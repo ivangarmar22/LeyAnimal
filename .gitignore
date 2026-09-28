@@ -1,0 +1,26 @@
+# Dependencias
+node_modules/
+.pnpm-store/
+
+# Astro
+dist/
+.astro/
+*.tsbuildinfo
+
+# Entorno
+.env
+.env.local
+.env.*.local
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Editores
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Descargas del BOE y del INE de los scripts de contenido (se rehacen solas)
+apps/web/scripts/contenido/.cache/

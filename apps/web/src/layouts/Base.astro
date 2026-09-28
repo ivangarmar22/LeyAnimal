@@ -1,0 +1,117 @@
+---
+/**
+ * Layout de todas las paginas: <head> con SEO (canonica, hreflang, Open
+ * Graph), cabecera, contenido y pie.
+ */
+import '@/estilos/global.css';
+import Cabecera from '@/componentes/layout/Cabecera.astro';
+import Pie from '@/componentes/layout/Pie.astro';
+import { traductor } from '@/i18n/catalogos';
+import type { Idioma } from '@/i18n/idiomas';
+import { alternativas, urlAbsoluta } from '@/lib/seo';
+import { URL_SITIO } from '@/lib/sitio';
+
+interface Props {
+  idioma: Idioma;
+  /** Ruta sin prefijo de idioma: '/consulta', '/municipios/malaga'. */
+  ruta: string;
+  titulo: string;
+  descripcion: string;
+  /** Sin el sufijo "| LeyAnimal" (portada). */
+  tituloCompleto?: boolean;
+  indexable?: boolean;
+  /** Anuncia el feed RSS de cambios. */
+  conRss?: boolean;
+}
+
+const {
+  idioma,
+  ruta,
+  titulo,
+  descripcion,
+  tituloCompleto = false,
+  indexable = true,
+  conRss = false,
+} = Astro.props;
+const t = traductor(idioma, 'navegacion');
+const titular = tituloCompleto ? titulo : `${titulo} | LeyAnimal`;
+const canonica = urlAbsoluta(ruta, idioma);
+const imagen = new URL(`/og/${idioma}.png`, URL_SITIO).toString();
+
+/**
+ * Antes del primer pintado: marca que hay JavaScript (activa las animaciones
+ * de aparicion) y aplica el tema guardado. Por defecto, claro.
+ */
+const guionInicial = `(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('tema');if(t==='dark'||t==='sistema'){d.setAttribute('data-theme',t)}}catch(e){}})()`;
+---
+
+<!doctype html>
+<html lang={idioma}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titular}</title>
+    <meta name="description" content={descripcion} />
+    <link rel="canonical" href={canonica} />
+    {alternativas(ruta).map((a) => (
+      <link rel="alternate" hreflang={a.hreflang} href={a.href} />
+    ))}
+    {!indexable && <meta name="robots" content="noindex, follow" />}
+    {conRss && (
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title="LeyAnimal"
+        href="/cambios/rss.xml"
+      />
+    )}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LeyAnimal" />
+    <meta property="og:locale" content={idioma === 'es' ? 'es_ES' : 'en_GB'} />
+    <meta property="og:title" content={titulo} />
+    <meta property="og:description" content={descripcion} />
+    <meta property="og:url" content={canonica} />
+    <meta property="og:image" content={imagen} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="theme-color" content="#effaf4" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="/fuentes/geist.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fuentes/sora.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script is:inline set:html={guionInicial} />
+    <slot name="head" />
+  </head>
+  <body class="min-h-dvh">
+    <div class="flex min-h-dvh flex-col">
+      <a
+        href="#contenido"
+        class="fixed top-[-80px] left-4 z-[100] rounded-full bg-superficie px-4 py-2.5 font-semibold text-texto shadow-media transition-[top] focus:top-3"
+      >
+        {t('saltarAlContenido')}
+      </a>
+      <Cabecera idioma={idioma} rutaActual={ruta} />
+      <main id="contenido" class="flex-1">
+        <slot />
+      </main>
+      <Pie idioma={idioma} />
+    </div>
+    <script>
+      import '@/scripts/efectos';
+    </script>
+  </body>
+</html>

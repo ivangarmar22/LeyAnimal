@@ -1,0 +1,159 @@
+---
+import { Info } from 'lucide-preact';
+import FuentePlegable from '@/componentes/legal/FuentePlegable.astro';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import PanelCta from '@/componentes/pagina/PanelCta.astro';
+import { textosPara, traductor } from '@/i18n/catalogos';
+import { idiomaDe, rutasIdioma } from '@/i18n/idiomas';
+import Calculadora, {
+  type Gravedad,
+  type Infraccion,
+  type Regimen,
+} from '@/islas/Calculadora';
+import Base from '@/layouts/Base.astro';
+import { articulo, norma } from '@/lib/datos';
+
+export const getStaticPaths = rutasIdioma;
+const idioma = idiomaDe(Astro.params.lang);
+const t = traductor(idioma, 'multas');
+const tn = traductor(idioma, 'navegacion');
+const tc = traductor(idioma, 'comun');
+const tcta = traductor(idioma, 'inicio.cta');
+
+const L7 = 'ley-7-2023-bienestar-animal';
+const L50 = 'ley-50-1999-animales-potencialmente-peligrosos';
+
+/** Cada infraccion apunta al articulo que la clasifica, citado literalmente. */
+const CATALOGO: [string, Regimen, Gravedad, string][] = [
+  ['identificacion', 'general', 'grave', `${L7}#art. 74.b`],
+  ['abandono', 'general', 'grave', `${L7}#art. 74.k`],
+  ['terraza', 'general', 'grave', `${L7}#art. 74.o`],
+  ['metodos', 'general', 'grave', `${L7}#art. 74.c`],
+  ['muerte', 'general', 'muyGrave', `${L7}#art. 75.a`],
+  ['peleas', 'general', 'muyGrave', `${L7}#art. 75.c`],
+  ['otrasLeve', 'general', 'leve', `${L7}#art. 73`],
+  ['sinLicencia', 'especial', 'muyGrave', `${L50}#art. 13.1.b`],
+  ['abandonoPpp', 'especial', 'muyGrave', `${L50}#art. 13.1.a`],
+  ['suelto', 'especial', 'grave', `${L50}#art. 13.2.a`],
+  ['sinBozal', 'especial', 'grave', `${L50}#art. 13.2.d`],
+  ['sinIdentificar', 'especial', 'grave', `${L50}#art. 13.2.b`],
+  ['sinRegistro', 'especial', 'grave', `${L50}#art. 13.2.c`],
+  ['otrasPpp', 'especial', 'leve', `${L50}#art. 13.4`],
+];
+
+function fuente(id: string) {
+  const a = articulo(id);
+  const n = a ? norma(a.norma) : undefined;
+  if (!a || !n) throw new Error(`Falta el articulo ${id}`);
+  return { norma: n, articulo: a };
+}
+
+const infracciones: Infraccion[] = CATALOGO.map(
+  ([clave, regimen, gravedad, id]) => ({
+    clave,
+    regimen,
+    gravedad,
+    fuente: fuente(id),
+  }),
+);
+const tramos = {
+  general: fuente(`${L7}#art. 76.1`),
+  especial: fuente(`${L50}#art. 13.5`),
+};
+const filas: [Regimen, string, string][] = [
+  ['general', t('general'), `${L7}#art. 76.1`],
+  ['especial', t('especial'), `${L50}#art. 13.5`],
+];
+const claves = {
+  general: ['t7leve', 't7grave', 't7muyGrave'],
+  especial: ['t50leve', 't50grave', 't50muyGrave'],
+} as const;
+const gravedades = [t('leve'), t('grave'), t('muyGrave')];
+---
+
+<Base
+  idioma={idioma}
+  ruta="/multas"
+  titulo={t('metaTitulo')}
+  descripcion={t('metaDescripcion')}
+>
+  <CabeceraPagina
+    idioma={idioma}
+    eyebrow={t('eyebrow')}
+    titulo={t('titulo')}
+    entradilla={t('entradilla')}
+    migas={[{ nombre: tn('temas'), href: '/temas' }]}
+    actual={tn('multas')}
+    solape
+  />
+
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <div class="rounded-[28px] border border-borde bg-superficie p-5 shadow-alta sm:p-8 lg:p-10">
+      <Calculadora
+        client:visible
+        idioma={idioma}
+        textos={textosPara(idioma, ['multas', 'ley', 'comun'])}
+        infracciones={infracciones}
+        tramos={tramos}
+      />
+      <div class="mt-10 grid gap-3 border-t border-borde pt-6 text-[0.9375rem]">
+        <p class="flex gap-2.5">
+          <Info
+            class="mt-0.5 size-5 shrink-0 text-marca-600"
+            aria-hidden="true"
+          />
+          {t('aviso')}
+        </p>
+        <p class="pl-7.5 text-texto-3">{t('reincidencia')}</p>
+        <div class="pl-7.5">
+          <FuentePlegable
+            idioma={idioma}
+            ids={[`${L7}#art. 76.2`, `${L7}#art. 76.3`, `${L50}#art. 13.7`]}
+          />
+        </div>
+      </div>
+    </div>
+
+    <section class="mt-20" aria-labelledby="tramos">
+      <h2 id="tramos" class="titulo-3">
+        {t('tablaTitulo')}
+      </h2>
+      <div class="mt-6 rounded-3xl border border-borde bg-superficie md:p-2">
+        <table class="tabla tabla--apilable">
+          <thead>
+            <tr>
+              <th scope="col">{t('regimen')}</th>
+              {gravedades.map((g) => (
+                <th scope="col">{g}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {filas.map(([regimen, nombre, id]) => (
+              <tr>
+                <td>
+                  <span class="font-medium text-texto">{nombre}</span>
+                  <FuentePlegable idioma={idioma} ids={[id]} />
+                </td>
+                {claves[regimen].map((clave, i) => (
+                  <td data-etiqueta={gravedades[i]} class="cifras">
+                    {t(clave)}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="mt-12 text-sm font-medium text-texto-2">{tc('descargo')}</p>
+  </div>
+
+  <PanelCta
+    idioma={idioma}
+    titulo={tcta('titulo')}
+    texto={tcta('texto')}
+    boton={tcta('boton')}
+  />
+</Base>

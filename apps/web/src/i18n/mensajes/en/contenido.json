@@ -1,0 +1,106 @@
+{
+  "temas": {
+    "seguro": {
+      "nombre": "Third-party liability insurance",
+      "descripcion": "What the law says about liability insurance for your dog, which part can be enforced today and which part depends on a pending regulation."
+    },
+    "identificacion": {
+      "nombre": "Identification and microchip",
+      "descripcion": "Microchip, register and local census: what your region requires and what national law requires for cats."
+    },
+    "curso": {
+      "nombre": "Responsible ownership course",
+      "descripcion": "The responsible ownership course that Act 7/2023 requires to own a dog, and why it cannot be taken yet."
+    },
+    "ppp": {
+      "nombre": "Potentially dangerous dogs",
+      "descripcion": "Which dogs are considered potentially dangerous and what it involves: local licence, €120,000 insurance, muzzle and lead."
+    },
+    "esterilizacion": {
+      "nombre": "Neutering",
+      "descripcion": "The national obligation to neuter cats before six months of age and its only exception."
+    }
+  },
+  "especies": {
+    "perro": "Dog",
+    "gato": "Cat",
+    "huron": "Ferret",
+    "ave": "Bird",
+    "reptil": "Reptile",
+    "pez": "Fish",
+    "roedor": "Rodent",
+    "otro": "Other"
+  },
+  "parametros": {
+    "validez_anios": {
+      "etiqueta": "Validity",
+      "valor": "{valor, plural, one {# year} other {# years}}"
+    },
+    "cobertura_minima_eur": {
+      "etiqueta": "Minimum insurance cover",
+      "valor": "€{valor, number}"
+    },
+    "edad_limite_meses": {
+      "etiqueta": "Age limit",
+      "valor": "{valor, plural, one {# month} other {# months}}"
+    }
+  },
+  "requisitos": {
+    "seguro_rc_perros": {
+      "titulo": "Third-party liability insurance for your dog",
+      "descripcion": "Act 7/2023 requires it for the dog's whole life, but leaves the amount to a regulation.",
+      "explicacion": "The law requires you to take out and keep third-party liability insurance for damage to others for the whole life of your dog. However, it leaves the minimum amount to a regulation that has not been published yet, so today there is no national amount that can be enforced.\n\nNote: if your region or your town council already required it on their own, it can be enforced there. And if your dog is considered potentially dangerous, the €120,000 minimum set by Royal Decree 287/2002 does apply today.",
+      "plazo": "For the animal's whole life",
+      "quien": "National government"
+    },
+    "curso_tenencia_perros": {
+      "titulo": "Responsible dog ownership course",
+      "descripcion": "Mandatory, free and valid indefinitely, but its content is pending regulation.",
+      "explicacion": "Act 7/2023 requires anyone who wants to own a dog to prove they have completed a training course. The course is free and valid indefinitely.\n\nIts content will be set by regulation, and that regulation has not been published yet, so there is still no official course you can take to comply.",
+      "plazo": "Before becoming a dog's owner",
+      "quien": "National government"
+    },
+    "microchip_esterilizacion_gatos": {
+      "titulo": "Microchip and neutering for your cat",
+      "descripcion": "Before six months of age, except cats registered as breeding animals of a registered breeder.",
+      "explicacion": "Act 7/2023 requires all cats to be identified with a microchip and surgically neutered before they are six months old.\n\nThere is one exception: cats registered in the identification register as breeding animals in the name of a breeder listed in the Register of Pet Breeders. We cannot check that case with the data we ask for, so keep it in mind if it applies to you.\n\nUnlike the insurance and the course, this obligation does not depend on any pending regulation: it can be enforced.",
+      "plazo": "Before six months of age",
+      "quien": "National government"
+    },
+    "licencia_ppp": {
+      "titulo": "Local licence for a potentially dangerous dog",
+      "descripcion": "Granted by your town council. It requires insurance of at least €120,000 and is renewed every five years.",
+      "explicacion": "If your dog is considered potentially dangerous, you need an administrative licence granted by the competent body of your town council.\n\nAmong its requirements: being of legal age, clean criminal record certificates, certificates of physical fitness and psychological aptitude, and third-party liability insurance with cover of no less than €120,000.\n\nThe licence is valid for five years and can be renewed for equal periods.",
+      "plazo": "Renewal every five years",
+      "quien": "Town council"
+    },
+    "identificacion_animales": {
+      "titulo": "Identify your animal",
+      "descripcion": "Your region requires your animal to be identified, usually with a microchip.",
+      "explicacion": "Identification is a regional responsibility, so the deadline and the species covered depend on where you live. See your region's quote below.",
+      "plazo": "Varies by region",
+      "quien": "Regional government"
+    },
+    "censo_municipal": {
+      "titulo": "Register your animal with your town council",
+      "descripcion": "Your region requires you to register it in your town council's animal census.",
+      "explicacion": "The census is kept by your town council, but the obligation to register comes from your region's law. The exact deadline is in the quote.",
+      "plazo": "Varies by region",
+      "quien": "Town council"
+    }
+  },
+  "notasReglas": {
+    "5d3bb43e-6771-9b84-9fff-d41d1a112a48": "The duty covers the censuses “that apply in each case”. It is applied to the species that must be identified under the same law (article 14): dogs, cats and ferrets.",
+    "c76be30c-66ff-fe3d-30ed-88c2e1919c48": "Mandatory for dogs. For other species the law makes it voluntary, except for animals classed as potentially dangerous.",
+    "952e1b48-9010-f78a-3747-728c5920d38c": "A direct duty to register with the town council within three months. The article's references to regulations concern the content of the census, not the duty itself.",
+    "10000000-0000-4000-8000-000000000002": "The content of the course will be set by regulation, and that regulation is still pending.",
+    "4648206b-02df-8d2a-7eb7-072894b589bc": "The reference to regulations governs how the microchip works, not whether the duty exists, which is reinforced by the words “in any case”.",
+    "6ca96957-b010-75c9-a497-9d522038f96d": "The reference to regulations covers additional species; dogs, cats and ferrets are directly subject to the duty.",
+    "c4383c09-b6fa-3024-a0d1-868b157c6747": "The reference to regulations only covers “other animals”: for dogs and cats the duty is direct, within three months of birth.",
+    "10000000-0000-4000-8000-000000000004": "Besides the breeds in Annex I, the competent authority can declare any dog that shows marked aggressiveness to be potentially dangerous.",
+    "10000000-0000-4000-8000-000000000003": "Exception we cannot evaluate: cats registered as breeding animals in the name of a registered breeder.",
+    "10000000-0000-4000-8000-000000000001": "The law sets the obligation but leaves the minimum amount to a regulation that has not been published.",
+    "ed3d781e-d0d2-b939-b641-0fa7b47091a6": "It leaves it to a regulation to set the cases. The article was amended in December 2024 and the reference to a regulation was kept.",
+    "ff4dac09-5c8f-7c43-8fc3-5c1ca8650a7f": "For dogs the duty is direct; the reference to regulations only covers “those species determined by regulation”."
+  }
+}

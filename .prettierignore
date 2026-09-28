@@ -1,0 +1,9 @@
+node_modules
+dist
+.astro
+pnpm-lock.yaml
+
+# Datos: los escriben los scripts de contenido con un formato fijo, para que
+# cada cambio legal se revise linea a linea en el diff
+apps/web/src/datos
+apps/web/scripts/contenido/.cache

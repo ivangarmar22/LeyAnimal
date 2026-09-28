@@ -1,0 +1,32 @@
+{
+  "name": "leyanimal",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Obligaciones legales de tu animal de compania en Espana",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @leyanimal/web dev",
+    "build": "pnpm --filter @leyanimal/web build",
+    "start": "pnpm --filter @leyanimal/web preview",
+    "lint": "pnpm -r --no-bail lint",
+    "typecheck": "pnpm -r --no-bail typecheck",
+    "test": "pnpm -r --no-bail test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "verificar": "pnpm format:check && pnpm datos:comprobar && pnpm lint && pnpm typecheck && pnpm test",
+    "datos:comprobar": "node apps/web/scripts/contenido/comprobar.mjs",
+    "datos:geografia": "node apps/web/scripts/contenido/generar-geografia.mjs",
+    "datos:autonomicas": "node apps/web/scripts/contenido/generar-autonomicas.mjs",
+    "datos:referencia": "node apps/web/scripts/contenido/generar-referencia-estatal.mjs",
+    "datos:extraer": "node apps/web/scripts/contenido/extraer-autonomicas.mjs",
+    "og": "node apps/web/scripts/generar-og.mjs"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "1.1.0",
+    "prettier-plugin-tailwindcss": "^0.8.1"
+  }
+}

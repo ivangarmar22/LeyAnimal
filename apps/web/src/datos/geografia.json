@@ -1,0 +1,484 @@
+{
+ "comunidades": [
+  {
+   "codigoIne": "01",
+   "nombre": "Andalucía",
+   "nombreOficial": "Andalucía",
+   "slug": "andalucia"
+  },
+  {
+   "codigoIne": "02",
+   "nombre": "Aragón",
+   "nombreOficial": "Aragón",
+   "slug": "aragon"
+  },
+  {
+   "codigoIne": "03",
+   "nombre": "Principado de Asturias",
+   "nombreOficial": "Asturias, Principado de",
+   "slug": "principado-de-asturias"
+  },
+  {
+   "codigoIne": "04",
+   "nombre": "Illes Balears",
+   "nombreOficial": "Balears, Illes",
+   "slug": "illes-balears"
+  },
+  {
+   "codigoIne": "05",
+   "nombre": "Canarias",
+   "nombreOficial": "Canarias",
+   "slug": "canarias"
+  },
+  {
+   "codigoIne": "06",
+   "nombre": "Cantabria",
+   "nombreOficial": "Cantabria",
+   "slug": "cantabria"
+  },
+  {
+   "codigoIne": "07",
+   "nombre": "Castilla y León",
+   "nombreOficial": "Castilla y León",
+   "slug": "castilla-y-leon"
+  },
+  {
+   "codigoIne": "08",
+   "nombre": "Castilla-La Mancha",
+   "nombreOficial": "Castilla-La Mancha",
+   "slug": "castilla-la-mancha"
+  },
+  {
+   "codigoIne": "09",
+   "nombre": "Cataluña",
+   "nombreOficial": "Cataluña",
+   "slug": "cataluna"
+  },
+  {
+   "codigoIne": "10",
+   "nombre": "Comunitat Valenciana",
+   "nombreOficial": "Comunitat Valenciana",
+   "slug": "comunitat-valenciana"
+  },
+  {
+   "codigoIne": "11",
+   "nombre": "Extremadura",
+   "nombreOficial": "Extremadura",
+   "slug": "extremadura"
+  },
+  {
+   "codigoIne": "12",
+   "nombre": "Galicia",
+   "nombreOficial": "Galicia",
+   "slug": "galicia"
+  },
+  {
+   "codigoIne": "13",
+   "nombre": "Comunidad de Madrid",
+   "nombreOficial": "Madrid, Comunidad de",
+   "slug": "comunidad-de-madrid"
+  },
+  {
+   "codigoIne": "14",
+   "nombre": "Región de Murcia",
+   "nombreOficial": "Murcia, Región de",
+   "slug": "region-de-murcia"
+  },
+  {
+   "codigoIne": "15",
+   "nombre": "Comunidad Foral de Navarra",
+   "nombreOficial": "Navarra, Comunidad Foral de",
+   "slug": "comunidad-foral-de-navarra"
+  },
+  {
+   "codigoIne": "16",
+   "nombre": "País Vasco",
+   "nombreOficial": "País Vasco",
+   "slug": "pais-vasco"
+  },
+  {
+   "codigoIne": "17",
+   "nombre": "La Rioja",
+   "nombreOficial": "Rioja, La",
+   "slug": "la-rioja"
+  },
+  {
+   "codigoIne": "18",
+   "nombre": "Ceuta",
+   "nombreOficial": "Ceuta",
+   "slug": "ceuta"
+  },
+  {
+   "codigoIne": "19",
+   "nombre": "Melilla",
+   "nombreOficial": "Melilla",
+   "slug": "melilla"
+  }
+ ],
+ "provincias": [
+  {
+   "codigoIne": "01",
+   "nombre": "Araba/Álava",
+   "nombreOficial": "Araba/Álava",
+   "slug": "araba-alava",
+   "comunidad": "16"
+  },
+  {
+   "codigoIne": "02",
+   "nombre": "Albacete",
+   "nombreOficial": "Albacete",
+   "slug": "albacete",
+   "comunidad": "08"
+  },
+  {
+   "codigoIne": "03",
+   "nombre": "Alicante/Alacant",
+   "nombreOficial": "Alicante/Alacant",
+   "slug": "alicante-alacant",
+   "comunidad": "10"
+  },
+  {
+   "codigoIne": "04",
+   "nombre": "Almería",
+   "nombreOficial": "Almería",
+   "slug": "almeria",
+   "comunidad": "01"
+  },
+  {
+   "codigoIne": "05",
+   "nombre": "Ávila",
+   "nombreOficial": "Ávila",
+   "slug": "avila",
+   "comunidad": "07"
+  },
+  {
+   "codigoIne": "06",
+   "nombre": "Badajoz",
+   "nombreOficial": "Badajoz",
+   "slug": "badajoz",
+   "comunidad": "11"
+  },
+  {
+   "codigoIne": "07",
+   "nombre": "Illes Balears",
+   "nombreOficial": "Balears, Illes",
+   "slug": "illes-balears",
+   "comunidad": "04"
+  },
+  {
+   "codigoIne": "08",
+   "nombre": "Barcelona",
+   "nombreOficial": "Barcelona",
+   "slug": "barcelona",
+   "comunidad": "09"
+  },
+  {
+   "codigoIne": "09",
+   "nombre": "Burgos",
+   "nombreOficial": "Burgos",
+   "slug": "burgos",
+   "comunidad": "07"
+  },
+  {
+   "codigoIne": "10",
+   "nombre": "Cáceres",
+   "nombreOficial": "Cáceres",
+   "slug": "caceres",
+   "comunidad": "11"
+  },
+  {
+   "codigoIne": "11",
+   "nombre": "Cádiz",
+   "nombreOficial": "Cádiz",
+   "slug": "cadiz",
+   "comunidad": "01"
+  },
+  {
+   "codigoIne": "12",
+   "nombre": "Castellón/Castelló",
+   "nombreOficial": "Castellón/Castelló",
+   "slug": "castellon-castello",
+   "comunidad": "10"
+  },
+  {
+   "codigoIne": "13",
+   "nombre": "Ciudad Real",
+   "nombreOficial": "Ciudad Real",
+   "slug": "ciudad-real",
+   "comunidad": "08"
+  },
+  {
+   "codigoIne": "14",
+   "nombre": "Córdoba",
+   "nombreOficial": "Córdoba",
+   "slug": "cordoba",
+   "comunidad": "01"
+  },
+  {
+   "codigoIne": "15",
+   "nombre": "A Coruña",
+   "nombreOficial": "Coruña, A",
+   "slug": "a-coruna",
+   "comunidad": "12"
+  },
+  {
+   "codigoIne": "16",
+   "nombre": "Cuenca",
+   "nombreOficial": "Cuenca",
+   "slug": "cuenca",
+   "comunidad": "08"
+  },
+  {
+   "codigoIne": "17",
+   "nombre": "Girona",
+   "nombreOficial": "Girona",
+   "slug": "girona",
+   "comunidad": "09"
+  },
+  {
+   "codigoIne": "18",
+   "nombre": "Granada",
+   "nombreOficial": "Granada",
+   "slug": "granada",
+   "comunidad": "01"
+  },
+  {
+   "codigoIne": "19",
+   "nombre": "Guadalajara",
+   "nombreOficial": "Guadalajara",
+   "slug": "guadalajara",
+   "comunidad": "08"
+  },
+  {
+   "codigoIne": "20",
+   "nombre": "Gipuzkoa",
+   "nombreOficial": "Gipuzkoa",
+   "slug": "gipuzkoa",
+   "comunidad": "16"
+  },
+  {
+   "codigoIne": "21",
+   "nombre": "Huelva",
+   "nombreOficial": "Huelva",
+   "slug": "huelva",
+   "comunidad": "01"
+  },
+  {
+   "codigoIne": "22",
+   "nombre": "Huesca",
+   "nombreOficial": "Huesca",
+   "slug": "huesca",
+   "comunidad": "02"
+  },
+  {
+   "codigoIne": "23",
+   "nombre": "Jaén",
+   "nombreOficial": "Jaén",
+   "slug": "jaen",
+   "comunidad": "01"
+  },
+  {
+   "codigoIne": "24",
+   "nombre": "León",
+   "nombreOficial": "León",
+   "slug": "leon",
+   "comunidad": "07"
+  },
+  {
+   "codigoIne": "25",
+   "nombre": "Lleida",
+   "nombreOficial": "Lleida",
+   "slug": "lleida",
+   "comunidad": "09"
+  },
+  {
+   "codigoIne": "26",
+   "nombre": "La Rioja",
+   "nombreOficial": "Rioja, La",
+   "slug": "la-rioja",
+   "comunidad": "17"
+  },
+  {
+   "codigoIne": "27",
+   "nombre": "Lugo",
+   "nombreOficial": "Lugo",
+   "slug": "lugo",
+   "comunidad": "12"
+  },
+  {
+   "codigoIne": "28",
+   "nombre": "Madrid",
+   "nombreOficial": "Madrid",
+   "slug": "madrid",
+   "comunidad": "13"
+  },
+  {
+   "codigoIne": "29",
+   "nombre": "Málaga",
+   "nombreOficial": "Málaga",
+   "slug": "malaga",
+   "comunidad": "01"
+  },
+  {
+   "codigoIne": "30",
+   "nombre": "Murcia",
+   "nombreOficial": "Murcia",
+   "slug": "murcia",
+   "comunidad": "14"
+  },
+  {
+   "codigoIne": "31",
+   "nombre": "Navarra",
+   "nombreOficial": "Navarra",
+   "slug": "navarra",
+   "comunidad": "15"
+  },
+  {
+   "codigoIne": "32",
+   "nombre": "Ourense",
+   "nombreOficial": "Ourense",
+   "slug": "ourense",
+   "comunidad": "12"
+  },
+  {
+   "codigoIne": "33",
+   "nombre": "Asturias",
+   "nombreOficial": "Asturias",
+   "slug": "asturias",
+   "comunidad": "03"
+  },
+  {
+   "codigoIne": "34",
+   "nombre": "Palencia",
+   "nombreOficial": "Palencia",
+   "slug": "palencia",
+   "comunidad": "07"
+  },
+  {
+   "codigoIne": "35",
+   "nombre": "Las Palmas",
+   "nombreOficial": "Palmas, Las",
+   "slug": "las-palmas",
+   "comunidad": "05"
+  },
+  {
+   "codigoIne": "36",
+   "nombre": "Pontevedra",
+   "nombreOficial": "Pontevedra",
+   "slug": "pontevedra",
+   "comunidad": "12"
+  },
+  {
+   "codigoIne": "37",
+   "nombre": "Salamanca",
+   "nombreOficial": "Salamanca",
+   "slug": "salamanca",
+   "comunidad": "07"
+  },
+  {
+   "codigoIne": "38",
+   "nombre": "Santa Cruz de Tenerife",
+   "nombreOficial": "Santa Cruz de Tenerife",
+   "slug": "santa-cruz-de-tenerife",
+   "comunidad": "05"
+  },
+  {
+   "codigoIne": "39",
+   "nombre": "Cantabria",
+   "nombreOficial": "Cantabria",
+   "slug": "cantabria",
+   "comunidad": "06"
+  },
+  {
+   "codigoIne": "40",
+   "nombre": "Segovia",
+   "nombreOficial": "Segovia",
+   "slug": "segovia",
+   "comunidad": "07"
+  },
+  {
+   "codigoIne": "41",
+   "nombre": "Sevilla",
+   "nombreOficial": "Sevilla",
+   "slug": "sevilla",
+   "comunidad": "01"
+  },
+  {
+   "codigoIne": "42",
+   "nombre": "Soria",
+   "nombreOficial": "Soria",
+   "slug": "soria",
+   "comunidad": "07"
+  },
+  {
+   "codigoIne": "43",
+   "nombre": "Tarragona",
+   "nombreOficial": "Tarragona",
+   "slug": "tarragona",
+   "comunidad": "09"
+  },
+  {
+   "codigoIne": "44",
+   "nombre": "Teruel",
+   "nombreOficial": "Teruel",
+   "slug": "teruel",
+   "comunidad": "02"
+  },
+  {
+   "codigoIne": "45",
+   "nombre": "Toledo",
+   "nombreOficial": "Toledo",
+   "slug": "toledo",
+   "comunidad": "08"
+  },
+  {
+   "codigoIne": "46",
+   "nombre": "Valencia/València",
+   "nombreOficial": "Valencia/València",
+   "slug": "valencia-valencia",
+   "comunidad": "10"
+  },
+  {
+   "codigoIne": "47",
+   "nombre": "Valladolid",
+   "nombreOficial": "Valladolid",
+   "slug": "valladolid",
+   "comunidad": "07"
+  },
+  {
+   "codigoIne": "48",
+   "nombre": "Bizkaia",
+   "nombreOficial": "Bizkaia",
+   "slug": "bizkaia",
+   "comunidad": "16"
+  },
+  {
+   "codigoIne": "49",
+   "nombre": "Zamora",
+   "nombreOficial": "Zamora",
+   "slug": "zamora",
+   "comunidad": "07"
+  },
+  {
+   "codigoIne": "50",
+   "nombre": "Zaragoza",
+   "nombreOficial": "Zaragoza",
+   "slug": "zaragoza",
+   "comunidad": "02"
+  },
+  {
+   "codigoIne": "51",
+   "nombre": "Ceuta",
+   "nombreOficial": "Ceuta",
+   "slug": "ceuta",
+   "comunidad": "18"
+  },
+  {
+   "codigoIne": "52",
+   "nombre": "Melilla",
+   "nombreOficial": "Melilla",
+   "slug": "melilla",
+   "comunidad": "19"
+  }
+ ]
+}

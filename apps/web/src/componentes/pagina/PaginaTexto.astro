@@ -1,0 +1,41 @@
+---
+/** Pagina de texto largo: legales, contacto. Cabecera + tarjeta de lectura. */
+import { AlertTriangle } from 'lucide-preact';
+import { traductor } from '@/i18n/catalogos';
+import type { Idioma } from '@/i18n/idiomas';
+import CabeceraPagina from './CabeceraPagina.astro';
+
+interface Props {
+  idioma: Idioma;
+  eyebrow: string;
+  titulo: string;
+  entradilla?: string;
+  /** Muestra el aviso de datos del titular pendientes. */
+  pendiente?: boolean;
+}
+
+const { idioma, eyebrow, titulo, entradilla, pendiente = false } = Astro.props;
+const t = traductor(idioma, 'legal');
+---
+
+<CabeceraPagina
+  idioma={idioma}
+  eyebrow={eyebrow}
+  titulo={titulo}
+  entradilla={entradilla}
+  solape
+/>
+<div class="contenedor solape pb-[var(--seccion)]">
+  <article class="prosa mx-auto max-w-[860px] rounded-[28px] border border-borde bg-superficie p-6 shadow-alta sm:p-10 lg:p-14 [&>h2:first-child]:mt-0">
+    {pendiente ? (
+      <div class="mb-10 flex gap-3 rounded-2xl border border-pendiente-borde bg-pendiente-fondo p-4 text-pendiente-texto">
+        <AlertTriangle class="mt-0.5 size-5 shrink-0" aria-hidden="true" />
+        <div class="text-[0.9375rem]">
+          <p class="font-semibold">{t('pendiente')}</p>
+          <p class="mt-1">{t('pendienteTexto')}</p>
+        </div>
+      </div>
+    ) : null}
+    <slot />
+  </article>
+</div>

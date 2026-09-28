@@ -1,0 +1,45 @@
+{
+  "temas": {
+    "seguro": {
+      "descripcion": "Qué exige la ley sobre el seguro de responsabilidad civil de tu perro, qué parte es exigible hoy y qué depende de un reglamento pendiente."
+    },
+    "identificacion": {
+      "descripcion": "Microchip, registro y censo municipal: qué pide tu comunidad y qué pide la ley estatal para los gatos."
+    },
+    "curso": {
+      "descripcion": "El curso de tenencia responsable que la Ley 7/2023 exige para tener un perro, y por qué todavía no se puede hacer."
+    },
+    "ppp": {
+      "descripcion": "Qué perros se consideran potencialmente peligrosos y qué implica: licencia municipal, seguro de 120.000 €, bozal y correa."
+    },
+    "esterilizacion": {
+      "descripcion": "La obligación estatal de esterilizar a los gatos antes de los seis meses y su única excepción."
+    }
+  },
+  "especies": {
+    "perro": "Perro",
+    "gato": "Gato",
+    "huron": "Hurón",
+    "ave": "Ave",
+    "reptil": "Reptil",
+    "pez": "Pez",
+    "roedor": "Roedor",
+    "otro": "Otro"
+  },
+  "parametros": {
+    "validez_anios": {
+      "etiqueta": "Validez",
+      "valor": "{valor, plural, one {# año} other {# años}}"
+    },
+    "cobertura_minima_eur": {
+      "etiqueta": "Cobertura mínima del seguro",
+      "valor": "{valor, number} €"
+    },
+    "edad_limite_meses": {
+      "etiqueta": "Edad límite",
+      "valor": "{valor, plural, one {# mes} other {# meses}}"
+    }
+  },
+  "requisitos": {},
+  "notasReglas": {}
+}

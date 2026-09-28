@@ -1,0 +1,52 @@
+---
+/**
+ * El simbolo dibujado a linea a gran tamano, con un "cometa" que lo recorre.
+ * Decoracion pura: va detras del contenido y se oculta a lectores de pantalla.
+ * Cada forma declara pathLength="1" para que la animacion de trazo funcione
+ * igual en todas. `id` distingue el degradado si hay dos en la pagina.
+ */
+import { ALMOHADILLA, DEDOS, ESCUDO } from './formas';
+
+interface Props {
+  class?: string;
+  id?: string;
+}
+
+const { class: clase, id = 'trazo' } = Astro.props;
+const degradado = `${id}-degradado`;
+const capas = [
+  { clase: 'base', trazo: `url(#${degradado})` },
+  { clase: 'cometa', trazo: undefined },
+];
+---
+
+<svg
+  viewBox="0 0 48 52"
+  class:list={['trazo-marca', clase]}
+  aria-hidden="true"
+  focusable="false"
+>
+  <defs>
+    <linearGradient id={degradado} x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#86d4ab"></stop>
+      <stop offset="0.6" stop-color="#23a36a"></stop>
+      <stop offset="1" stop-color="#16804f"></stop>
+    </linearGradient>
+  </defs>
+  {capas.map(({ clase: capa, trazo }) => (
+    <g class={capa} stroke={trazo}>
+      <path d={ESCUDO} pathLength="1" />
+      <path d={ALMOHADILLA} pathLength="1" />
+      {DEDOS.map(([cx, cy, rx, ry, g]) => (
+        <ellipse
+          cx={cx}
+          cy={cy}
+          rx={rx}
+          ry={ry}
+          transform={`rotate(${g} ${cx} ${cy})`}
+          pathLength="1"
+        />
+      ))}
+    </g>
+  ))}
+</svg>

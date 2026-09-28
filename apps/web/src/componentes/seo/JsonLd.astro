@@ -1,0 +1,13 @@
+---
+/**
+ * Datos estructurados schema.org. Se escapa '<' para que ningun texto del
+ * contenido pueda cerrar la etiqueta script.
+ */
+interface Props {
+  datos: Record<string, unknown>;
+}
+
+const json = JSON.stringify(Astro.props.datos).replace(/</g, '\\u003c');
+---
+
+<script is:inline type="application/ld+json" set:html={json} />

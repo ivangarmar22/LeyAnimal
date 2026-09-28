@@ -1,0 +1,74 @@
+---
+/**
+ * Cabecera de las paginas interiores: banda menta que se funde con el blanco.
+ * La cabecera fija del sitio es transparente arriba y se apoya en ella.
+ *
+ * `solape` deja sitio para que el primer bloque de contenido suba por encima
+ * del borde inferior, como en las paginas de servicio de TraceIT.
+ */
+import type { Idioma } from '@/i18n/idiomas';
+import Migas, { type Miga } from './Migas.astro';
+
+interface Props {
+  idioma: Idioma;
+  eyebrow: string;
+  titulo: string;
+  entradilla?: string;
+  /** Idioma del titulo si no es el de la pagina (titulos de normas). */
+  langTitulo?: string;
+  migas?: Miga[];
+  /** Texto de la miga actual. Por defecto, el titulo. */
+  actual?: string;
+  solape?: boolean;
+  class?: string;
+}
+
+const {
+  idioma,
+  eyebrow,
+  titulo,
+  entradilla,
+  langTitulo,
+  migas = [],
+  actual,
+  solape = false,
+  class: clase,
+} = Astro.props;
+---
+
+<section
+  class:list={[
+    'cabecera-pagina tinte',
+    solape && 'cabecera-pagina--solape',
+    clase,
+  ]}
+>
+  <div class="fondo-rejilla" aria-hidden="true"></div>
+  <div class="fondo-brillo" aria-hidden="true"></div>
+  <div class="contenedor">
+    <div data-intro>
+      <Migas idioma={idioma} items={migas} actual={actual ?? titulo} />
+    </div>
+    <p class="eyebrow mt-8" data-intro style="--i: 1">
+      {eyebrow}
+    </p>
+    <h1
+      class="titulo-pagina mt-5 max-w-[22ch]"
+      data-intro
+      style="--i: 2"
+      lang={langTitulo}
+    >
+      {titulo}
+    </h1>
+    {entradilla ? (
+      <p class="entradilla mt-5" data-intro style="--i: 3">
+        {entradilla}
+      </p>
+    ) : null}
+    {Astro.slots.has('default') ? (
+      <div class="mt-8" data-intro style="--i: 4">
+        <slot />
+      </div>
+    ) : null}
+  </div>
+</section>

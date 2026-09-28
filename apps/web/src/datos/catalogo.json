@@ -1,0 +1,134 @@
+{
+ "especies": [
+  {
+   "clave": "perro",
+   "nombre": "Perro"
+  },
+  {
+   "clave": "gato",
+   "nombre": "Gato"
+  },
+  {
+   "clave": "huron",
+   "nombre": "Huron"
+  },
+  {
+   "clave": "ave",
+   "nombre": "Ave"
+  },
+  {
+   "clave": "reptil",
+   "nombre": "Reptil"
+  },
+  {
+   "clave": "pez",
+   "nombre": "Pez"
+  },
+  {
+   "clave": "roedor",
+   "nombre": "Roedor"
+  },
+  {
+   "clave": "otro",
+   "nombre": "Otro"
+  }
+ ],
+ "razas": [
+  {
+   "slug": "akita-inu",
+   "nombre": "Akita Inu",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": null,
+   "autonomicas": []
+  },
+  {
+   "slug": "american-staffordshire-terrier",
+   "nombre": "American Staffordshire Terrier",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": "El anexo I del RD 287/2002 lo escribe \"American Staffodshire Terrier\". La errata es del texto oficial.",
+   "autonomicas": []
+  },
+  {
+   "slug": "dogo-argentino",
+   "nombre": "Dogo Argentino",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": null,
+   "autonomicas": []
+  },
+  {
+   "slug": "fila-brasileiro",
+   "nombre": "Fila Brasileiro",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": null,
+   "autonomicas": []
+  },
+  {
+   "slug": "pit-bull-terrier",
+   "nombre": "Pit Bull Terrier",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": null,
+   "autonomicas": []
+  },
+  {
+   "slug": "rottweiler",
+   "nombre": "Rottweiler",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": null,
+   "autonomicas": []
+  },
+  {
+   "slug": "staffordshire-bull-terrier",
+   "nombre": "Staffordshire Bull Terrier",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": null,
+   "autonomicas": []
+  },
+  {
+   "slug": "tosa-inu",
+   "nombre": "Tosa Inu",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": null,
+   "autonomicas": []
+  }
+ ],
+ "temas": [
+  {
+   "clave": "seguro",
+   "nombre": "Seguro de responsabilidad civil",
+   "slug": "seguro",
+   "descripcion": null
+  },
+  {
+   "clave": "identificacion",
+   "nombre": "Identificación y microchip",
+   "slug": "identificacion",
+   "descripcion": null
+  },
+  {
+   "clave": "curso",
+   "nombre": "Curso de tenencia responsable",
+   "slug": "curso",
+   "descripcion": null
+  },
+  {
+   "clave": "ppp",
+   "nombre": "Perros potencialmente peligrosos",
+   "slug": "ppp",
+   "descripcion": null
+  },
+  {
+   "clave": "esterilizacion",
+   "nombre": "Esterilización",
+   "slug": "esterilizacion",
+   "descripcion": null
+  }
+ ]
+}

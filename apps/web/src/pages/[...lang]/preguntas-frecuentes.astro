@@ -1,0 +1,59 @@
+---
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import ListaPreguntas from '@/componentes/pagina/ListaPreguntas.astro';
+import PanelCta from '@/componentes/pagina/PanelCta.astro';
+import JsonLd from '@/componentes/seo/JsonLd.astro';
+import { traductor } from '@/i18n/catalogos';
+import { idiomaDe, rutasIdioma } from '@/i18n/idiomas';
+import Base from '@/layouts/Base.astro';
+import { PREGUNTAS } from '@/lib/contenido/preguntas';
+
+export const getStaticPaths = rutasIdioma;
+const idioma = idiomaDe(Astro.params.lang);
+const t = traductor(idioma, 'faq');
+const tc = traductor(idioma, 'comun');
+const tcta = traductor(idioma, 'inicio.cta');
+---
+
+<Base
+  idioma={idioma}
+  ruta="/preguntas-frecuentes"
+  titulo={t('metaTitulo')}
+  descripcion={t('metaDescripcion')}
+>
+  <JsonLd
+    slot="head"
+    datos={{
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      inLanguage: idioma,
+      mainEntity: PREGUNTAS.map((p) => ({
+        '@type': 'Question',
+        name: t(`preguntas.${p.clave}.p`),
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: t(`preguntas.${p.clave}.r`),
+        },
+      })),
+    }}
+  />
+  <CabeceraPagina
+    idioma={idioma}
+    eyebrow={t('eyebrow')}
+    titulo={t('titulo')}
+    entradilla={t('entradilla')}
+    solape
+  />
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <div class="rounded-[28px] border border-borde bg-superficie p-5 shadow-alta sm:p-8 lg:p-12">
+      <ListaPreguntas idioma={idioma} conFuentes />
+      <p class="mt-8 text-sm font-medium text-texto-2">{tc('descargo')}</p>
+    </div>
+  </div>
+  <PanelCta
+    idioma={idioma}
+    titulo={tcta('titulo')}
+    texto={tcta('texto')}
+    boton={tcta('boton')}
+  />
+</Base>

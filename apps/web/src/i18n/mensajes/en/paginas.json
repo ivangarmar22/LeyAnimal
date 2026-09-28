@@ -1,0 +1,616 @@
+{
+  "normativa": {
+    "metaTitulo": "Pet laws in Spain",
+    "metaDescripcion": "The national and regional laws that govern keeping dogs, cats and other pets in Spain, with their status, the articles we quote and the official link.",
+    "eyebrow": "Laws",
+    "titulo": "The laws that apply to you, verified one by one",
+    "entradilla": "National and regional laws with their real status, the articles we quote and the link to their official consolidated text.",
+    "buscar": "Search by title or number",
+    "ambito": "Level",
+    "comunidad": "Region",
+    "estado": "Status",
+    "vista": "View",
+    "lista": "List",
+    "tabla": "Table",
+    "colNorma": "Law",
+    "colAmbito": "Level",
+    "colEstado": "Status",
+    "colArticulos": "Articles quoted",
+    "colVerificada": "Verified",
+    "articulos": "{n, plural, =0 {Articles pending review} one {# article quoted} other {# articles quoted}}",
+    "sinResultados": "No law matches these filters.",
+    "nota": "We only list laws checked against their official text. We have not loaded any local by-laws yet."
+  },
+  "norma": {
+    "metaDescripcion": "{titulo} Status, articles quoted, obligations it creates and link to the official text.",
+    "datos": "About this law",
+    "identificador": "Official identifier",
+    "ambito": "Level",
+    "territorio": "Territory",
+    "espana": "Spain",
+    "estado": "Status",
+    "publicacion": "Publication",
+    "vigor": "In force since",
+    "verificada": "Last verified",
+    "resumen": "In short",
+    "articulos": "Articles we quote",
+    "sinArticulos": "We do not quote any article of this law yet: its text is pending review.",
+    "obligaciones": "Obligations based on this law",
+    "sinObligaciones": "No obligation in the check relies on this law yet.",
+    "boletin": "Read the official consolidated text",
+    "historial": "Change history",
+    "sinHistorial": "We have not recorded any change to this law since we verified it.",
+    "enComunidad": "See what {comunidad} requires"
+  },
+  "paginaTemas": {
+    "metaTitulo": "Guides to your obligations as a pet owner",
+    "metaDescripcion": "Topic guides on what Spanish law requires of dog and cat owners: insurance, identification, training course, potentially dangerous dogs and neutering.",
+    "eyebrow": "Guides",
+    "titulo": "Guides by topic",
+    "entradilla": "What the law requires, what can be enforced today and how it changes from one region to another. All of it with the article behind it.",
+    "recursos": "More resources"
+  },
+  "guia": {
+    "metaTitulo": "{tema} in Spain ({anio})",
+    "eyebrow": "Guide",
+    "obligaciones": "What the law requires",
+    "estatal": "What national law says",
+    "variacion": "How it changes by region",
+    "variacionTexto": "Status of this obligation for {especie} in each region, based on the laws we have verified.",
+    "unPerro": "an adult dog",
+    "unGato": "an adult cat",
+    "unPerroPpp": "an adult potentially dangerous dog",
+    "colComunidad": "Region",
+    "colEstado": "Status",
+    "colNorma": "Law that decides it",
+    "normas": "Related laws",
+    "consulta": "Check your own case",
+    "consultaTexto": "This guide is general. Your result depends on your municipality and your animal.",
+    "enlacesPpp": "Use the breed checker",
+    "enlacesSeguro": "Read the full insurance guide"
+  },
+  "comunidades": {
+    "metaTitulo": "Pet owner obligations by Spanish region",
+    "metaDescripcion": "What each Spanish region requires of dog and cat owners: identification, local census and insurance, with the law and article behind each obligation.",
+    "eyebrow": "Regions",
+    "titulo": "What each region requires",
+    "entradilla": "Identification, local census and insurance depend largely on each region's law. This is where each one stands based on what we have verified.",
+    "comparativa": "Comparison for an adult dog",
+    "colComunidad": "Region",
+    "colLey": "Regional law",
+    "colIdentificacion": "Identification",
+    "colCenso": "Local census",
+    "colSeguro": "Liability insurance",
+    "mapa": "See it on the map"
+  },
+  "comunidad": {
+    "metaTitulo": "Dog and cat owner obligations in {comunidad} ({anio})",
+    "metaDescripcion": "What the law requires in {comunidad} if you have a dog or a cat: insurance, identification, census and more, with the law and article behind each obligation.",
+    "eyebrow": "Region",
+    "eyebrowCiudad": "Autonomous city",
+    "entradillaReglas": "What the law requires if you live in {comunidad} and have a dog or a cat, according to its regional law and national law.",
+    "entradillaPendiente": "{comunidad} has its own animal protection law, but we have not reviewed its articles yet. For now we show what national law requires.",
+    "entradillaSinLey": "{comunidad} repealed its animal protection law without replacing it. Only the national framework applies today.",
+    "entradillaOrdenanzas": "{comunidad} is an autonomous city without legislative powers: it regulates animals through its own regulations and by-laws, which we have not loaded yet. For now we show what national law requires.",
+    "ley": "Regional law",
+    "perro": "If you have a dog",
+    "gato": "If you have a cat",
+    "referencia": "Reference profile: adult animal, not considered potentially dangerous. For your own case, run a check.",
+    "provincias": "Provinces",
+    "municipios": "{n, plural, one {# municipality} other {# municipalities}}",
+    "capital": "Capital: {capital}",
+    "ctaTitulo": "Do you live in {comunidad}?",
+    "ctaTexto": "Run a check with your animal's details and your municipality.",
+    "municipio": "See the page for {municipio}"
+  },
+  "provincia": {
+    "metaTitulo": "Dog and cat owner obligations in the province of {provincia} ({anio})",
+    "metaDescripcion": "The {n} municipalities in the province of {provincia} and what the law requires there of dog and cat owners.",
+    "eyebrow": "Province · {comunidad}",
+    "entradilla": "The {n} municipalities in the province of {provincia}. Choose yours to see its obligations.",
+    "resumen": "In {comunidad}, for an adult dog",
+    "verComunidad": "See what {comunidad} requires",
+    "filtrar": "Filter municipalities",
+    "filtrarMarcador": "Type to filter",
+    "capital": "capital",
+    "municipios": "Municipalities"
+  },
+  "municipio": {
+    "metaTitulo": "Obligations for dog and cat owners in {municipio} ({anio})",
+    "metaDescripcion": "What the law requires in {municipio} ({provincia}) if you have a dog or a cat: insurance, microchip, census, dangerous dog licence and more, with the law and article.",
+    "titulo": "Owning a dog or a cat in {municipio}",
+    "entradilla": "What the law requires today in {municipio}, based on the national and regional laws we have verified.",
+    "oficial": "Official name: {nombre}",
+    "perro": "If you have a dog",
+    "gato": "If you have a cat",
+    "referencia": "Reference profile: adult animal, not considered potentially dangerous.",
+    "ctaTitulo": "Your case, with your details",
+    "ctaTexto": "Breed, age, microchip… Run a check for {municipio} and get your exact list.",
+    "ctaBoton": "Check in {municipio}",
+    "ppp": "Potentially dangerous dog?",
+    "pppTexto": "You need a licence from the {municipio} town council and insurance of at least €120,000.",
+    "pppEnlace": "What it involves",
+    "cercanos": "Other municipalities in {provincia}",
+    "verProvincia": "See all {n} municipalities in {provincia}"
+  },
+  "mapa": {
+    "metaTitulo": "Map of pet owner obligations by region",
+    "metaDescripcion": "Map of Spain by region showing the status of liability insurance, identification and local census for dogs, based on the laws we have verified.",
+    "eyebrow": "Map",
+    "titulo": "Spain, region by region",
+    "entradilla": "Choose what to see: insurance, identification or local census for an adult dog, based on what we have verified in each region.",
+    "capa": "Show",
+    "seguro": "Liability insurance",
+    "identificacion": "Identification",
+    "censo": "Local census",
+    "leyenda": "Key",
+    "nota": "The tile map is approximate: each tile is a region, not its real shape.",
+    "curso": "The responsible ownership course is pending regulation all over Spain, so it does not change from one region to another.",
+    "listado": "See as a table"
+  },
+  "ppp": {
+    "metaTitulo": "Potentially dangerous dogs in Spain: breeds, licence and insurance",
+    "metaDescripcion": "Check whether your dog is considered potentially dangerous in Spain and what it involves: local licence, €120,000 insurance, muzzle, lead and register, article by article.",
+    "eyebrow": "Dangerous dog checker",
+    "titulo": "Is your dog considered potentially dangerous?",
+    "entradilla": "Choose the breed and your region. We tell you whether it is on the legal list and what that involves, with the article behind each point.",
+    "raza": "Breed",
+    "razaOtra": "Another breed or mixed breed",
+    "comunidad": "Region",
+    "elegir": "Choose…",
+    "siTitulo": "Yes: the {raza} is considered potentially dangerous",
+    "siTexto": "It is listed in Annex I of Royal Decree 287/2002, which applies all over Spain.",
+    "noTitulo": "It is not on the list of breeds",
+    "noTexto": "It is still considered potentially dangerous if it is a cross of those breeds, if it has all or most of the features in Annex II, or if the authorities declare it so because of its behaviour.",
+    "autonomica": "We have not verified yet whether {comunidad} has its own list of breeds.",
+    "pendienteElegir": "Choose a breed to see the result.",
+    "implica": "What owning a potentially dangerous dog involves",
+    "licencia": "Local licence",
+    "licenciaTexto": "Granted by your town council. You must be of legal age, have no specific convictions or penalties, prove physical fitness and psychological aptitude, and have insurance.",
+    "seguro": "Insurance of at least €120,000",
+    "seguroTexto": "Third-party liability insurance. It is a requirement to obtain and renew the licence.",
+    "validez": "Valid for five years",
+    "validezTexto": "The licence is renewed for equal periods and lapses if you stop meeting the requirements.",
+    "bozal": "Muzzle in public places",
+    "bozalTexto": "Suitable for the animal's breed type.",
+    "correa": "Short lead and one per person",
+    "correaTexto": "A non-extendable chain or lead shorter than 2 metres, and no more than one of these dogs per person.",
+    "documentos": "Carry the licence",
+    "documentosTexto": "Whoever walks the dog must carry the licence and the certificate of registration in the local register.",
+    "microchip": "Microchip",
+    "microchipTexto": "All potentially dangerous dogs must be identified with a microchip.",
+    "perdida": "Loss or theft: 48 hours",
+    "perdidaTexto": "It must be reported to the local register within 48 hours.",
+    "sanciones": "If the rules are not followed",
+    "sancionesTexto": "Keeping one without a licence is a very serious offence; walking it without a muzzle or unrestrained is a serious one.",
+    "multas": "See the fine ranges",
+    "razas": "The breeds in Annex I",
+    "conducta": "Also because of its behaviour",
+    "errata": "The BOE spells it \"American Staffodshire Terrier\": the typo is in the official text."
+  },
+  "seguros": {
+    "metaTitulo": "Dog liability insurance in Spain: what the law requires",
+    "metaDescripcion": "What cover each area of Spain requires today for your dog's insurance, what depends on a pending regulation, whether home insurance counts and what to ask your insurer.",
+    "eyebrow": "Insurance guide",
+    "titulo": "Your dog's insurance, without the small print",
+    "entradilla": "What cover each area requires today, what depends on a pending regulation and what to ask before you sign.",
+    "aviso": "Information only. We do not sell insurance and have no agreements with any insurer.",
+    "estatal": "What national law says",
+    "estatalTexto": "Act 7/2023 requires liability insurance for the dog's whole life, but leaves the amount to a regulation that has not been published. Until it exists, it cannot be enforced at national level.",
+    "ppp": "If your dog is potentially dangerous",
+    "pppTexto": "Nothing is pending here: Royal Decree 287/2002 requires insurance with cover of at least €120,000 to obtain and renew the local licence.",
+    "territorios": "What each region requires",
+    "territoriosTexto": "Insurance status for an adult dog that is not potentially dangerous.",
+    "hogar": "Does my home insurance count?",
+    "hogarTexto": "It depends on your policy. Some include liability for household animals and others do not, or limit it. Ask your insurer to confirm in writing whether it covers damage your dog causes outside your home and up to what limit.",
+    "preguntas": "What to ask your insurer",
+    "p1": "What is the compensation limit per claim and per year?",
+    "p2": "Does it cover anyone who walks my dog?",
+    "p2nota": "Act 7/2023 requires the insurance to cover the people responsible for the animal.",
+    "p3": "Is there an excess? How much?",
+    "p4": "Does it exclude any breed or potentially dangerous dogs?",
+    "p5": "Does it cover damage outside my home and all over Spain?",
+    "p6": "What document will you give me to prove it if I am asked?"
+  },
+  "multas": {
+    "metaTitulo": "Fines under Spanish animal protection law: official ranges",
+    "metaDescripcion": "Information-only penalty calculator: choose the offence and see how it is classified and the fine range set by law, with the literal text of the article.",
+    "eyebrow": "Fines and penalties",
+    "titulo": "How much breaking the rules can cost",
+    "entradilla": "Choose an offence and we show you how it is classified and the fine range set by law, with the literal text. No made-up estimates.",
+    "regimen": "What kind of animal is it?",
+    "general": "Any animal · Act 7/2023",
+    "especial": "Potentially dangerous dog · Act 50/1999",
+    "infraccion": "Offence",
+    "elegir": "Choose an offence",
+    "clasificacion": "Classification",
+    "tramo": "Fine range",
+    "leve": "Minor",
+    "grave": "Serious",
+    "muyGrave": "Very serious",
+    "t7leve": "Warning or a fine of €500 to €10,000",
+    "t7grave": "€10,001 to €50,000",
+    "t7muyGrave": "€50,001 to €200,000",
+    "t50leve": "€150.25 to €300.51",
+    "t50grave": "€300.52 to €2,404.05",
+    "t50muyGrave": "€2,404.06 to €15,025.30",
+    "porQue": "Why it is classified like this",
+    "cuanto": "What the law says about the amount",
+    "vacio": "Choose an offence to see its range.",
+    "aviso": "The exact fine is set by the competent authority within the range. Regional laws may have their own table of offences and penalties, which we have not verified yet.",
+    "reincidencia": "Repeating a minor offence, or committing it continuously, rules out a mere warning.",
+    "quien": "Who imposes the fine",
+    "tablaTitulo": "All the ranges",
+    "i": {
+      "identificacion": "Not identifying your animal",
+      "abandono": "Abandoning an animal",
+      "terraza": "Keeping a dog or cat permanently on a terrace, balcony or similar",
+      "metodos": "Training it with aggressive or violent methods",
+      "muerte": "Breaking the law in a way that causes the animal's death, if it is not a crime",
+      "peleas": "Using or training it for fights",
+      "otrasLeve": "Other breaches that do not harm the animal",
+      "sinLicencia": "Keeping a potentially dangerous dog without a licence",
+      "abandonoPpp": "Abandoning a potentially dangerous animal or any dog",
+      "suelto": "Letting it loose or not preventing it from escaping",
+      "sinBozal": "Taking it to public places without a muzzle or unrestrained",
+      "sinIdentificar": "Not identifying it",
+      "sinRegistro": "Not registering it",
+      "otrasPpp": "Other breaches of Act 50/1999"
+    }
+  },
+  "queHacerSi": {
+    "metaTitulo": "What to do if you lose your pet, find one or there is a bite",
+    "metaDescripcion": "Practical steps, with the law behind them, for when you lose your pet, find an abandoned one, there is a bite, you witness abuse, you move or your pet dies.",
+    "eyebrow": "What to do if…",
+    "titulo": "What to do if…",
+    "entradilla": "Practical steps for the most common situations, with the law behind each one.",
+    "indice": "Situations",
+    "normas": "What the law says",
+    "casos": {
+      "perdido": {
+        "titulo": "You have lost your animal",
+        "pasos": [
+          "Report it to the competent authority within 48 hours of it happening.",
+          "Tell your town council: collecting lost and abandoned animals is its job.",
+          "If it has a microchip, check that your contact details in the register are up to date.",
+          "If it is a potentially dangerous dog, also report it to the local register within the same period."
+        ]
+      },
+      "encontrado": {
+        "titulo": "You find a lost or abandoned animal",
+        "pasos": [
+          "Tell the town council or the local police: collecting lost and abandoned animals is the town council's job.",
+          "A vet clinic can read its microchip to find the person responsible for it.",
+          "If it is injured or in immediate danger, call 112."
+        ]
+      },
+      "mordedura": {
+        "titulo": "Your dog bites someone or causes damage",
+        "pasos": [
+          "Look after the injured person first and call 112 if needed.",
+          "Exchange your details and your insurance details: as the person responsible for the animal, you are liable for the damage it causes.",
+          "Keep your dog's identification documents at hand: you may be asked for them.",
+          "A dog that has attacked people or animals can be considered potentially dangerous by the competent authority."
+        ]
+      },
+      "maltrato": {
+        "titulo": "You witness abuse or abandonment",
+        "pasos": [
+          "If the animal or anyone is in immediate danger, call 112.",
+          "You can report it to the local police, the Guardia Civil (062) or your town council.",
+          "Write down what you can: place, date and time, and photos or videos if it is safe to take them.",
+          "Abandonment is a serious offence, and conduct that causes the animal's death, if it is not a crime, is a very serious one."
+        ]
+      },
+      "mudanza": {
+        "titulo": "You move to another region or municipality",
+        "pasos": [
+          "Check what your new region requires: identification and the local census depend on it.",
+          "Update your details in your animal's identification register.",
+          "If your new region requires the local census, register your animal with your new town council."
+        ]
+      },
+      "muerte": {
+        "titulo": "Your animal dies",
+        "pasos": [
+          "If it was identified, report the removal of the body to the competent authority.",
+          "The deregistration must come with a document proving it was cremated or buried by an officially recognised company.",
+          "Your vet clinic or the company handling the body can guide you through the procedure."
+        ]
+      }
+    },
+    "consulta": "Check what your region requires"
+  },
+  "cambios": {
+    "metaTitulo": "Legal changes and verifications",
+    "metaDescripcion": "Public log of changes to Spanish pet law and of the checks we run against the official text. Also available as RSS.",
+    "eyebrow": "Changes",
+    "titulo": "What has changed and what we have verified",
+    "entradilla": "A public log of legal changes and of every check against the official text.",
+    "rss": "Subscribe via RSS",
+    "cambiosTitulo": "Legal changes",
+    "sinCambios": "We have not recorded any legal change since we started verifying. When one is published —for example, the regulation setting the insurance amount or the course content— it will appear here and in the RSS feed.",
+    "verificaciones": "Verification log",
+    "verificacionesTexto": "Each law, with the date we last checked it against its consolidated text.",
+    "colNorma": "Law",
+    "colAmbito": "Level",
+    "colEstado": "Status",
+    "colVerificada": "Verified",
+    "tipos": {
+      "nueva_norma": "New law",
+      "modificacion": "Amendment",
+      "derogacion": "Repeal",
+      "entrada_en_vigor": "Entry into force",
+      "cambio_estado": "Status change",
+      "correccion": "Correction"
+    },
+    "rssTitulo": "LeyAnimal · Legal changes",
+    "rssDescripcion": "Changes to pet law in Spain."
+  },
+  "faq": {
+    "metaTitulo": "FAQ about your obligations as a pet owner in Spain",
+    "metaDescripcion": "Short answers with the law behind them: mandatory insurance, training course, potentially dangerous dogs, cats, fines, lost pets and more.",
+    "eyebrow": "FAQ",
+    "titulo": "Frequently asked questions",
+    "entradilla": "Short answers, with the law behind them. If your question depends on where you live, run a check.",
+    "fuentes": "Source",
+    "preguntas": {
+      "seguro": {
+        "p": "Is insurance mandatory for dogs?",
+        "r": "Act 7/2023 requires it for every dog, but the minimum amount depends on a regulation that has not been published, so today it cannot be enforced at national level. There are exceptions: in the Basque Country the regional law already requires it for dogs, and if your dog is potentially dangerous you need insurance of at least €120,000."
+      },
+      "curso": {
+        "p": "Do I have to take the responsible ownership course?",
+        "r": "The law requires it of anyone who wants to own a dog: it is free and valid for life. But its content depends on a pending regulation and, until it is published, there is no official course you can take."
+      },
+      "ppp": {
+        "p": "Which dogs are potentially dangerous?",
+        "r": "Those of the breeds in Annex I of Royal Decree 287/2002 (Pit Bull Terrier, Staffordshire Bull Terrier, American Staffordshire Terrier, Rottweiler, Dogo Argentino, Fila Brasileiro, Tosa Inu and Akita Inu) and their crosses, those with the features in Annex II, and those the authorities declare so because of their behaviour."
+      },
+      "gatos": {
+        "p": "Do cats have to be neutered?",
+        "r": "Yes. Act 7/2023 requires every cat to be microchipped and neutered before six months of age, except those registered as breeding animals in the name of a registered breeder. It does not depend on any regulation: it can be enforced."
+      },
+      "pendiente": {
+        "p": "What does \"pending regulation\" mean?",
+        "r": "That the law states the obligation but leaves an essential part (the amount, the content or the cases) to an implementing regulation that does not exist yet. In the meantime it cannot be enforced."
+      },
+      "sinDatos": {
+        "p": "What does \"not verified yet\" mean?",
+        "r": "That we have not checked yet what your region or your town council says about that obligation. It does not mean \"does not affect you\": it means \"we don't know yet\", and we would rather tell you."
+      },
+      "multas": {
+        "p": "How much are the fines?",
+        "r": "Act 7/2023 sets fines of €500 to €10,000 for minor offences (or a warning), €10,001 to €50,000 for serious ones and €50,001 to €200,000 for very serious ones. Potentially dangerous dogs have their own table in Act 50/1999."
+      },
+      "perdida": {
+        "p": "What should I do if I lose my pet?",
+        "r": "Act 7/2023 requires you to report the loss or theft to the competent authority within 48 hours. If it is a potentially dangerous dog, you must also report it to the local register within the same period."
+      },
+      "solo": {
+        "p": "How long can I leave my dog alone?",
+        "r": "Act 7/2023 forbids leaving any pet unsupervised for more than three days in a row, and dogs for more than twenty-four hours in a row."
+      },
+      "terraza": {
+        "p": "Can I keep my dog on the terrace?",
+        "r": "Not habitually. Act 7/2023 forbids habitually keeping dogs and cats on terraces, balconies, roofs, storerooms, basements, yards and similar places, or in vehicles."
+      },
+      "excrementos": {
+        "p": "Do I have to clean up my dog's urine?",
+        "r": "Act 7/2023 requires you to prevent droppings and urine in places people usually walk past, such as façades, doors or shop entrances, and to remove or clean them with biodegradable products. Your local by-law may add details."
+      },
+      "asesoramiento": {
+        "p": "Is this legal advice?",
+        "r": "No. It is general information prepared from official sources. For a specific case, ask your town council or a professional."
+      },
+      "fuentes": {
+        "p": "Where does the information come from?",
+        "r": "From the consolidated text published by the BOE, Spain's official gazette, through its open data API, and from the INE for geography. Every statement links to the exact article and shows when we verified it."
+      }
+    }
+  },
+  "metodologia": {
+    "metaTitulo": "Methodology: how we verify the information",
+    "metaDescripcion": "Where every piece of LeyAnimal data comes from, how we verify it against the official text and how we resolve conflicts between national, regional and local laws.",
+    "eyebrow": "Methodology",
+    "titulo": "We only state what we can quote",
+    "entradilla": "Where every piece of data comes from, how we check it and how we decide what you see when two laws say different things.",
+    "indice": "On this page",
+    "fuentes": "Where the information comes from",
+    "fuentesTexto": [
+      "We take the text of each law from the consolidated text published by the BOE, Spain's official gazette, through its open data API. The consolidated text includes later amendments, so we quote the version in force, not the original one.",
+      "We check the status of each law (in force or repealed) against its official metadata. Geography —regions, provinces and the 8,132 municipalities— comes from the INE, Spain's National Statistics Institute."
+    ],
+    "verificacion": "How we verify",
+    "verificacionLista": [
+      "A person chooses the article that creates each obligation. We rule out articles about offences, which describe the breach but do not create the duty, and duties that fall on other people, such as vets, breeders or sellers.",
+      "The quote is not typed by hand: a program copies it from the official text using a reference sentence. If the official text changes and that sentence no longer appears, the program stops and the law is reviewed again.",
+      "Each rule is limited to the species its article names, and automatic checks make sure no obligation is left without a law, without species or with an empty or truncated quote.",
+      "Each quote shows its verification date and links to the exact article of the official text."
+    ],
+    "estados": "What each status means",
+    "conflictos": "How we resolve conflicts between laws",
+    "conflictosTexto": "The same obligation can be regulated at the same time by the State, your region and your town council. The rules engine always applies this order:",
+    "conflictosLista": [
+      "Only rules in force on the date of the check, whose conditions are met by your animal, count.",
+      "The law closest to you prevails: local over provincial, provincial over regional and regional over national.",
+      "At the same level, the strictest one wins: mandatory, then pending regulation, then recommended and finally does not apply.",
+      "If there is still a tie, the priority assigned to the rule decides and, after that, the most recent one.",
+      "If an obligation depends on what your region or your town council says and we have not verified that law, the result is \"not verified yet\", never \"does not apply\"."
+    ],
+    "conflictosDuda": "In addition, if a rule that would have prevailed cannot be evaluated because of something you marked as \"I don't know\", the result is \"not verified yet\": we do not accept an answer that might be wrong. Every card in the result includes a \"Why am I seeing this?\" section with this reasoning applied to your case.",
+    "versionado": "How we store the content",
+    "versionadoTexto": [
+      "The legal content is prepared in a database and published as data files inside the website itself. There is no database behind each visit.",
+      "Every change is recorded line by line in the project's history, so any change to a quote or a status can be reviewed and undone."
+    ],
+    "limites": "What we do not cover yet",
+    "limitesLista": [
+      "Local by-laws: we have not loaded any yet.",
+      "Five regions —the Balearic Islands, the Canary Islands, Cantabria, Castile and León and Extremadura— have their own law, whose articles we are still reviewing.",
+      "Regional lists of potentially dangerous dogs: for now we have only verified the national one.",
+      "Regional regulations implementing the laws.",
+      "Species other than dogs, cats and ferrets: the national positive list has not been published yet."
+    ],
+    "revision": "If you find a mistake",
+    "revisionTexto": "Every quote shows when it was last verified. If you spot a mistake or something is missing, let us know: we check it against the official source before changing anything.",
+    "revisionCta": "Report a mistake"
+  },
+  "colabora": {
+    "metaTitulo": "Contribute: report a mistake or a by-law",
+    "metaDescripcion": "Tell us if your municipality's by-law is missing, you see wrong data or a broken link. We will check it against the official source.",
+    "eyebrow": "Contribute",
+    "titulo": "Help us complete and correct it",
+    "entradilla": "If your municipality's by-law is missing, you see wrong data or a broken link, tell us. We will check it against the official source.",
+    "tipo": "What do you want to tell us?",
+    "tipos": {
+      "falta_ordenanza": "A by-law is missing",
+      "dato_incorrecto": "Some data is wrong",
+      "enlace_roto": "A link does not work",
+      "sugerencia": "A suggestion"
+    },
+    "municipio": "Municipality",
+    "url": "Related page or link",
+    "urlAyuda": "If you can, include the link to the official law.",
+    "mensaje": "Message",
+    "opcional": "(optional)",
+    "enviar": "Prepare the email",
+    "comoFunciona": "Pressing the button opens your email app with the message ready. This page does not send or store anything you write.",
+    "asunto": "[LeyAnimal] {tipo}",
+    "cuerpoTipo": "Type",
+    "cuerpoMunicipio": "Municipality",
+    "cuerpoUrl": "Link",
+    "cuerpoMensaje": "Message",
+    "error": "Write a message before continuing.",
+    "provisional": "The final mailbox is not active yet: it will be published before launch.",
+    "otras": "Other ways to help",
+    "otras1": "Share it with people who have a dog or a cat.",
+    "otras2": "If you are a vet, work at an animal shelter or are a lawyer, write to us: your review is very valuable."
+  },
+  "sobre": {
+    "metaTitulo": "About LeyAnimal",
+    "metaDescripcion": "Why LeyAnimal exists, the principles it follows and where its data comes from.",
+    "eyebrow": "About",
+    "titulo": "Why LeyAnimal exists",
+    "entradilla": "Because knowing what the law requires of you and your pet should not mean reading five laws or trusting a website that sells insurance.",
+    "problema": "The problem",
+    "problemaTexto": "Act 7/2023 has been in force since 29 September 2023, but part of its obligations depends on regulations that have still not been published. On top of that come each region's law and each town council's by-law. As a result, it is very hard to know what applies to you, today, where you live.",
+    "principios": "Principles",
+    "p1": "Radical honesty",
+    "p1t": "We never say something is mandatory if it is not yet. If we don't know, we say so.",
+    "p2": "Official sources",
+    "p2t": "Every statement comes with its law, its article, its official link and its verification date.",
+    "p3": "No commercial interests",
+    "p3t": "We don't sell insurance, we don't take commissions and there are no ads or analytics.",
+    "p4": "For everyone",
+    "p4t": "No sign-up, accessible and in Spanish and English. Legal quotes, always in their official language.",
+    "datos": "Open data",
+    "datosTexto": "We use the open data API of the BOE, Spain's official gazette, and the municipality codes of the INE, Spain's National Statistics Institute.",
+    "fotos": "Photographs",
+    "fotosTexto": "The photographs come from Unsplash and are used under its licence.",
+    "foto": "Photo by {autor} on Unsplash"
+  },
+  "contacto": {
+    "metaTitulo": "Contact",
+    "metaDescripcion": "How to contact LeyAnimal to report a mistake or suggest an improvement.",
+    "eyebrow": "Contact",
+    "titulo": "Let's talk",
+    "entradilla": "To report a mistake, suggest an improvement or anything else.",
+    "email": "Write to us at",
+    "colabora": "For mistakes and missing by-laws, the Contribute form is better: it prepares the message with what we need.",
+    "colaboraBoton": "Go to Contribute",
+    "noAsesoramiento": "We cannot answer legal questions about specific cases. For that, ask your town council or a professional."
+  },
+  "legal": {
+    "pendiente": "To be completed before publication",
+    "pendienteTexto": "The website owner's details are missing. They will be added before launch."
+  },
+  "avisoLegal": {
+    "metaTitulo": "Legal notice",
+    "metaDescripcion": "LeyAnimal legal notice: owner, purpose, liability and intellectual property.",
+    "eyebrow": "Legal",
+    "titulo": "Legal notice",
+    "titular": "Owner",
+    "titularLista": [
+      "Name or company name",
+      "Tax ID (NIF)",
+      "Address",
+      "Email"
+    ],
+    "objeto": "Purpose",
+    "objetoTexto": "LeyAnimal provides general information about legal obligations relating to pets in Spain.",
+    "responsabilidad": "Liability",
+    "responsabilidadTexto": "The information is not legal advice. It comes from official sources and is reviewed, but it may contain mistakes or omissions or not reflect recent changes. Before making a decision, check it against the linked official law, your town council or a professional.",
+    "enlaces": "Links",
+    "enlacesTexto": "We link to official gazettes and other third-party websites over which we have no control or responsibility.",
+    "propiedad": "Intellectual property",
+    "propiedadTexto": "The legal texts quoted are not subject to intellectual property (article 13 of the Spanish Intellectual Property Act). The photographs are used under the Unsplash licence. All other content and the design belong to the owner.",
+    "ley": "Applicable law",
+    "leyTexto": "This notice is governed by Spanish law."
+  },
+  "privacidad": {
+    "metaTitulo": "Privacy policy",
+    "metaDescripcion": "LeyAnimal does not collect personal data: no sign-up, no cookies and no analytics.",
+    "eyebrow": "Legal",
+    "titulo": "Privacy",
+    "entradilla": "In short: we do not collect personal data.",
+    "resumen": "What data we handle",
+    "lista": [
+      "There is no sign-up and there are no user accounts.",
+      "Your check lives in the page address. We do not store it, and your animal's name is left out when you copy the link.",
+      "When you search for a municipality or a law, the search runs in your own browser: what you type is not sent to any server.",
+      "We do not use cookies, analytics or advertising tools.",
+      "Fonts and images are served from our own domain: your browser does not contact third parties when you visit the site.",
+      "The Contribute form does not send anything: it opens your email app. If you write to us, we will only use your address to reply."
+    ],
+    "alojamiento": "Hosting",
+    "alojamientoTexto": "The provider hosting the website may log technical access data, such as the IP address, for security reasons. We will name it here when the website goes live.",
+    "derechos": "Your rights",
+    "derechosTexto": "You can exercise your rights of access, rectification, erasure, objection, restriction and portability by writing to {email}. You can also complain to the Spanish Data Protection Agency (AEPD).",
+    "responsable": "Controller",
+    "responsableTexto": "The website owner (see the legal notice)."
+  },
+  "cookies": {
+    "metaTitulo": "Cookie policy",
+    "metaDescripcion": "LeyAnimal does not use cookies. It only stores your colour preference in your browser, if you change it.",
+    "eyebrow": "Legal",
+    "titulo": "Cookies",
+    "entradilla": "We do not use cookies of any kind. That is why you will not see any banner.",
+    "tabla": "What is stored in your browser",
+    "colNombre": "Name",
+    "colTipo": "Type",
+    "colFinalidad": "Purpose",
+    "colDuracion": "Duration",
+    "tema": "Remembers whether you prefer the light, dark or system theme.",
+    "local": "Local storage",
+    "indefinida": "Until you delete it",
+    "exencion": "It is local storage that you switch on yourself when you choose a preference, so it is exempt from consent under article 22.2 of Spanish Act 34/2002 (LSSI).",
+    "borrar": "You can delete it at any time from your browser settings."
+  },
+  "accesibilidad": {
+    "metaTitulo": "Accessibility statement",
+    "metaDescripcion": "LeyAnimal's accessibility commitment: WCAG 2.2 level AA target, measures taken, known limitations and contact.",
+    "eyebrow": "Legal",
+    "titulo": "Accessibility",
+    "entradilla": "We want everyone to be able to use LeyAnimal. Our goal is to meet WCAG 2.2 at level AA.",
+    "medidas": "What we have done",
+    "medidasLista": [
+      "Text contrast of at least 4.5:1, checked in both light and dark themes.",
+      "Full keyboard navigation with focus always visible.",
+      "The status of each obligation is never shown by colour alone: it always has an icon and text.",
+      "A skip-to-content link, an ordered heading structure and a single main heading per page.",
+      "Results and searches are announced to screen readers.",
+      "The reduced-motion preference is respected.",
+      "Legal quotes in Spanish are marked with their language, including on the English version."
+    ],
+    "situacion": "Compliance status",
+    "situacionTexto": "We have not had an external audit yet. The checks are internal.",
+    "limitaciones": "Known limitations",
+    "limitacionesLista": [
+      "Legal quotes are shown in their official language (Spanish) on the English version too.",
+      "The regional map is an approximate tile map; the same information is available as a table."
+    ],
+    "contacto": "If you find a barrier",
+    "contactoTexto": "Write to us at {email} telling us which page and what problem. We will fix it."
+  }
+}

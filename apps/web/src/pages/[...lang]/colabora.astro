@@ -1,0 +1,58 @@
+---
+import { HeartHandshake, Share2 } from 'lucide-preact';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import { textosPara, traductor } from '@/i18n/catalogos';
+import { idiomaDe, rutasIdioma } from '@/i18n/idiomas';
+import FormularioColabora from '@/islas/FormularioColabora';
+import Base from '@/layouts/Base.astro';
+import { EMAIL_CONTACTO, EMAIL_ES_PROVISIONAL } from '@/lib/sitio';
+
+export const getStaticPaths = rutasIdioma;
+const idioma = idiomaDe(Astro.params.lang);
+const t = traductor(idioma, 'colabora');
+---
+
+<Base
+  idioma={idioma}
+  ruta="/colabora"
+  titulo={t('metaTitulo')}
+  descripcion={t('metaDescripcion')}
+>
+  <CabeceraPagina
+    idioma={idioma}
+    eyebrow={t('eyebrow')}
+    titulo={t('titulo')}
+    entradilla={t('entradilla')}
+    solape
+  />
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12">
+      <div class="rounded-[28px] border border-borde bg-superficie p-5 shadow-alta sm:p-8 lg:p-10">
+        <FormularioColabora
+          client:load
+          idioma={idioma}
+          textos={textosPara(idioma, ['colabora'])}
+          email={EMAIL_CONTACTO}
+          provisional={EMAIL_ES_PROVISIONAL}
+        />
+      </div>
+      <aside class="tarjeta h-fit gap-5 lg:sticky lg:top-[calc(var(--cabecera)+24px)]">
+        <h2 class="font-display text-lg font-semibold">{t('otras')}</h2>
+        <p class="flex gap-3">
+          <Share2
+            class="mt-0.5 size-5 shrink-0 text-marca-600"
+            aria-hidden="true"
+          />
+          {t('otras1')}
+        </p>
+        <p class="flex gap-3">
+          <HeartHandshake
+            class="mt-0.5 size-5 shrink-0 text-marca-600"
+            aria-hidden="true"
+          />
+          {t('otras2')}
+        </p>
+      </aside>
+    </div>
+  </div>
+</Base>

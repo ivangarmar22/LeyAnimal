@@ -1,0 +1,156 @@
+---
+import { ArrowRight, ShieldAlert } from 'lucide-preact';
+import ObligacionesTerritorio from '@/componentes/obligaciones/ObligacionesTerritorio.astro';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import { traductor } from '@/i18n/catalogos';
+import { IDIOMAS, idiomaDe, parametroIdioma, ruta } from '@/i18n/idiomas';
+import Base from '@/layouts/Base.astro';
+import {
+  comunidad,
+  municipio,
+  municipiosDe,
+  provincia,
+  todosLosMunicipios,
+} from '@/lib/datos';
+import { anioActual } from '@/lib/seo';
+
+/** Las 8.132 fichas en los dos idiomas se generan al compilar (D48). */
+export function getStaticPaths() {
+  return IDIOMAS.flatMap((idioma) =>
+    todosLosMunicipios().map((m) => ({
+      params: { lang: parametroIdioma(idioma), slug: m.slug },
+    })),
+  );
+}
+
+const idioma = idiomaDe(Astro.params.lang);
+const m = municipio(String(Astro.params.slug));
+if (!m) throw new Error(`Municipio desconocido: ${Astro.params.slug}`);
+const tg = traductor(idioma);
+const t = tg.en('municipio');
+const tr = tg.en('resultado');
+const p = provincia(m.provincia);
+const c = comunidad(m.comunidad);
+
+// Vecinos alfabeticos de la misma provincia: enlazado interno util y estable.
+const deLaProvincia = municipiosDe(m.provincia).sort((a, b) =>
+  a.nombre.localeCompare(b.nombre, 'es'),
+);
+const pos = deLaProvincia.findIndex((x) => x.codigoIne === m.codigoIne);
+const cercanos = deLaProvincia
+  .slice(Math.max(0, pos - 6), pos + 7)
+  .filter((x) => x.codigoIne !== m.codigoIne)
+  .slice(0, 12);
+const colabora = `${ruta('/colabora', idioma)}?tipo=falta_ordenanza&municipio=${encodeURIComponent(`${m.nombre} (${p?.nombre ?? ''})`)}`;
+---
+
+<Base
+  idioma={idioma}
+  ruta={`/municipios/${m.slug}`}
+  titulo={t('metaTitulo', { municipio: m.nombre, anio: anioActual() })}
+  descripcion={t('metaDescripcion', {
+    municipio: m.nombre,
+    provincia: p?.nombre ?? '',
+  })}
+>
+  <CabeceraPagina
+    idioma={idioma}
+    eyebrow={`${p?.nombre ?? ''} · ${c?.nombre ?? ''}`}
+    titulo={t('titulo', { municipio: m.nombre })}
+    entradilla={t('entradilla', { municipio: m.nombre })}
+    migas={[
+      { nombre: tg('comunidades.eyebrow'), href: '/comunidades' },
+      ...(c ? [{ nombre: c.nombre, href: `/comunidades/${c.slug}` }] : []),
+      ...(p && deLaProvincia.length > 1
+        ? [{ nombre: p.nombre, href: `/provincias/${p.slug}` }]
+        : []),
+    ]}
+    actual={m.nombre}
+    solape
+  >
+    <div class="flex flex-wrap items-center gap-4">
+      <a
+        href={`${ruta('/consulta', idioma)}?municipio=${m.slug}&paso=1`}
+        class="boton boton--principal"
+      >
+        {t('ctaBoton', { municipio: m.nombre })}
+        <ArrowRight aria-hidden="true" />
+      </a>
+      {m.nombreOficial !== m.nombre ? (
+        <span class="text-sm text-texto-3">
+          {t('oficial', { nombre: m.nombreOficial })}
+        </span>
+      ) : null}
+    </div>
+  </CabeceraPagina>
+
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <div class="rounded-[28px] border border-borde bg-superficie-2 p-3 shadow-alta sm:p-8 lg:p-10">
+      <aside class="mb-12 grid gap-4 rounded-3xl border border-dashed border-borde-fuerte bg-superficie p-5 sm:p-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
+        <div>
+          <h2 class="font-display text-lg font-semibold text-texto">
+            {tr('ordenanzaTitulo', { municipio: m.nombre })}
+          </h2>
+          <p class="mt-1.5 text-[0.9375rem]">{tr('ordenanzaTexto')}</p>
+        </div>
+        <a href={colabora} class="boton boton--contorno boton--sm">
+          {tr('ordenanzaCta')}
+        </a>
+      </aside>
+
+      <ObligacionesTerritorio
+        idioma={idioma}
+        territorio={{
+          comunidad: m.comunidad,
+          provincia: m.provincia,
+          municipio: m.codigoIne,
+        }}
+        titulos={{ perro: t('perro'), gato: t('gato') }}
+        nota={t('referencia')}
+      />
+
+      <div class="mt-12 flex flex-col gap-4 rounded-3xl border border-obligatorio-borde bg-obligatorio-fondo p-5 text-obligatorio-texto sm:flex-row sm:items-center sm:p-6">
+        <ShieldAlert class="size-7 shrink-0" aria-hidden="true" />
+        <div class="flex-1">
+          <p class="font-semibold">{t('ppp')}</p>
+          <p class="mt-1 text-[0.9375rem]">
+            {t('pppTexto', { municipio: m.nombre })}
+          </p>
+        </div>
+        <a
+          href={ruta('/perros-potencialmente-peligrosos', idioma)}
+          class="font-semibold underline underline-offset-2"
+        >
+          {t('pppEnlace')}
+        </a>
+      </div>
+    </div>
+
+    {cercanos.length > 0 && p ? (
+      <section class="mt-16" aria-labelledby="cercanos">
+        <h2 id="cercanos" class="titulo-3">
+          {t('cercanos', { provincia: p.nombre })}
+        </h2>
+        <ul class="mt-6 flex flex-wrap gap-2">
+          {cercanos.map((x) => (
+            <li>
+              <a
+                href={ruta(`/municipios/${x.slug}`, idioma)}
+                class="pastilla min-h-11 px-4 transition-colors hover:border-marca-300"
+              >
+                {x.nombre}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a
+          href={ruta(`/provincias/${p.slug}`, idioma)}
+          class="enlace-flecha mt-6"
+        >
+          {t('verProvincia', { n: deLaProvincia.length, provincia: p.nombre })}
+          <ArrowRight aria-hidden="true" />
+        </a>
+      </section>
+    ) : null}
+  </div>
+</Base>

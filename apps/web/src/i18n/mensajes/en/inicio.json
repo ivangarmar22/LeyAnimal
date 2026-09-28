@@ -1,0 +1,126 @@
+{
+  "inicio": {
+    "hero": {
+      "eyebrow": "Act 7/2023 · {comunidades} regions · {municipios} municipalities",
+      "titulo1": "What Spanish law requires of you and your pet,",
+      "titulo2": "today and where you live",
+      "entradilla": "Insurance, microchip, course, dangerous dog licence, census… We tell you what can really be enforced in your municipality and what cannot, with the article and the official link behind every answer.",
+      "selectorTitulo": "Start your check",
+      "especie": "Your animal",
+      "municipio": "Your municipality",
+      "marcador": "Type your municipality",
+      "boton": "See my obligations",
+      "otraEspecie": "Another species",
+      "metodo": "How we verify it",
+      "sinRegistro": "No sign-up",
+      "citas": "Literal quotes from the BOE",
+      "gratis": "Free and ad-free"
+    },
+    "maqueta": {
+      "etiqueta": "Real example of a result",
+      "perfil": "Dog · {raza} · 3 years old",
+      "lugar": "{municipio} · {comunidad}",
+      "flotanteCobertura": "Minimum insurance cover",
+      "flotanteVerificado": "Quotes verified",
+      "flotanteVerificadoTexto": "on {fecha}"
+    },
+    "cifras": {
+      "comunidades": "regions and autonomous cities",
+      "municipios": "municipalities with their own page",
+      "normas": "laws loaded and verified",
+      "articulos": "articles quoted word for word"
+    },
+    "contraste": {
+      "eyebrow": "The problem",
+      "titulo": "What you usually read, compared with what the law says",
+      "texto": "Act 7/2023 is in force, but part of it depends on regulations that have not been published, and each region has its own law. That is why so much contradictory information goes around.",
+      "antes": "You usually read",
+      "despues": "What the law says",
+      "p1a": "Since 2023 insurance is mandatory for every dog.",
+      "p1b": "Act 7/2023 requires it, but leaves the amount to an unpublished regulation: at national level it cannot be enforced yet.",
+      "p2a": "You already have to take the course to own a dog.",
+      "p2b": "The course is mandatory on paper, but its content depends on a regulation that does not exist: it cannot be taken yet.",
+      "p3a": "The new law did away with the dangerous dogs rules.",
+      "p3b": "Act 50/1999 and Royal Decree 287/2002 are still in force: local licence and insurance of at least €120,000.",
+      "p4a": "The same rules apply all over Spain.",
+      "p4b": "Each region has its own law: in the Basque Country dog insurance is already mandatory; in Madrid it depends on a regulation."
+    },
+    "estado": {
+      "eyebrow": "State of the law",
+      "titulo": "What can be enforced today all over Spain",
+      "texto": "This is what national law says for anyone with a dog or a cat. Your region and your town council may add more.",
+      "enlace": "See what your region adds",
+      "fuente": "{norma}, {articulo}"
+    },
+    "pasos": {
+      "eyebrow": "How it works",
+      "titulo": "Three questions and an answer you can check",
+      "texto": "No sign-up and no personal data. The result is calculated by a rules engine that always applies the same criteria.",
+      "p1": "What animal you have",
+      "p1t": "Dog, cat, ferret or another species. Each one has different obligations.",
+      "p2": "Where you live",
+      "p2t": "We search the 8,132 municipalities listed by the INE, tolerating accents and typos.",
+      "p3": "Your list, with the laws behind it",
+      "p3t": "What can be enforced, what is pending and what we do not know yet, with the literal quote of each law."
+    },
+    "guias": {
+      "eyebrow": "Guides",
+      "titulo": "Everything the law can require of you, by topic",
+      "texto": "Each guide explains the obligation, what can be enforced today and how it changes from one region to another.",
+      "leer": "Read the guide",
+      "queHacer": "What to do if…",
+      "queHacerTexto": "You have lost your animal, you find an abandoned one, there is a bite or you witness animal abuse.",
+      "multas": "Fines and penalties",
+      "multasTexto": "The literal ranges set by law for each type of offence, with no made-up amounts.",
+      "ppp": "Potentially dangerous dog checker",
+      "pppTexto": "Choose the breed and the region: we tell you whether it counts as potentially dangerous and what that involves.",
+      "seguros": "Insurance guide",
+      "segurosTexto": "What cover each area requires and what to ask your insurer."
+    },
+    "confianza": {
+      "eyebrow": "Why trust us",
+      "titulo": "Honesty before convenient answers",
+      "texto": "We never say something is mandatory if it is not yet, and we always separate what the law says from what can be enforced today.",
+      "f1": "Literal quotes",
+      "f1t": "The text of the law as it is, taken from the BOE, with a link to the exact article.",
+      "f2": "Verification date",
+      "f2t": "Each quote says when we last checked it.",
+      "f3": "If we don't know, we say so",
+      "f3t": "\"Not verified yet\" does not mean \"does not affect you\". It means \"we don't know yet\".",
+      "f4": "No commercial interests",
+      "f4t": "We don't sell insurance or take commissions. No ads and no analytics.",
+      "insignia": "{citas} articles quoted word for word",
+      "insigniaTexto": "Last verified: {fecha}",
+      "metodo": "Read our methodology",
+      "altFoto": "A tabby cat looking out of a window"
+    },
+    "comunidades": {
+      "eyebrow": "By region",
+      "titulo": "Your region matters",
+      "texto": "Identification, census and insurance depend largely on each region's law. These are the ones we have verified.",
+      "reglas": "{n, plural, =0 {No verified rules yet} one {# verified obligation} other {# verified obligations}}",
+      "sinLey": "No regional law in force",
+      "ordenanzas": "Regulates through by-laws",
+      "pendiente": "Law pending review",
+      "mapa": "See the map"
+    },
+    "cambios": {
+      "eyebrow": "Up to date",
+      "titulo": "Latest verifications",
+      "texto": "We check each law against its official consolidated text. Legal changes will appear here as soon as they are published.",
+      "verificada": "Verified on {fecha}",
+      "todos": "See changes and verifications"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "titulo": "The most common questions",
+      "todas": "See all questions"
+    },
+    "cta": {
+      "titulo": "Clear up your doubts in two minutes",
+      "texto": "Four steps, no sign-up and the law behind every answer.",
+      "boton": "Check my obligations",
+      "secundario": "Explore the laws"
+    }
+  }
+}

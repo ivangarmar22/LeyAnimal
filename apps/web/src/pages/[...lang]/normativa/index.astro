@@ -1,0 +1,82 @@
+---
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import PanelCta from '@/componentes/pagina/PanelCta.astro';
+import { textosPara, traductor } from '@/i18n/catalogos';
+import { idiomaDe, rutasIdioma } from '@/i18n/idiomas';
+import Explorador, { type NormaResumen } from '@/islas/Explorador';
+import Base from '@/layouts/Base.astro';
+import { articulosDe, comunidad, normas } from '@/lib/datos';
+import { nombreNorma } from '@/lib/datos/textos';
+import { formatearFecha } from '@/lib/fechas';
+
+export const getStaticPaths = rutasIdioma;
+const idioma = idiomaDe(Astro.params.lang);
+const t = traductor(idioma, 'normativa');
+const tcta = traductor(idioma, 'inicio.cta');
+
+const ORDEN_AMBITO = {
+  estatal: 0,
+  autonomico: 1,
+  provincial: 2,
+  municipal: 3,
+} as const;
+const nombreComunidad = (codigo: string | null) =>
+  codigo ? (comunidad(codigo)?.nombre ?? null) : null;
+const lista: NormaResumen[] = [...normas()]
+  .sort(
+    (a, b) =>
+      ORDEN_AMBITO[a.ambito] - ORDEN_AMBITO[b.ambito] ||
+      (nombreComunidad(a.comunidad) ?? '').localeCompare(
+        nombreComunidad(b.comunidad) ?? '',
+        'es',
+      ) ||
+      (b.anio ?? 0) - (a.anio ?? 0),
+  )
+  .map((n) => ({
+    slug: n.slug,
+    nombre: nombreNorma(n),
+    titulo: n.titulo,
+    ambito: n.ambito,
+    comunidad: nombreComunidad(n.comunidad),
+    estado: n.estado,
+    articulos: articulosDe(n.slug).length,
+    verificada: n.verificadaEn
+      ? formatearFecha(n.verificadaEn, idioma, { dateStyle: 'medium' })
+      : null,
+  }));
+---
+
+<Base
+  idioma={idioma}
+  ruta="/normativa"
+  titulo={t('metaTitulo')}
+  descripcion={t('metaDescripcion')}
+>
+  <CabeceraPagina
+    idioma={idioma}
+    eyebrow={t('eyebrow')}
+    titulo={t('titulo')}
+    entradilla={t('entradilla')}
+    solape
+  />
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <Explorador
+      client:load
+      idioma={idioma}
+      textos={textosPara(idioma, [
+        'normativa',
+        'comun',
+        'ambitos',
+        'estadosNorma',
+      ])}
+      normas={lista}
+    />
+    <p class="mt-8 text-sm text-texto-3">{t('nota')}</p>
+  </div>
+  <PanelCta
+    idioma={idioma}
+    titulo={tcta('titulo')}
+    texto={tcta('texto')}
+    boton={tcta('boton')}
+  />
+</Base>

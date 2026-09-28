@@ -1,0 +1,308 @@
+{
+ "normas": [
+  {
+   "slug": "ley-7-2023-bienestar-animal",
+   "ambito": "estatal",
+   "comunidad": null,
+   "tipo": "ley",
+   "numero": "7/2023",
+   "anio": 2023,
+   "titulo": "Ley 7/2023, de 28 de marzo, de protección de los derechos y el bienestar de los animales.",
+   "tituloCorto": "Ley 7/2023 de bienestar animal",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936",
+   "identificadorBoletin": "BOE-A-2023-7936",
+   "fechaPublicacion": "2023-03-29",
+   "fechaEntradaVigor": "2023-09-29",
+   "estado": "vigente",
+   "resumen": "Marco estatal de protección animal. Varias de sus obligaciones (seguro de responsabilidad civil y curso de tenencia) remiten su contenido a un desarrollo reglamentario que todavía no se ha publicado.",
+   "verificadaEn": "2026-09-04"
+  },
+  {
+   "slug": "rd-287-2002-animales-potencialmente-peligrosos",
+   "ambito": "estatal",
+   "comunidad": null,
+   "tipo": "real_decreto",
+   "numero": "287/2002",
+   "anio": 2002,
+   "titulo": "Real Decreto 287/2002, de 22 de marzo, por el que se desarrolla la Ley 50/1999, de 23 de diciembre, sobre el régimen jurídico de la tenencia de animales potencialmente peligrosos.",
+   "tituloCorto": "RD 287/2002",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-6016",
+   "identificadorBoletin": "BOE-A-2002-6016",
+   "fechaPublicacion": "2002-03-27",
+   "fechaEntradaVigor": "2002-03-28",
+   "estado": "vigente",
+   "resumen": "Desarrolla la Ley 50/1999: lista de razas del anexo I, requisitos de la licencia municipal y cobertura mínima del seguro. Su artículo 2.1 fue modificado por el RD 1570/2007.",
+   "verificadaEn": "2026-09-04"
+  },
+  {
+   "slug": "ley-50-1999-animales-potencialmente-peligrosos",
+   "ambito": "estatal",
+   "comunidad": null,
+   "tipo": "ley",
+   "numero": "50/1999",
+   "anio": 1999,
+   "titulo": "Ley 50/1999, de 23 de diciembre, sobre el Régimen Jurídico de la Tenencia de Animales Potencialmente Peligrosos.",
+   "tituloCorto": "Ley 50/1999 de animales potencialmente peligrosos",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-1999-24419",
+   "identificadorBoletin": "BOE-A-1999-24419",
+   "fechaPublicacion": "1999-12-24",
+   "fechaEntradaVigor": "1999-12-25",
+   "estado": "vigente",
+   "resumen": "Régimen de la tenencia de animales potencialmente peligrosos. El BOE la sigue dando como no derogada: la Ley 7/2023 no la sustituyó.",
+   "verificadaEn": "2026-09-04"
+  }
+ ],
+ "articulos": [
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 26.i",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 26.i",
+   "epigrafe": "Obligaciones específicas. Microchip y esterilización de gatos",
+   "textoLiteral": "Identificar mediante microchip y proceder a la esterilización quirúrgica de todos los gatos antes de los seis meses de edad salvo aquellos inscritos en el registro de identificación como reproductores y a nombre de un criador registrado en el Registro de Criadores de Animales de Compañía.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-8"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 30.1",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 30.1",
+   "epigrafe": "Tenencia de perros. Curso de formación",
+   "textoLiteral": "Las personas que opten a ser titulares de perros deberán acreditar la realización un curso de formación para la tenencia de perros que tendrá una validez indefinida.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a3-2"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 30.2",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 30.2",
+   "epigrafe": "Tenencia de perros. Gratuidad del curso",
+   "textoLiteral": "Dicho curso de formación será gratuito y su contenido se determinará reglamentariamente.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a3-2"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 30.3",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 30.3",
+   "epigrafe": "Tenencia de perros. Seguro de responsabilidad civil",
+   "textoLiteral": "En el caso de la tenencia de perros y durante toda la vida del animal, la persona titular deberá contratar y mantener en vigor un seguro de responsabilidad civil por daños a terceros, que incluya en su cobertura a las personas responsables del animal, por un importe de cuantía suficiente para sufragar los posibles gastos derivados, que se establecerá reglamentariamente.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a3-2"
+  },
+  {
+   "id": "rd-287-2002-animales-potencialmente-peligrosos#anexo I",
+   "norma": "rd-287-2002-animales-potencialmente-peligrosos",
+   "referencia": "anexo I",
+   "epigrafe": "Razas incluidas",
+   "textoLiteral": "a) Pit Bull Terrier. b) Staffordshire Bull Terrier. c) American Staffodshire Terrier. d) Rottweiler. e) Dogo Argentino. f) Fila Brasileiro. g) Tosa Inu. h) Akita Inu.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-6016#ani"
+  },
+  {
+   "id": "rd-287-2002-animales-potencialmente-peligrosos#art. 2.1",
+   "norma": "rd-287-2002-animales-potencialmente-peligrosos",
+   "referencia": "art. 2.1",
+   "epigrafe": "Perros potencialmente peligrosos",
+   "textoLiteral": "A los efectos previstos en el artículo 2.2 de la Ley 50/1999, de 23 de diciembre, tendrán la consideración de perros potencialmente peligrosos: a) Los que pertenezcan a las razas relacionadas en el anexo I del presente real decreto y a sus cruces. b) Aquellos cuyas características se correspondan con todas o la mayoría de las que figuran en el anexo II, salvo que se trate de perros-guía o de perros de asistencia acreditados y adiestrados en centros oficialmente reconocidos, conforme a la legislación autonómica o, en su caso, estatal, así como aquellos perros que se encuentren en fase de instrucción para adquirir esa condición.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-6016#a2"
+  },
+  {
+   "id": "rd-287-2002-animales-potencialmente-peligrosos#art. 3.1.e",
+   "norma": "rd-287-2002-animales-potencialmente-peligrosos",
+   "referencia": "art. 3.1.e",
+   "epigrafe": "Licencia. Seguro de responsabilidad civil",
+   "textoLiteral": "Acreditación de haber formalizado un seguro de responsabilidad civil por daños a terceros con una cobertura no inferior a ciento veinte mil euros (120.000 €).",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-6016#a3"
+  },
+  {
+   "id": "rd-287-2002-animales-potencialmente-peligrosos#art. 3.3",
+   "norma": "rd-287-2002-animales-potencialmente-peligrosos",
+   "referencia": "art. 3.3",
+   "epigrafe": "Licencia. Validez",
+   "textoLiteral": "La licencia tendrá un periodo de validez de cinco años pudiendo ser renovada por periodos sucesivos de igual duración. No obstante, la licencia perderá su vigencia en el momento en que su titular deje de cumplir cualquiera de los requisitos establecidos en el apartado anterior.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-6016#a3"
+  }
+ ],
+ "requisitos": [
+  {
+   "clave": "seguro_rc_perros",
+   "tema": "seguro",
+   "titulo": "Seguro de responsabilidad civil para tu perro",
+   "descripcionCorta": "La Ley 7/2023 lo exige durante toda la vida del animal, pero deja la cuantía al reglamento.",
+   "explicacion": "La ley obliga a contratar y mantener en vigor un seguro de responsabilidad civil por daños a terceros durante toda la vida del perro. Ahora bien, el importe mínimo lo remite a un desarrollo reglamentario que todavía no se ha publicado, así que a día de hoy no hay una cuantía estatal exigible.\n\nOjo: si tu comunidad o tu ayuntamiento ya lo exigían por su cuenta, allí sí es exigible. Y si tu perro está considerado potencialmente peligroso, el mínimo de 120.000 € del RD 287/2002 sí se aplica hoy.",
+   "tipo": "obligacion",
+   "periodicidad": "permanente",
+   "plazo": "Durante toda la vida del animal",
+   "quienLoExige": "Administración General del Estado",
+   "exigeNormaTerritorial": false,
+   "orden": 1
+  },
+  {
+   "clave": "curso_tenencia_perros",
+   "tema": "curso",
+   "titulo": "Curso de tenencia responsable de perros",
+   "descripcionCorta": "Obligatorio, gratuito y de validez indefinida, pero su contenido está pendiente de reglamento.",
+   "explicacion": "La Ley 7/2023 exige acreditar un curso de formación para poder ser titular de un perro. El curso es gratuito y tiene validez indefinida.\n\nSu contenido se determinará reglamentariamente y ese reglamento aún no se ha publicado, así que todavía no hay un curso oficial que puedas hacer para cumplirlo.",
+   "tipo": "obligacion",
+   "periodicidad": "unica",
+   "plazo": "Antes de ser titular de un perro",
+   "quienLoExige": "Administración General del Estado",
+   "exigeNormaTerritorial": false,
+   "orden": 2
+  },
+  {
+   "clave": "microchip_esterilizacion_gatos",
+   "tema": "identificacion",
+   "titulo": "Microchip y esterilización de tu gato",
+   "descripcionCorta": "Antes de los seis meses de edad, salvo gatos inscritos como reproductores de un criador registrado.",
+   "explicacion": "La Ley 7/2023 obliga a identificar mediante microchip y a esterilizar quirúrgicamente a todos los gatos antes de los seis meses de edad.\n\nHay una excepción: los gatos inscritos en el registro de identificación como reproductores y a nombre de un criador registrado en el Registro de Criadores de Animales de Compañía. No podemos comprobar ese caso con los datos que te pedimos, así que tenlo en cuenta si es el tuyo.\n\nA diferencia del seguro y del curso, esta obligación no depende de ningún reglamento pendiente: es exigible.",
+   "tipo": "obligacion",
+   "periodicidad": "unica",
+   "plazo": "Antes de los seis meses de edad",
+   "quienLoExige": "Administración General del Estado",
+   "exigeNormaTerritorial": false,
+   "orden": 3
+  },
+  {
+   "clave": "licencia_ppp",
+   "tema": "ppp",
+   "titulo": "Licencia municipal para perro potencialmente peligroso",
+   "descripcionCorta": "La concede tu ayuntamiento. Exige seguro de al menos 120.000 € y se renueva cada cinco años.",
+   "explicacion": "Si tu perro está considerado potencialmente peligroso, necesitas una licencia administrativa que otorga el órgano municipal competente de tu ayuntamiento.\n\nEntre sus requisitos: ser mayor de edad, certificados negativos de antecedentes penales, certificados de capacidad física y aptitud psicológica, y un seguro de responsabilidad civil con cobertura no inferior a 120.000 €.\n\nLa licencia vale cinco años y se puede renovar por periodos iguales.",
+   "tipo": "tramite",
+   "periodicidad": "periodica",
+   "plazo": "Renovación cada cinco años",
+   "quienLoExige": "Ayuntamiento",
+   "exigeNormaTerritorial": false,
+   "orden": 4
+  }
+ ],
+ "reglas": [
+  {
+   "id": "10000000-0000-4000-8000-000000000002",
+   "requisito": "curso_tenencia_perros",
+   "ambito": "estatal",
+   "comunidad": null,
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "op": "eq",
+    "campo": "especie",
+    "valor": "perro"
+   },
+   "estado": "obligatorio_pendiente_reglamento",
+   "parametros": {},
+   "vigenteDesde": "2023-09-29",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "El contenido del curso se determinará reglamentariamente y ese reglamento sigue pendiente.",
+   "verificadaEn": "2026-09-04"
+  },
+  {
+   "id": "10000000-0000-4000-8000-000000000004",
+   "requisito": "licencia_ppp",
+   "ambito": "estatal",
+   "comunidad": null,
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "all": [
+     {
+      "op": "eq",
+      "campo": "especie",
+      "valor": "perro"
+     },
+     {
+      "op": "eq",
+      "campo": "es_ppp",
+      "valor": true
+     }
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {
+    "validez_anios": 5,
+    "cobertura_minima_eur": 120000
+   },
+   "vigenteDesde": "2002-03-28",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Además de las razas del anexo I, la autoridad competente puede declarar potencialmente peligroso a cualquier perro que muestre agresividad marcada.",
+   "verificadaEn": "2026-09-04"
+  },
+  {
+   "id": "10000000-0000-4000-8000-000000000003",
+   "requisito": "microchip_esterilizacion_gatos",
+   "ambito": "estatal",
+   "comunidad": null,
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "op": "eq",
+    "campo": "especie",
+    "valor": "gato"
+   },
+   "estado": "obligatorio",
+   "parametros": {
+    "edad_limite_meses": 6
+   },
+   "vigenteDesde": "2023-09-29",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Excepción no evaluable: gatos inscritos como reproductores a nombre de un criador registrado.",
+   "verificadaEn": "2026-09-04"
+  },
+  {
+   "id": "10000000-0000-4000-8000-000000000001",
+   "requisito": "seguro_rc_perros",
+   "ambito": "estatal",
+   "comunidad": null,
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "op": "eq",
+    "campo": "especie",
+    "valor": "perro"
+   },
+   "estado": "obligatorio_pendiente_reglamento",
+   "parametros": {},
+   "vigenteDesde": "2023-09-29",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "La ley fija la obligación pero remite el importe mínimo a un reglamento que no se ha publicado.",
+   "verificadaEn": "2026-09-04"
+  }
+ ],
+ "fuentes": [
+  {
+   "regla": "10000000-0000-4000-8000-000000000001",
+   "articulo": "ley-7-2023-bienestar-animal#art. 30.3",
+   "cita": "deberá contratar y mantener en vigor un seguro de responsabilidad civil por daños a terceros […] por un importe […] que se establecerá reglamentariamente"
+  },
+  {
+   "regla": "10000000-0000-4000-8000-000000000002",
+   "articulo": "ley-7-2023-bienestar-animal#art. 30.1",
+   "cita": "deberán acreditar la realización un curso de formación para la tenencia de perros que tendrá una validez indefinida"
+  },
+  {
+   "regla": "10000000-0000-4000-8000-000000000002",
+   "articulo": "ley-7-2023-bienestar-animal#art. 30.2",
+   "cita": "Dicho curso de formación será gratuito y su contenido se determinará reglamentariamente"
+  },
+  {
+   "regla": "10000000-0000-4000-8000-000000000003",
+   "articulo": "ley-7-2023-bienestar-animal#art. 26.i",
+   "cita": "Identificar mediante microchip y proceder a la esterilización quirúrgica de todos los gatos antes de los seis meses de edad"
+  },
+  {
+   "regla": "10000000-0000-4000-8000-000000000004",
+   "articulo": "rd-287-2002-animales-potencialmente-peligrosos#anexo I",
+   "cita": "a) Pit Bull Terrier. b) Staffordshire Bull Terrier. c) American Staffodshire Terrier. d) Rottweiler. e) Dogo Argentino. f) Fila Brasileiro. g) Tosa Inu. h) Akita Inu."
+  },
+  {
+   "regla": "10000000-0000-4000-8000-000000000004",
+   "articulo": "rd-287-2002-animales-potencialmente-peligrosos#art. 3.1.e",
+   "cita": "un seguro de responsabilidad civil por daños a terceros con una cobertura no inferior a ciento veinte mil euros (120.000 €)"
+  },
+  {
+   "regla": "10000000-0000-4000-8000-000000000004",
+   "articulo": "rd-287-2002-animales-potencialmente-peligrosos#art. 3.3",
+   "cita": "La licencia tendrá un periodo de validez de cinco años"
+  }
+ ]
+}

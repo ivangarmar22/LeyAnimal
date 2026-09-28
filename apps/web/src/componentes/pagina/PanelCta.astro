@@ -1,0 +1,52 @@
+---
+/** Panel de cierre en menta, con el simbolo trazado de fondo. */
+import { ArrowRight } from 'lucide-preact';
+import TrazoMarca from '@/componentes/marca/TrazoMarca.astro';
+import { ruta, type Idioma } from '@/i18n/idiomas';
+
+interface Props {
+  idioma: Idioma;
+  titulo: string;
+  texto: string;
+  boton: string;
+  href?: string;
+  secundario?: { texto: string; href: string };
+}
+
+const {
+  idioma,
+  titulo,
+  texto,
+  boton,
+  href = '/consulta',
+  secundario,
+} = Astro.props;
+---
+
+<section class="contenedor pb-[var(--seccion)]">
+  <div class="panel-cta" data-aparece>
+    <div class="fondo-rejilla" aria-hidden="true"></div>
+    <TrazoMarca
+      id="trazo-cta"
+      class="-right-16 -bottom-24 hidden w-[400px] opacity-80 md:block"
+    />
+    <div class="relative max-w-2xl">
+      <h2 class="titulo-2">{titulo}</h2>
+      <p class="entradilla mt-4">{texto}</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href={ruta(href, idioma)} class="boton boton--principal boton--lg">
+          {boton}
+          <ArrowRight aria-hidden="true" />
+        </a>
+        {secundario ? (
+          <a
+            href={ruta(secundario.href, idioma)}
+            class="boton boton--contorno boton--lg"
+          >
+            {secundario.texto}
+          </a>
+        ) : null}
+      </div>
+    </div>
+  </div>
+</section>

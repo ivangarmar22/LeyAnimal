@@ -1,0 +1,118 @@
+---
+import { ArrowRight } from 'lucide-preact';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import PanelCta from '@/componentes/pagina/PanelCta.astro';
+import { textosPara, traductor } from '@/i18n/catalogos';
+import { IDIOMAS, idiomaDe, parametroIdioma, ruta } from '@/i18n/idiomas';
+import ListaMunicipios from '@/islas/ListaMunicipios';
+import Base from '@/layouts/Base.astro';
+import {
+  capitalDe,
+  comunidad,
+  municipiosDe,
+  provincia,
+  provincias,
+} from '@/lib/datos';
+import { obligacionesDeReferencia } from '@/lib/datos/evaluacion';
+import { textosRequisito } from '@/lib/datos/textos';
+import { ORDEN_ESTADOS } from '@/lib/dominio/estados';
+import { anioActual } from '@/lib/seo';
+import { ChipEstado } from '@/ui/Chips';
+
+export function getStaticPaths() {
+  return IDIOMAS.flatMap((idioma) =>
+    provincias().map((p) => ({
+      params: { lang: parametroIdioma(idioma), slug: p.slug },
+    })),
+  );
+}
+
+const idioma = idiomaDe(Astro.params.lang);
+const p = provincia(String(Astro.params.slug));
+if (!p) throw new Error(`Provincia desconocido: ${Astro.params.slug}`);
+const tg = traductor(idioma);
+const t = tg.en('provincia');
+const c = comunidad(p.comunidad);
+const capital = capitalDe(p.codigoIne);
+const municipios = municipiosDe(p.codigoIne)
+  .map((m) => ({
+    slug: m.slug,
+    nombre: m.nombre,
+    capital: m.codigoIne === capital?.codigoIne,
+  }))
+  .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+const resumen = obligacionesDeReferencia(
+  { comunidad: p.comunidad, provincia: p.codigoIne },
+  'perro',
+).sort(
+  (a, b) =>
+    ORDEN_ESTADOS.indexOf(a.resultado.estado) -
+    ORDEN_ESTADOS.indexOf(b.resultado.estado),
+);
+---
+
+<Base
+  idioma={idioma}
+  ruta={`/provincias/${p.slug}`}
+  titulo={t('metaTitulo', { provincia: p.nombre, anio: anioActual() })}
+  descripcion={t('metaDescripcion', {
+    provincia: p.nombre,
+    n: municipios.length,
+  })}
+>
+  <CabeceraPagina
+    idioma={idioma}
+    eyebrow={t('eyebrow', { comunidad: c?.nombre ?? '' })}
+    titulo={p.nombre}
+    entradilla={t('entradilla', { n: municipios.length, provincia: p.nombre })}
+    migas={[
+      { nombre: tg('comunidades.eyebrow'), href: '/comunidades' },
+      ...(c ? [{ nombre: c.nombre, href: `/comunidades/${c.slug}` }] : []),
+    ]}
+    solape
+  />
+
+  <div class="contenedor solape pb-[var(--seccion)]">
+    {c ? (
+      <div class="tarjeta gap-5 shadow-alta">
+        <h2 class="titulo-3">{t('resumen', { comunidad: c.nombre })}</h2>
+        <ul class="grid gap-2 md:grid-cols-2">
+          {resumen.map((o) => (
+            <li class="flex flex-wrap items-center gap-3 rounded-2xl border border-borde px-4 py-3">
+              <ChipEstado estado={o.resultado.estado} t={tg} />
+              <span class="text-[0.9375rem] font-medium text-texto">
+                {textosRequisito(tg.en('requisitos'), o.requisito).titulo}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <a
+          href={ruta(`/comunidades/${c.slug}`, idioma)}
+          class="enlace-flecha self-start"
+        >
+          {t('verComunidad', { comunidad: c.nombre })}
+          <ArrowRight aria-hidden="true" />
+        </a>
+      </div>
+    ) : null}
+
+    <section class="mt-16" aria-labelledby="municipios">
+      <h2 id="municipios" class="titulo-3 mb-6">
+        {t('municipios')}
+      </h2>
+      <ListaMunicipios
+        client:visible
+        idioma={idioma}
+        textos={textosPara(idioma, ['provincia', 'comun.resultados'])}
+        municipios={municipios}
+      />
+    </section>
+  </div>
+
+  <PanelCta
+    idioma={idioma}
+    titulo={tg('inicio.cta.titulo')}
+    texto={tg('inicio.cta.texto')}
+    boton={tg('inicio.cta.boton')}
+  />
+</Base>

@@ -1,0 +1,17 @@
+---
+/** Logotipo: simbolo partido + "Ley" "Animal" en dos tonos (estilos: .logo). */
+import Simbolo from './Simbolo.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: clase } = Astro.props;
+---
+
+<span class:list={['logo', clase]}>
+  <Simbolo class="logo__simbolo" />
+  <span class="logo__texto">
+    Ley<span>Animal</span>
+  </span>
+</span>

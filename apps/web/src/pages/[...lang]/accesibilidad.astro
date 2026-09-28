@@ -1,0 +1,42 @@
+---
+import PaginaTexto from '@/componentes/pagina/PaginaTexto.astro';
+import { traductor } from '@/i18n/catalogos';
+import { idiomaDe, rutasIdioma } from '@/i18n/idiomas';
+import Base from '@/layouts/Base.astro';
+import { EMAIL_CONTACTO } from '@/lib/sitio';
+
+export const getStaticPaths = rutasIdioma;
+const idioma = idiomaDe(Astro.params.lang);
+const t = traductor(idioma, 'accesibilidad');
+---
+
+<Base
+  idioma={idioma}
+  ruta="/accesibilidad"
+  titulo={t('metaTitulo')}
+  descripcion={t('metaDescripcion')}
+>
+  <PaginaTexto
+    idioma={idioma}
+    eyebrow={t('eyebrow')}
+    titulo={t('titulo')}
+    entradilla={t('entradilla')}
+  >
+    <h2>{t('medidas')}</h2>
+    <ul>
+      {(t.raw('medidasLista') as string[]).map((p) => (
+        <li>{p}</li>
+      ))}
+    </ul>
+    <h2>{t('situacion')}</h2>
+    <p>{t('situacionTexto')}</p>
+    <h2>{t('limitaciones')}</h2>
+    <ul>
+      {(t.raw('limitacionesLista') as string[]).map((p) => (
+        <li>{p}</li>
+      ))}
+    </ul>
+    <h2>{t('contacto')}</h2>
+    <p>{t('contactoTexto', { email: EMAIL_CONTACTO })}</p>
+  </PaginaTexto>
+</Base>

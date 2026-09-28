@@ -1,0 +1,76 @@
+---
+/**
+ * Estado de un requisito comunidad a comunidad. En movil se apila en
+ * tarjetas (.tabla--apilable), no se desplaza en horizontal.
+ */
+import { traductor } from '@/i18n/catalogos';
+import { ruta, type Idioma } from '@/i18n/idiomas';
+import type { ObligacionEvaluada } from '@/lib/datos/evaluacion';
+import { nombreNorma } from '@/lib/datos/textos';
+import type { Comunidad } from '@/lib/datos/tipos';
+import { ChipAmbito, ChipEstado } from '@/ui/Chips';
+
+interface Props {
+  idioma: Idioma;
+  filas: { comunidad: Comunidad; obligacion: ObligacionEvaluada | null }[];
+  caption: string;
+}
+
+const { idioma, filas, caption } = Astro.props;
+const t = traductor(idioma);
+const tg = t.en('guia');
+---
+
+<div class="rounded-3xl border border-borde bg-superficie md:p-2">
+  <table class="tabla tabla--apilable">
+    <caption class="sr-only">{caption}</caption>
+    <thead>
+      <tr>
+        <th scope="col">{tg('colComunidad')}</th>
+        <th scope="col">{tg('colEstado')}</th>
+        <th scope="col">{tg('colNorma')}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {filas.map(({ comunidad, obligacion }) => {
+        const fuente = obligacion?.fuentes[0];
+        return (
+          <tr>
+            <td>
+              <a
+                href={ruta(`/comunidades/${comunidad.slug}`, idioma)}
+                class="font-medium text-texto underline-offset-2 hover:underline"
+              >
+                {comunidad.nombre}
+              </a>
+            </td>
+            <td data-etiqueta={tg('colEstado')}>
+              {obligacion ? (
+                <ChipEstado estado={obligacion.resultado.estado} t={t} />
+              ) : (
+                '—'
+              )}
+            </td>
+            <td data-etiqueta={tg('colNorma')}>
+              {fuente && obligacion?.ambito ? (
+                <span class="flex flex-wrap items-center gap-2">
+                  <ChipAmbito ambito={obligacion.ambito} t={t} />
+                  <a
+                    href={fuente.url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="text-[0.9375rem] text-marca-700 underline underline-offset-2"
+                  >
+                    {nombreNorma(fuente.norma)}, {fuente.articulo.referencia}
+                  </a>
+                </span>
+              ) : (
+                <span class="text-texto-3">—</span>
+              )}
+            </td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+</div>

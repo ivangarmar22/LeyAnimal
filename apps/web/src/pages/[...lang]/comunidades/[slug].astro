@@ -1,0 +1,146 @@
+---
+import { ArrowRight, BookOpen, MapPin } from 'lucide-preact';
+import ObligacionesTerritorio from '@/componentes/obligaciones/ObligacionesTerritorio.astro';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import PanelCta from '@/componentes/pagina/PanelCta.astro';
+import { traductor } from '@/i18n/catalogos';
+import { IDIOMAS, idiomaDe, parametroIdioma, ruta } from '@/i18n/idiomas';
+import Base from '@/layouts/Base.astro';
+import {
+  capitalDe,
+  comunidad,
+  comunidades,
+  municipiosDe,
+  provinciasDe,
+  situacionComunidad,
+} from '@/lib/datos';
+import { nombreNorma } from '@/lib/datos/textos';
+import { anioActual } from '@/lib/seo';
+import { ChipNorma } from '@/ui/Chips';
+
+export function getStaticPaths() {
+  return IDIOMAS.flatMap((idioma) =>
+    comunidades().map((c) => ({
+      params: { lang: parametroIdioma(idioma), slug: c.slug },
+    })),
+  );
+}
+
+/** Ceuta y Melilla: ciudades autonomas (D34). */
+const CIUDADES = new Set(['18', '19']);
+
+const idioma = idiomaDe(Astro.params.lang);
+const c = comunidad(String(Astro.params.slug));
+if (!c) throw new Error(`Comunidad desconocido: ${Astro.params.slug}`);
+const tg = traductor(idioma);
+const t = tg.en('comunidad');
+const s = situacionComunidad(c.codigoIne);
+const entradilla = {
+  reglas: t('entradillaReglas', { comunidad: c.nombre }),
+  pendiente: t('entradillaPendiente', { comunidad: c.nombre }),
+  sinLey: t('entradillaSinLey', { comunidad: c.nombre }),
+  ordenanzas: t('entradillaOrdenanzas', { comunidad: c.nombre }),
+}[s.tipo];
+const provincias = provinciasDe(c.codigoIne).map((p) => {
+  const capital = capitalDe(p.codigoIne);
+  const total = municipiosDe(p.codigoIne).length;
+  // Ceuta y Melilla son a la vez provincia y municipio unico.
+  const href =
+    total === 1 && capital
+      ? `/municipios/${capital.slug}`
+      : `/provincias/${p.slug}`;
+  return { p, capital, total, href };
+});
+---
+
+<Base
+  idioma={idioma}
+  ruta={`/comunidades/${c.slug}`}
+  titulo={t('metaTitulo', { comunidad: c.nombre, anio: anioActual() })}
+  descripcion={t('metaDescripcion', { comunidad: c.nombre })}
+>
+  <CabeceraPagina
+    idioma={idioma}
+    eyebrow={CIUDADES.has(c.codigoIne) ? t('eyebrowCiudad') : t('eyebrow')}
+    titulo={c.nombre}
+    entradilla={entradilla}
+    migas={[{ nombre: tg('comunidades.eyebrow'), href: '/comunidades' }]}
+    solape
+  >
+    {s.normas.length > 0 ? (
+      <ul class="flex flex-wrap gap-3">
+        {s.normas.map((n) => (
+          <li>
+            <a
+              href={ruta(`/normativa/${n.slug}`, idioma)}
+              class="inline-flex min-h-12 items-center gap-3 rounded-full border border-borde bg-superficie px-4 text-[0.9375rem] font-medium text-texto shadow-suave transition-colors hover:border-marca-300"
+            >
+              <BookOpen class="size-[18px] text-marca-600" aria-hidden="true" />
+              {nombreNorma(n)}
+              <ChipNorma estado={n.estado} t={tg} />
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : null}
+  </CabeceraPagina>
+
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <div class="rounded-[28px] border border-borde bg-superficie-2 p-3 shadow-alta sm:p-8 lg:p-10">
+      {s.tipo === 'sinLey' && s.normas[0]?.resumen ? (
+        <p
+          class="mb-10 rounded-2xl border border-borde bg-superficie p-5"
+          lang="es"
+        >
+          {s.normas[0].resumen}
+        </p>
+      ) : null}
+      <ObligacionesTerritorio
+        idioma={idioma}
+        territorio={{ comunidad: c.codigoIne }}
+        titulos={{ perro: t('perro'), gato: t('gato') }}
+        nota={t('referencia')}
+      />
+    </div>
+
+    <section class="mt-16" aria-labelledby="provincias">
+      <h2 id="provincias" class="titulo-3">
+        {t('provincias')}
+      </h2>
+      <ul class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {provincias.map(({ p, capital, total, href }) => (
+          <li>
+            <a
+              href={ruta(href, idioma)}
+              class="group flex h-full items-center gap-4 rounded-3xl border border-borde bg-superficie p-4 transition-colors hover:border-marca-300"
+            >
+              <span class="caja-icono size-11">
+                <MapPin aria-hidden="true" />
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block font-semibold text-texto">{p.nombre}</span>
+                <span class="block text-sm text-texto-3">
+                  {t('municipios', { n: total })}
+                  {capital && total > 1
+                    ? ` · ${t('capital', { capital: capital.nombre })}`
+                    : ''}
+                </span>
+              </span>
+              <ArrowRight
+                class="size-4 text-texto-3 transition-transform group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+
+  <PanelCta
+    idioma={idioma}
+    titulo={t('ctaTitulo', { comunidad: c.nombre })}
+    texto={t('ctaTexto')}
+    boton={tg('comun.empezarConsulta')}
+  />
+</Base>
