@@ -1,0 +1,152 @@
+---
+import { Picture } from 'astro:assets';
+import { ArrowRight } from 'lucide-preact';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import PanelCta from '@/componentes/pagina/PanelCta.astro';
+import { traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import Base from '@/layouts/Base.astro';
+import perroSofa from '@/assets/fotos/perro-sofa.jpg';
+import {
+  abrazo,
+  brujula,
+  corazonVerde,
+  lupa,
+  pergamino,
+  visto,
+} from '@/lib/contenido/ilustraciones';
+import { Ilustracion } from '@/ui/Ilustracion';
+
+const t = traductor('sobre');
+const tcta = traductor('inicio.cta');
+
+const secciones = [
+  ['consulta', '/consulta', lupa],
+  ['situaciones', '/situaciones', brujula],
+  ['normativa', '/normativa', pergamino],
+] as const;
+const principios = [
+  ['p1', visto],
+  ['p2', pergamino],
+  ['p3', corazonVerde],
+  ['p4', abrazo],
+] as const;
+const pasos = ['m1', 'm2', 'm3', 'm4'] as const;
+---
+
+<Base ruta="/sobre" titulo={t('metaTitulo')} descripcion={t('metaDescripcion')}>
+  <CabeceraPagina titulo={t('titulo')} entradilla={t('entradilla')} solape />
+
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <div class="grid items-center gap-10 rounded-[28px] border border-borde bg-superficie p-5 shadow-alta sm:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-14 lg:p-12">
+      <div class="grid gap-8">
+        <div>
+          <h2 class="titulo-3">{t('problema')}</h2>
+          <p class="mt-3">{t('problemaTexto')}</p>
+        </div>
+        <div>
+          <h2 class="titulo-3">{t('hacemos')}</h2>
+          <p class="mt-3">{t('hacemosTexto')}</p>
+        </div>
+      </div>
+      <div class="overflow-hidden rounded-3xl" data-aparece="recorte">
+        <Picture
+          src={perroSofa}
+          formats={['avif', 'webp']}
+          alt={t('altFoto')}
+          widths={[480, 720, 1080]}
+          sizes="(min-width: 1024px) 560px, 100vw"
+          class="aspect-[3/2] w-full object-cover"
+        />
+      </div>
+    </div>
+
+    <section class="mt-20" aria-labelledby="encontraras">
+      <h2 id="encontraras" class="titulo-2">
+        {t('encontraras')}
+      </h2>
+      <ul class="mt-10 grid gap-4 md:grid-cols-3" data-escalonado>
+        {secciones.map(([clave, href, icono]) => (
+          <li>
+            <a href={ruta(href)} class="tarjeta foco-luz h-full gap-4">
+              <span class="caja-icono">
+                <Ilustracion icono={icono} />
+              </span>
+              <span class="font-display text-lg font-semibold text-texto">
+                {t(`${clave}`)}
+              </span>
+              <span class="text-[0.9375rem]">{t(`${clave}Texto`)}</span>
+              <span class="enlace-flecha mt-auto text-[0.9375rem]">
+                {t(`${clave}Enlace`)}
+                <ArrowRight aria-hidden="true" />
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mt-20" aria-labelledby="principios">
+      <h2 id="principios" class="titulo-2">
+        {t('principios')}
+      </h2>
+      <ul
+        class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+        data-escalonado
+      >
+        {principios.map(([clave, icono]) => (
+          <li class="tarjeta gap-4">
+            <span class="caja-icono">
+              <Ilustracion icono={icono} />
+            </span>
+            <h3 class="font-display text-lg font-semibold">{t(clave)}</h3>
+            <p class="text-[0.9375rem]">{t(`${clave}t`)}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section
+      class="mt-20 grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-16"
+      aria-labelledby="metodo"
+    >
+      <div>
+        <h2 id="metodo" class="titulo-2">
+          {t('metodo')}
+        </h2>
+        <p class="entradilla mt-5">{t('metodoTexto')}</p>
+        <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+          <a href={ruta('/metodologia')} class="enlace-flecha">
+            {t('metodoEnlace')}
+            <ArrowRight aria-hidden="true" />
+          </a>
+          <a href={ruta('/colabora')} class="enlace-flecha">
+            {t('colaboraEnlace')}
+            <ArrowRight aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+      <ol class="grid gap-3">
+        {pasos.map((clave, n) => (
+          <li class="flex gap-4 rounded-3xl border border-borde bg-superficie p-5">
+            <span class="grid size-9 shrink-0 place-items-center rounded-full bg-marca-600 font-display text-sm font-semibold text-sobre-marca">
+              {n + 1}
+            </span>
+            <span>
+              <span class="block font-display font-semibold text-texto">
+                {t(clave)}
+              </span>
+              <span class="mt-1 block text-[0.9375rem]">{t(`${clave}t`)}</span>
+            </span>
+          </li>
+        ))}
+      </ol>
+    </section>
+  </div>
+
+  <PanelCta
+    titulo={tcta('titulo')}
+    texto={tcta('texto')}
+    boton={tcta('boton')}
+  />
+</Base>

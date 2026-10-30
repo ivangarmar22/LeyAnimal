@@ -1,0 +1,53 @@
+---
+/**
+ * 404 unico: los alojamientos estaticos sirven un solo 404.html.
+ */
+import { Picture } from 'astro:assets';
+import { ArrowRight, Home } from 'lucide-preact';
+import { traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import Base from '@/layouts/Base.astro';
+import perroSofa from '@/assets/fotos/perro-sofa.jpg';
+
+const t = traductor('noEncontrado');
+const tc = traductor('comun');
+---
+
+<Base
+  ruta="/404"
+  titulo={t('titulo')}
+  descripcion={t('texto')}
+  indexable={false}
+>
+  <section class="cabecera-pagina tinte lg:min-h-[80vh]">
+    <div class="fondo-rejilla" aria-hidden="true"></div>
+    <div class="fondo-brillo" aria-hidden="true"></div>
+    <div class="contenedor grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+      <div>
+        <p class="rotulo">{t('codigo')}</p>
+        <h1 class="titulo-pagina mt-3">{t('titulo')}</h1>
+        <p class="entradilla mt-6">{t('texto')}</p>
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a href={ruta('/consulta')} class="boton boton--principal">
+            {tc('empezarConsulta')}
+            <ArrowRight aria-hidden="true" />
+          </a>
+          <a href={ruta('/')} class="boton boton--contorno">
+            <Home aria-hidden="true" />
+            {t('irInicio')}
+          </a>
+        </div>
+      </div>
+      <div class="hidden overflow-hidden rounded-[28px] border border-borde shadow-alta lg:block">
+        <Picture
+          src={perroSofa}
+          formats={['avif', 'webp']}
+          alt=""
+          widths={[480, 720]}
+          sizes="480px"
+          class="aspect-[4/5] w-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+</Base>

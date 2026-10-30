@@ -1,0 +1,62 @@
+---
+import { ArrowRight, Info } from 'lucide-preact';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import PanelCta from '@/componentes/pagina/PanelCta.astro';
+import { textosPara, traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import Mosaico, { type CasillaMapa } from '@/islas/Mosaico';
+import Base from '@/layouts/Base.astro';
+import { comunidades } from '@/lib/datos';
+import { obligacionesDeReferencia } from '@/lib/datos/evaluacion';
+
+const t = traductor('mapa');
+const tcta = traductor('inicio.cta');
+
+const casillas: CasillaMapa[] = comunidades().map((c) => {
+  const o = obligacionesDeReferencia({ comunidad: c.codigoIne }, 'perro');
+  const estado = (clave: string) =>
+    o.find((x) => x.requisito.clave === clave)?.resultado.estado ?? 'no_aplica';
+  return {
+    codigo: c.codigoIne,
+    nombre: c.nombre,
+    slug: c.slug,
+    estados: {
+      seguro: estado('seguro_rc_perros'),
+      identificacion: estado('identificacion_animales'),
+      censo: estado('censo_municipal'),
+    },
+  };
+});
+---
+
+<Base ruta="/mapa" titulo={t('metaTitulo')} descripcion={t('metaDescripcion')}>
+  <CabeceraPagina titulo={t('titulo')} entradilla={t('entradilla')} solape />
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <div class="rounded-[28px] border border-borde bg-superficie p-5 shadow-alta sm:p-8 lg:p-10">
+      <Mosaico
+        client:visible
+        textos={textosPara(['mapa', 'estados'])}
+        casillas={casillas}
+      />
+      <div class="mt-10 grid gap-3 border-t border-borde pt-6 text-sm text-texto-3">
+        <p class="flex gap-2">
+          <Info class="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+          {t('curso')}
+        </p>
+        <p>{t('nota')}</p>
+        <a
+          href={ruta('/comunidades')}
+          class="enlace-flecha mt-2 self-start text-[0.9375rem]"
+        >
+          {t('listado')}
+          <ArrowRight aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <PanelCta
+    titulo={tcta('titulo')}
+    texto={tcta('texto')}
+    boton={tcta('boton')}
+  />
+</Base>

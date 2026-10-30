@@ -1,0 +1,71 @@
+---
+import { Heart, Rss } from 'lucide-preact';
+import Logo from '@/componentes/marca/Logo.astro';
+import { traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import { PIE } from '@/lib/sitio';
+
+const t = traductor('pie');
+const tn = traductor('navegacion');
+const columnas = [
+  { titulo: t('explorar'), enlaces: PIE.explorar },
+  { titulo: t('recursos'), enlaces: PIE.recursos },
+  { titulo: t('proyecto'), enlaces: PIE.proyecto },
+];
+---
+
+<footer class="pie pt-[clamp(56px,8vw,88px)] text-[0.95rem]">
+  <div class="contenedor">
+    <div class="grid gap-12 border-b border-borde pb-14 sm:grid-cols-2 lg:grid-cols-[1.5fr_repeat(3,1fr)]">
+      <div class="sm:col-span-2 lg:col-span-1">
+        <Logo />
+        <p class="mt-5 max-w-[36ch] text-texto-3">{t('lema')}</p>
+        <a href={ruta('/apoya')} class="boton boton--principal boton--sm mt-6">
+          <Heart class="fill-current" aria-hidden="true" />
+          {t('colaborar')}
+        </a>
+      </div>
+
+      {columnas.map((columna) => (
+        <nav aria-label={columna.titulo}>
+          <h2 class="mb-3 font-display text-[0.95rem] font-semibold text-texto">
+            {columna.titulo}
+          </h2>
+          <ul class="grid gap-0.5">
+            {columna.enlaces.map(({ href, clave }) => (
+              <li>
+                <a href={ruta(href)} class="inline-flex py-1.5">
+                  {tn(clave)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ))}
+    </div>
+
+    <!-- Descargo visible en todo el sitio -->
+    <div class="grid gap-2 border-b border-borde py-6 text-sm text-texto-3">
+      <p>{t('descargo')}</p>
+      <p>{t('datosAbiertos')}</p>
+    </div>
+
+    <div class="flex flex-col gap-5 py-7 text-sm text-texto-3 md:flex-row md:items-center md:justify-between">
+      <div class="flex flex-wrap items-center gap-x-5">
+        <span>© {new Date().getFullYear()} LeyAnimal</span>
+        {PIE.legal.map(({ href, clave }) => (
+          <a href={ruta(href)} class="inline-flex min-h-10 items-center">
+            {tn(clave)}
+          </a>
+        ))}
+        <a
+          href={ruta('/cambios/rss.xml')}
+          class="inline-flex min-h-10 items-center gap-1.5"
+        >
+          <Rss class="size-4" aria-hidden="true" />
+          RSS
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

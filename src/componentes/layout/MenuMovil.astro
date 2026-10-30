@@ -1,0 +1,68 @@
+---
+/**
+ * Menu movil a pantalla completa: enlaces grandes que entran escalonados.
+ * Cerrado es `inert`, para que el teclado y los lectores de pantalla no lo
+ * recorran; Escape lo cierra y devuelve el foco al boton.
+ */
+import { ArrowRight } from 'lucide-preact';
+import { traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import { MENU } from '@/lib/sitio';
+
+const t = traductor('navegacion');
+---
+
+<button
+  type="button"
+  class="boton-menu lg:hidden"
+  aria-expanded="false"
+  aria-controls="menu-movil"
+  aria-label={t('abrirMenu')}
+  data-abrir={t('abrirMenu')}
+  data-cerrar={t('cerrarMenu')}
+>
+  <span></span>
+  <span></span>
+</button>
+
+<div id="menu-movil" class="menu-movil lg:hidden" inert>
+  <nav aria-label={t('principal')}>
+    {MENU.map(({ href, clave }, i) => (
+      <a href={ruta(href)} class="menu-movil__enlace" style={`--i: ${i}`}>
+        {t(clave)}
+        <ArrowRight aria-hidden="true" />
+      </a>
+    ))}
+  </nav>
+  <p class="mt-auto pt-8 text-sm text-texto-3">{t('descargoCorto')}</p>
+</div>
+
+<script>
+  const boton = document.querySelector<HTMLButtonElement>('.boton-menu');
+  const menu = document.getElementById('menu-movil');
+
+  function poner(abierto: boolean) {
+    if (!boton || !menu) return;
+    boton.setAttribute('aria-expanded', String(abierto));
+    boton.setAttribute(
+      'aria-label',
+      (abierto ? boton.dataset.cerrar : boton.dataset.abrir) ?? '',
+    );
+    menu.classList.toggle('abierto', abierto);
+    menu.inert = !abierto;
+    document.body.classList.toggle('menu-abierto', abierto);
+  }
+
+  boton?.addEventListener('click', () =>
+    poner(boton.getAttribute('aria-expanded') !== 'true'),
+  );
+  menu?.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement).closest('a')) poner(false);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && boton?.getAttribute('aria-expanded') === 'true') {
+      poner(false);
+      boton.focus();
+    }
+  });
+</script>

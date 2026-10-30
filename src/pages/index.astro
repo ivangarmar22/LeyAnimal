@@ -1,0 +1,485 @@
+---
+import { ArrowRight, BadgeCheck, MapPin } from 'lucide-preact';
+import Maqueta from '@/componentes/inicio/Maqueta.astro';
+import FuentePlegable from '@/componentes/legal/FuentePlegable.astro';
+import TrazoMarca from '@/componentes/marca/TrazoMarca.astro';
+import ListaPreguntas from '@/componentes/pagina/ListaPreguntas.astro';
+import PanelCta from '@/componentes/pagina/PanelCta.astro';
+import JsonLd from '@/componentes/seo/JsonLd.astro';
+import TarjetasSituacion from '@/componentes/situaciones/TarjetasSituacion.astro';
+import { textosPara, traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import SelectorRapido from '@/islas/SelectorRapido';
+import Base from '@/layouts/Base.astro';
+import { ICONOS_TEMA } from '@/lib/contenido/iconos';
+import {
+  balanza,
+  calendario,
+  corazonVerde,
+  documento,
+  lupa,
+  pensativo,
+  pergamino,
+  sirena,
+} from '@/lib/contenido/ilustraciones';
+import { PREGUNTAS_PORTADA } from '@/lib/contenido/preguntas';
+import {
+  cifras,
+  comunidades,
+  normas,
+  reglas,
+  situacionComunidad,
+  temas,
+  ultimaVerificacion,
+} from '@/lib/datos';
+import { nombreNorma, textosTema } from '@/lib/datos/textos';
+import { formatearFecha, formatearNumero } from '@/lib/fechas';
+import { urlAbsoluta } from '@/lib/seo';
+import { URL_SITIO } from '@/lib/sitio';
+import { ChipAmbito, ChipEstado, ChipNeutro } from '@/ui/Chips';
+import { Ilustracion } from '@/ui/Ilustracion';
+
+const tg = traductor();
+const t = tg.en('inicio');
+const tm = tg.en('meta');
+const ts = tg.en('situaciones.portada');
+
+const c = cifras();
+const verificada = ultimaVerificacion();
+const fecha = (iso: string) => formatearFecha(iso);
+
+const L7 = 'ley-7-2023-bienestar-animal';
+/**
+ * Lo que se suele leer frente a lo que dice la norma. El estado sale de la
+ * regla estatal de cada requisito, asi que si cambia el contenido legal
+ * cambia el chip; el articulo es el que respalda la frase.
+ */
+const MITOS = [
+  { clave: 'p1', requisito: 'seguro_rc_perros', ids: [`${L7}#art. 30.3`] },
+  {
+    clave: 'p2',
+    requisito: 'curso_tenencia_perros',
+    ids: [`${L7}#art. 30.1`, `${L7}#art. 30.2`],
+  },
+  {
+    clave: 'p3',
+    requisito: 'licencia_ppp',
+    ids: ['rd-287-2002-animales-potencialmente-peligrosos#art. 3.1.e'],
+  },
+  {
+    clave: 'p5',
+    requisito: 'microchip_esterilizacion_gatos',
+    ids: [`${L7}#art. 26.i`],
+  },
+  {
+    clave: 'p4',
+    requisito: null,
+    ids: [
+      'ley-animales-pais-vasco#Artículo 4',
+      'ley-animales-comunidad-de-madrid#Artículo 6',
+    ],
+  },
+].map((m) => ({
+  ...m,
+  estado: m.requisito
+    ? reglas().find(
+        (r) => r.ambito === 'estatal' && r.requisito === m.requisito,
+      )?.estado
+    : undefined,
+}));
+
+const ultimas = [...normas()]
+  .filter((n) => n.verificadaEn && n.estado === 'vigente')
+  .sort((a, b) => (b.verificadaEn ?? '').localeCompare(a.verificadaEn ?? ''))
+  .slice(0, 4);
+
+const herramientas = [
+  ['/perros-potencialmente-peligrosos', 'ppp', lupa],
+  ['/multas', 'multas', balanza],
+  ['/que-hacer-si', 'queHacer', sirena],
+] as const;
+
+const confianza = [
+  ['f1', pergamino],
+  ['f2', calendario],
+  ['f3', pensativo],
+  ['f4', corazonVerde],
+] as const;
+
+const cifrasTira = [
+  ['comunidades', c.comunidades],
+  ['municipios', c.municipios],
+  ['normas', c.normas],
+  ['articulos', c.articulos],
+] as const;
+---
+
+<Base
+  ruta="/"
+  titulo={tm('titulo')}
+  descripcion={tm('descripcion')}
+  tituloCompleto
+>
+  <JsonLd
+    datos={{
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'LeyAnimal',
+      url: urlAbsoluta('/'),
+      description: tm('descripcion'),
+      inLanguage: 'es',
+      publisher: { '@type': 'Organization', name: 'LeyAnimal', url: URL_SITIO },
+    }}
+  />
+
+  <!-- 1. Hero -->
+  <section class="hero tinte">
+    <div class="fondo-rejilla" aria-hidden="true"></div>
+    <div class="fondo-brillo" aria-hidden="true"></div>
+    <TrazoMarca
+      id="trazo-hero"
+      class="top-28 -right-44 hidden w-[640px] opacity-70 xl:block"
+    />
+
+    <div class="contenedor grid items-start gap-14 pb-14 lg:pb-20 xl:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] xl:gap-16">
+      <div class="max-w-[720px] xl:max-w-none">
+        <h1 class="titulo-1" data-intro>
+          {t('hero.titulo1')} <span class="destacado">{t('hero.titulo2')}</span>
+        </h1>
+        <p class="entradilla mt-6" data-intro style="--i: 1">
+          {t('hero.entradilla')}
+        </p>
+        <!--
+          Por encima de lo que viene despues: cada bloque animado es una capa
+          propia, y sin esto la lista de municipios quedaba debajo del texto.
+        -->
+        <div class="relative z-20 mt-9" data-intro style="--i: 2">
+          <SelectorRapido
+            client:idle
+            textos={textosPara(['inicio.hero', 'especies'])}
+          />
+        </div>
+        <a
+          href={ruta('/metodologia')}
+          class="enlace-flecha mt-6 text-sm"
+          data-intro
+          style="--i: 3"
+        >
+          {t('hero.metodo')}
+          <ArrowRight aria-hidden="true" />
+        </a>
+      </div>
+
+      <div
+        class="hidden md:block md:max-w-[640px] xl:max-w-none xl:pt-4"
+        data-intro
+        style="--i: 2"
+      >
+        <Maqueta />
+      </div>
+    </div>
+
+    <div class="contenedor pb-4">
+      <dl class="tira">
+        {cifrasTira.map(([clave, valor]) => (
+          <div>
+            <dt class="sr-only">{t(`cifras.${clave}`)}</dt>
+            <dd>
+              <strong data-cuenta={valor}>{formatearNumero(valor)}</strong>
+              <span aria-hidden="true">{t(`cifras.${clave}`)}</span>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- 2. Situaciones -->
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="cabeza-seccion cabeza-seccion--doble" data-aparece>
+        <h2 class="titulo-2">{ts('titulo')}</h2>
+        <p class="entradilla">{ts('texto')}</p>
+      </div>
+      <TarjetasSituacion />
+      <a href={ruta('/situaciones')} class="enlace-flecha mt-10" data-aparece>
+        {ts('todas')}
+        <ArrowRight aria-hidden="true" />
+      </a>
+    </div>
+  </section>
+
+  <!-- 3. Lo que se suele leer, con el estado real y el articulo -->
+  <section class="seccion seccion--suave">
+    <div class="contenedor grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-20">
+      <div
+        class="lg:sticky lg:top-[calc(var(--cabecera)+40px)] lg:self-start"
+        data-aparece
+      >
+        <h2 class="titulo-2">{t('contraste.titulo')}</h2>
+        <p class="entradilla mt-5">{t('contraste.texto')}</p>
+        <a href={ruta('/comunidades')} class="enlace-flecha mt-8 max-lg:hidden">
+          {t('contraste.enlace')}
+          <ArrowRight aria-hidden="true" />
+        </a>
+      </div>
+      <div>
+        <div class="rotulo mb-2 hidden grid-cols-[44px_minmax(0,1fr)] gap-4 sm:grid">
+          <span></span>
+          <span>
+            {t('contraste.antes')} → {t('contraste.despues')}
+          </span>
+        </div>
+        {MITOS.map(({ clave, estado, ids }, n) => (
+          <div class="contraste" data-aparece="fundido">
+            <span class="contraste__num">{n + 1}</span>
+            <p class="contraste__antes">
+              <span class="sr-only">{t('contraste.antes')}: </span>
+              <span>{t(`contraste.${clave}a`)}</span>
+            </p>
+            <div class="contraste__despues">
+              <BadgeCheck aria-hidden="true" />
+              <div class="grid gap-3">
+                <p>
+                  <span class="sr-only">{t('contraste.despues')}: </span>
+                  {t(`contraste.${clave}b`)}
+                </p>
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+                  {estado ? (
+                    <ChipEstado estado={estado} t={tg} />
+                  ) : (
+                    <ChipNeutro Icono={MapPin} texto={t('contraste.depende')} />
+                  )}
+                  <FuentePlegable ids={ids} />
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+        <a href={ruta('/comunidades')} class="enlace-flecha mt-8 lg:hidden">
+          {t('contraste.enlace')}
+          <ArrowRight aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Guias por tema y herramientas -->
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="cabeza-seccion cabeza-seccion--doble" data-aparece>
+        <h2 class="titulo-2">{t('guias.titulo')}</h2>
+        <p class="entradilla">{t('guias.texto')}</p>
+      </div>
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-escalonado>
+        {temas().map((tema) => {
+          const Icono = ICONOS_TEMA[tema.clave] ?? documento;
+          const textos = textosTema(tg.en('temas'), tema);
+          return (
+            <li>
+              <a
+                href={ruta(`/temas/${tema.slug}`)}
+                class="tarjeta foco-luz h-full gap-4"
+              >
+                <span class="flex items-center gap-4">
+                  <span class="caja-icono shrink-0">
+                    <Ilustracion icono={Icono} />
+                  </span>
+                  <span class="font-display text-lg font-semibold text-texto">
+                    {textos.nombre}
+                  </span>
+                </span>
+                <span class="text-[0.9375rem]">{textos.descripcion}</span>
+                <span class="enlace-flecha mt-auto text-[0.9375rem]">
+                  {t('guias.leer')}
+                  <ArrowRight aria-hidden="true" />
+                </span>
+              </a>
+            </li>
+          );
+        })}
+        <li class="tarjeta tarjeta--menta gap-3">
+          <p class="font-display text-lg font-semibold text-texto">
+            {t('guias.herramientas')}
+          </p>
+          <p class="text-[0.9375rem]">{t('guias.herramientasTexto')}</p>
+          <ul class="mt-1 grid gap-1">
+            {herramientas.map(([href, clave, Icono]) => (
+              <li>
+                <a
+                  href={ruta(href)}
+                  class="flex min-h-11 items-center gap-3 rounded-xl py-1.5 font-medium text-texto transition-colors hover:text-marca-700"
+                >
+                  <Ilustracion icono={Icono} class="size-6 shrink-0" />
+                  <span class="flex-1">{t(`guias.${clave}`)}</span>
+                  <ArrowRight
+                    class="size-4 shrink-0 text-texto-3"
+                    aria-hidden="true"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. Comunidades -->
+  <section class="seccion seccion--suave">
+    <div class="contenedor">
+      <div class="cabeza-seccion cabeza-seccion--doble" data-aparece>
+        <h2 class="titulo-2">{t('comunidades.titulo')}</h2>
+        <p class="entradilla">{t('comunidades.texto')}</p>
+      </div>
+      <ul
+        class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
+        data-escalonado="fundido"
+      >
+        {comunidades().map((com) => {
+          const s = situacionComunidad(com.codigoIne);
+          const texto =
+            s.tipo === 'reglas'
+              ? t('comunidades.reglas', { n: s.reglas })
+              : s.tipo === 'sinLey'
+                ? t('comunidades.sinLey')
+                : s.tipo === 'ordenanzas'
+                  ? t('comunidades.ordenanzas')
+                  : t('comunidades.remite');
+          const punto = s.tipo === 'reglas' ? 'bg-marca-500' : 'bg-texto-3';
+          return (
+            <li>
+              <a
+                href={ruta(`/comunidades/${com.slug}`)}
+                class="group flex h-full items-center justify-between gap-3 rounded-2xl border border-borde bg-superficie px-4 py-3.5 transition-colors hover:border-marca-300"
+              >
+                <span>
+                  <span class="block font-medium text-texto">{com.nombre}</span>
+                  <span class="mt-0.5 flex items-center gap-1.5 text-sm text-texto-3">
+                    <span
+                      class={`size-1.5 rounded-full ${punto}`}
+                      aria-hidden="true"
+                    />
+                    {texto}
+                  </span>
+                </span>
+                <ArrowRight
+                  class="size-4 shrink-0 text-texto-3 transition-transform group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                />
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+      <a href={ruta('/mapa')} class="enlace-flecha mt-10" data-aparece>
+        {t('comunidades.mapa')}
+        <ArrowRight aria-hidden="true" />
+      </a>
+    </div>
+  </section>
+
+  <!-- 6. Por que fiarte, con las ultimas verificaciones -->
+  <section class="seccion">
+    <div class="contenedor grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-20">
+      <div>
+        <div data-aparece>
+          <h2 class="titulo-2">{t('confianza.titulo')}</h2>
+          <p class="entradilla mt-5">{t('confianza.texto')}</p>
+        </div>
+        <ul class="mt-10 grid gap-7 sm:grid-cols-2" data-escalonado>
+          {confianza.map(([clave, Icono]) => (
+            <li class="flex gap-4">
+              <span class="caja-icono size-11 shrink-0">
+                <Ilustracion icono={Icono} />
+              </span>
+              <span>
+                <span class="block font-display font-semibold text-texto">
+                  {t(`confianza.${clave}`)}
+                </span>
+                <span class="mt-1 block text-[0.9375rem]">
+                  {t(`confianza.${clave}t`)}
+                </span>
+              </span>
+            </li>
+          ))}
+        </ul>
+        <a href={ruta('/metodologia')} class="enlace-flecha mt-10" data-aparece>
+          {t('confianza.metodo')}
+          <ArrowRight aria-hidden="true" />
+        </a>
+      </div>
+
+      <div class="tarjeta gap-5 self-start shadow-media lg:mt-2" data-aparece>
+        <div>
+          <h3 class="titulo-3">{t('cambios.titulo')}</h3>
+          {verificada ? (
+            <p class="mt-1.5 text-sm text-texto-3">
+              {t('confianza.resumen', {
+                citas: c.articulos,
+                fecha: fecha(verificada),
+              })}
+            </p>
+          ) : null}
+        </div>
+        <ul class="grid gap-1">
+          {ultimas.map((n) => (
+            <li>
+              <a
+                href={ruta(`/normativa/${n.slug}`)}
+                class="flex items-center gap-3 rounded-2xl px-3 py-3 transition-colors hover:bg-superficie-2"
+              >
+                <Ilustracion icono={documento} class="size-6 shrink-0" />
+                <span class="min-w-0 flex-1">
+                  <span class="block font-medium text-texto">
+                    {nombreNorma(n)}
+                  </span>
+                  {n.verificadaEn ? (
+                    <span class="block text-sm text-texto-3">
+                      {t('cambios.verificada', {
+                        fecha: fecha(n.verificadaEn),
+                      })}
+                    </span>
+                  ) : null}
+                </span>
+                <span class="hidden shrink-0 sm:block">
+                  <ChipAmbito ambito={n.ambito} t={tg} />
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a
+          href={ruta('/cambios')}
+          class="enlace-flecha border-t border-borde pt-4 text-[0.9375rem]"
+        >
+          {t('cambios.todos')}
+          <ArrowRight aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Preguntas -->
+  <section class="seccion seccion--suave">
+    <div class="contenedor grid gap-12 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-20">
+      <div data-aparece>
+        <h2 class="titulo-2">{t('faq.titulo')}</h2>
+        <a href={ruta('/preguntas-frecuentes')} class="enlace-flecha mt-8">
+          {t('faq.todas')}
+          <ArrowRight aria-hidden="true" />
+        </a>
+      </div>
+      <ListaPreguntas claves={PREGUNTAS_PORTADA} abiertaPrimera />
+    </div>
+  </section>
+
+  <div class="pt-[var(--seccion)]">
+    <PanelCta
+      titulo={t('cta.titulo')}
+      texto={t('cta.texto')}
+      boton={t('cta.boton')}
+      secundario={{ texto: t('cta.secundario'), href: '/normativa' }}
+    />
+  </div>
+</Base>

@@ -1,0 +1,156 @@
+---
+/**
+ * Lo que la normativa propia de una comunidad añade a lo que ya resuelve la
+ * consulta: otras obligaciones de su ley, su regimen de perros
+ * potencialmente peligrosos y su cuadro de multas. Todo con la cita literal.
+ */
+import { ArrowRight, ExternalLink } from 'lucide-preact';
+import FuentePlegable from '@/componentes/legal/FuentePlegable.astro';
+import { traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import { ICONOS_DESTACADO } from '@/lib/contenido/iconos';
+import { aviso, bolsaDinero } from '@/lib/contenido/ilustraciones';
+import { pppDeComunidad, raza, referencias } from '@/lib/datos';
+import { formatearEuros } from '@/lib/fechas';
+import { CitaLegal } from '@/ui/CitaLegal';
+import { Ilustracion } from '@/ui/Ilustracion';
+
+interface Props {
+  comunidad: { codigoIne: string; nombre: string };
+}
+
+const { comunidad } = Astro.props;
+const tg = traductor();
+const t = tg.en('comunidad');
+const c = comunidad.codigoIne;
+
+// Varias referencias pueden compartir clave (dos frases del mismo tema).
+const destacados = [
+  ...Map.groupBy(referencias('obligacion', c), (r) => r.clave ?? '').entries(),
+].map(([clave, lista]) => ({ clave, fuentes: lista.map((r) => r.fuente) }));
+const multas = referencias('sanciones', c).map((r) => r.fuente);
+const ppp = pppDeComunidad(c);
+const lista = new Intl.ListFormat('es', { type: 'conjunction' });
+const razas = ppp?.razas
+  ? lista.format(ppp.razas.anadidas.map((s) => raza(s)?.nombre ?? s))
+  : null;
+const fuentesPpp = ppp
+  ? [
+      ...(ppp.razas ? [ppp.razas.fuente] : []),
+      ...(ppp.seguro ? [ppp.seguro.fuente] : []),
+      ...ppp.otros.map((o) => o.fuente),
+    ]
+  : [];
+---
+
+<div class="mt-16 grid gap-16">
+  {destacados.length > 0 ? (
+    <section aria-labelledby="anade">
+      <h2 id="anade" class="titulo-3">
+        {t('anade', { comunidad: comunidad.nombre })}
+      </h2>
+      <p class="mt-2 max-w-[65ch] text-texto-2">{t('anadeTexto')}</p>
+      <ul class="mt-6 grid gap-4 md:grid-cols-2">
+        {destacados.map(({ clave, fuentes }) => {
+          const Icono = ICONOS_DESTACADO[clave];
+          return (
+            <li class="tarjeta gap-3">
+              <div class="flex items-center gap-3">
+                {Icono ? (
+                  <span class="caja-icono size-11 shrink-0">
+                    <Ilustracion icono={Icono} />
+                  </span>
+                ) : null}
+                <h3 class="font-display text-lg font-semibold">
+                  {t(`destacados.${clave}`)}
+                </h3>
+              </div>
+              {fuentes.map((f) => (
+                <CitaLegal
+                  norma={f.norma}
+                  articulo={f.articulo}
+                  cita={f.cita}
+                  t={tg}
+                />
+              ))}
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  ) : null}
+
+  <section aria-labelledby="ppp-comunidad" class="tarjeta gap-4">
+    <div class="flex items-center gap-3">
+      <span class="caja-icono size-11 shrink-0">
+        <Ilustracion icono={aviso} />
+      </span>
+      <h2 id="ppp-comunidad" class="titulo-3">
+        {t('ppp', { comunidad: comunidad.nombre })}
+      </h2>
+    </div>
+    {razas ? <p>{t('pppRazas', { razas })}</p> : null}
+    {ppp?.seguro && ppp.seguro.importe > 120000 ? (
+      <p>
+        {t('pppSeguro', {
+          importe: formatearEuros(ppp.seguro.importe),
+        })}
+        {ppp.seguro.soloRazas ? ` ${t('pppSoloRazas')}` : ''}
+      </p>
+    ) : null}
+    {ppp?.otros.map((o) => (
+      <p>{t(`pppOtros.${o.clave}`)}</p>
+    ))}
+    {ppp?.avisos.map((a) => (
+      <p>
+        {t(`pppAvisos.${a.clave}`)}{' '}
+        <a
+          href={a.url}
+          target="_blank"
+          rel="noreferrer noopener"
+          class="inline-flex items-center gap-1 font-medium text-marca-700 underline underline-offset-2"
+        >
+          RACIC
+          <ExternalLink class="size-3.5" aria-hidden="true" />
+          <span class="sr-only">{tg('comun.abreEnPestana')}</span>
+        </a>
+      </p>
+    ))}
+    {!razas && !(ppp?.seguro && ppp.seguro.importe > 120000) ? (
+      <p>{t('pppEstatal')}</p>
+    ) : null}
+    {fuentesPpp.length > 0 ? (
+      <div class="border-t border-borde pt-2">
+        <FuentePlegable fuentes={fuentesPpp} />
+      </div>
+    ) : null}
+    <a
+      href={ruta('/perros-potencialmente-peligrosos')}
+      class="enlace-flecha self-start"
+    >
+      {tg('ppp.titulo')}
+      <ArrowRight aria-hidden="true" />
+    </a>
+  </section>
+
+  {multas.length > 0 ? (
+    <section aria-labelledby="multas-comunidad" class="tarjeta gap-4">
+      <div class="flex items-center gap-3">
+        <span class="caja-icono size-11 shrink-0">
+          <Ilustracion icono={bolsaDinero} />
+        </span>
+        <h2 id="multas-comunidad" class="titulo-3">
+          {t('multas', { comunidad: comunidad.nombre })}
+        </h2>
+      </div>
+      <p class="max-w-[65ch] text-texto-2">{t('multasTexto')}</p>
+      {multas.map((f) => (
+        <CitaLegal norma={f.norma} articulo={f.articulo} cita={f.cita} t={tg} />
+      ))}
+      <a href={ruta('/multas')} class="enlace-flecha self-start">
+        {tg('multas.titulo')}
+        <ArrowRight aria-hidden="true" />
+      </a>
+    </section>
+  ) : null}
+</div>

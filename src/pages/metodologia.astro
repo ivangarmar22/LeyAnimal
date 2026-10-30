@@ -1,0 +1,113 @@
+---
+import { ArrowRight } from 'lucide-preact';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import { traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import Base from '@/layouts/Base.astro';
+import { ORDEN_ESTADOS } from '@/lib/dominio/estados';
+import { ChipEstado } from '@/ui/Chips';
+
+const t = traductor('metodologia');
+const tg = traductor();
+const lista = (clave: string) => t.raw(clave) as string[];
+const SECCIONES = [
+  'fuentes',
+  'verificacion',
+  'estados',
+  'conflictos',
+  'versionado',
+  'limites',
+  'revision',
+] as const;
+---
+
+<Base
+  ruta="/metodologia"
+  titulo={t('metaTitulo')}
+  descripcion={t('metaDescripcion')}
+>
+  <CabeceraPagina titulo={t('titulo')} entradilla={t('entradilla')} solape />
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <div class="grid gap-10 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-14">
+      <nav
+        class="indice hidden lg:sticky lg:top-[calc(var(--cabecera)+32px)] lg:block lg:self-start lg:pt-40"
+        aria-label={t('indice')}
+      >
+        <p class="rotulo mb-3">{t('indice')}</p>
+        {SECCIONES.map((s) => (
+          <a href={`#${s}`}>{t(s)}</a>
+        ))}
+      </nav>
+
+      <article class="prosa max-w-none rounded-[28px] border border-borde bg-superficie p-5 shadow-alta sm:p-8 lg:p-12 [&>h2:first-child]:mt-0">
+        <h2 id="fuentes" class="scroll-mt-28">
+          {t('fuentes')}
+        </h2>
+        {lista('fuentesTexto').map((p) => (
+          <p>{p}</p>
+        ))}
+
+        <h2 id="verificacion" class="scroll-mt-28">
+          {t('verificacion')}
+        </h2>
+        <ul>
+          {lista('verificacionLista').map((p) => (
+            <li>{p}</li>
+          ))}
+        </ul>
+
+        <h2 id="estados" class="scroll-mt-28">
+          {t('estados')}
+        </h2>
+        <dl class="grid gap-4">
+          {ORDEN_ESTADOS.map((e) => (
+            <div class="grid gap-2 sm:grid-cols-[15rem_minmax(0,1fr)] sm:items-center">
+              <dt>
+                <ChipEstado estado={e} t={tg} />
+              </dt>
+              <dd>{tg(`estadosDescripcion.${e}`)}</dd>
+            </div>
+          ))}
+        </dl>
+
+        <h2 id="conflictos" class="scroll-mt-28">
+          {t('conflictos')}
+        </h2>
+        <p>{t('conflictosTexto')}</p>
+        <ol>
+          {lista('conflictosLista').map((p) => (
+            <li>{p}</li>
+          ))}
+        </ol>
+        <p>{t('conflictosDuda')}</p>
+
+        <h2 id="versionado" class="scroll-mt-28">
+          {t('versionado')}
+        </h2>
+        {lista('versionadoTexto').map((p) => (
+          <p>{p}</p>
+        ))}
+
+        <h2 id="limites" class="scroll-mt-28">
+          {t('limites')}
+        </h2>
+        <ul>
+          {lista('limitesLista').map((p) => (
+            <li>{p}</li>
+          ))}
+        </ul>
+
+        <h2 id="revision" class="scroll-mt-28">
+          {t('revision')}
+        </h2>
+        <p>{t('revisionTexto')}</p>
+        <p>
+          <a href={ruta('/colabora')} class="enlace-flecha">
+            {t('revisionCta')}
+            <ArrowRight aria-hidden="true" />
+          </a>
+        </p>
+      </article>
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,62 @@
+---
+/**
+ * Cabecera fija. Transparente sobre la banda menta de cada pagina y con fondo
+ * de cristal en cuanto se hace scroll (lo activa scripts/efectos.ts).
+ */
+import { PawPrint } from 'lucide-preact';
+import Logo from '@/componentes/marca/Logo.astro';
+import { traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import { MENU } from '@/lib/sitio';
+import MenuMovil from './MenuMovil.astro';
+
+interface Props {
+  /** Ruta de la pagina, para marcar la actual en el menu. */
+  rutaActual: string;
+}
+
+const { rutaActual } = Astro.props;
+const t = traductor('navegacion');
+const esActual = (href: string) =>
+  rutaActual === href || rutaActual.startsWith(`${href}/`);
+---
+
+<header class="cabecera">
+  <div class="contenedor flex h-[var(--cabecera)] items-center gap-4 lg:gap-8">
+    <a
+      href={ruta('/')}
+      class="relative z-[56] flex shrink-0 items-center rounded-md"
+      aria-label={t('inicio')}
+    >
+      <Logo />
+    </a>
+
+    <nav class="hidden lg:block" aria-label={t('principal')}>
+      <ul class="flex items-center gap-1">
+        {MENU.map(({ href, clave }) => (
+          <li>
+            <a
+              href={ruta(href)}
+              class="nav-enlace"
+              aria-current={esActual(href) ? 'page' : undefined}
+            >
+              {t(clave)}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-2">
+      <a
+        href={ruta('/apoya')}
+        class="boton-apoyo"
+        aria-current={esActual('/apoya') ? 'page' : undefined}
+      >
+        <PawPrint aria-hidden="true" />
+        {t('apoya')}
+      </a>
+      <MenuMovil />
+    </div>
+  </div>
+</header>

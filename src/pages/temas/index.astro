@@ -1,0 +1,91 @@
+---
+import { ArrowRight } from 'lucide-preact';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import PanelCta from '@/componentes/pagina/PanelCta.astro';
+import { traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import Base from '@/layouts/Base.astro';
+import { ICONOS_TEMA } from '@/lib/contenido/iconos';
+import {
+  balanza,
+  documento,
+  escudo,
+  lupa,
+  sirena,
+} from '@/lib/contenido/ilustraciones';
+import { Ilustracion } from '@/ui/Ilustracion';
+import { temas } from '@/lib/datos';
+import { textosTema } from '@/lib/datos/textos';
+
+const tg = traductor();
+const t = tg.en('paginaTemas');
+const recursos = [
+  ['/perros-potencialmente-peligrosos', 'ppp', lupa],
+  ['/seguros', 'seguros', escudo],
+  ['/multas', 'multas', balanza],
+  ['/que-hacer-si', 'queHacerSi', sirena],
+] as const;
+---
+
+<Base ruta="/temas" titulo={t('metaTitulo')} descripcion={t('metaDescripcion')}>
+  <CabeceraPagina titulo={t('titulo')} entradilla={t('entradilla')} solape />
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <ul class="grid gap-4 md:grid-cols-2 lg:grid-cols-3" data-escalonado>
+      {temas().map((tema) => {
+        const Icono = ICONOS_TEMA[tema.clave] ?? documento;
+        const textos = textosTema(tg.en('temas'), tema);
+        return (
+          <li>
+            <a
+              href={ruta(`/temas/${tema.slug}`)}
+              class="tarjeta foco-luz h-full gap-5"
+            >
+              <span class="esquinas" aria-hidden="true">
+                <i />
+                <i />
+                <i />
+                <i />
+              </span>
+              <span class="caja-icono">
+                <Ilustracion icono={Icono} />
+              </span>
+              <span class="titulo-3 font-display font-semibold text-texto">
+                {textos.nombre}
+              </span>
+              <span>{textos.descripcion}</span>
+              <span class="enlace-flecha mt-auto text-[0.9375rem]">
+                {tg('inicio.guias.leer')}
+                <ArrowRight aria-hidden="true" />
+              </span>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+
+    <h2 class="titulo-3 mt-16">{t('recursos')}</h2>
+    <ul class="mt-6 grid gap-3 md:grid-cols-2">
+      {recursos.map(([href, clave, Icono]) => (
+        <li>
+          <a
+            href={ruta(href)}
+            class="flex items-center gap-4 rounded-3xl border border-borde bg-superficie p-4 transition-colors hover:border-marca-300"
+          >
+            <span class="caja-icono size-11">
+              <Ilustracion icono={Icono} />
+            </span>
+            <span class="flex-1 font-medium text-texto">
+              {tg(`navegacion.${clave}`)}
+            </span>
+            <ArrowRight class="size-4 text-texto-3" aria-hidden="true" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <PanelCta
+    titulo={tg('inicio.cta.titulo')}
+    texto={tg('inicio.cta.texto')}
+    boton={tg('inicio.cta.boton')}
+  />
+</Base>

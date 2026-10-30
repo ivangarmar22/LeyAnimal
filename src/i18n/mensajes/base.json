@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "titulo": "LeyAnimal · Lo que la ley te exige con tu perro o tu gato",
+    "descripcion": "Consulta qué obligaciones legales tienes hoy con tu animal de compañía según tu municipio, con la norma, el artículo y el enlace oficial de cada una."
+  },
+  "comun": {
+    "lema": "Lo que la ley te exige con tu animal, en tu municipio y al día",
+    "descargo": "Información divulgativa. No es asesoramiento jurídico.",
+    "cargando": "Cargando",
+    "siguiente": "Siguiente",
+    "fuenteOficial": "Fuente oficial",
+    "inicio": "Inicio",
+    "abreEnPestana": "(se abre en otra pestaña)",
+    "perro": "Perro",
+    "gato": "Gato",
+    "copiar": "Copiar",
+    "copiado": "Copiado",
+    "imprimir": "Imprimir",
+    "buscar": "Buscar",
+    "filtrar": "Filtrar",
+    "limpiar": "Limpiar filtros",
+    "todas": "Todas",
+    "todos": "Todos",
+    "resultados": "{cuenta, plural, =0 {Ningún resultado} one {# resultado} other {# resultados}}",
+    "empezarConsulta": "Consultar mis obligaciones"
+  },
+  "ley": {
+    "citaLiteral": "Texto literal de la norma",
+    "verificada": "Verificada el {fecha}",
+    "publicadaEnBoe": "Publicada en el BOE el {fecha}",
+    "publicadaEnDogc": "Publicada en el DOGC el {fecha}"
+  },
+  "estados": {
+    "obligatorio": "Obligatorio",
+    "obligatorio_pendiente_reglamento": "Pendiente de reglamento",
+    "recomendado": "Recomendado",
+    "no_aplica": "No aplica",
+    "sin_datos": "Sin datos verificados"
+  },
+  "estadosDescripcion": {
+    "obligatorio": "Es exigible hoy en tu territorio.",
+    "obligatorio_pendiente_reglamento": "La ley lo enuncia, pero todavía no es exigible porque falta el reglamento que lo desarrolla.",
+    "recomendado": "No es obligatorio, pero conviene.",
+    "no_aplica": "No te afecta según los datos que has indicado.",
+    "sin_datos": "Aún no lo hemos verificado para tu municipio."
+  },
+  "ambitos": {
+    "estatal": "Estatal",
+    "autonomico": "Autonómico",
+    "provincial": "Provincial",
+    "municipal": "Municipal"
+  },
+  "ambitosRegla": {
+    "estatal": "estatal",
+    "autonomico": "autonómica",
+    "provincial": "provincial",
+    "municipal": "municipal"
+  },
+  "estadosNorma": {
+    "vigente": "Vigente",
+    "derogada": "Derogada",
+    "pendiente_desarrollo": "Pendiente de desarrollo",
+    "en_tramitacion": "En tramitación"
+  },
+  "tiposNorma": {
+    "ley": "Ley",
+    "ley_organica": "Ley orgánica",
+    "real_decreto": "Real decreto",
+    "decreto": "Decreto",
+    "orden": "Orden",
+    "ordenanza": "Ordenanza",
+    "proyecto": "Proyecto"
+  },
+  "navegacion": {
+    "principal": "Navegación principal",
+    "inicio": "LeyAnimal, ir al inicio",
+    "saltarAlContenido": "Saltar al contenido",
+    "abrirMenu": "Abrir menú",
+    "cerrarMenu": "Cerrar menú",
+    "descargoCorto": "Información divulgativa, no asesoramiento jurídico.",
+    "consulta": "Consulta",
+    "situaciones": "Situaciones",
+    "normativa": "Normativa",
+    "temas": "Guías",
+    "comunidades": "Comunidades",
+    "cambios": "Cambios",
+    "mapa": "Mapa por comunidades",
+    "ppp": "Perros potencialmente peligrosos",
+    "seguros": "Guía del seguro",
+    "multas": "Multas y sanciones",
+    "queHacerSi": "Qué hacer si…",
+    "faq": "Preguntas frecuentes",
+    "metodologia": "Metodología",
+    "colabora": "Avisar de un error",
+    "sobre": "Sobre el proyecto",
+    "contacto": "Contacto",
+    "avisoLegal": "Aviso legal",
+    "privacidad": "Privacidad",
+    "cookies": "Cookies",
+    "accesibilidad": "Accesibilidad",
+    "apoya": "Colabora"
+  },
+  "pie": {
+    "lema": "Lo que la ley te exige con tu animal, en tu municipio y al día. Cada afirmación, con su artículo y su enlace oficial.",
+    "explorar": "Explorar",
+    "recursos": "Recursos",
+    "proyecto": "Proyecto",
+    "descargo": "LeyAnimal es un proyecto divulgativo. La información procede de fuentes oficiales y se revisa periódicamente, pero no es asesoramiento jurídico: ante un caso concreto, consulta a tu ayuntamiento o a un profesional.",
+    "datosAbiertos": "Datos: BOE (API de datos abiertos) e INE.",
+    "colaborar": "Colaborar con un donativo"
+  },
+  "noEncontrado": {
+    "titulo": "Esta página no existe",
+    "texto": "Puede que el enlace esté mal escrito o que la página se haya movido. Desde aquí puedes volver al inicio o empezar una consulta con tu municipio.",
+    "irInicio": "Ir al inicio",
+    "codigo": "Error 404"
+  }
+}

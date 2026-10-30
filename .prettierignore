@@ -5,5 +5,8 @@ pnpm-lock.yaml
 
 # Datos: los escriben los scripts de contenido con un formato fijo, para que
 # cada cambio legal se revise linea a linea en el diff
-apps/web/src/datos
-apps/web/scripts/contenido/.cache
+src/datos
+scripts/contenido/.cache
+
+# Iconos a color: los genera scripts/generar-ilustraciones.mjs (pnpm iconos)
+src/lib/contenido/ilustraciones.ts

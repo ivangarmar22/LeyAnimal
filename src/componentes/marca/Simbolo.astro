@@ -1,0 +1,16 @@
+---
+/**
+ * Simbolo de LeyAnimal (el dibujo esta en formas.ts). El layout lo define una
+ * vez por pagina como <symbol id="la-simbolo">, con sus degradados: la
+ * cabecera y el pie solo lo referencian.
+ */
+interface Props {
+  class?: string;
+}
+
+const { class: clase } = Astro.props;
+---
+
+<svg viewBox="0 0 48 52" class={clase} aria-hidden="true" focusable="false">
+  <use href="#la-simbolo" />
+</svg>

@@ -543,6 +543,9 @@ extractor.
 
 ### D33. Madrid: el seguro es `obligatorio_pendiente_reglamento`, no `obligatorio`
 
+> **Superada por D54.** La Ley 7/2024 suprimió el seguro de la ley madrileña;
+> lo que sigue describe el texto anterior a esa reforma.
+
 El §1 afirmaba que Madrid ya exigía seguro de responsabilidad civil antes que
 el Estado. El texto vigente de la Ley 4/2016, art. 6.2.a) dice:
 
@@ -636,6 +639,8 @@ igual y medir lo mismo: el BOE usa **U+00A0** y el script un espacio normal. Se
 normaliza al decodificar. Es el tipo de fallo que no se ve leyendo el código.
 
 ### D38. Cobertura real de esta tanda
+
+> **Superada por D58.** Las cinco comunidades pendientes tienen ya sus reglas.
 
 **14 reglas en 11 comunidades**, sobre identificación, censo municipal y seguro.
 
@@ -863,3 +868,274 @@ catálogo y cambios, byte a byte. Los identificadores de las reglas autonómicas
 
 **V2**: las cuentas necesitarán un backend; se elegirá cuando se diseñe esa
 fase. Las migraciones de la V2 que había no se conservan.
+
+## Segunda auditoría y guías por situación (septiembre de 2026)
+
+### D50. Un solo proyecto: fuera el monorepo y la V2
+
+Sustituye a la parte de D48 y de la auditoría anterior que mantenía el motor
+como paquete aparte «para la V2».
+
+**Por qué**: decisión del propietario (28/09/2026): la web va a ser solo una
+página informativa, sin login ni base de datos. El monorepo (`apps/web` y
+`packages/reglas` con workspaces de pnpm) solo se justificaba para reutilizar
+el motor en una V2 con servidor, que ya no va a existir.
+
+**Qué cambia**:
+
+- La web vive en la raíz del repositorio y el motor en `src/lib/reglas/`, con
+  sus tests al lado. Se movió con `git mv`: el historial se conserva.
+- Un solo `package.json`; los scripts ya no usan `--filter`. `pnpm-workspace.yaml`
+  solo guarda los ajustes de pnpm (`allowBuilds`).
+- `astro check` y ESLint cubren también el motor (antes no tenía lint). Sale
+  `ssr.noExternal` de la configuración de Astro, que solo existía para
+  consumir el paquete como TypeScript.
+- IDEAS.md pasa la V2 a «Decidido dejar fuera».
+
+### D51. Guías por situación
+
+Qué necesita tu animal según lo que vayas a hacer: comprar o adoptar,
+mudarte, viajar por España, viajar al extranjero y perro de asistencia. La de
+perros potencialmente peligrosos ya existía y el índice enlaza a ella en lugar
+de repetirla. El caso «Te mudas» sale de «Qué hacer si…», que queda para
+incidencias (pérdida, mordedura, maltrato, muerte).
+
+**Estructura**: `src/lib/contenido/situaciones.ts` declara los puntos de cada
+guía; el texto está en los catálogos. Cada punto lleva uno de los estados del
+sitio (obligatorio, pendiente de reglamento, recomendado) o «depende del
+lugar», para lo que decide la comunidad, el ayuntamiento, la compañía de
+transporte o el país de destino.
+
+**Criterios**:
+
+- Mismo criterio que D36: si la remisión a reglamento regula el cómo y no el
+  si, el punto es obligatorio. El contrato escrito de compraventa (art. 55.2)
+  es exigible aunque sus cláusulas mínimas estén por fijar; el curso y el
+  seguro de la Ley 7/2023 (art. 30) siguen pendientes, como en el motor.
+- Cuando la obligación recae en otro (el vendedor, la protectora, el
+  establecimiento), el punto dice lo que la persona tiene derecho a exigir o
+  debe comprobar, con el artículo que obliga al otro.
+- Ningún punto obligatorio sin artículo: `pnpm datos:comprobar` lo rechaza, y
+  también un artículo citado que no exista. `FuentePlegable` rompe la
+  compilación si una página cita un artículo inexistente (antes lo omitía en
+  silencio).
+
+**Normas nuevas**: el Real Decreto 409/2025, de 27 de mayo, de perros de
+asistencia (BOE-A-2025-10490, en vigor desde el 17/06/2025), que la web no
+tenía pese a ser estatal y posterior a la Ley 7/2023, y el artículo 18.1 del
+Reglamento General de Circulación (colocación de los animales en el coche).
+Las 50 citas nuevas salen literales del BOE con `pnpm datos:referencia`; las
+38 que ya había no cambiaron ni una línea, lo que confirma que siguen al día.
+Se completó el art. 3.3 del RD 287/2002, al que le faltaba su última frase
+(comunicar en quince días cualquier cambio en los datos de la licencia).
+
+**Viajar al extranjero**: los detalles vienen del Reglamento (UE) 576/2013, que
+no se cita literalmente: el modelo solo tiene ámbitos españoles y el extractor
+solo lee el BOE. El punto obligatorio se apoya en el art. 61.3 de la Ley
+7/2023, que obliga a cumplir la normativa europea «y, en particular, la
+vacunación antirrábica». Los detalles (microchip antes de la vacuna, doce
+semanas, 21 días de espera, pasaporte europeo, tenia para cinco destinos,
+máximo cinco animales) se explican enlazando a Tu Europa y al Ministerio de
+Agricultura; se comprobaron el 28/09/2026 en la página de Tu Europa.
+
+**Filtro por animal**: CSS (`:has()`), sin JavaScript. Un script mínimo lo
+recuerda en la URL (`?animal=gato`) y anuncia a los lectores de pantalla
+cuántos puntos quedan. El resultado de la consulta enlaza a las guías ya
+filtradas por la especie consultada, y pone primero la de perros de asistencia
+cuando el uso declarado es ese.
+
+**Menú**: «Situaciones» entra en segundo lugar y «Cambios» sale del menú
+superior (sigue en el pie y en la portada): con seis enlaces no caben junto al
+buscador a 1024 px.
+
+### D52. Pendiente de decisión: la identificación estatal en el motor
+
+> **Resuelta en D55.** El motor tiene ya la regla estatal del art. 51.2.
+
+El art. 51.2 de la Ley 7/2023 obliga a identificar con microchip a perros,
+gatos y hurones en toda España. El motor solo tiene la identificación por
+reglas autonómicas (y la de gatos por el art. 26.i), así que en las
+comunidades sin regla propia (Illes Balears, Canarias, Cantabria, Castilla y
+León, Extremadura, La Rioja, Ceuta y Melilla) la consulta de un perro da
+«sin datos» en identificación, aunque la ley estatal la exige. Las guías por
+situación ya citan el art. 51.2.
+
+Añadir una regla estatal cambiaría los resultados de la consulta en todo el
+país: es un cambio de contenido legal y, como D42, **queda pendiente de
+revisión por el propietario**. No se ha tocado el motor.
+
+### D53. Ajustes visuales: portada más corta, sin rótulos, iconos a color
+
+Decisiones del propietario (29/09/2026) y lo que se hizo con cada una.
+
+- **Cabecera**: sale el buscador global (su isla, su índice JSON y sus
+  textos). Entra un botón de tema claro/oscuro, sin la opción «sistema», que
+  obligaba a duplicar todos los colores del tema oscuro en el CSS. Orden:
+  idioma, tema y «Consultar». El selector de tema del pie desaparece.
+- **Cursor**: mano en todo lo que se pulsa. Tailwind 4 deja los botones con el
+  cursor normal; una regla de la capa base lo corrige para botones, resúmenes
+  plegables y opciones.
+- **Rótulos pequeños sobre los títulos («eyebrows»)**: fuera todos. En las
+  páginas interiores repetían lo que ya dicen las migas; en la portada eran
+  relleno de plantilla. El de cada norma («Estatal · Real decreto») pasa a
+  chips junto a su estado.
+- **Portada**: de diez secciones a siete. Salen «Cómo funciona» (los tres pasos
+  de cualquier plantilla) y «Estado de la ley», cuyo contenido se une a «Lo que
+  se suele leer»: cada fila lleva ahora el estado real, que sale de la regla
+  estatal, y su cita plegable. «Por qué fiarte» y «Últimas verificaciones» se
+  unen en una sección, sin la foto de archivo. La rejilla de guías deja de
+  repetir PPP y seguro. Se añade un quinto mito: el microchip de los gatos
+  (art. 26.i).
+- **Desplegable de municipios del hero**: quedaba debajo del texto porque cada
+  bloque animado del hero es una capa propia; el del selector va por encima.
+- **Contacto**: correo definitivo (leyanimalcontacto@gmail.com), con botones
+  para abrirlo y copiarlo y dos tarjetas que llevan a Colabora o a la
+  consulta. Fuera los avisos de buzón provisional.
+- **Páginas legales**: tarjeta alineada con el título (antes estaba centrada)
+  e índice lateral. Contenido revisado: la privacidad dice que el buzón está en
+  Gmail, para qué usamos lo que nos escriben y durante cuánto tiempo; cookies
+  ya no habla de un tema «del sistema»; accesibilidad aclara que la
+  declaración es voluntaria (el RD 1112/2018 es para el sector público).
+- **Sin créditos de imágenes en la web**: fuera la sección de fotografías de
+  «Sobre» y la mención a Unsplash del aviso legal (su licencia no exige
+  atribución; la autoría queda en `src/assets/fotos/CREDITOS.md`). Se
+  mantiene «Datos: BOE e INE» en el pie: las condiciones de reutilización de
+  sus datos piden citar la fuente.
+- **Iconos**: los de contenido pasan de Lucide (línea dentro de un cuadrado
+  verde, el patrón de cualquier web generada) a Fluent Emoji Flat, a color,
+  con licencia MIT. Un generador descarga solo los elegidos y cada isla
+  importa los suyos. Los de interfaz siguen de línea.
+- **Logotipo**: el escudo plano pasa a tener volumen (degradado, cara derecha
+  iluminada, brillo, filete interior y huella con sombra), sin cambiar la
+  idea. Un solo dibujo para la web, el favicon y las imágenes para compartir.
+
+## Revisión legal completa (29 de septiembre de 2026)
+
+Se volvieron a descargar del BOE todas las leyes (texto vigente, metadatos y
+análisis de reformas), se releyó el articulado de las 17 leyes autonómicas y
+se buscaron en los boletines autonómicos los decretos que el consolidado del
+BOE no recoge. Cada cambio de contenido tiene su entrada en `cambios.json`.
+
+### D54. Madrid ya no exige seguro: la Ley 7/2024 lo suprimió
+
+El generador buscaba la cita en todas las versiones del artículo, no solo en
+la vigente, y seguía encontrando la frase del seguro de la redacción
+anterior. Con la Ley 7/2024, de 26 de diciembre (`BOE-A-2025-5522`, en vigor
+desde el 28/12/2024), el art. 6 de la Ley 4/2016 se reescribió entero y **ya
+no obliga a contratar un seguro**; el art. 11 remite la identificación a la
+Ley 7/2023 y el art. 21, las sanciones.
+
+**Decisión**: Madrid no tiene reglas autonómicas propias; rigen las estatales
+(seguro pendiente de reglamento, identificación del art. 51.2). La ficha de
+Madrid lo dice con un estado propio, `remite`, distinto de «sin ley».
+
+**Corrección del método**: el generador y el extractor leen ahora solo la
+última versión de cada artículo. Era un fallo silencioso: la comprobación de
+que la cita existe pasaba, porque la frase seguía en el XML.
+
+### D55. Identificación estatal y ámbito de la Ley 7/2023
+
+Resuelve D52. Reglas estatales nuevas:
+
+- **Art. 51.2**: perros, gatos, hurones y aves (anilla), `obligatorio`.
+- **Art. 51.1**: el resto de especies se identificará con el sistema que fije
+  un reglamento por especie, que no existe → `obligatorio_pendiente_reglamento`.
+- **Art. 1.3.e**: los perros de caza, pastoreo y trabajo quedan fuera de la
+  ley. El seguro, el curso y la identificación estatales no se les aplican; su
+  identificación sale `sin_datos` (no `no_aplica`) donde no hay regla
+  autonómica, porque la exige la normativa de caza, ganadería o sanidad de
+  cada comunidad. Un perro sin uso declarado se evalúa como de compañía: la
+  pregunta no tiene «no lo sé».
+
+El fundamento legal de una obligación incluye ahora también las reglas que
+dicen lo mismo y solo pierden por ser menos específicas: en Baleares se citan
+la ley balear y la Ley 7/2023.
+
+### D56. Normas fuera del consolidado del BOE: `externas.json`
+
+Las listas autonómicas de perros potencialmente peligrosos, varios seguros
+mínimos, el plazo de identificación de Navarra y los reglamentos de Ceuta y
+Melilla están en decretos que el BOE no consolida. Se citan desde su boletín
+oficial en `src/datos/externas.json`, con enlace y fecha de verificación. Su
+texto no lo extrae un programa: se copió del documento oficial (HTML o PDF)
+y `pnpm datos:comprobar` verifica que cada cita esté en su artículo. Al
+actualizar hay que releer la fuente.
+
+`ppp.json` dice qué razas añade y qué seguro exige cada comunidad, apuntando a
+esos artículos o a los del BOE:
+
+| Comunidad                        | Razas que añade                                                          | Seguro mínimo                                  |
+| -------------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------- |
+| Andalucía (D. 42/2008)           | Dóberman                                                                 | 175.000 € y curso de adiestramiento            |
+| Canarias (D. 30/2018)            | —                                                                        | 200.000 €                                      |
+| Castilla y León (D. 134/1999)    | Dogo del Tíbet                                                           | 30 millones de pesetas, solo razas de su anexo |
+| Cataluña (Ley 10/1999)           | Bullmastiff, Dóberman, Dogo de Burdeos, Mastín napolitano, Presa canario | 150.253,03 €                                   |
+| C. Valenciana (D. 145/2000)      | Las de Cataluña, más Bull terrier y Presa mallorquín                     | 20 millones de pesetas                         |
+| Extremadura (Ley 5/2002)         | Las de Cataluña                                                          | —                                              |
+| Galicia (Ley 4/2017, D. 90/2002) | Las de C. Valenciana, más Dogo del Tíbet                                 | 125.000 €                                      |
+| País Vasco (D. 44/2020)          | American Bully, Akita americano, Bandogg                                 | —                                              |
+
+Cantabria regula aparte las «razas de guarda y defensa» (D. 64/1999); una
+ordenanza de 2025 publicada en el BOC las distingue de las PPP, así que no se
+marcan como tales. Madrid (D. 30/2003) y Aragón aplican la lista estatal.
+
+Ceuta (Reglamento 2/2015) y Melilla (Reglamento de Sanidad Animal, texto de 2022) entran como normas municipales (D34): microchip para perros, gatos y
+hurones en las dos, censo en Ceuta y vacuna antirrábica anual en las dos.
+
+### D57. Reformas anunciadas que el consolidado aún no incorpora
+
+La Ley catalana 11/2026, de 9 de julio (DOGC núm. 9706), cambió las multas del
+art. 46 del texto refundido catalán, pero el consolidado del BOE seguía con
+las de 2020. Su análisis sí la anunciaba.
+
+**Decisión**: el extractor descarga también `/analisis` y el generador falla si
+cita un artículo al que se anuncia una reforma que no está entre sus
+versiones. Solo se reconocen las reformas que nombran artículos; las de
+«determinados preceptos» no se pueden atribuir. La cuantía catalana vigente
+se cita desde la propia Ley 11/2026 (`externas.json`).
+
+### D58. Cobertura tras la revisión
+
+- **28 reglas autonómicas** en 15 comunidades, más 7 estatales y 3
+  municipales (Ceuta y Melilla). Identificación obligatoria en los 19
+  territorios; censo municipal en 11 comunidades y Ceuta; seguro propio
+  exigible solo en el País Vasco (Murcia lo deja a un reglamento).
+- Sin censo propio, y por tanto `sin_datos` (depende de la ordenanza):
+  Galicia, Madrid, Murcia, Navarra, País Vasco, La Rioja y Melilla. En la
+  Comunitat Valenciana el registro autonómico hace de censo.
+- Cuadro de multas de cada ley autonómica, otras obligaciones propias
+  (vacuna antirrábica, esterilización, correa, tiempo solo, número de
+  animales, formación) y la ley de perros de asistencia de cada comunidad
+  (Extremadura no tiene; su ley de accesibilidad reconoce el acceso).
+- Queda fuera, y la metodología lo dice: ordenanzas municipales salvo Ceuta y
+  Melilla, la vacuna antirrábica que fijan decretos u órdenes autonómicas, y
+  el resto de reglamentos de desarrollo.
+
+### D59. Lanzamiento: solo español, sin tema oscuro y en GitHub Pages
+
+Sustituye a D4 y D5 (idiomas) y a la parte de D47 sobre el tema oscuro.
+
+**Por qué**: decisión del propietario (30/10/2026) antes de publicar. GitHub
+Pages admite webs de hasta 1 GB y, con las 8.132 fichas de municipio en dos
+idiomas, el sitio ocupaba 1,3 GB.
+
+**Decisión**:
+
+- La web es solo en español: fuera las páginas `/en`, el catálogo inglés, el
+  cambio de idioma y los `hreflang`. El texto sigue en catálogos JSON
+  (`src/i18n/mensajes/`), sin parámetro de idioma.
+- Sin tema oscuro: en su hueco de la cabecera va el botón «Colabora», que
+  lleva a los donativos (`/apoya`). El formulario de errores (`/colabora`) se
+  llama en la web «Avisar de un error».
+- Sin migas de pan: el título de cada página va directamente bajo la
+  cabecera.
+- Publicación en GitHub Pages con `.github/workflows/despliegue.yml`. La URL
+  sale de `PUBLIC_SITE_URL`, que puede llevar subcarpeta
+  (`https://ivangarmar22.github.io/LeyAnimal`): `ruta()` (`src/lib/rutas.ts`)
+  la antepone a todos los enlaces. El dominio previsto es `leyanimal.es`.
+- Para que quepa con margen, los iconos de Lucide pierden al compilar sus
+  atributos repetidos, que pasan a una regla CSS
+  (`scripts/compactar-iconos.mjs`), y el logotipo se define una vez por
+  página como `<symbol>`. El sitio compilado ocupa unos 450 MB.
+- El formulario de avisos se envía con Web3Forms, que lo reenvía al correo
+  del proyecto. La web sigue sin base de datos (D50).

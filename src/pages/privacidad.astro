@@ -1,0 +1,226 @@
+---
+import PaginaTexto from '@/componentes/pagina/PaginaTexto.astro';
+import Base from '@/layouts/Base.astro';
+import { visto } from '@/lib/contenido/ilustraciones';
+import { ruta } from '@/lib/rutas';
+import { EMAIL_CONTACTO, TITULAR } from '@/lib/sitio';
+import { Ilustracion } from '@/ui/Ilustracion';
+
+const RGPD =
+  'https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32016R0679';
+const LOPDGDD = 'https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673';
+
+const resumen = [
+  'No hay registro ni cuentas de usuario.',
+  'No usamos cookies, analítica, publicidad ni perfiles.',
+  'La consulta se calcula en tu navegador y no se guarda en ningún servidor.',
+  'Solo tratamos datos si nos escribes, nos envías un aviso o haces un donativo.',
+];
+
+const tratamientos = [
+  {
+    actividad: 'Mensajes por correo electrónico',
+    datos:
+      'Tu dirección de correo, tu nombre si lo indicas y el contenido del mensaje.',
+    finalidad: 'Responder a tu consulta.',
+    base: 'Tu consentimiento al escribirnos (art. 6.1.a RGPD).',
+    plazo: 'Hasta atender la consulta y, después, un máximo de 12 meses.',
+  },
+  {
+    actividad: 'Formulario «Avisar de un error»',
+    datos:
+      'Tipo de aviso, municipio, enlace y mensaje; tu correo solo si decides darlo.',
+    finalidad:
+      'Revisar el aviso, corregir la web y, si dejas tu correo, responderte.',
+    base: 'Tu consentimiento al enviarlo (art. 6.1.a RGPD).',
+    plazo: 'Hasta revisar el aviso y, después, un máximo de 12 meses.',
+  },
+  {
+    actividad: 'Donativos',
+    datos:
+      'Lo que muestran Bizum o PayPal al recibir el pago: normalmente nombre, importe y concepto.',
+    finalidad: 'Recibir el donativo y, si procede, agradecértelo.',
+    base: 'Tu decisión de donar (art. 6.1.b RGPD).',
+    plazo: 'Los plazos que exija la normativa fiscal y contable.',
+  },
+  {
+    actividad: 'Visitas a la web',
+    datos:
+      'Datos técnicos de la conexión, como la dirección IP, que registra el alojamiento.',
+    finalidad: 'Seguridad y funcionamiento del servicio de alojamiento.',
+    base: 'Interés legítimo en mantener la web segura (art. 6.1.f RGPD).',
+    plazo: 'Los que fije GitHub. LeyAnimal no tiene acceso a esos registros.',
+  },
+];
+
+const proveedores = [
+  {
+    nombre: 'Google (Gmail)',
+    funcion: 'Buzón de correo del proyecto.',
+    enlace: 'https://policies.google.com/privacy?hl=es',
+  },
+  {
+    nombre: 'Web3Forms',
+    funcion: 'Envío del formulario de avisos a nuestro correo.',
+    enlace: 'https://web3forms.com/privacy',
+  },
+  {
+    nombre: 'GitHub, Inc. (GitHub Pages)',
+    funcion: 'Alojamiento de la web.',
+    enlace:
+      'https://docs.github.com/es/site-policy/privacy-policies/github-general-privacy-statement',
+  },
+  {
+    nombre: 'Bizum y PayPal',
+    funcion:
+      'Gestión de los donativos, como responsables independientes de esos pagos.',
+    enlace: 'https://www.paypal.com/es/legalhub/paypal/privacy-full',
+  },
+];
+---
+
+<Base
+  ruta="/privacidad"
+  titulo="Política de privacidad"
+  descripcion="Cómo trata LeyAnimal los datos personales: responsable, finalidades, bases jurídicas, plazos de conservación, proveedores y tus derechos."
+>
+  <PaginaTexto
+    titulo="Privacidad"
+    entradilla="Cómo trata LeyAnimal los datos personales, conforme al Reglamento General de Protección de Datos (RGPD) y a la Ley Orgánica 3/2018 (LOPDGDD)."
+    actualizado="2026-10-30"
+  >
+    <div class="rounded-2xl border border-marca-100 bg-marca-50 p-5">
+      <p class="font-display font-semibold text-texto">En pocas palabras</p>
+      <ul class="mt-3 !list-none !pl-0">
+        {resumen.map((p) => (
+          <li class="flex gap-3">
+            <Ilustracion icono={visto} class="mt-1 size-5 shrink-0" />
+            <span>{p}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <h2>1. Responsable del tratamiento</h2>
+    <dl class="grid rounded-2xl border border-borde">
+      <div class="fila-dato">
+        <dt>Responsable</dt>
+        <dd>{TITULAR}, titular de LeyAnimal</dd>
+      </div>
+      <div class="fila-dato">
+        <dt>Contacto</dt>
+        <dd>
+          <a href={`mailto:${EMAIL_CONTACTO}`} class="break-all">
+            {EMAIL_CONTACTO}
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2>2. Qué datos tratamos y para qué</h2>
+    <p>
+      LeyAnimal no pide datos para usar la web. Solo trata datos personales en
+      estos casos:
+    </p>
+    <div class="rounded-2xl border border-borde lg:p-2">
+      <table class="tabla max-lg:apilada">
+        <thead>
+          <tr>
+            <th scope="col">Actividad</th>
+            <th scope="col">Datos</th>
+            <th scope="col">Finalidad</th>
+            <th scope="col">Base jurídica</th>
+            <th scope="col">Conservación</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tratamientos.map((f) => (
+            <tr>
+              <th scope="row" class="font-semibold text-texto">
+                {f.actividad}
+              </th>
+              <td data-etiqueta="Datos">{f.datos}</td>
+              <td data-etiqueta="Finalidad">{f.finalidad}</td>
+              <td data-etiqueta="Base jurídica">{f.base}</td>
+              <td data-etiqueta="Conservación">{f.plazo}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p>
+      No tomamos decisiones automatizadas ni elaboramos perfiles. Los datos de
+      la consulta (animal, municipio, raza) se procesan en tu navegador y viajan
+      solo en la dirección de la página; el nombre de tu animal no se incluye al
+      copiar el enlace.
+    </p>
+
+    <h2>3. Destinatarios y proveedores</h2>
+    <p>
+      No cedemos datos a terceros salvo obligación legal. Para funcionar,
+      LeyAnimal se apoya en estos proveedores, que tratan los datos según sus
+      propias políticas:
+    </p>
+    <ul>
+      {proveedores.map((p) => (
+        <li>
+          <strong>{p.nombre}</strong>: {p.funcion}{' '}
+          <a href={p.enlace} target="_blank" rel="noreferrer noopener">
+            Política de privacidad
+          </a>
+          .
+        </li>
+      ))}
+    </ul>
+
+    <h2>4. Transferencias internacionales</h2>
+    <p>
+      Algunos de estos proveedores pueden tratar datos fuera del Espacio
+      Económico Europeo. En esos casos se amparan en las garantías del capítulo
+      V del <a href={RGPD}>RGPD</a>, como las decisiones de adecuación de la
+      Comisión Europea o sus cláusulas contractuales tipo, según indica cada
+      proveedor en su política.
+    </p>
+
+    <h2>5. Tus derechos</h2>
+    <p>Puedes ejercer en cualquier momento tus derechos de:</p>
+    <ul>
+      <li>acceso, rectificación y supresión de tus datos;</li>
+      <li>oposición y limitación del tratamiento;</li>
+      <li>portabilidad;</li>
+      <li>
+        retirar tu consentimiento, sin que afecte a lo tratado antes de
+        retirarlo.
+      </li>
+    </ul>
+    <p>
+      Escribe a <a href={`mailto:${EMAIL_CONTACTO}`}>{EMAIL_CONTACTO}</a>{' '}
+      indicando qué derecho quieres ejercer. Responderemos en el plazo de un mes
+      que fija el artículo 12.3 del <a href={RGPD}>RGPD</a>. Si consideras que
+      no hemos atendido bien tu solicitud, puedes presentar una reclamación ante
+      la{' '}
+      <a href="https://www.aepd.es">Agencia Española de Protección de Datos</a>.
+    </p>
+
+    <h2>6. Menores de edad</h2>
+    <p>
+      La web no está dirigida a menores de 14 años. Si lo eres, no nos envíes
+      datos personales sin la autorización de tus padres o tutores, como prevé
+      el artículo 7 de la <a href={LOPDGDD}>LOPDGDD</a>.
+    </p>
+
+    <h2>7. Seguridad</h2>
+    <p>
+      La web se sirve siempre por HTTPS y no tiene base de datos ni cuentas de
+      usuario. Los mensajes se guardan únicamente en el buzón del proyecto.
+    </p>
+
+    <h2>8. Cambios en esta política</h2>
+    <p>
+      Si cambia la forma de tratar los datos, actualizaremos esta página y su
+      fecha. Consulta también la{' '}
+      <a href={ruta('/cookies')}>política de cookies</a> y el{' '}
+      <a href={ruta('/aviso-legal')}>aviso legal</a>.
+    </p>
+  </PaginaTexto>
+</Base>

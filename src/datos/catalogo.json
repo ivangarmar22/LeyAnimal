@@ -1,0 +1,353 @@
+{
+ "especies": [
+  {
+   "clave": "perro",
+   "nombre": "Perro"
+  },
+  {
+   "clave": "gato",
+   "nombre": "Gato"
+  },
+  {
+   "clave": "huron",
+   "nombre": "Huron"
+  },
+  {
+   "clave": "ave",
+   "nombre": "Ave"
+  },
+  {
+   "clave": "reptil",
+   "nombre": "Reptil"
+  },
+  {
+   "clave": "pez",
+   "nombre": "Pez"
+  },
+  {
+   "clave": "roedor",
+   "nombre": "Roedor"
+  },
+  {
+   "clave": "otro",
+   "nombre": "Otro"
+  }
+ ],
+ "razas": [
+  {
+   "slug": "akita-americano",
+   "nombre": "Akita Americano",
+   "especie": "perro",
+   "esPppEstatal": false,
+   "notas": null,
+   "autonomicas": [
+    {
+     "comunidad": "16",
+     "esPpp": true
+    }
+   ]
+  },
+  {
+   "slug": "akita-inu",
+   "nombre": "Akita Inu",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": null,
+   "autonomicas": []
+  },
+  {
+   "slug": "american-bully",
+   "nombre": "American Bully",
+   "especie": "perro",
+   "esPppEstatal": false,
+   "notas": null,
+   "autonomicas": [
+    {
+     "comunidad": "16",
+     "esPpp": true
+    }
+   ]
+  },
+  {
+   "slug": "american-staffordshire-terrier",
+   "nombre": "American Staffordshire Terrier",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": "El anexo I del RD 287/2002 lo escribe \"American Staffodshire Terrier\". La errata es del texto oficial.",
+   "autonomicas": []
+  },
+  {
+   "slug": "bandogg",
+   "nombre": "Bandogg",
+   "especie": "perro",
+   "esPppEstatal": false,
+   "notas": null,
+   "autonomicas": [
+    {
+     "comunidad": "16",
+     "esPpp": true
+    }
+   ]
+  },
+  {
+   "slug": "bull-terrier",
+   "nombre": "Bull Terrier",
+   "especie": "perro",
+   "esPppEstatal": false,
+   "notas": null,
+   "autonomicas": [
+    {
+     "comunidad": "10",
+     "esPpp": true
+    },
+    {
+     "comunidad": "12",
+     "esPpp": true
+    }
+   ]
+  },
+  {
+   "slug": "bullmastiff",
+   "nombre": "Bullmastiff",
+   "especie": "perro",
+   "esPppEstatal": false,
+   "notas": null,
+   "autonomicas": [
+    {
+     "comunidad": "09",
+     "esPpp": true
+    },
+    {
+     "comunidad": "10",
+     "esPpp": true
+    },
+    {
+     "comunidad": "11",
+     "esPpp": true
+    },
+    {
+     "comunidad": "12",
+     "esPpp": true
+    }
+   ]
+  },
+  {
+   "slug": "doberman",
+   "nombre": "Dóberman",
+   "especie": "perro",
+   "esPppEstatal": false,
+   "notas": null,
+   "autonomicas": [
+    {
+     "comunidad": "01",
+     "esPpp": true
+    },
+    {
+     "comunidad": "09",
+     "esPpp": true
+    },
+    {
+     "comunidad": "10",
+     "esPpp": true
+    },
+    {
+     "comunidad": "11",
+     "esPpp": true
+    },
+    {
+     "comunidad": "12",
+     "esPpp": true
+    }
+   ]
+  },
+  {
+   "slug": "dogo-argentino",
+   "nombre": "Dogo Argentino",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": null,
+   "autonomicas": []
+  },
+  {
+   "slug": "dogo-de-burdeos",
+   "nombre": "Dogo de Burdeos",
+   "especie": "perro",
+   "esPppEstatal": false,
+   "notas": null,
+   "autonomicas": [
+    {
+     "comunidad": "09",
+     "esPpp": true
+    },
+    {
+     "comunidad": "10",
+     "esPpp": true
+    },
+    {
+     "comunidad": "11",
+     "esPpp": true
+    },
+    {
+     "comunidad": "12",
+     "esPpp": true
+    }
+   ]
+  },
+  {
+   "slug": "dogo-del-tibet",
+   "nombre": "Dogo del Tíbet",
+   "especie": "perro",
+   "esPppEstatal": false,
+   "notas": null,
+   "autonomicas": [
+    {
+     "comunidad": "07",
+     "esPpp": true
+    },
+    {
+     "comunidad": "12",
+     "esPpp": true
+    }
+   ]
+  },
+  {
+   "slug": "fila-brasileiro",
+   "nombre": "Fila Brasileiro",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": null,
+   "autonomicas": []
+  },
+  {
+   "slug": "mastin-napolitano",
+   "nombre": "Mastín Napolitano",
+   "especie": "perro",
+   "esPppEstatal": false,
+   "notas": null,
+   "autonomicas": [
+    {
+     "comunidad": "09",
+     "esPpp": true
+    },
+    {
+     "comunidad": "10",
+     "esPpp": true
+    },
+    {
+     "comunidad": "11",
+     "esPpp": true
+    },
+    {
+     "comunidad": "12",
+     "esPpp": true
+    }
+   ]
+  },
+  {
+   "slug": "pit-bull-terrier",
+   "nombre": "Pit Bull Terrier",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": null,
+   "autonomicas": []
+  },
+  {
+   "slug": "presa-canario",
+   "nombre": "Presa Canario",
+   "especie": "perro",
+   "esPppEstatal": false,
+   "notas": null,
+   "autonomicas": [
+    {
+     "comunidad": "09",
+     "esPpp": true
+    },
+    {
+     "comunidad": "10",
+     "esPpp": true
+    },
+    {
+     "comunidad": "11",
+     "esPpp": true
+    },
+    {
+     "comunidad": "12",
+     "esPpp": true
+    }
+   ]
+  },
+  {
+   "slug": "presa-mallorquin",
+   "nombre": "Presa Mallorquín (Ca de Bou)",
+   "especie": "perro",
+   "esPppEstatal": false,
+   "notas": null,
+   "autonomicas": [
+    {
+     "comunidad": "10",
+     "esPpp": true
+    },
+    {
+     "comunidad": "12",
+     "esPpp": true
+    }
+   ]
+  },
+  {
+   "slug": "rottweiler",
+   "nombre": "Rottweiler",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": null,
+   "autonomicas": []
+  },
+  {
+   "slug": "staffordshire-bull-terrier",
+   "nombre": "Staffordshire Bull Terrier",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": null,
+   "autonomicas": []
+  },
+  {
+   "slug": "tosa-inu",
+   "nombre": "Tosa Inu",
+   "especie": "perro",
+   "esPppEstatal": true,
+   "notas": null,
+   "autonomicas": []
+  }
+ ],
+ "temas": [
+  {
+   "clave": "seguro",
+   "nombre": "Seguro de responsabilidad civil",
+   "slug": "seguro",
+   "descripcion": null
+  },
+  {
+   "clave": "identificacion",
+   "nombre": "Identificación y microchip",
+   "slug": "identificacion",
+   "descripcion": null
+  },
+  {
+   "clave": "curso",
+   "nombre": "Curso de tenencia responsable",
+   "slug": "curso",
+   "descripcion": null
+  },
+  {
+   "clave": "ppp",
+   "nombre": "Perros potencialmente peligrosos",
+   "slug": "ppp",
+   "descripcion": null
+  },
+  {
+   "clave": "esterilizacion",
+   "nombre": "Esterilización",
+   "slug": "esterilizacion",
+   "descripcion": null
+  }
+ ]
+}

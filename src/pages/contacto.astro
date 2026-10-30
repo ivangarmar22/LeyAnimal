@@ -1,0 +1,134 @@
+---
+/**
+ * Contacto: el correo, bien visible y facil de copiar, y a que pagina ir
+ * segun lo que quieras contarnos. No hay formulario propio: el mensaje sale
+ * del programa de correo de cada persona y la web no guarda nada.
+ */
+import { ArrowRight, Check, Copy, Mail } from 'lucide-preact';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import { traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import Base from '@/layouts/Base.astro';
+import { balanza, correo, nota } from '@/lib/contenido/ilustraciones';
+import { EMAIL_CONTACTO } from '@/lib/sitio';
+import { Ilustracion } from '@/ui/Ilustracion';
+
+const t = traductor('contacto');
+---
+
+<Base
+  ruta="/contacto"
+  titulo={t('metaTitulo')}
+  descripcion={t('metaDescripcion')}
+>
+  <CabeceraPagina titulo={t('titulo')} entradilla={t('entradilla')} solape />
+
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <div class="grid gap-5 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+      <section class="tarjeta gap-6 shadow-alta" aria-labelledby="h-correo">
+        <span class="caja-icono">
+          <Ilustracion icono={correo} />
+        </span>
+        <div>
+          <h2 id="h-correo" class="titulo-3">
+            {t('correoTitulo')}
+          </h2>
+          <p class="mt-2">{t('correoTexto')}</p>
+        </div>
+        <a
+          href={`mailto:${EMAIL_CONTACTO}`}
+          class="font-display text-[clamp(1.2rem,3.4vw,1.75rem)] font-semibold break-all text-marca-700 underline-offset-4 hover:underline"
+        >
+          {EMAIL_CONTACTO}
+        </a>
+        <div class="flex flex-wrap gap-3">
+          <a href={`mailto:${EMAIL_CONTACTO}`} class="boton boton--principal">
+            <Mail aria-hidden="true" />
+            {t('abrir')}
+          </a>
+          <button
+            type="button"
+            class="boton boton--contorno hidden [.js_&]:inline-flex"
+            data-copiar={EMAIL_CONTACTO}
+            data-copiado={t('copiado')}
+          >
+            <Copy aria-hidden="true" data-icono-copiar />
+            <Check aria-hidden="true" class="hidden" data-icono-copiado />
+            <span data-texto aria-live="polite">
+              {t('copiar')}
+            </span>
+          </button>
+        </div>
+        <p class="border-t border-borde pt-5 text-sm text-texto-3">
+          {t('privacidad')}
+        </p>
+      </section>
+
+      <div class="grid content-start gap-5">
+        <section class="tarjeta gap-4" aria-labelledby="h-colabora">
+          <div class="flex items-center gap-4">
+            <span class="caja-icono shrink-0">
+              <Ilustracion icono={nota} />
+            </span>
+            <h2
+              id="h-colabora"
+              class="font-display text-lg font-semibold text-texto"
+            >
+              {t('colaboraTitulo')}
+            </h2>
+          </div>
+          <p class="text-[0.9375rem]">{t('colabora')}</p>
+          <a
+            href={ruta('/colabora')}
+            class="enlace-flecha self-start text-[0.9375rem]"
+          >
+            {t('colaboraBoton')}
+            <ArrowRight aria-hidden="true" />
+          </a>
+        </section>
+
+        <section class="tarjeta tarjeta--menta gap-4" aria-labelledby="h-caso">
+          <div class="flex items-center gap-4">
+            <span class="caja-icono shrink-0">
+              <Ilustracion icono={balanza} />
+            </span>
+            <h2
+              id="h-caso"
+              class="font-display text-lg font-semibold text-texto"
+            >
+              {t('casoTitulo')}
+            </h2>
+          </div>
+          <p class="text-[0.9375rem]">{t('noAsesoramiento')}</p>
+          <a
+            href={ruta('/consulta')}
+            class="enlace-flecha self-start text-[0.9375rem]"
+          >
+            {t('consultaBoton')}
+            <ArrowRight aria-hidden="true" />
+          </a>
+        </section>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<script>
+  // Copiar el correo. Si el navegador no deja usar el portapapeles, el
+  // enlace mailto sigue ahi.
+  for (const boton of document.querySelectorAll<HTMLButtonElement>(
+    '[data-copiar]',
+  )) {
+    boton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(boton.dataset.copiar ?? '');
+      } catch {
+        return;
+      }
+      const texto = boton.querySelector('[data-texto]');
+      if (texto) texto.textContent = boton.dataset.copiado ?? '';
+      boton.querySelector('[data-icono-copiar]')?.classList.add('hidden');
+      boton.querySelector('[data-icono-copiado]')?.classList.remove('hidden');
+    });
+  }
+</script>

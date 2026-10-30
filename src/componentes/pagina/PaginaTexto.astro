@@ -1,0 +1,76 @@
+---
+/**
+ * Pagina de texto largo (legales): cabecera y tarjeta de lectura alineadas
+ * con el titulo, y en escritorio un indice lateral con sus apartados. El
+ * indice sale de los h2 del contenido, que reciben su id aqui.
+ */
+import { traductor } from '@/i18n/catalogos';
+import { formatearFecha } from '@/lib/fechas';
+import CabeceraPagina from './CabeceraPagina.astro';
+
+interface Props {
+  titulo: string;
+  entradilla?: string;
+  /** Fecha ISO de la ultima revision del texto. */
+  actualizado?: string;
+}
+
+const { titulo, entradilla, actualizado } = Astro.props;
+const t = traductor('legal');
+
+const ENTIDADES: Record<string, string> = {
+  '&amp;': '&',
+  '&quot;': '"',
+  '&#39;': "'",
+  '&lt;': '<',
+  '&gt;': '>',
+};
+const decodificar = (texto: string) =>
+  texto.replace(/&(amp|quot|#39|lt|gt);/g, (m) => ENTIDADES[m] ?? m);
+const aId = (texto: string) =>
+  texto
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+
+const secciones: { id: string; texto: string }[] = [];
+const contenido = (await Astro.slots.render('default')).replace(
+  /<h2([^>]*)>([\s\S]*?)<\/h2>/g,
+  (entero: string, atributos: string, dentro: string) => {
+    const texto = decodificar(dentro.replace(/<[^>]+>/g, '').trim());
+    const propio = /\sid="([^"]+)"/.exec(atributos)?.[1];
+    const id = propio ?? aId(texto);
+    secciones.push({ id, texto });
+    return propio ? entero : `<h2${atributos} id="${id}">${dentro}</h2>`;
+  },
+);
+---
+
+<CabeceraPagina titulo={titulo} entradilla={entradilla} solape>
+  {actualizado ? (
+    <p class="text-sm text-texto-3">
+      {t('actualizado', { fecha: formatearFecha(actualizado) })}
+    </p>
+  ) : null}
+</CabeceraPagina>
+<div class="contenedor solape pb-[var(--seccion)]">
+  <div class="grid items-start gap-10 lg:grid-cols-[minmax(0,50rem)_14rem] lg:gap-14">
+    <article class="prosa max-w-none rounded-[28px] border border-borde bg-superficie p-6 shadow-alta sm:p-10 lg:p-12 [&>h2:first-child]:mt-0 [&>h2]:scroll-mt-28">
+      <Fragment set:html={contenido} />
+    </article>
+
+    {secciones.length > 2 ? (
+      <nav
+        class="indice hidden lg:sticky lg:top-[calc(var(--cabecera)+32px)] lg:block lg:max-h-[calc(100dvh-var(--cabecera)-48px)] lg:overflow-y-auto lg:pt-12"
+        aria-label={t('indice')}
+      >
+        <p class="rotulo mb-3">{t('indice')}</p>
+        {secciones.map(({ id, texto }) => (
+          <a href={`#${id}`}>{texto}</a>
+        ))}
+      </nav>
+    ) : null}
+  </div>
+</div>

@@ -1,0 +1,48 @@
+---
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import ListaPreguntas from '@/componentes/pagina/ListaPreguntas.astro';
+import PanelCta from '@/componentes/pagina/PanelCta.astro';
+import JsonLd from '@/componentes/seo/JsonLd.astro';
+import { traductor } from '@/i18n/catalogos';
+import Base from '@/layouts/Base.astro';
+import { PREGUNTAS } from '@/lib/contenido/preguntas';
+
+const t = traductor('faq');
+const tc = traductor('comun');
+const tcta = traductor('inicio.cta');
+---
+
+<Base
+  ruta="/preguntas-frecuentes"
+  titulo={t('metaTitulo')}
+  descripcion={t('metaDescripcion')}
+>
+  <JsonLd
+    slot="head"
+    datos={{
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      inLanguage: 'es',
+      mainEntity: PREGUNTAS.map((p) => ({
+        '@type': 'Question',
+        name: t(`preguntas.${p.clave}.p`),
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: t(`preguntas.${p.clave}.r`),
+        },
+      })),
+    }}
+  />
+  <CabeceraPagina titulo={t('titulo')} entradilla={t('entradilla')} solape />
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <div class="rounded-[28px] border border-borde bg-superficie p-5 shadow-alta sm:p-8 lg:p-12">
+      <ListaPreguntas conFuentes />
+      <p class="mt-8 text-sm font-medium text-texto-2">{tc('descargo')}</p>
+    </div>
+  </div>
+  <PanelCta
+    titulo={tcta('titulo')}
+    texto={tcta('texto')}
+    boton={tcta('boton')}
+  />
+</Base>

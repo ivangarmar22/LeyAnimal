@@ -1,0 +1,55 @@
+---
+/**
+ * Referencia visible (norma y articulo) que se despliega en la cita literal.
+ * Para listas con muchas afirmaciones, donde todas las citas abiertas a la
+ * vez harian la pagina ilegible.
+ *
+ * Por `ids` cita el articulo entero; por `fuentes`, la frase exacta que
+ * respalda la afirmacion (referencias autonomicas, perros PPP).
+ */
+import { ChevronDown } from 'lucide-preact';
+import { traductor } from '@/i18n/catalogos';
+import { articulo, norma, type FuenteResuelta } from '@/lib/datos';
+import { nombreNorma } from '@/lib/datos/textos';
+import { CitaLegal } from '@/ui/CitaLegal';
+
+interface Props {
+  ids?: readonly string[];
+  fuentes?: readonly FuenteResuelta[];
+}
+
+const { ids = [], fuentes: resueltas = [] } = Astro.props;
+const t = traductor();
+// Un articulo que no existe es una errata en la pagina: rompe la compilacion
+// en lugar de desaparecer sin avisar.
+const fuentes = [
+  ...ids.map((id) => {
+    const a = articulo(id);
+    const n = a ? norma(a.norma) : undefined;
+    if (!a || !n)
+      throw new Error(`FuentePlegable: no existe el articulo "${id}"`);
+    return { a, n, cita: undefined as string | undefined };
+  }),
+  ...resueltas.map((f) => ({ a: f.articulo, n: f.norma, cita: f.cita })),
+];
+---
+
+{fuentes.length > 0 ? (
+  <details>
+    <summary class="resumen inline-flex items-start gap-2 py-3 text-sm text-marca-700">
+      <ChevronDown
+        class="resumen__flecha mt-0.5 text-current"
+        aria-hidden="true"
+      />
+      {fuentes
+        .map(({ a, n }) => `${nombreNorma(n)}, ${a.referencia}`)
+        .join(' · ')}
+      <span class="sr-only">— {t('ley.citaLiteral')}</span>
+    </summary>
+    <div class="mt-2 grid gap-3">
+      {fuentes.map(({ a, n, cita }) => (
+        <CitaLegal norma={n} articulo={a} cita={cita} t={t} />
+      ))}
+    </div>
+  </details>
+) : null}

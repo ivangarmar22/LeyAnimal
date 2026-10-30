@@ -1,0 +1,90 @@
+---
+import PaginaTexto from '@/componentes/pagina/PaginaTexto.astro';
+import Base from '@/layouts/Base.astro';
+import { ruta } from '@/lib/rutas';
+import { EMAIL_CONTACTO } from '@/lib/sitio';
+
+const RD_1112 = 'https://www.boe.es/buscar/act.php?id=BOE-A-2018-12699';
+const WCAG = 'https://www.w3.org/TR/WCAG22/';
+
+const medidas = [
+  'Contraste de texto de al menos 4,5:1 y de 3:1 en textos grandes y elementos gráficos.',
+  'Navegación completa con teclado, con el foco siempre visible y un enlace para saltar al contenido.',
+  'Estructura de títulos ordenada, con un único título principal por página, y regiones identificadas (cabecera, navegación, contenido y pie).',
+  'El estado de cada obligación nunca se comunica solo con color: siempre lleva icono y texto.',
+  'Los iconos son decorativos y se ocultan a los lectores de pantalla; la información está en el texto que los acompaña.',
+  'Los resultados de la consulta y de la búsqueda de municipio se anuncian a los lectores de pantalla.',
+  'Formularios con etiquetas visibles y mensajes de error asociados a cada campo.',
+  'Botones y enlaces con un área táctil de al menos 24 píxeles, y un diseño que se adapta del móvil al escritorio sin desplazamiento horizontal.',
+  'Se respeta la preferencia del sistema de reducir el movimiento.',
+];
+
+const limitaciones = [
+  'El mapa por comunidades es un mosaico orientativo. La misma información está disponible como tabla en la página de comunidades.',
+  'Las citas legales reproducen literalmente el texto oficial, que puede ser largo y técnico. Cada una va precedida de una explicación en lenguaje sencillo.',
+  'Los enlaces a boletines oficiales y a otras webs llevan a contenidos de terceros cuya accesibilidad no depende de LeyAnimal.',
+];
+---
+
+<Base
+  ruta="/accesibilidad"
+  titulo="Declaración de accesibilidad"
+  descripcion="Declaración de accesibilidad de LeyAnimal: nivel de cumplimiento con las WCAG 2.2, medidas aplicadas, limitaciones conocidas y contacto."
+>
+  <PaginaTexto
+    titulo="Accesibilidad"
+    entradilla="LeyAnimal quiere que cualquier persona pueda consultar sus obligaciones legales con su animal, sea cual sea el dispositivo o la tecnología de apoyo que use."
+    actualizado="2026-10-30"
+  >
+    <h2>1. Compromiso</h2>
+    <p>
+      El objetivo de LeyAnimal es cumplir las{' '}
+      <a href={WCAG}>
+        Pautas de Accesibilidad para el Contenido Web (WCAG) 2.2
+      </a>{' '}
+      en su nivel AA, el que recoge la norma europea UNE-EN 301 549. Es un
+      compromiso voluntario: el <a href={RD_1112}>Real Decreto 1112/2018</a>{' '}
+      solo obliga a las webs del sector público, pero esta declaración sigue su
+      estructura.
+    </p>
+
+    <h2>2. Situación de cumplimiento</h2>
+    <p>
+      La web es <strong>parcialmente conforme</strong> con las WCAG 2.2 nivel AA
+      debido a las limitaciones que se indican en el apartado 4.
+    </p>
+
+    <h2>3. Medidas adoptadas</h2>
+    <ul>
+      {medidas.map((m) => (
+        <li>{m}</li>
+      ))}
+    </ul>
+
+    <h2>4. Limitaciones conocidas</h2>
+    <ul>
+      {limitaciones.map((l) => (
+        <li>{l}</li>
+      ))}
+    </ul>
+
+    <h2>5. Preparación de esta declaración</h2>
+    <p>
+      Esta declaración se preparó el 30 de octubre de 2026 mediante una
+      autoevaluación: revisión manual con teclado y comprobaciones automáticas
+      de contraste, tamaño de letra, zonas táctiles y desbordamientos en un
+      navegador real, a anchos de 360 a 1440 píxeles. Todavía no se ha hecho una
+      auditoría externa.
+    </p>
+
+    <h2>6. Contacto</h2>
+    <p>
+      Si encuentras una barrera de accesibilidad o necesitas un contenido en
+      otro formato, escribe a{' '}
+      <a href={`mailto:${EMAIL_CONTACTO}`}>{EMAIL_CONTACTO}</a> indicando la
+      página y el problema, o usa el formulario de{' '}
+      <a href={ruta('/colabora')}>Avisar de un error</a>. Responderemos lo antes
+      posible y corregiremos el problema si está en nuestra mano.
+    </p>
+  </PaginaTexto>
+</Base>

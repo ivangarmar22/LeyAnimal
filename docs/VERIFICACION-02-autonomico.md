@@ -1,107 +1,51 @@
 # Ficha de verificación 02 — normativa autonómica
 
-> **Pendiente de tu aprobación.** Nada de esto entra en la base de datos
-> hasta que lo revises. Todas las citas son literales del texto
-> consolidado del BOE, obtenidas por su API de datos abiertos.
+> Ficha de trabajo. Lo que entra en la web lo decide la selección de
+> `scripts/contenido/generar-autonomicas.mjs` (DECISIONES.md, D35). Todas
+> las citas son literales de la versión vigente del texto consolidado del
+> BOE, obtenidas por su API de datos abiertos.
 
-Generada el 2026-09-07 por
-`apps/web/scripts/contenido/extraer-autonomicas.mjs`.
+Generada el 2026-09-29 por
+`scripts/contenido/extraer-autonomicas.mjs`.
 
 ## Cómo se han localizado estas leyes
 
-Se descargó el índice completo de legislación consolidada del BOE
-(12.387 normas, de las cuales 3.618 son autonómicas) y se filtró por
-ámbito autonómico y por título. No es una lista escrita de memoria.
+Se recorrió la legislación consolidada del BOE filtrando por ámbito
+autonómico y por título. No es una lista escrita de memoria.
 
-**Ceuta y Melilla no aparecen** (0 normas suyas en todo el consolidado), y
-no es un fallo de búsqueda: son ciudades autónomas **sin potestad
-legislativa**, así que no dictan leyes. Regulan por reglamento y ordenanza
-de la propia ciudad.
+**Ceuta y Melilla no aparecen**: son ciudades autónomas sin potestad
+legislativa y regulan por reglamento y ordenanza de la propia ciudad
+(DECISIONES.md, D34).
 
-**Decisión tomada:** no se crean reglas de ámbito autonómico para ellas.
-Lo que regulen entra como **ámbito municipal**, que es el que corresponde a
-una ordenanza. En la geografía del INE ambas existen a la vez como
-comunidad, provincia y municipio (51001 y 52001), así que el motor las
-resuelve sin cambios. Entran con la carga de ordenanzas.
+**La Rioja no tiene ley autonómica**: la Ley 10/2023, de 7 de agosto,
+derogó la Ley 6/2018 sin sustituirla (DECISIONES.md, D32).
 
-## Atención: La Rioja no tiene ley autonómica
-
-El brief (§1) daba por vigente la **Ley 6/2018 de La Rioja**. No lo está.
-
-- La Ley 6/2018 derogó la anterior Ley 5/1995 el 30/11/2018.
-- La **Ley 10/2023, de 7 de agosto** derogó a su vez la Ley 6/2018 con
-  efectos del 08/08/2023. Es una ley de artículo único: «Queda derogada la
-  Ley 6/2018, de 26 de noviembre, de protección de los animales en la
-  Comunidad Autónoma de La Rioja». **No la sustituye por otra.**
-- Derogar la norma derogatoria no resucita la de 1995.
-
-**Decisión tomada:** no se carga ninguna regla autonómica para La Rioja, y
-_no_ se marca la comunidad como `sin_datos` en bloque. `sin_datos`
-significa «no lo hemos verificado», y aquí sí lo hemos verificado: no hay
-ley. Al no existir regla autonómica ganan las estatales, que es justo lo
-que le pasa hoy a alguien de Logroño. En la página de La Rioja se dirá
-expresamente que la comunidad derogó su ley.
-
-Fuente: https://www.boe.es/buscar/act.php?id=BOE-A-2018-17064 y
-https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-18413
-
-## Atención: el seguro en Madrid no es incondicional
-
-El brief (§1) afirma que «la Comunidad de Madrid ya exigía seguro de RC
-antes de la ley estatal». El texto de la Ley 4/2016 dice, literalmente:
-
-> a) Contratar un seguro de responsabilidad civil **en aquellos casos que
-> se determine reglamentariamente**.
-
-Es decir, la ley madrileña **remite a un reglamento**, igual que hace la
-estatal. Comprobado además:
-
-- El consolidado del BOE está actualizado a 19/12/2025.
-- El artículo 6 fue reformado por la Ley 7/2024, de 26 de diciembre
-  (`BOE-A-2025-5522`), en vigor desde el 28/12/2024, y **la remisión al
-  reglamento se mantuvo**.
-- No consta reglamento publicado que determine esos casos. Lo último
-  localizado es una nota de la propia Comunidad de octubre de 2018 diciendo
-  que estaba «en fase final de tramitación».
-
-**Decisión tomada:** `obligatorio_pendiente_reglamento`, el mismo estado
-que el estatal. No `obligatorio`, porque diríamos a un madrileño que debe
-contratar un seguro que hoy no se le puede exigir; y no `sin_datos`, porque
-sí sabemos lo que dice la ley.
-
-Esto **no afecta a los perros potencialmente peligrosos**: su seguro de
-120.000 € sí es exigible hoy por el RD 287/2002, que es norma estatal.
-
-## Qué necesito de ti
-
-Por cada comunidad, dime qué obligaciones apruebo cargar y con qué estado.
-Mi propuesta por defecto, salvo que me digas otra cosa:
-
-- Obligación redactada de forma directa y sin remisión → `obligatorio`.
-- Obligación que remite a desarrollo reglamentario →
-  `obligatorio_pendiente_reglamento`.
-- Tema que la ley no regula → `sin_datos` (nunca `no_aplica`).
+**Madrid ya no exige seguro**: la Ley 7/2024, de 26 de diciembre
+(`BOE-A-2025-5522`), reescribió el artículo 6 de la Ley 4/2016 y suprimió
+la obligación de contratarlo; la identificación y las sanciones remiten
+ahora a la Ley 7/2023 (DECISIONES.md, D54).
 
 ## Resumen
 
-| Comunidad                  | Identificador       | Estado  | Artículos | Temas |
-| -------------------------- | ------------------- | ------- | --------: | ----: |
-| Andalucía                  | `BOE-A-2003-23292`  | vigente |        53 |    11 |
-| Aragón                     | `BOE-A-2003-8225`   | vigente |        98 |    12 |
-| Principado de Asturias     | `BOE-A-2003-2102`   | vigente |        52 |    13 |
-| Illes Balears              | `BOE-A-1992-14038`  | vigente |        58 |    11 |
-| Canarias                   | `BOE-A-1991-16425`  | vigente |        34 |    11 |
-| Cantabria                  | `BOE-A-1992-11685`  | vigente |        66 |    10 |
-| Castilla-La Mancha         | `BOE-A-2020-13916`  | vigente |        57 |    13 |
-| Castilla y León            | `BOE-A-1997-14412`  | vigente |        41 |     9 |
-| Cataluña                   | `DOGC-f-2008-90016` | vigente |        75 |    12 |
-| Comunitat Valenciana       | `BOE-A-2023-7421`   | vigente |        71 |    12 |
-| Extremadura                | `BOE-A-2002-16784`  | vigente |        49 |    11 |
-| Galicia                    | `BOE-A-2017-12357`  | vigente |        60 |    13 |
-| Comunidad de Madrid        | `BOE-A-2016-11097`  | vigente |        49 |    13 |
-| Región de Murcia           | `BOE-A-2017-15288`  | vigente |        60 |    13 |
-| Comunidad Foral de Navarra | `BOE-A-2019-6779`   | vigente |        46 |    12 |
-| País Vasco                 | `BOE-A-2022-14086`  | vigente |        57 |    13 |
+| Comunidad                                   | Identificador       | Estado  | Artículos | Temas |
+| ------------------------------------------- | ------------------- | ------- | --------: | ----: |
+| Andalucía                                   | `BOE-A-2003-23292`  | vigente |        53 |    11 |
+| Aragón                                      | `BOE-A-2003-8225`   | vigente |        98 |    12 |
+| Principado de Asturias                      | `BOE-A-2003-2102`   | vigente |        52 |    13 |
+| Illes Balears                               | `BOE-A-1992-14038`  | vigente |        58 |    11 |
+| Canarias                                    | `BOE-A-1991-16425`  | vigente |        34 |    11 |
+| Cantabria                                   | `BOE-A-1992-11685`  | vigente |        66 |     8 |
+| Castilla-La Mancha                          | `BOE-A-2020-13916`  | vigente |        57 |    13 |
+| Castilla y León                             | `BOE-A-1997-14412`  | vigente |        41 |     9 |
+| Cataluña                                    | `DOGC-f-2008-90016` | vigente |        75 |    12 |
+| Comunitat Valenciana                        | `BOE-A-2023-7421`   | vigente |        71 |    12 |
+| Extremadura                                 | `BOE-A-2002-16784`  | vigente |        49 |    11 |
+| Galicia                                     | `BOE-A-2017-12357`  | vigente |        60 |    13 |
+| Comunidad de Madrid                         | `BOE-A-2016-11097`  | vigente |        49 |    13 |
+| Región de Murcia                            | `BOE-A-2017-15288`  | vigente |        60 |    13 |
+| Comunidad Foral de Navarra                  | `BOE-A-2019-6779`   | vigente |        46 |    12 |
+| País Vasco                                  | `BOE-A-2022-14086`  | vigente |        57 |    13 |
+| Cataluña (perros potencialmente peligrosos) | `BOE-A-1999-18004`  | vigente |        17 |    10 |
 
 ---
 
@@ -580,7 +524,9 @@ _(y 8 artículos más en este tema)_
 
 **Artículo 68**
 
-> […] compañía previstas en esta Ley. 18. El acceso de animales de compañía sin autorización o, en su caso, sin bozal a los medios de transporte públicos en que estén autorizados. 19. Impedir el acceso a perros guía a las instalaciones o establecimientos autorizados por la legislación vigente. 20. Ejercer la actividad de núcleo zoológico sin estar autorizado para ello. 21. El incumplimiento de la obligación de notificar al registro de núcleos zoológicos los datos relativos a los cambios de titularidad, así como el incumplimiento de las condiciones establecidas para los núcleos zoológicos en las letras a) y b) del apartado 1 del artículo 27 de la […]
+> […] de 30 de marzo. Ref. BOE-A-2023-10879#df-3, tendrá efectos desde el 17 de julio de 2023, según se establece en la disposición final 9 de la citada ley.
+> Redacción anterior:
+> "19. Impedir el acceso a perros guía a las instalaciones o establecimientos autorizados por la legislación vigente". 20. Ejercer la actividad de núcleo zoológico sin estar autorizado para ello. 21. El incumplimiento de la obligación de notificar al registro de núcleos zoológicos los datos relativos a los cambios de titularidad, así como el incumplimiento de las condiciones establecidas para los núcleos zoológicos en las letras a) y b) del apartado 1 del artículo 27 de la […]
 
 **Disposición adicional única**
 
@@ -631,7 +577,7 @@ _(y 8 artículos más en este tema)_
 
 **Artículo 19**
 
-> […] anterior, los mismos tendrán acceso a los medios de transporte público cuando esté garantizado su óptimo estado higiénico-sanitario y ello no sea contrario a las prácticas y usos sociales generalmente admitidos y así se acuerde por la autoridad competente en cada caso para cada tipo de transporte. 3. El uso de bozal será necesario para los perros que se trasladen en los medios de transporte público. 4. Las empresas propietarias de los medios de transporte podrán fijar tarifas correspondientes al uso de estos medios por los animales de compañía. 5. Respecto a los perros guía para deficientes visuales, así como en relación con […]
+> […] anterior, los mismos tendrán acceso a los medios de transporte público cuando esté garantizado su óptimo estado higiénico-sanitario y ello no sea contrario a las prácticas y usos sociales generalmente admitidos y así se acuerde por la autoridad competente en cada caso para cada tipo de transporte. 3. El uso de bozal será necesario para los perros que se trasladen en los medios de transporte público. 4. Las empresas propietarias de los medios de transporte podrán fijar tarifas correspondientes al uso de estos medios por los animales de compañía. 5. Respecto a los perros de asistencia para personas con discapacidad u otras […]
 
 **Artículo 24**
 
@@ -675,7 +621,7 @@ _(y 8 artículos más en este tema)_
 
 > Artículo 34. Espectáculos circenses.
 >
-> 1. Los animales utilizados en espectáculos circenses estarán protegidos por las previsiones de esta Ley en cuanto al trato recibido, características de la actuación, habitáculo, alimentación, cuidados higiénico-sanitarios y transporte.
+> 1. Los animales utilizados en espectáculos circenses estarán protegidos por las previsiones de esta Ley en cuanto a su procedencia, trato recibido, características de la actuación, habitáculo, alimentación, cuidados higiénico-sanitarios y transporte.
 > 2. Para el desarrollo de espectáculos circenses que utilicen animales en el territorio de la Comunidad Autónoma de Aragón deberán poseerse los documentos exigibles según la legislación aplicable.
 > 3. Para comprobar la tenencia de los documentos señalados en el apartado anterior, el Departamento con competencia en […]
 
@@ -1333,13 +1279,6 @@ _(y 8 artículos más en este tema)_
 
 ### Colonias felinas y CES
 
-**Artículo 4**
-
-> […] caso se permitirán las replazas ni otra práctica que suponga tiros adicionales a los dos que corresponden al competidor.
-> c) Las fiestas que se hayan celebrado de forma interrumpida durante cien años, y siempre que no supongan tortura, lesiones o muerte del animal.
-> d) Las tiradas y los campeonatos de tiro de codornices lanzadas a máquina, siempre que sean promovidas y controladas por la Federación Balear de Caza y cuenten con la autorización de la consejería competente en materia de caza.
-> En ningún caso, las fiestas en que los animales puedan ser objeto de malos tratos gozarán de ningún tipo de apoyo o subvención de Instituciones […]
-
 **Artículo 19**
 
 > […] generales establecidas en esta Ley, deberán:
@@ -1775,11 +1714,7 @@ _(y 6 artículos más en este tema)_
 
 **Artículo 49**
 
-> […] la oportuna autorización o a menos de 1.000 metros de la linde cinegética más próxima. 5. Cazar siendo poseedor de la documentación preceptiva, pero no llevándola consigo. 6. Cazar palomas mensajeras y deportivas o buchones que ostenten las marcas establecidas al efecto. 7. Cazar no teniendo contratado y vigente el seguro obligatorio del cazador. 8. Cazar fuera del horario establecido o en día no hábil de caza, estando la veda abierta. 9. No impedir que los perros propios o que acompañen a una persona vaguen sin control en época de veda. 10. No ejercer la debida vigilancia y cuidado sobre los perros de pastores de ganado, de […]
-
-**Artículo 50**
-
-> […] la oportuna autorización o a menos de 1.000 metros de la linde cinegética más próxima. 5. Cazar siendo poseedor de la documentación preceptiva, pero no llevándola consigo. 6. Cazar palomas mensajeras y deportivas o buchones que ostenten las marcas establecidas al efecto. 7. Cazar no teniendo contratado y vigente el seguro obligatorio del cazador. 8. Cazar fuera del horario establecido o en día no hábil de caza, estando la veda abierta. 9. No impedir que los perros propios vaguen sin control en época de veda. 10. No ejercer la debida vigilancia y cuidado sobre los perros de pastores de ganado, de transeúntes, etc., para evitar que […]
+> […] palomares sin autorización o a menos de 1.000 metros de la linde cinegética más próxima. 4. Cazar palomas mensajeras, deportivas o buchones que ostenten las marcas establecidas al efecto. 5. Cazar siendo poseedor de la documentación preceptiva, pero no llevándola consigo. 6. Cazar no teniendo contratado y vigente el seguro obligatorio del cazador. 7. Cazar fuera del horario o día hábiles de caza establecidos. 8. No impedir que los perros propios o que acompañen a una persona vaguen sin control en época de veda. 9. Cazar con arma de fuego siendo menor de edad, cuando se haga a más de 120 metros del cazador mayor de edad encargado de la […]
 
 ### Censo y registro municipal
 
@@ -1802,25 +1737,7 @@ _(y 6 artículos más en este tema)_
 
 **Artículo 47**
 
-> Artículo 47. Tendrán la consideración de infracciones menos graves:
->
-> 1. La venta de animales de compañía a menores sin la autorización de quienes tengan la patria potestad o custodia de los mismos.
-> 2. La no inscripción en el Registro correspondiente de escuelas de adiestramiento o residencias de animales.
-> 3. El ejercer la venta ambulante de animales de compañía, fuera de los establecimientos autorizados.
-> 4. El incumplimiento de lo establecido en el artículo 24, apartado d), de la presente Ley.
->    Artículo 47.
->    Tendrán consideración de […]
-
-**Artículo 48**
-
-> […] venta de animales a centros sin control de la Administración. 4. Emplear en el sacrificio de animales técnicas distintas de las que autoriza la legislación vigente. 5. La no comunicación de brotes epizoóticos, por los propietarios de residencias de animales o de centros de adiestramiento. 6. El funcionamiento, sin la inscripción preceptiva, de parques zoológicos, safaris, etc., así como centros de venta de animales. 7. Alimentar a animales con restos de otros animales muertos, salvo los casos exceptuados legal o reglamentariamente. 8. La tenencia, venta, compra, circulación o transporte de ganado sin señal para su identificación o con ésta […]
-
-**Artículo 57**
-
-> […] y por la Diputación Regional de Cantabria se organizarán campamentos, con el cometido de facilitar a los escolares, el conocimiento y protección de los animales y el contacto con la naturaleza.
-> c) 1. Las Asociaciones de protección y defensa de los animales, sin fines de lucro y legalmente constituidas, podrán inscribirse en un Registro creado a tal fin, y se les otorgará el título de Entidades Colaboradoras, de acuerdo con la normativa al efecto. 2. La Consejería competente de la Diputación Regional de Cantabria podrá convenir con dichas Asociaciones la realización de tareas en relación con la protección y defensa de los animales. […]
-
-_(y 1 artículos más en este tema)_
+> […] venta de animales a centros sin control de la Administración. 6. Emplear en el sacrificio de animales técnicas distintas de las que autoriza la legislación vigente. 7. La no comunicación de brotes epizoóticos por los propietarios de residencias de animales o de centros de adiestramientos. 8. El funcionamiento, sin la inscripción preceptiva, de parques zoológicos, safaris, etc., así como centros de venta de animales. 9. Alimentar a animales con restos de otros animales muertos, salvo los casos exceptuados legal o reglamentariamente. 10. La tenencia, venta, compra, circulación o transporte de ganado sin señal para su identificación o con esta […]
 
 ### Perros potencialmente peligrosos
 
@@ -1834,121 +1751,90 @@ _(y 1 artículos más en este tema)_
 
 **Artículo 39**
 
-> […] 5.000 a 50.000 pesetas.
-> Infracciones menos graves: De 50.001 a 250.000 pesetas.
-> Infracciones graves: De 250.001 a 1.000.000 de pesetas.
-> Infracciones muy graves: De 1.000.001 a 5.000.000 de pesetas. 3. Las infracciones muy graves y graves en materia de caza y pesca podrán llevar consigo la anulación de la respectiva licencia e inhabilitación para obtenerla durante un período de uno a tres años. 4. Para determinar la sanción se tendrán en cuenta las circunstancias concurrentes y el principio de proporcionalidad. 5. Si se apreciare reincidencia, la cuantía de las sanciones consignadas en el apartado 2 de este artículo podrá incrementarse […]
+> […] las sanciones podrán hacerse efectivas dentro de los diez días siguientes a la notificación de la propuesta de resolución, con una reducción del 20 por 100 sobre la cuantía fijada en la propuesta. 4. Las infracciones muy graves y graves en materia de caza y pesca podrán llevar consigo la anulación de la respectiva licencia, e inhabilitación para obtenerla debidamente en un período de tiempo de uno a tres años. 5. Para determinar la sanción se tendrán en cuenta las circunstancias concurrentes y el principio de proporcionalidad, pudiendo imponerse en la cuantía señalada para las infracciones inferiores en un grado, si aquéllas fueran muy […]
 
 **Artículo 50**
 
-> […] metros del cazador mayor de edad encargado de la vigilancia del menor o cuando no se cumplan sus indicaciones. 12. Acompañar a un cazador menor de dieciocho años que utilice armas de fuego sin vigilar eficazmente sus actividades cinegéticas.
 > Artículo 50.
-> Tendrán la consideración de infracciones graves:
+> Tendrá la consideración de infracciones graves:
 >
-> 1. Cazar sin licencia.
-> 2. Poseer o transportar en época hábil piezas de caza cuya edad o sexo, en el caso de que sean notorios, no concuerden con los legalmente permitidos.
-> 3. No cumplir las normas sobre caza en cauces de ríos, arroyos y canales que atraviesen o linden con terrenos sometidos a régimen cinegético especial o cazar en estos […]
+> 1. Cazar sin la licencia de caza de Cantabria.
+> 2. Poseer o transportar en época hábil de caza piezas cinegéticas cuya edad o sexo, en el caso de que sean notorios, no concuerden con los legalmente permitidos.
+> 3. No cumplir las normas sobre caza en cauces de ríos, arroyos y canales que atraviesen o linden con terrenos sometidos a régimen […]
 
 **Artículo 51**
 
-> Artículo 51.
-> Tendrán la consideración de infracciones menos graves:
+> […] a error sobre ella. 3. La introducción, traslado, transporte o suelta de especies de la fauna silvestre sin la debida autorización. 4. La realización de cualquier actividad de índole cinegética sin tener aprobado el plan técnico de aprovechamiento cinegético. 5. Cazar estando inhabilitado para tener u obtener la licencia de caza de Cantabria por sentencia judicial o resolución administrativa firmes. 6. Cazar desde aeronave, automóvil o cualquier otro medio de locomoción, cuyo uso para esta finalidad no esté autorizado. 7. Efectuar disparo/s con arma de fuego en terrenos sometidos a régimen cinegético especial, si estar en posesión del […]
+
+**Artículo 54**
+
+> Artículo 54.
+> Tendrán la consideración de infracciones leves:
 >
-> 1. Cazar sin licencia.
-> 2. El incumplimiento de la normativa dictada sobre la caza en batida.
-> 3. La utilización de perros con fines cinegéticos en época de veda.
-> 4. Alterar precintos y marcas reglamentarias.
-> 5. El incumplimiento de las condiciones fijadas en los permisos de «caza fotográfica».
-> 6. Impedir o tratar de impedir la entrada a los […]
+> 1. Pescar siendo titular de una licencia válida de pesca, cuando no se lleva consigo.
+> 2. Pescar en un tramo acotado, siendo titular del permiso reglamentario, cuando no se lleve consigo este permiso.
+> 3. Pescar con caña en ríos trucheros, no habitados por salmón, de forma tal que el pescador o el cebo se sitúen a menos de 25 metros de la entrada o salida de […]
 
-**Artículo 52**
+**Artículo 55**
 
-> […] sin estar en posesión de la debida autorización o el incumplimiento de las normas dictadas al respecto. 18. La destrucción de vivares o nidos de especies cinegéticas. 19. La tenencia de especies cinegéticas muertas en épocas de veda, en el caso de que no se demuestre su procedencia legítima. 20. Solicitar o poseer licencia de caza estando inhabilitado para ello.
-> Artículo 52.
+> Artículo 55.
+> Tendrán la consideración de infracciones graves:
 >
-> 1. Toda infracción administrativa en materia de caza llevará consigo el decomiso de la caza, viva o muerta, que fuera ocupada, así como de cuantas artes materiales o animales vivos hayan servido para cometer el hecho objeto de infracción.
-> 2. En el caso de ocupación […]
+> 1. Pescar sin licencia.
+> 2. Pescar con caña en los ríos salmoneros de forma tal que el pescador o el cebo se sitúen a menos de 50 metros del pie de las presas o de las entradas a las escalas salmoneras.
+> 3. Pescar haciendo uso de luces artificiales, que faciliten la captura de las especies.
+> 4. Vigilar la presencia o movimiento de la guardería […]
 
-**Artículo 53**
-
-> […] de la fauna silvestre, sin la debida autorización. 5. El aprovechamiento abusivo y desordenado de las especies existentes en un coto de caza o en el incumplimiento de los planes técnicos de aprovechamiento cinegético. Puede llevar consigo la anulación de la declaración de acotado. 6. Cazar teniendo retirada la licencia de caza o estar privado de la facultad de obtenerla, por sentencia judicial o por resolución administrativa firmes. 7. Cazar desde aeronave, automóvil o cualquier otro medio de locomoción, cuyo uso para esta finalidad no esté reglamentariamente autorizado o transportar en ellos armas desenfundadas o listas para su […]
-
-_(y 3 artículos más en este tema)_
-
-### Curso o formación
-
-**Artículo 57**
-
-> […] y formar en el trato y comportamiento para con los animales, la Diputación Regional de Cantabria fomentará y facilitará dentro del ámbito de la región una serie de medidas conducentes al cumplimiento de esta Ley, como son las siguientes:
-> a) Se establece la constitución de Aulas de la Naturaleza donde se impartirán cursos y conferencias sobre estos temas en colaboración con los Centros docentes e Instituciones interesadas.
-> b) En las épocas apropiadas y por la Diputación Regional de Cantabria se organizarán campamentos, con el cometido de facilitar a los escolares, el conocimiento y protección de los animales y el contacto con la […]
-
-**Artículo 58**
-
-> […] y formar en el trato y comportamiento para con los animales, la Diputación Regional de Cantabria fomentará y facilitará dentro del ámbito de la región una serie de medidas conducentes al cumplimiento de esta Ley, como son las siguientes:
-> a) Se establece la constitución de Aulas de la Naturaleza donde se impartirán cursos y conferencias sobre estos temas en colaboración con los Centros docentes e Instituciones interesadas.
-> b) En las épocas apropiadas y por la Diputación Regional de Cantabria se organizarán campamentos, con el cometido de facilitar a los escolares, el conocimiento y protección de los animales y el contacto con la […]
+_(y 1 artículos más en este tema)_
 
 ### Colonias felinas y CES
 
 **Artículo 50**
 
-> […] eficazmente sus actividades cinegéticas.
 > Artículo 50.
-> Tendrán la consideración de infracciones graves:
+> Tendrá la consideración de infracciones graves:
 >
-> 1. Cazar sin licencia.
-> 2. Poseer o transportar en época hábil piezas de caza cuya edad o sexo, en el caso de que sean notorios, no concuerden con los legalmente permitidos.
+> 1. Cazar sin la licencia de caza de Cantabria.
+> 2. Poseer o transportar en época hábil de caza piezas cinegéticas cuya edad o sexo, en el caso de que sean notorios, no concuerden con los legalmente permitidos.
 > 3. No cumplir las normas sobre caza en cauces de ríos, arroyos y canales que atraviesen o linden con terrenos sometidos a régimen cinegético especial o cazar en estos lugares quienes no estén en posesión del oportuno permiso.
 > 4. Cazar en los llamados días de fortuna, es decir, en aquellos en los que como consecuencia de incendios, epizootias, inundaciones, […]
 
-**Artículo 51**
-
-> […] en los terrenos cercados con el fin de proteger los cultivos del interior del cerramiento o los de las fincas colindantes. 10. Poseer o transportar en época hábil piezas de caza cuya edad o sexo, en el caso de que sean notorios, no concuerden con los legalmente permitidos. 11. No cumplir las normas sobre caza, en cauces de ríos, arroyos y canales que atraviesen o linden con terrenos sometidos a régimen cinegético especial o cazar en estos lugares quienes no estén en posesión del oportuno permiso. 12. Transitar con perros por zonas de seguridad, sin ocuparse de evitar que el animal dañe, moleste o persiga a la fauna cinegética, sus […]
-
 **Artículo 54**
 
-> […] no se lleva consigo. 2. Pescar en un tramo acotado, siendo titular del permiso reglamentario, cuando no se lleve consigo este permiso. 3. Pescar con caña en ríos trucheros, no habitados por salmón, de forma tal que el pescador o el cebo se sitúen a menos de 25 metros de la entrada o salida de las escalas o pasos de peces. 4. Pescar con más de dos cañas a la vez, o con dos si éstas no se encuentran al alcance de la mano, o con más de una si se trata de salmón. 5. Pescar entorpeciendo a otro pescador, cuanto éste estuviere ejerciendo previamente su legítimo derecho de pesca. 6. No guardar, respecto a otros pescadores, mediando […]
+> […] no se lleva consigo. 2. Pescar en un tramo acotado, siendo titular del permiso reglamentario, cuando no se lleve consigo este permiso. 3. Pescar con caña en ríos trucheros, no habitados por salmón, de forma tal que el pescador o el cebo se sitúen a menos de 25 metros de la entrada o salida de las escalas o pasos de peces. 4. Pescar con más de dos cañas a la vez, o con dos si éstas no se encuentran al alcance de la mano, o con más de una si se trata de salmón. 5. Pescar entorpeciendo a otro pescador, cuando éste estuviere ejerciendo, previamente, su legítimo derecho de pesca. 6. No guardar, respecto a otros pescadores, mediando […]
 
 **Artículo 55**
 
-> […] cangrejos emplenado cada pescador más de ocho reteles, lamparillas o arañas a la vez, con artes no permitidos. 5. Pescar con caña en los ríos salmoneros de forma tal que el pescador o el cebo se sitúen a menos de 50 metros del pie de las presas o de las entradas a las escalas salmoneras. 6. Pescar haciendo uso de luces artificiales que faciliten la captura de las especies. 7. Pescar utilizando como cebo peces vivos, cuando la especie que sirve de cebo no estuviera presente de forma natural en aguas pescadas, salvo en aquellos casos en que la Administración hubiese hecho pública autorización en contrario. 8. Pescar en zonas acotadas […]
+> Artículo 55.
+> Tendrán la consideración de infracciones graves:
+>
+> 1. Pescar sin licencia.
+> 2. Pescar con caña en los ríos salmoneros de forma tal que el pescador o el cebo se sitúen a menos de 50 metros del pie de las presas o de las entradas a las escalas salmoneras.
+> 3. Pescar haciendo uso de luces artificiales, que faciliten la captura de las especies.
+> 4. Vigilar la presencia o movimiento de la guardería para facilitar la pesca fraudulenta practicada por otros pescadores, así como colocarse de vigía durante la costera del salmón para registrar y avisar su paso con fines de pesca.
+> 5. Vender salmón o trucha en […]
 
 **Artículo 56**
 
-> […] tridentes, arpones, grampines, fitoras. 5. Pescar en vedados o donde esté prohibido hacerlo. 6. Tener sustancias tóxicas en las proximidades de las aguas, cuando razonablemente pueda presumirse que las mismas se pretenden utilizar con fines de pesca. 7. La tenencia o transporte, por persona que no esté pescando, de peces o cangrejos de tamaño menor al reglamentario o de tamaño legal en época en que esté prohibida su pesca o venta. 8. Vender, comprar, transportar o traficar con huevos de peces o cangrejos, así como importar o exportar peces, cangrejos o sus huevos sin autorización del organismo competente. 9. La tenencia, transporte o […]
-
-**Artículo 57**
-
-> Artículo 57.
+> Artículo 56.
 > Tendrán la consideración de infracciones muy graves:
 >
 > 1. Pescar en el interior de las escalas o pasos de peces.
-> 2. Pescar con redes o pretender hacerlo, en las aguas declaradas oficialmente como habitadas por salmónidos.
-> 3. Pescar con redes en las inmediaciones de la desembocadura de los ríos salmoneros durante el período hábil para la pesca del salmón.
-> 4. Pescar haciendo uso de aparatos accionados por electricidad, productos […]
-
-### Vía pública y excrementos
-
-**Artículo 2**
-
-> […] y la desinfección. 4) Puertas con suficiente anchura para el paso del ganado y extracción de los estiércoles. 5) Cama en cantidad y calidad que asegure en los establos un microclima carente de factores insalubres y elementos molestos, evitando el contacto directo y permanente del animal y su piel con sus propios excrementos, y/o el suelo. El incumplimiento de esta condición constituirá causa de cierre de la instalación, caso de que, apercibido y sancionado el propietario de la misma, persistiera en el incumplimiento.
-> d) Practicarles mutilaciones, excepto: Las efectuadas o controladas por los veterinarios, las realizadas para mantener […]
+> 2. Pescar con redes, o pretender hacerlo, en las aguas declaradas oficialmente como habitadas por salmónidos.
+> 3. Pescar con redes, en las inmediaciones de la desembocadura de los ríos salmoneros durante el período hábil para la pesca del salmón.
+> 4. Pescar haciendo uso de aparatos accionados por electricidad, […]
 
 ### Transporte
 
 **Artículo 46**
 
-> Artículo 46.
-> Tendrán la consideración de infracciones leves:
+> […] la consideración de infracciones leves:
 >
 > 1. No adoptar las medidas oportunas para impedir que los animales de compañía ensucien las vías o espacios públicos.
-> 2. La posesión de un perro sin tenerlo debidamente censado.
-> 3. El transporte de animales con infracción de lo previsto en el artículo quinto de esta Ley.
-> 4. La no notificación de la muerte de un animal según lo estipulado en el artículo 10.
->    Artículo 46.
->    Tendrán la consideración de infracciones leves:
-> 5. No adoptar las medidas oportunas para impedir que los animales de compañía ensucien las […]
+> 2. La posesión de un perro sin tenerlo debidamente censado, o no comunicar su muerte, según establece el artículo 10, en el plazo máximo de quince días.
+> 3. El transporte de animales con infracción de lo previsto en el artículo 5 de esta Ley.
+> 4. La donación de un animal de compañía como premio, reclamo publicitario, recompensa o regalo de compensación por otras adquisiciones de naturaleza distinta a la transacción onerosa de animales.
+> 5. El no tener actualizados o tener incompletos los […]
 
 **Artículo 47**
 
@@ -1956,27 +1842,33 @@ _(y 3 artículos más en este tema)_
 
 **Artículo 48**
 
-> […] de adiestramiento. 6. El funcionamiento, sin la inscripción preceptiva, de parques zoológicos, safaris, etc., así como centros de venta de animales. 7. Alimentar a animales con restos de otros animales muertos, salvo los casos exceptuados legal o reglamentariamente. 8. La tenencia, venta, compra, circulación o transporte de ganado sin señal para su identificación o con ésta alterada o manipulada, cuando reglamentariamente sea obligatoria y los resultados de las pruebas para determinar su estado sanitario fueran negativos. 9. La negativa a efectuar las pruebas de saneamiento, o su vacunación obligatoria, o al marcaje de las reses […]
-
-**Artículo 49**
-
-> […] actividades en que los animales resulten dañados o sean objeto de tratamientos indignos o de manipulaciones prohibidas en el artículo 6.2. 3. La alimentación de animales con restos de otros animales muertos, si se demuestra que éstos padecían enfermedad infecto-contagiosa. 4. La tenencia, venta, compra, circulación o transporte de ganado sin señal para su identificación o con ésta alterada o manipulada, cuando reglamentariamente sea obligatoria y los resultados de las pruebas para determinar su estado sanitario fueran positivos. 5. La venta, compra, circulación o transporte de ganado encontrándose depositado por secuestro. 6. La alteración o […]
+> […] actividades en los que animales resulten dañados o sean objeto de tratamientos indignos o de manipulaciones prohibidas en el artículo 6.2. 3. Alimentación de animales con restos de otros animales muertos, si se demuestra que éstos padecían enfermedad infecto-contagiosa. 4. La tenencia, venta, compra, circulación o transporte de ganado sin señal para su identificación o con ésta alterada o manipulada, cuando reglamentariamente sea obligatoria y los resultados de las pruebas para determinar su estado sanitario fueran positivos. 5. La venta, compra, circulación o transporte de ganado encontrándose depositado por secuestro. 6. Quitar, […]
 
 **Artículo 50**
 
-> […] de edad encargado de la vigilancia del menor o cuando no se cumplan sus indicaciones. 12. Acompañar a un cazador menor de dieciocho años que utilice armas de fuego sin vigilar eficazmente sus actividades cinegéticas.
 > Artículo 50.
-> Tendrán la consideración de infracciones graves:
+> Tendrá la consideración de infracciones graves:
 >
-> 1. Cazar sin licencia.
-> 2. Poseer o transportar en época hábil piezas de caza cuya edad o sexo, en el caso de que sean notorios, no concuerden con los legalmente permitidos.
-> 3. No cumplir las normas sobre caza en cauces de ríos, arroyos y canales que atraviesen o linden con terrenos sometidos a régimen cinegético especial o cazar en estos lugares quienes no estén […]
+> 1. Cazar sin la licencia de caza de Cantabria.
+> 2. Poseer o transportar en época hábil de caza piezas cinegéticas cuya edad o sexo, en el caso de que sean notorios, no concuerden con los legalmente permitidos.
+> 3. No cumplir las normas sobre caza en cauces de ríos, arroyos y canales que atraviesen o linden con terrenos sometidos a régimen cinegético especial o cazar en estos lugares […]
 
 **Artículo 51**
 
-> […] las condiciones técnicas que se dicten sobre el cerramiento de terrenos constituidos en cotos de caza. 9. No cumplir las normas que se dicten sobre reducción o eliminación de la caza en los terrenos cercados con el fin de proteger los cultivos del interior del cerramiento o los de las fincas colindantes. 10. Poseer o transportar en época hábil piezas de caza cuya edad o sexo, en el caso de que sean notorios, no concuerden con los legalmente permitidos. 11. No cumplir las normas sobre caza, en cauces de ríos, arroyos y canales que atraviesen o linden con terrenos sometidos a régimen cinegético especial o cazar en estos lugares quienes no estén […]
+> […] 51.
+> Tendrán la consideración de infracciones muy graves:
+>
+> 1. La explotación industrial de la caza sin estar en posesión de la debida autorización.
+> 2. Colocar, suprimir o alterar los carteles o señales indicadoras de la condición cinegética de un terreno para inducir a error sobre ella.
+> 3. La introducción, traslado, transporte o suelta de especies de la fauna silvestre sin la debida autorización.
+> 4. La realización de cualquier actividad de índole cinegética sin tener aprobado el plan técnico de aprovechamiento cinegético.
+> 5. Cazar estando inhabilitado para tener u obtener la licencia de caza de Cantabria por sentencia judicial o resolución […]
 
-_(y 4 artículos más en este tema)_
+**Artículo 55**
+
+> […] que acudan al cebo o señuelo, tales como tridentes, arpones, grampines fitoras. 15. Pescar en vedados o donde esté prohibido hacerlo. 16. Tener sustancias tóxicas en las proximidades de las aguas, cuando razonablemente pueda presumirse que las mismas se pretenden utilizar con fines de pesca o venta. 17. La tenencia o transporte, por persona que no esté pescando, de peces o cangrejos de tamaño menor al reglamentario o de tamaño legal en época en que esté prohibida su pesca o venta. 18. Falsear los datos en la solicitud de la licencia de pesca. 19. Negarse a mostrar el contenido de los cestos, morrales y vestimenta o los aparejos empleados […]
+
+_(y 1 artículos más en este tema)_
 
 ### Cría y venta
 
@@ -1990,7 +1882,6 @@ _(y 4 artículos más en este tema)_
 
 **Artículo 3**
 
-> […] especial vigente.
 > Artículo 3.
 >
 > 1. Con la finalidad de procurar una protección integral de todas las especies de la fauna silvestre, se prohíbe en particular su muerte o captura intencionadas ; la retirada de sus nidos y sus huevos; su perturbación intencionada, especialmente en sus períodos de celo, reproducción y crianza; la retención de aquellas cuya caza o captura no estén permitidas; su comercialización y todas las actividades asociadas a su venta, ya estén vivas o muertas, exceptuando las que reglamentariamente se determinen.
@@ -2017,7 +1908,7 @@ _(y 4 artículos más en este tema)_
 
 > […] en los artículos precedentes deberán disponer de instalaciones idóneas para los animales sanos y de otras adecuadamente preparadas para situaciones de enfermedad, así como de un servicio veterinario encargado de vigilar el estado físico de los animales residentes y, en su caso, otorgar certificado de salud para la venta de los animales, que será preceptivo y sin el cual estará expresamente prohibida. 2. Será obligación del Centro procurar que los animales se adapten a la nueva situación, evitar acciones que pueda provocarles daño alguno y adoptar las medidas oportunas en cada caso. 3. Si un animal enfermare, el Centro lo comunicará […]
 
-_(y 12 artículos más en este tema)_
+_(y 9 artículos más en este tema)_
 
 ### Abandono y sacrificio
 
@@ -2061,13 +1952,13 @@ _(y 12 artículos más en este tema)_
 
 > […] llevara identificación, se avisará al propietario y éste tendrá un plazo de tres días a partir de la notificación para recuperarlo, abonando previamente los gastos que haya originado su mantenimiento. Una vez transcurrido este plazo, si el propietario no se hubiera presentado para retirarlo, el animal se considerará abandonado.
 
-_(y 9 artículos más en este tema)_
+_(y 8 artículos más en este tema)_
 
 ### Infracciones y sanciones
 
 **Artículo 2**
 
-> […] calidad que asegure en los establos un microclima carente de factores insalubres y elementos molestos, evitando el contacto directo y permanente del animal y su piel con sus propios excrementos, y/o el suelo. El incumplimiento de esta condición constituirá causa de cierre de la instalación, caso de que, apercibido y sancionado el propietario de la misma, persistiera en el incumplimiento.
+> […] con suficiente anchura para el paso del ganado y extracción de los estiércoles. 5) Cama en cantidad y calidad que asegure en los establos un microclima carente de factores insalubres y elementos molestos. El incumplimiento de esta condición constituirá causa de cierre de la instalación, caso de que, apercibido y sancionado el propietario de la misma, persistiera en el incumplimiento.
 > d) Practicarles mutilaciones, excepto: Las efectuadas o controladas por los veterinarios, las realizadas para mantener las características de la raza, o las que correspondan a ventajas de tipo fisiológico y/o de manejo.
 > e) No facilitarles la alimentación […]
 
@@ -2087,13 +1978,9 @@ _(y 9 artículos más en este tema)_
 >
 > 1. Las infracciones se clasifican en:
 >    a) Leves.
->    b) Menos graves.
->    c) Graves.
->    d) Muy graves.
-> 2. Las referidas infracciones serán sancionadas con las siguientes multas:
->    Infracciones leves: De 5.000 a 50.000 pesetas.
->    Infracciones menos graves: De 50.001 a 250.000 pesetas.
->    Infracciones graves: De 250.001 a 1.000.000 de […]
+>    b) Graves.
+>    c) Muy graves.
+> 2. El reglamento para la protección de los animales introducirá graduaciones al cuadro de infracciones o sanciones establecidas en el apartado 1 de este artículo que sin constituir nuevas infracciones o sanciones, ni alterar la naturaleza o límites de la Ley, […]
 
 **Artículo 40**
 
@@ -2105,7 +1992,7 @@ _(y 9 artículos más en este tema)_
 > Artículo 41.
 > La apertura e instrucción del expediente administrativo sancionador se realizará por el órgano administrativo competente de la Consejería de Ganadería, Agricultura y Pesca, de conformidad con lo dispuesto en el capítulo II del título VI de la Ley de Procedimiento Administrativo de 17 de julio de 1958.
 
-_(y 17 artículos más en este tema)_
+_(y 16 artículos más en este tema)_
 
 ## Castilla-La Mancha
 
@@ -2592,26 +2479,13 @@ _(y 10 artículos más en este tema)_
 
 **Artículo 28**
 
-> […] onerosa de animales.
-> c) La no posesión o posesión incompleta de un archivo de fichas clínicas de los animales objeto de vacunación o tratamiento obligatorio tal y como reglamentariamente se determine.
-> d) La no notificación de la muerte de un animal cuando aquélla esté prevista.
-> e) La no recogida inmediata de los excrementos evacuados por un animal de compañía en la vía pública.
-> f) Cualquier otra actuación que vulnere lo dispuesto en esta Ley y que no esté tipificada como infracción grave o muy grave. 3. Son infracciones graves:
-> a) El incumplimiento de las obligaciones señaladas en el artículo 4.2, de esa Ley, salvo lo dispuesto en los […]
+> […] de vacunación o de tratamiento obligatorio, tal y como reglamentariamente se determine.
+> d) No comunicar el extravío, muerte, venta o cambio de titularidad de los animales en el plazo establecido en el artículo 4.5, cuando dicha comunicación esté prevista en la normativa aplicable.
+> e) La no recogida inmediata de los excrementos evacuados por un animal de compañía en los espacios públicos o privados de uso común.
+> f) La manipulación artificial de los animales con objeto de hacerlos atractivos como diversión o juguete para su venta.
+> g) La no obtención de las autorizaciones, permisos o licencias necesarias, en cada caso, para estar en posesión […]
 
 ### Transporte
-
-**Artículo 3**
-
-> […] a los criados con la finalidad de ser devueltos a su medio natural, les será de aplicación las disposiciones contenidas en el capítulo II del título I de esta Ley.
-> 2.º Asimismo a los animales criados para el aprovechamiento de sus producciones, sean o no domésticos, les resultan de aplicación las previsiones sobre el transporte de animales contenidas en el artículo 5 de la presente Ley.
-> Artículo 3. Exclusiones.
-> Quedan fuera del ámbito de aplicación de esta ley, rigiéndose por su normativa específica:
-> a) La caza.
-> b) La pesca.
-> c) La fauna silvestre.
-> d) Los animales de producción, los de parques zoológicos.
-> e) Los animales utilizados con fines […]
 
 **Artículo 5**
 
@@ -2628,35 +2502,20 @@ _(y 10 artículos más en este tema)_
 
 **Artículo 28**
 
-> […] en la vía pública.
-> f) Cualquier otra actuación que vulnere lo dispuesto en esta Ley y que no esté tipificada como infracción grave o muy grave. 3. Son infracciones graves:
-> a) El incumplimiento de las obligaciones señaladas en el artículo 4.2, de esa Ley, salvo lo dispuesto en los apartados a), b), i) y k).
-> b) El transporte de animales con vulneración de las disposiciones contenidas en la presente Ley o en sus normas de desarrollo.
-> c) La filmación de escenas de ficción con animales que simulen crueldad, maltrato o sufrimiento sin autorización previa, cuando el daño sea efectivamente simulado.
-> d) El incumplimiento por parte de los […]
+> […] en los espacios públicos o privados de uso común.
+> f) La manipulación artificial de los animales con objeto de hacerlos atractivos como diversión o juguete para su venta.
+> g) La no obtención de las autorizaciones, permisos o licencias necesarias, en cada caso, para estar en posesión del animal de que se trate.
+> h) El transporte de los animales con vulneración de las obligaciones y requisitos establecidos en la presente ley o en su normativa de desarrollo, siempre y cuando los animales no sufran daños evidentes.
+> i) La presencia en vías y espacios públicos o privados de uso común de animales no sujetos con cadena, correa o cordón resistente
+> j) […]
 
 ### Cría y venta
 
 **Artículo 2**
 
-> Artículo 2. Definiciones.
-> Son animales de compañía los animales domésticos o domesticados, a excepción de los de renta y de los criados para el aprovechamiento de sus producciones, siempre y cuando a lo largo de su vida se les destine única y exclusivamente a este fin.
-> Artículo 2. Definiciones.
-> A los efectos de esta ley se entenderá por:
-> a) animales de compañía: aquellos animales que viven con las personas, principalmente en el hogar, con fines […]
-
-**Artículo 3**
-
-> […] y excepciones.
->
-> 1. Quedan fuera del ámbito de esta Ley, y se regirán por su normativa específica:
->    a) La caza.
->    b) La pesca.
->    c) La protección y conservación de la fauna silvestre en su medio natural.
->    d) Los domésticos de renta, con las salvedades previstas en el apartado 2, 1.o, de este artículo.
->    e) Los animales criados para el aprovechamiento de sus producciones, sean o no domésticos, siempre y cuando a lo largo de su vida se les destine única y exclusivamente a este fin, con las salvedades previstas en el apartado 2, 2.o, de este artículo.
->    f) La utilización de animales para experimentación y otros fines científicos.
->    g) La fiesta […]
+> […] como destino su consumo o el aprovechamiento de sus producciones, o no se lleve a cabo, en general, con fines comerciales o lucrativos.
+> b) animales de producción: aquellos animales de producción, reproducción, cebo o sacrificio, incluidos los animales de peletería o de actividades cinegéticas, mantenidos, cebados o criados para la producción de alimentos o productos de origen animal, para cualquier uso industrial, o con fines comerciales y lucrativos, siempre y cuando a lo largo de su vida se les destine única y exclusivamente a estos fines.
+> c) fauna silvestre: el conjunto de especies, subespecies, población e individuos animales que […]
 
 **Artículo 4**
 
@@ -2687,7 +2546,12 @@ _(y 10 artículos más en este tema)_
 >
 > 1. Los establecimientos de venta de animales de compañía deberán entregar los animales con las debidas garantías sanitarias, libres de toda enfermedad, y acreditarlo mediante certificado oficial veterinario. Ello no eximirá al vendedor de responsabilidad ante enfermedades en incubación no detectadas en el momento de […]
 
-_(y 3 artículos más en este tema)_
+**Artículo 25**
+
+> Artículo 25. Vigilancia e inspección.
+> Los Ayuntamientos y la Consejería competente llevarán a cabo la vigilancia e inspección de los establecimientos de cría, venta o mantenimiento temporal de animales de compañía, así como de los centros de recogida de animales abandonados.
+
+_(y 2 artículos más en este tema)_
 
 ### Abandono y sacrificio
 
@@ -2727,9 +2591,8 @@ _(y 3 artículos más en este tema)_
 **Artículo 18**
 
 > Artículo 18. Servicio de recogida.
->
-> 1. Será competencia de los Ayuntamientos, o en su caso de las Diputaciones, la recogida de los animales abandonados. A tal fin dispondrán de personal adiestrado y de instalaciones adecuadas o concertarán la realización de dicho servicio con asociaciones de protección y defensa de los animales o con entidades autorizadas para tal fin.
-> 2. En las poblaciones donde existan sociedades protectoras de animales que soliciten hacerse […]
+> Será competencia de los Ayuntamientos, o en su caso de las Diputaciones, la recogida de los animales abandonados. A tal fin dispondrán de personal adiestrado y de instalaciones adecuadas o concertarán la realización de dicho servicio con asociaciones de protección y defensa de los animales o con entidades autorizadas para tal fin.
+> Se modifica por el art. 17.1 del Decreto-ley 3/2009, de 23 de diciembre. Ref. […]
 
 _(y 10 artículos más en este tema)_
 
@@ -2756,21 +2619,21 @@ _(y 10 artículos más en este tema)_
 
 **Artículo 28**
 
-> Artículo 28. Clasificación.
+> Artículo 28. Clasificación de las infracciones.
 >
-> 1. Las infracciones se clasifican en leves, graves y muy graves.
+> 1. Las infracciones se clasifican en infracciones leves, graves y muy graves.
 > 2. Son infracciones leves:
->    a) Vender, donar o ceder animales a menores de edad o incapacitados sin la autorización de quien tenga su patria potestad o tutela.
->    b) Donar un animal como premio, reclamo publicitario o recompensa, a excepción de negocios jurídicos derivados […]
+>    a) Vender, donar o ceder animales a menores de edad o incapacitados sin la autorización de quien tenga su patria potestad, tutela o custodia.
+>    b) Ofrecer o regalar animales como premio o recompensa en concursos […]
 
 **Artículo 29**
 
-> Artículo 29. Multas.
->
-> 1. Las infracciones de la presente Ley serán sancionadas con multas de 5.000 a 2.500.000 pesetas de acuerdo con la siguiente escala:
->    a) Las infracciones leves con multas de 5.000 a 25.000 pesetas.
->    b) Las infracciones graves con multas de 25.001 a 250.000 pesetas.
->    c) Las infracciones muy graves con multas de 250.001 […]
+> Artículo 29. Sanciones.
+> Las infracciones tipificadas en el artículo anterior serán sancionadas con multas de:
+> a) 150 a 600 euros para las leves.
+> b) 601 a 3.000 euros para las graves.
+> c) 3.001 a 30.000 euros para las muy graves.
+> Se modifica por el art. 6.4 de la Ley 2/2017, de 4 de julio. Ref. BOE-A-2017-9778
 
 **Artículo 30**
 
@@ -2923,16 +2786,9 @@ _(y 4 artículos más en este tema)_
 
 **Artículo 24**
 
-> […] asimilables y otros sistemas de difusión, se debe incluir en el anuncio el número de registro del núcleo zoológico del centro vendedor o donante.
+> […] en su sistema de difusión la advertencia de que los anunciantes deben incluir en sus anuncios el número de inscripción en el Registro de núcleos zoológicos.
 > b) Las personas profesionales que trabajen en establecimientos de venta, cría o importación de animales y que tengan que manipularlos deben haber asistido a un curso de cuidador o cuidadora de animales.
 > c) Los cachorros importados o criados para ser vendidos como animales de compañía no pueden ser separados de su madre antes del momento de destete recomendado para cada especie. 3. Se prohíbe la instalación, en todo el territorio de Cataluña, de granjas, centros de cría o centros […]
-
-**Artículo 34**
-
-> […] de acuerdo con lo que se establezca por reglamento, se puede autorizar la captura en vivo, la tenencia y la exhibición pública de machos de pinzón («Fringilla coelebs»), jilguero («Carduelis carduelis»), verderón («Carduelis chloris») y pardillo («Carduelis cannabina») para actividades tradicionales destinadas a concursos de canto, siempre que las actividades mencionadas no conlleven un detrimento para las poblaciones de estas especies. Se prohíbe la captura, la tenencia y la exhibición pública de hembras de las especies mencionadas.
-> Artículo 34. Autorizaciones de captura en vivo.
->
-> 1. En condiciones estrictamente controladas, el […]
 
 **Artículo 44**
 
@@ -2951,7 +2807,10 @@ _(y 4 artículos más en este tema)_
 > Disposición transitoria primera. Curso de cuidador o cuidadora de animales.
 > En el plazo máximo de dos años desde la entrada en vigor de la Ley 22/2003, de 4 de julio, de protección de los animales, los centros de recogida de animales de compañía y los demás núcleos zoológicos deben haber cumplido la obligación de la ejecución del curso de cuidador o […]
 
-_(y 1 artículos más en este tema)_
+**Disposición final segunda**
+
+> Disposición final segunda. Programa del curso de cuidador o cuidadora de animales.
+> En el plazo de seis meses a partir de la entrada en vigor de la Ley 22/2003, de 4 de julio, de protección de los animales, el Gobierno debe aprobar el programa del curso de cuidador o cuidadora de animales a que hace referencia esta Ley.
 
 ### Núcleo zoológico
 
@@ -3140,15 +2999,15 @@ _(y 4 artículos más en este tema)_
 
 > Artículo 45. Multas, decomiso y cierre de instalaciones.
 >
-> 1. Las infracciones cometidas contra esta Ley se sancionan con multas de hasta 20.000 euros.
-> 2. La imposición de la multa puede conllevar el decomiso de los animales objeto de la infracción, sin perjuicio de la aplicación del decomiso preventivo que se puede determinar a criterio […]
+> 1. Las infracciones cometidas contra lo dispuesto por la presente ley son sancionadas con multas de hasta 45.000 euros.
+> 2. La imposición de la multa puede conllevar el decomiso de los animales objeto de la infracción, sin perjuicio de la aplicación del decomiso preventivo que se […]
 
 **Artículo 46**
 
 > Artículo 46. Cuantía de las multas.
 >
-> 1. Las infracciones leves se sancionan con una multa de 100 euros hasta 400 euros; las graves, con una multa de 401 euros hasta 2.000 euros, y las muy graves, con una multa de 2.001 euros hasta 20.000 euros.
-> 2. En la imposición de las sanciones se deben tener en cuenta, para graduar la cuantía de las multas y la […]
+> 1. Las infracciones leves se sancionan con una multa de 300 euros a 3.000 euros; las graves, con una multa de 3.001 euros a 9.000 euros, y las muy graves, con una multa de 9.001 euros a 45.000 euros.
+> 2. En la imposición de las sanciones se deben tener en cuenta, para graduar la cuantía de las multas y la imposición […]
 
 **Artículo 47**
 
@@ -3172,7 +3031,7 @@ _(y 6 artículos más en este tema)_
 - **Identificador**: `BOE-A-2023-7421`
 - **Fuente oficial**: https://www.boe.es/buscar/act.php?id=BOE-A-2023-7421
 - **Publicación**: 20230322 · **Vigencia**: 20230315
-- **Última actualización del consolidado**: 20260811T091012Z
+- **Última actualización del consolidado**: 20260917T074529Z
 - **Artículos**: 71
 
 ### Identificación y microchip
@@ -3184,14 +3043,14 @@ _(y 6 artículos más en este tema)_
 
 **Artículo 24**
 
-> […] mínimos que sirvan de referencia para la implantación de programas de gestión de colonias felinas en los términos municipales. 2. Los ayuntamientos llevarán a cabo en sus municipios una gestión integral de las mismas, que incluya, en todo caso, la esterilización. 3. Los gatos comunitarios serán identificados con microchip bajo la titularidad de la administración local competente cuando se capturen para su esterilización o por cualquier otro motivo justificado. 4. En el caso de incidencias vecinales relacionadas con las colonias felinas, o de estas con los distintos entornos incluidos los espacios naturales protegidos, se establecerán […]
+> […] de los gatos comunitarios, y la limpieza e identificación de las colonias felinas. Los ayuntamientos también serán los responsables de la formación, educación y concienciación de las personas que gestionan las colonias felinas y de su identificación mediante carné. 3. Los gatos comunitarios serán identificados con microchip bajo la titularidad de la administración local competente cuando se capturen para su esterilización o por cualquier otro motivo justificado. 4. En el caso de incidencias vecinales relacionadas con las colonias felinas, o de estas con los distintos entornos incluidos los espacios naturales protegidos, se establecerán […]
 
 **Artículo 42**
 
-> […] que se mantengan en polígonos industriales, obras, zonas urbanas y periurbanas, fincas rústicas o apartadas del casco urbano o similares, y aquellos que tengan acceso al exterior de las viviendas y puedan tener contacto no controlado con otros animales de la misma especie, excepto prescripción veterinaria.
-> d) No identificar a los animales que la normativa considera obligatorio mediante el procedimiento establecido.
-> e) No comunicar el extravío o la muerte de los animales al Registro Supramunicipal de Identificación de Animales de Compañía de la Comunitat Valenciana en los plazos establecidos en la presente ley.
-> f) No comunicar el extravío […]
+> […] a los animales atención, supervisión, control y/o compañía, en especial a los animales gregarios, que en ningún caso podrán mantenerse aislados del ser humano u otros animales, y en general, no proporcionar una atención adecuada a las necesidades etológicas y físicas de la especie y de cada individuo.
+> mm) No identificar a los animales según el procedimiento establecido en la normativa aplicable. 4. Son infracciones muy graves:
+> a) El sacrificio o eutanasia de animales de compañía en los supuestos no incluidos en esta ley y en la normativa estatal que resulte de aplicación.
+> b) Inducir la muerte a un animal mediante métodos y/o […]
 
 ### Censo y registro municipal
 
@@ -3208,21 +3067,14 @@ _(y 6 artículos más en este tema)_
 > 1. Sin perjuicio de otras normas que se puedan determinar por vía reglamentaria, se establece como sistema de identificación de los animales la aplicación de un código único validado para el animal y su inscripción junto con los datos de la persona responsable legal en el Registro Supramunicipal de Identificación de Animales de Compañía de la Comunitat Valenciana. El procedimiento y los sistemas de identificación se desarrollarán reglamentariamente.
 > 2. No se podrán inscribir en el Registro Supramunicipal de Identificación de […]
 
-**Artículo 13**
-
-> […] realizarse de manera previa a cualquier tipo de transmisión y antes de las vacunaciones obligatorias. El plazo para el resto de animales regulados por esta ley se establecerá conforme a su legislación específica.
-> Se establece el plazo máximo de dos días hábiles desde la identificación para la comunicación del alta o inscripción en el Registro Supramunicipal de Identificación de Animales de Compañía de la Comunitat Valenciana. 2. El cambio de titularidad lo realizará la persona veterinaria actuante, previa solicitud formal del antiguo titular y el nuevo, y constará en el Registro Supramunicipal de Identificación de Animales de Compañía de la […]
-
 **Artículo 14**
 
 > […] verifique su fiabilidad y su funcionamiento correcto. Asimismo, se propondrán las mejoras oportunas para el cumplimiento de los objetivos que motivaron su creación. 9. El Registro Supramunicipal de Identificación de Animales de Compañía de la Comunitat Valenciana tendrá carácter censal a los efectos de establecer los censos municipales y las obligaciones que se deriven de ello. 10. Los trámites de comunicación con el Registro Supramunicipal de Identificación de Animales de Compañía de la Comunitat Valenciana deberán realizarse por procedimientos electrónicos.
-> Artículo 14. Registro Supramunicipal de Identificación de Animales de Compañía […]
+> Se modifican los apartados 3 y 6 por el art. 114.6 de la Ley 6/2024, de 5 de […]
 
 **Artículo 17**
 
-> […] supervisión y seguimiento de un programa higiénico-sanitario, de bienestar y de identificación de los animales, así como de la realización de las actuaciones médicas preventivas, paliativas o curativas, de identificación o de certificación que le correspondan.
-> h) Tener en lugar visible la acreditación de su inscripción en el Registro de Núcleos Zoológicos, cuando se trate de establecimientos de acceso público, así como el número máximo de capacidad de animales y especies que se puedan albergar.
-> i) Tener a disposición de la administración competente toda la documentación referida a los animales residentes en el núcleo, de acuerdo con […]
+> […] Valenciana, o cualquier otra norma que la desarrolle o sustituya. En el caso de aves de compañía identificadas en federaciones o asociaciones ornitológicas y aves sujetas a la Convención sobre el comercio internacional de especies amenazadas de fauna y flora silvestres conocido como CITES cuya actividad requiera la inscripción en el Registro de núcleos zoológicos pero que no tenga carácter profesional ni empresarial y que no suponga una incidencia ambiental conforme lo dispuesto en el artículo 1 de la Ley 6/2014, de 25 de julio, no serán necesarios los citados instrumentos de intervención administrativa por estar la actividad fuera del […]
 
 **Artículo 18**
 
@@ -3230,7 +3082,13 @@ _(y 6 artículos más en este tema)_
 >
 > 1. Se crea el Registro de Núcleos Zoológicos de la Comunitat Valenciana, que se incluye dentro del Registro de Explotaciones Ganaderas de la Comunitat Valenciana, en el cual se tendrán que inscribir todos los núcleos zoológicos de acuerdo con su clasificación zootécnica particular, cuya organización y funcionamiento se establecerá reglamentariamente. Y como tal, asumirá toda la información y la base de datos del Registro de Núcleos Zoológicos de la Comunitat Valenciana, creado por el Decreto 158/1996, de 13 de […]
 
-_(y 4 artículos más en este tema)_
+**Artículo 26**
+
+> […] La conselleria competente en materia de protección animal podrá realizar convenios de colaboración con las entidades inscritas para realizar actividades encaminadas a la protección y defensa de los animales, a través de la dirección general competente en materia de protección animal. 3. El procedimiento de inscripción se desarrollará reglamentariamente, siendo los requisitos mínimos que deberán cumplir para inscribirse en el registro como entidades colaboradoras los siguientes:
+> a) Ser entidades sin ánimo de lucro, legalmente constituidas y tener como principal finalidad la defensa y protección de los animales.
+> b) Presentar […]
+
+_(y 3 artículos más en este tema)_
 
 ### Esterilización
 
@@ -3258,17 +3116,18 @@ _(y 4 artículos más en este tema)_
 
 **Artículo 12**
 
-> […] de tres días hábiles. El alta se tramitará por medio de la persona veterinaria que ha llevado a cabo la identificación. Asimismo, tendrá que reflejarse en el pasaporte o documento de identificación y en el Registro Supramunicipal de Identificación de Animales de Compañía de la Comunitat Valenciana la condición de esterilización del animal. 3. El código asignado e implantado se debe constatar, si procede, en la cartilla sanitaria o en el pasaporte oficial del animal. 4. En caso de animales de compañía que se encuentren muertos o heridos en carreteras, autopistas, autovías o la vía pública, la autoridad competente que lleve a cabo la […]
+> […] máximo de tres días hábiles. El alta se tramitará por medio de la persona veterinaria que ha llevado a cabo la identificación. Asimismo, deberá reflejarse en el pasaporte o documento de identificación y en el Registro Supramunicipal de Identificación. de Animales de Compañía de la Comunitat Valenciana la condición de esterilización del animal. 3. El código asignado e implantado se debe constatar, si procede, en la cartilla sanitaria o en el pasaporte oficial del animal. 4. En caso de animales de compañía que se encuentren muertos o heridos en carreteras, autopistas, autovías o la vía pública, la autoridad competente que lleve a cabo la […]
 
 **Artículo 19**
 
-> […] reglamentariamente. El titular del establecimiento está obligado a buscar un destino ético a los animales reproductores, una vez finalizado el periodo reproductivo, y a los animales que no hayan sido objeto de transmisión o venta, y a, garantizar en todo momento su bienestar. Estos animales, se entregarán esterilizados, correctamente identificados y tras la aplicación de todos los tratamientos obligatorios. Únicamente se contemplará la eutanasia como destino final de estos animales bajo los supuestos contemplados en el artículo 15 de esta ley.
-> l) La venta de animales solo se puede realizar a personas mayores de edad que no estén […]
+> […] desarrolladas reglamentariamente. El titular del establecimiento está obligado a buscar un destino ético a los animales reproductores, una vez finalizado el periodo reproductivo, y a los animales que no hayan sido objeto de transmisión o venta y a garantizar en todo momento su bienestar. Estos animales, se entregarán esterilizados, correctamente identificados y tras la aplicación de todos los tratamientos obligatorios.
+> l) La venta de animales solo se puede realizar a personas mayores de edad que no estén incapacitadas, de acuerdo con la legislación vigente o mediante resolución judicial firme.
+> m) Las personas profesionales que trabajan en […]
 
 **Artículo 21**
 
-> […] cualesquiera otros registros públicos.
-> Todos los animales serán identificados conforme les corresponda, en el caso de que no lo estuviesen. En todo caso, se acompañará de una fotografía. 9. Los ayuntamientos, en sus términos municipales, han de llevar a cabo campañas periódicas, al menos anuales, de promoción de la esterilización de animales de compañía como medida preventiva contra el abandono, así como el fomento de la adopción de los animales declarados abandonados, con la ayuda financiera o subvenciones de las diputaciones y la conselleria competente en materia de sanidad y bienestar animal. 10. Las administraciones públicas concederán […]
+> […] requisitos de esta ley. 8. (Suprimido)
+> Todos los animales serán identificados conforme les corresponda, en el caso de que no lo estuviesen. En todo caso, se acompañará de una fotografía. 9. Los ayuntamientos, en sus términos municipales, deben llevar a cabo campañas periódicas, al menos anuales, de promoción de la esterilización de animales de compañía como medida preventiva contra el abandono, así como el fomento de la adopción de los animales declarados abandonados, con la ayuda financiera o subvenciones de las diputaciones y la conselleria competente en materia de protección animal, siempre que se disponga de tales ayudas para dichas […]
 
 _(y 6 artículos más en este tema)_
 
@@ -3289,10 +3148,8 @@ _(y 6 artículos más en este tema)_
 
 **Artículo 10**
 
-> […] a identificación los animales de la especie canina, felina, mustélidos domésticos, los animales que habiten en santuarios que no estén sujetos a identificación individual y las especies de animales que se determine reglamentariamente. 3. Así mismo, deben disponer de identificación todos los animales regulados como potencialmente peligrosos conforme a lo que se establece en la normativa vigente en la materia, sin perjuicio de cualquier otra especie o tipo de animal que se pueda determinar reglamentariamente o esté ya determinado en la fecha de entrada en vigor de la ley.
-> Artículo 10. Animales sujetos a identificación.
->
-> 1. La persona responsable legal […]
+> […] los animales de la especie canina, felina, mustélidos domésticos, los animales que habiten en santuarios que no estén sujetos a identificación individual, las aves y las especies de animales que se determine reglamentariamente. 3. Así mismo, deben disponer de identificación todos los animales regulados como potencialmente peligrosos conforme a lo que se establece en la normativa vigente en la materia, sin perjuicio de cualquier otra especie o tipo de animal que se pueda determinar reglamentariamente o esté ya determinado en la fecha de entrada en vigor de la ley.
+> Se modifica el apartado 2 por el art. 114.3 de la Ley 6/2024, de 5 de diciembre. […]
 
 **Artículo 22**
 
@@ -3312,8 +3169,8 @@ _(y 6 artículos más en este tema)_
 > g) La retirada del reconocimiento de entidad colaboradora por un periodo de uno a cinco años para las infracciones graves y de cinco hasta diez años, o de manera definitiva, para las muy graves.
 > h) La baja en los registros previstos en el articulado de esta ley.
 > i) La revocación o retirada de las licencias, acreditaciones o autorizaciones otorgadas al amparo de esta ley, por un periodo de uno a cinco años para las infracciones graves y de cinco a diez años, o de manera definitiva, para las infracciones muy graves.
-> Artículo 44. Sanciones accesorias.
-> La comisión de infracciones graves y muy graves puede llevar aparejada […]
+> Se modifican la letra a) por el art. 105.11 de la Ley 3/2026, de 29 de junio. Ref. BOE-A-2026-15683
+> Se […]
 
 _(y 1 artículos más en este tema)_
 
@@ -3329,14 +3186,13 @@ _(y 1 artículos más en este tema)_
 **Artículo 22**
 
 > […] repercutirá el coste del cambio de titularidad del animal. 8. Los ayuntamientos, a través de los centros de acogida y/o en colaboración con entidades de protección y defensa animal, velarán por la eficiencia de la adopción y la disminución de las devoluciones de los animales dados en adopción, por ejemplo, mediante cursos de formación para todas las personas adoptantes, en nociones básicas sobre necesidades higiénico-sanitarias y etológicas, así como pautas para una buena educación que garanticen la adaptación correcta al nuevo hogar y disminuyan el fracaso de la adopción.
-> Artículo 22. Destino de animales extraviados, abandonados y […]
+> Se modifica el apartado 7 por el art. 114.10 de la Ley 6/2024, […]
 
 **Artículo 30**
 
 > Artículo 30. Formación.
 >
-> 1. La conselleria competente en sanidad y bienestar animal regulará la formación en materia de protección de animales de compañía, incluyendo la que sea necesaria para la cualificación de las personas que trabajan con animales de compañía, y fijará los requisitos de los programas, cursos y entidades que la impartan, así como los criterios de convalidación por experiencia para las personas profesionales con trayectoria profesional acreditada sin antecedentes penales en maltrato animal y/o violencia interpersonal.
-> 2. En el plazo de los dos años siguientes a la publicación de la ley, se regulará la […]
+> 1. La conselleria competente en protección animal regulará la formación en materia de protección de animales de compañía, fijará los requisitos de los programas, cursos y entidades que la impartan, así como los criterios de convalidación por experiencia para las personas profesionales con trayectoria profesional acreditada sin antecedentes penales en maltrato animal y/o violencia interpersonal. En el caso de la formación que sea necesaria para la cualificación de las personas que […]
 
 **Artículo 32**
 
@@ -3344,11 +3200,12 @@ _(y 1 artículos más en este tema)_
 
 **Artículo 42**
 
-> […] libertad en el medio natural de individuos de cualquier especie exótica invasora que se mantenga como animal de compañía, excepto las excepciones previstas en la ley.
-> j) El adiestramiento de animales para su comportamiento violento o agresivo o su preparación para peleas.
+> […] para su desarrollo normal cuando esto afecte gravemente a su salud.
+> i) La puesta en libertad en el medio natural de individuos de cualquier especie exótica invasora que se mantenga como animal de compañía, excepto las excepciones previstas en la ley.
+> j) (Suprimida)
 > k) La celebración de ferias, exposiciones, concursos o exhibiciones con animales en suelos de dominio público municipal sin la autorización previa del ayuntamiento en cuyo término municipal se desarrolle esta actividad.
-> l) Utilizar animales en espectáculos, peleas y otras actividades que impliquen crueldad o maltrato.
-> m) Llevar animales atados a vehículos de motor en […]
+> l) (Suprimida)
+> m) Llevar animales atados a vehículos de motor en marcha, o a cualquier otro medio de transporte que exceda de sus capacidades […]
 
 **Artículo 45**
 
@@ -3366,9 +3223,8 @@ _(y 3 artículos más en este tema)_
 
 **Artículo 19**
 
-> […] funcionamiento:
-> a) La cría con fines comerciales y la venta profesional de animales se ha de realizar desde los centros de cría y centros de venta registrados y destinados a tal efecto.
-> b) Los centros de venta pueden disponer para su venta de aquellas especies animales autorizadas en la resolución de declaración de núcleo zoológico y, en todo caso, de animales de las especies canina y felina, peces, reptiles, roedores, conejos, hurones domésticos y pájaros de jaula criados en cautividad, siempre que cumplan los requisitos de espacio que se deben establecer reglamentariamente. La conselleria competente en sanidad y bienestar animal revisará el […]
+> […] solo podrá realizarse directamente desde la persona criadora, que deberá estar debidamente inscrita en el correspondiente registro, sin que se pueda realizar a través de intermediarios.
+> b) Los centros de venta pueden disponer para su venta de aquellas especies animales autorizadas en la resolución de declaración de núcleo zoológico y, en todo caso, de peces, anfibios, reptiles, roedores, conejos y pájaros de jaula criados en cautividad, siempre que cumplan los requisitos de espacio que se deben establecer reglamentariamente. La conselleria competente en sanidad y bienestar animal revisará el listado de especies y los requisitos y condiciones […]
 
 ### Colonias felinas y CES
 
@@ -3383,14 +3239,14 @@ _(y 3 artículos más en este tema)_
 
 **Artículo 10**
 
-> […] de identificación para responsables legales que sean personas profesionales titulares de centros de cría, establecimientos de venta o centros de acogida, y los requisitos de identificación para el resto de los responsables legales. 2. Están obligatoriamente sujetos a identificación los animales de la especie canina, felina, mustélidos domésticos, los animales que habiten en santuarios que no estén sujetos a identificación individual y las especies de animales que se determine reglamentariamente. 3. Así mismo, deben disponer de identificación todos los animales regulados como potencialmente peligrosos conforme a lo que se establece en […]
+> […] de identificación para responsables legales que sean personas profesionales titulares de centros de cría, establecimientos de venta o centros de acogida, y los requisitos de identificación para el resto de los responsables legales. 2. Están obligatoriamente sujetos a identificación los animales de la especie canina, felina, mustélidos domésticos, los animales que habiten en santuarios que no estén sujetos a identificación individual, las aves y las especies de animales que se determine reglamentariamente. 3. Así mismo, deben disponer de identificación todos los animales regulados como potencialmente peligrosos conforme a lo que se […]
 
 **Artículo 13**
 
 > Artículo 13. Plazos de identificación y cambio de titularidad.
 >
-> 1. El plazo para la identificación de los animales de las especies canina, felina y mustélidos domésticos deberá realizarse de manera previa a cualquier tipo de transmisión y antes de las vacunaciones obligatorias. El plazo para el resto de animales regulados por esta ley se establecerá conforme a su legislación específica.
->    Se establece el plazo máximo de dos días hábiles desde la identificación […]
+> 1. La identificación de los animales de las especies canina, felina y mustélidos domésticos deberá realizarse de manera previa a cualquier tipo de transmisión y antes de las vacunaciones obligatorias. El plazo para el resto de los animales regulados por esta ley se establecerá conforme a su legislación específica.
+> 2. El cambio de titularidad lo realizará la persona veterinaria […]
 
 **Artículo 14**
 
@@ -3398,8 +3254,8 @@ _(y 3 artículos más en este tema)_
 
 **Artículo 19**
 
-> […] de animales se ha de realizar desde los centros de cría y centros de venta registrados y destinados a tal efecto.
-> b) Los centros de venta pueden disponer para su venta de aquellas especies animales autorizadas en la resolución de declaración de núcleo zoológico y, en todo caso, de animales de las especies canina y felina, peces, reptiles, roedores, conejos, hurones domésticos y pájaros de jaula criados en cautividad, siempre que cumplan los requisitos de espacio que se deben establecer reglamentariamente. La conselleria competente en sanidad y bienestar animal revisará el listado de especies y los requisitos y condiciones para la […]
+> […] la persona criadora, que deberá estar debidamente inscrita en el correspondiente registro, sin que se pueda realizar a través de intermediarios.
+> b) Los centros de venta pueden disponer para su venta de aquellas especies animales autorizadas en la resolución de declaración de núcleo zoológico y, en todo caso, de peces, anfibios, reptiles, roedores, conejos y pájaros de jaula criados en cautividad, siempre que cumplan los requisitos de espacio que se deben establecer reglamentariamente. La conselleria competente en sanidad y bienestar animal revisará el listado de especies y los requisitos y condiciones para la venta de cada una en […]
 
 _(y 5 artículos más en este tema)_
 
@@ -3407,7 +3263,7 @@ _(y 5 artículos más en este tema)_
 
 **Artículo 5**
 
-> […] del Estado y de la Unión Europea en materia de sanidad y bienestar animal, y las siguientes:
+> […] la Unión Europea en materia de protección animal, sanidad y bienestar animal, y las siguientes:
 > – Animales abandonados: todo aquel animal de producción o de compañía u otros animales en cautividad que, independientemente de que esté o no identificado en cuanto a su origen o persona responsable legal, circule por la vía pública o se encuentre en espacios públicos sin acompañamiento de ninguna persona o se refugie en espacios privados y del que no se haya denunciado su pérdida o sustracción en un tiempo prudencial inferior a setenta y dos horas; o aquel que no sea retirado de un centro de acogida por su persona responsable legal o la persona […]
 
 **Artículo 6**
@@ -3422,9 +3278,9 @@ _(y 5 artículos más en este tema)_
 
 **Artículo 19**
 
-> […] una vez finalizado el periodo reproductivo, y los animales que no hayan sido objeto de transmisión o dados en adopción se han de ceder a un centro de recogida y acogida de animales, y garantizar su destino ético.
-> k) Los animales destinados a la venta no se pueden exhibir en escaparates ni zonas expuestas a la vía pública y se han de alojar en un lugar adecuado dentro del establecimiento, cubriendo sus necesidades fisiológicas y etológicas correctamente.
-> l) Las personas profesionales que trabajan en establecimientos de venta, cría o importación de animales deben tener una formación específica de cuidador o cuidadora de animales […]
+> […] la venta de cada una en el término de dos años. Las instalaciones estarán diseñadas de forma que el público únicamente podrá tener contacto directo con los animales bajo la supervisión del personal del establecimiento.
+> c) Los animales destinados a la venta no se pueden exhibir en escaparates ni zonas expuestas a la vía pública y se deben alojar en un lugar adecuado dentro del establecimiento, para cubrir sus necesidades fisiológicas y etológicas correctamente.
+> d) Los establecimientos comerciales podrán mantener acuerdos de colaboración con entidades de protección animal para la adopción de animales de compañía utilizando sus instalaciones, […]
 
 **Artículo 34**
 
@@ -3452,7 +3308,7 @@ _(y 1 artículos más en este tema)_
 > […] y los permisos correspondientes.
 > i) La tenencia de animales de compañía en lugares donde no se pueda ejercer la atención y vigilancia adecuadas y oportunas, de acuerdo con sus necesidades etológicas según especie y raza, así como que no se pueda prestar los tratamientos veterinarios prescritos.
 > j) Dejar animales en vehículos estacionados o en cualquier otro lugar sin la protección adecuada frente a la exposición solar y/o sin la ventilación y temperatura adecuadas.
-> k) La puesta en libertad en el medio natural y el abandono de individuos de cualquier especie exótica invasora regulada en el Real decreto 630/2013, de 2 de agosto, por el que […]
+> k) La puesta en libertad en el medio natural y el abandono de individuos de cualquier especie exótica invasora regulada en el Real Decreto 630/2013, de 2 de agosto, por el que […]
 
 **Artículo 8**
 
@@ -3475,7 +3331,8 @@ _(y 1 artículos más en este tema)_
 
 > […] y emergencia ante catástrofes naturales, pandemias o similares de animales de compañía, domésticos y demás animales que se encuentren en su término municipal, incluyendo como mínimo:
 > – La planificación para la evacuación en caso de emergencia de animales con sus responsables legales, contando con los medios de transporte con plazas suficientes para ello.
-> – La confección de un mapa del municipio con la localización de todas las instalaciones donde se mantengan animales domésticos y con los datos del responsable legal, contando con la previsión de lugares con capacidad suficiente donde realizar el traslado. 2. Corresponde a la […]
+> – La confección de un mapa del municipio con la localización de todas las instalaciones donde se mantengan animales domésticos y con los datos del responsable legal, contando con la previsión de lugares con capacidad suficiente donde realizar el traslado.
+> Para el desarrollo de las […]
 
 _(y 2 artículos más en este tema)_
 
@@ -3520,7 +3377,7 @@ _(y 2 artículos más en este tema)_
 > 1. La persona responsable legal del animal, que tendrá que ser identificada, es responsable de la identificación de este. Reglamentariamente, se establecerán los requisitos de identificación para responsables legales que sean personas profesionales titulares de centros de cría, establecimientos de venta o centros de acogida, y los requisitos de identificación para el resto de los responsables legales.
 > 2. Están obligatoriamente sujetos a identificación los animales de la especie canina, felina, mustélidos domésticos, los animales que habiten en santuarios que no estén sujetos a […]
 
-_(y 13 artículos más en este tema)_
+_(y 12 artículos más en este tema)_
 
 ### Abandono y sacrificio
 
@@ -3541,7 +3398,7 @@ _(y 13 artículos más en este tema)_
 **Artículo 5**
 
 > Artículo 5. Definiciones a efectos de esta ley.
-> Son definiciones a efectos de esta ley las contenidas en la normativa vigente del Estado y de la Unión Europea en materia de sanidad y bienestar animal, y las siguientes:
+> Son definiciones a efectos de esta ley las contenidas en la normativa vigente del Estado y de la Unión Europea en materia de protección animal, sanidad y bienestar animal, y las siguientes:
 > – Animales abandonados: todo aquel animal de producción o de compañía u otros animales en cautividad que, independientemente de que esté o no identificado en cuanto a su origen o persona responsable legal, circule por la vía pública o se encuentre en espacios públicos sin acompañamiento de ninguna persona o se refugie en espacios […]
 
 **Artículo 6**
@@ -3552,16 +3409,16 @@ _(y 13 artículos más en este tema)_
 **Artículo 7**
 
 > Artículo 7. Prohibiciones en cuanto a los animales de compañía.
-> Queda prohibido:
+> Además de las prohibiciones contenidas en la Ley 7/2023, de 28 de marzo, en materia de protección y bienestar animal, queda prohibido:
 > a) El sacrificio y la eutanasia en los supuestos no previstos en esta ley.
 > b) Maltratar a los animales de compañía.
 > c) Abandonar a los animales de compañía.
-> d) Mantener a los animales de compañía atados permanentemente, enjaulados en instalaciones indebidas o en cualquier condición inadecuada para sus necesidades fisiológicas y […]
+> d) Mantener los animales de compañía atados o enjaulados en instalaciones indebidas desde el punto de vista higiénico-sanitario o inadecuadas para la práctica de los cuidados y […]
 
 **Artículo 9**
 
 > […] y, en su caso, el ayuntamiento podrán ordenar, respectivamente, por motivos justificados de sanidad animal o salud pública, el internamiento o el aislamiento de los animales a los que se haya diagnosticado una enfermedad transmisible, para ser sometidos al tratamiento curativo o paliativo que corresponda, o a su eutanasia, en caso de que el tratamiento paliativo no evite la agonía o sufrimiento crónico incapacitante para la vida del animal, debiendo emitir la administración competente un informe que justifique la eutanasia firmado por una persona veterinaria colegiada.
-> Artículo 9. Tratamientos obligatorios de los animales de […]
+> Se modifica el apartado 1 por el art. 114.2 de la Ley 6/2024, de 5 […]
 
 _(y 14 artículos más en este tema)_
 
@@ -3575,8 +3432,9 @@ _(y 14 artículos más en este tema)_
 
 **Artículo 19**
 
-> […] de la especie, el número de identificación del animal, en su caso, y el número de registro y nombre del núcleo zoológico; y en el caso de venta a particulares, un breve resumen de los consejos de educación y las condiciones de alimentación, atención, cuidado, manejo, sanitarias y de bienestar necesarias, y las infracciones y sanciones que comporten el maltrato y el abandono de los animales regulados en esta ley.
-> e) Los animales se han de vender sanos, desparasitados y, en su caso, identificados y con las vacunas obligatorias. En el caso de animales de las especies canina, felina y mustélidos domésticos, se debe entregar al comprador […]
+> […] de la especie, el número de identificación del animal, en su caso, y el número de registro y nombre del núcleo zoológico; en el caso de venta a particulares, un breve resumen de los consejos de educación y las condiciones de alimentación, atención, cuidado, manejo, sanitarias y de bienestar necesarias, y las infracciones y sanciones que comporten el maltrato y el abandono de los animales regulados en esta ley.
+> g) El centro de cría o de venta debe entregar el animal identificado, en su caso, de acuerdo con lo dispuesto en el capítulo 4, título II de esta ley, relativo a la identificación.
+> h) Los animales se deben vender sanos, […]
 
 **Artículo 23**
 
@@ -3591,7 +3449,7 @@ _(y 14 artículos más en este tema)_
 **Artículo 37**
 
 > Artículo 37. Salvaguarda del régimen de bienestar animal en competiciones deportivas o actividades culturales.
-> El contenido de los apartados a y c del artículo 6, a, b, c, d, e, f, g y l del artículo 7 siguientes, el título VII y el título IX, excepto la tipificación de las infracciones no correspondientes a los apartados a y c del artículo 6 y los apartados a, b, c, d, e, f, g y l del artículo 7 siguientes de la presente ley será aplicable a las competiciones deportivas o actividades culturales en las que participen animales de producción, en ausencia de normativa específica y sin perjuicio de […]
+> El contenido de los apartados a y c del artículo 6, de los apartados a, b, c, d, e, f, g y l del artículo 7, el título VII y el título IX, excepto la tipificación de las infracciones no correspondientes a los apartados a y c del artículo 6 y los apartados a, b, c, d, e, f, g y l del artículo 7 de la presente ley será aplicable a las actividades y competiciones deportivas o actividades culturales en las que participen animales de producción, en ausencia de normativa específica y sin perjuicio […]
 
 **Artículo 38**
 
@@ -4040,7 +3898,7 @@ _(y 8 artículos más en este tema)_
 
 **Artículo 4**
 
-> […] o fuerza mayor. 15. Establecimiento de animales de compañía: cualquier recinto, instalación, edificio o grupo de edificios, incluyendo anexos y espacios que no estén totalmente cerrados o cubiertos, así como las instalaciones móviles en donde se alojen, mantengan, críen o se preste servicios a estos animales. 16. Núcleo zoológico: conjunto formado por el establecimiento o recinto de animales de compañía, tanto de titularidad pública como privada, y la colección zoológica que alberga. 17. Colección zoológica: conjunto de animales de compañía que habitan en un núcleo zoológico, de manera permanente o temporal. 18. Perrera deportiva: núcleo […]
+> […] o fuerza mayor. 15. Establecimiento de animales de compañía: cualquier recinto, instalación, edificio o grupo de edificios, incluyendo anexos y espacios que no estén totalmente cerrados o cubiertos, así como las instalaciones móviles en donde se alojen, mantengan, críen o se preste servicios a estos animales. 16. Núcleo zoológico: conjunto formado por el establecimiento o recinto de animales de compañía, tanto de titularidad pública como privada, y la colección zoológica que alberga. Se excluyen de esta definición los centros veterinarios. 17. Colección zoológica: conjunto de animales de compañía que habitan en un núcleo zoológico, de manera […]
 
 ### Colonias felinas y CES
 
@@ -4245,71 +4103,40 @@ _(y 14 artículos más en este tema)_
 
 ### Seguro de responsabilidad civil
 
-**Artículo 6**
-
-> […] de la autoridad competente o de sus agentes aquella documentación que le fuere requerida y resulte obligatoria en cada caso, colaborando para la obtención de la información necesaria en cada momento. 2. Corresponde a los propietarios de los animales, además de lo previsto en el apartado anterior:
-> a) Contratar un seguro de responsabilidad civil en aquellos casos que se determine reglamentariamente.
-> b) Identificar a sus animales, de acuerdo con lo establecido en esta Ley.
-> c) Comunicar el cambio de titularidad al Registro de Identificación de Animales de Compañía en un plazo máximo de 72 horas, salvo que la normativa específica […]
-
 **Artículo 21**
 
-> […] trimestral toda la información referente a las entradas, salidas y destino de los animales, así como las incidencias sanitarias más significativas.
 > Artículo 21. Sanciones.
 > Las sanciones, así como las medidas accesorias aplicables por las infracciones previstas en esta ley, y las condiciones para su graduación y responsabilidad civil serán las contempladas en la Ley 7/2023, de 28 de marzo, de protección de los derechos y el bienestar de los animales.
 > Se modifica por el art. 9.13 y 19 de la Ley 7/2024, de 26 de diciembre. Ref. BOE-A-2025-5522
-
-**Artículo 27**
-
-> […] canina, felina o cualquier otra que se determine reglamentariamente, sin la correspondiente autorización municipal.
-> d) Trasportar a los animales en condiciones inadecuadas o en maleteros que no estén especialmente adaptados para ello, siempre y cuando los animales no sufran daños evidentes.
-> e) No tener suscrito un seguro de responsabilidad civil en perros y, en su caso, en otras especies que se determinen reglamentariamente, sin perjuicio de lo establecido en la normativa específica para determinados animales.
-> f) No someter a los animales a un reconocimiento veterinario de forma periódica.
-> g) No comunicar el extravío, muerte, venta o […]
 
 ### Identificación y microchip
 
 **Artículo 4**
 
-> […] de persona alguna y del cual no se haya denunciado su pérdida o sustracción, o aquel que no sea retirado del centro de recogida por su propietario o persona autorizada en los plazos establecidos en esta Ley. 5. Animales perdidos o extraviados: aquellos animales de compañía que, estando identificados o bien sin identificar, vagan sin destino y sin control, siempre que sus propietarios o poseedores hayan comunicado el extravío o perdida de los mismos. En caso de animales identificados, deberá haberse comunicado la pérdida al Registro de Identificación de Animales de Compañía de la Comunidad de Madrid. 6. Animales vagabundos: aquellos […]
+> […] felinas.
+> f) Animal desamparado: todo aquel que dentro del ámbito de esta ley e, independientemente de su origen o especie, se encuentre en una situación de indefensión o enfermedad sin recibir atención o auxilio.
+> g) Animal extraviado: todo aquel que dentro del ámbito de esta ley que, estando identificado o bien sin identificar, vaga sin destino y sin control, siempre que sus titulares o responsables hayan comunicado su extravío o pérdida en la forma y plazo establecidos al Registro de Identificación de Animales de Compañía correspondiente o a la autoridad competente, para la notificación a dicho Registro.
+> h) Animal identificado: aquel que […]
 
 **Artículo 6**
 
-> […] y resulte obligatoria en cada caso, colaborando para la obtención de la información necesaria en cada momento. 2. Corresponde a los propietarios de los animales, además de lo previsto en el apartado anterior:
-> a) Contratar un seguro de responsabilidad civil en aquellos casos que se determine reglamentariamente.
-> b) Identificar a sus animales, de acuerdo con lo establecido en esta Ley.
-> c) Comunicar el cambio de titularidad al Registro de Identificación de Animales de Compañía en un plazo máximo de 72 horas, salvo que la normativa específica disponga de un plazo menor, en cuyo caso será dicho plazo el que rija.
-> Artículo 6. Obligaciones con […]
+> […] acuarios, terrarios y similares, deberán contar con espacios adecuados en tamaño, naturalización y enriquecimiento ambiental para su tenencia. Las condiciones para cada especie se desarrollarán reglamentariamente.
+> h) Superar la formación en tenencia responsable reglamentada para cada especie de animal de compañía.
+> i) Identificar mediante microchip y proceder a la esterilización quirúrgica de todos los gatos antes de los seis meses de edad salvo aquellos inscritos en el Registro de identificación de animales de compañía de la Comunidad de Madrid como reproductores y a nombre de un criador registrado en el Registro de criadores de animales de […]
 
 **Artículo 7**
 
-> […] o por prescripción veterinaria.
-> i) Mantener a los animales atados o encerrados permanentemente o por tiempo o en condiciones que puedan suponer sufrimiento o daño para el animal, o mantenerlos aislados del ser humano u otros animales en caso de tratarse de animales de especies gregarias.
-> j) Poseer animales sin identificarlos de acuerdo a lo señalado en esta norma.
-> k) Exhibir animales en locales de ocio o diversión.
-> l) Ejercer la mendicidad o cualquier actividad ambulante utilizando animales como reclamo.
-> m) Regalar animales como recompensa o premio, o rifarlos.
-> n) Utilizar animales en carruseles de ferias.
-> ñ) La participación de […]
-
-**Artículo 11**
-
-> Artículo 11. Animales objeto de identificación.
-> Serán obligatoriamente objeto de identificación, mediante microchip, los perros, gatos, hurones, conejos y équidos. Las aves serán identificadas mediante anillado desde su nacimiento. Asimismo serán objeto de identificación todos los animales catalogados como potencialmente peligrosos conforme a lo previsto en la normativa vigente en la materia, sin perjuicio de cualquier otra especie […]
-
-**Artículo 12**
-
-> Artículo 12. Sistema de identificación.
->
-> 1. Sin perjuicio de otras previsiones que se puedan determinar por vía reglamentaria, se establece como sistema de marcaje de los animales la implantación de un microchip homologado, portador de un código único validado por el Registro de Identificación de Animales de Compañía, que en el caso de los gatos y perros se implantará subcutáneamente en la zona izquierda del cuello.
-> 2. No se podrán inscribir en el Registro de Identificación de Animales de Compañía aquellos animales que no se […]
+> […] La comercialización, donación o entrega en adopción de animales no identificados y registrados previamente a nombre del transmitente conforme a los métodos de identificación aplicables según la normativa vigente.
+> En el caso de los animales utilizados en actividades específicas y profesionales, se podrán identificar en el momento de la transmisión a nombre del nuevo titular, siempre y cuando no exista un beneficio económico en la misma y no se haya alcanzado la edad en la que es obligatoria la identificación.
+> y) Emplear animales de compañía para el consumo humano.
+> z) Se prohíbe el uso de cualquier herramienta de manejo que pueda […]
 
 ### Censo y registro municipal
 
 **Artículo 4**
 
-> […] por las autoridades competentes y se encuentran dados de alta en el Registro de Identificación de la Comunidad de Madrid o en el registro equivalente de otra Comunidad Autónoma. 8. Propietario: quien figure inscrito como tal en el Registro de Identificación correspondiente. En los casos en los que no exista inscripción en el Registro, se considerará propietario a quien pueda demostrar esta circunstancia por cualquier método admitido en Derecho para la prueba de su titularidad y dominio.
-> Los menores e incapacitados podrán ser propietarios de acuerdo con las reglas generales sobre capacidad establecidas en el Código Civil. 9. […]
+> […] siempre que su tenencia no tenga como destino su consumo el aprovechamiento de sus producciones o no se lleve a cabo, en general, con fines comerciales o lucrativos. Los animales de producción sólo se considerarán animales de compañía en el supuesto de que, perdiendo su fin productivo, el propietario decidiera inscribirlo como animal de compañía en el Registro de Animales de Compañía.
+> b) Animal doméstico: conforme al artículo 3.4 la Ley 8/2003, de 24 de abril, de Sanidad Animal, aquellos animales de compañía pertenecientes a especies que críe y posea tradicional y habitualmente el hombre, con el fin de vivir en domesticidad en el […]
 
 **Artículo 5**
 
@@ -4319,26 +4146,16 @@ _(y 14 artículos más en este tema)_
 
 **Artículo 9**
 
-> […] o medioambientales.
 > Artículo 9. Registros para la protección animal.
 > Los registros para la protección animal en el ámbito de la Comunidad de Madrid, cuya organización y funcionamiento se establecerá reglamentariamente, son:
 > a) Registro de entidades de protección animal de la Comunidad de Madrid: tiene como objeto la inscripción de asociaciones o fundaciones cuyos estatutos les habiliten para ejercer cualquier actividad que tenga por objeto la protección de los animales. Para ello, en este registro se incluirá el nombre de la entidad, razón social y dirección postal y datos identificativos de la persona física representante de dicha […]
 
-**Artículo 12**
-
-> […] se establece como sistema de marcaje de los animales la implantación de un microchip homologado, portador de un código único validado por el Registro de Identificación de Animales de Compañía, que en el caso de los gatos y perros se implantará subcutáneamente en la zona izquierda del cuello. 2. No se podrán inscribir en el Registro de Identificación de Animales de Compañía aquellos animales que no se encuentren marcados mediante los sistemas previstos en el apartado anterior. 3. Los animales marcados con arreglo a los sistemas de marcaje previstos, pero no inscritos en ninguna base de datos oficialmente reconocida, no se […]
-
 **Artículo 17**
 
-> Artículo 17. Registro de los centros de animales de compañía.
+> Artículo 17. Entidades de protección de los animales.
 >
-> 1. Se crea el Registro de Centros de Animales de Compañía de la Comunidad de Madrid, en el cual se deberán inscribir todos los centros de acuerdo con su clasificación zootécnica particular, cuya organización y funcionamiento se establecerá reglamentariamente.
-> 2. La Dirección General con competencias en materia de protección animal tramitará las solicitudes y registrará los centros, asignándoles un número de registro.
->    Los […]
-
-**Artículo 18**
-
-> […] tomando con referencia el desarrollo de su dentadura. 9. Los criadores deberán tomar medidas que aseguren la correcta socialización de los cachorros con anterioridad a su venta. 10. El criadero o centro de venta entregará el animal identificado por un veterinario, de acuerdo con lo señalado en esta norma, con la inscripción formalizada y efectiva del animal a nombre del comprador en el Registro de Identificación de Animales de Compañía de la Comunidad de Madrid. 11. La venta de animales solo podrá realizarse a personas mayores de edad que no estén incapacitados de acuerdo con la legislación vigente o mediante resolución judicial firme o […]
+> 1. A efectos de su inscripción en el Registro de entidades de protección animal de la Comunidad de Madrid, las entidades cumplirán los requisitos y se atendrán a la clasificación establecidos en la Ley 7/2023, de 28 de marzo, de protección de los derechos y el bienestar de los animales.
+> 2. Las entidades de protección de los animales registradas […]
 
 ### Esterilización
 
@@ -4360,20 +4177,10 @@ _(y 14 artículos más en este tema)_
 
 **Artículo 6**
 
-> […] del animal.
-> f) Adoptar las medidas necesarias para evitar la reproducción incontrolada de los animales. Los perros y gatos que se mantengan en polígonos industriales, obras o similares y los que tengan acceso al exterior de las viviendas y puedan tener contacto no controlado con otros perros y gatos, deberán estar esterilizados obligatoriamente. Igualmente los perros de asistencia deberán estar esterilizados de acuerdo a su normativa específica.
-> g) Comunicar el extravío o muerte de los animales al Registro de Identificación de Animales de Compañía en un plazo máximo de 72 horas, salvo que la normativa específica disponga de un plazo […]
-
-**Artículo 7**
-
-> […] prohíben las siguientes prácticas:
-> a) El sacrificio de animales.
-> b) El maltrato de animales.
-> c) El abandono de animales.
-> c bis) La cría y venta de animales con fines comerciales sin los permisos correspondientes.
-> d) Las mutilaciones de animales, excepto las precisas por necesidad médico quirúrgica, por esterilización o por suponer un beneficio futuro para el animal, que en todo caso serán realizadas por un veterinario. Esta excepción no incluye las mutilaciones con fines exclusivamente estéticos.
-> e) Dar a los animales una educación agresiva o violenta o prepararlos para peleas.
-> f) Implicar a los animales en peleas o agresiones […]
+> […] con espacios adecuados en tamaño, naturalización y enriquecimiento ambiental para su tenencia. Las condiciones para cada especie se desarrollarán reglamentariamente.
+> h) Superar la formación en tenencia responsable reglamentada para cada especie de animal de compañía.
+> i) Identificar mediante microchip y proceder a la esterilización quirúrgica de todos los gatos antes de los seis meses de edad salvo aquellos inscritos en el Registro de identificación de animales de compañía de la Comunidad de Madrid como reproductores y a nombre de un criador registrado en el Registro de criadores de animales de compañía.
+> j) Comunicar al Registro de […]
 
 **Artículo 14**
 
@@ -4386,59 +4193,39 @@ _(y 14 artículos más en este tema)_
 
 > […] pondrán en marcha medidas de fomento de la adopción de animales abandonados y vagabundos. 7. Los centros de protección animal públicos y privados fomentarán en todo momento la adopción responsable de animales. La adopción se llevará a cabo con todos los tratamientos obligatorios al día y previa identificación y esterilización del animal, o compromiso de esterilización en un plazo determinado, si hay razones sanitarias que no la hagan aconsejable en el momento de la adopción. 8. Los centros de protección animal públicos y privados comunicarán en un máximo de 24 horas la entrada de un animal identificado al Registro de Identificación de […]
 
-_(y 5 artículos más en este tema)_
+**Artículo 18**
+
+> […] para el ejercicio de su profesión en materia laboral y tributaria.
+> b) Que desarrollen su actividad profesional de acuerdo con los principios del código deontológico veterinario.
+> c) Promover la salud y el bienestar de los animales de compañía, divulgar la tenencia responsable de los animales, así como la adopción y esterilización de los animales.
+> d) Participen en las campañas de sanidad animal salud pública o identificación, promovidas por la Comunidad de Madrid.
+> e) Los veterinarios deberán comunicar a la Consejería competente en materia de protección animal, cualquier indicio que detecten en el ejercicio de su profesión que pudiera ser […]
+
+_(y 1 artículos más en este tema)_
 
 ### Perros potencialmente peligrosos
 
 **Artículo 4**
 
-> […] e incapacitados podrán ser propietarios de acuerdo con las reglas generales sobre capacidad establecidas en el Código Civil. 9. Poseedor: el que sin ser propietario en los términos establecidos en el punto anterior, ostente circunstancialmente la posesión y/o cuidado del animal. 10. Veterinario colaborador: el licenciado en Veterinaria reconocido, autorizado o habilitado por la autoridad competente para la ejecución de funciones en programas oficiales de protección y sanidad animal y de salud pública. 11. Entidades de protección de los animales: aquellas entidades con ámbito de actuación en la Comunidad de Madrid, sin fin de lucro, […]
+> […] ganadera debidamente inscrita en el Registro de Explotaciones Ganaderas o presta sus servicios como pastor en la misma.
+> l) Hurones de caza. Huron que es animal auxiliar de caza, está dado de alta como tal en el Registro de Identificación de Animales de Compañía de la Comunidad de Madrid, y cuyo titular dispone de una licencia de caza en vigor o presenta licencia federativa para la caza o presenta certificado de la Federación de la Madrileña de Caza para la caza.
+> m) Rehala: agrupación de perros de caza que está inscrita en el Registro de núcleos zoológicos de animales de compañía de la Comunidad de Madrid y cuyos animales tienen o bien una […]
 
 **Artículo 9**
 
 > […] inscripción de cualquier persona que ejerza la actividad profesional dirigida a la educación, adiestramiento, modificación de conducta o similares de los animales incluidos en el ámbito de aplicación de esta ley, las personas tituladas en veterinaria con formación acreditada en comportamiento animal, las personas con licenciatura o grado universitario con formación complementaria en etología y aquellas personas que posean como mínimo el certificado de profesionalidad de adiestramiento de base y educación canina (SEAD0412), que acredita a la cualificación profesional SEA531_2 adiestramiento de base y educación canina, recogida en el […]
 
-**Artículo 11**
-
-> Artículo 11. Animales objeto de identificación.
-> Serán obligatoriamente objeto de identificación, mediante microchip, los perros, gatos, hurones, conejos y équidos. Las aves serán identificadas mediante anillado desde su nacimiento. Asimismo serán objeto de identificación todos los animales catalogados como potencialmente peligrosos conforme a lo previsto en la normativa vigente en la materia, sin perjuicio de cualquier otra especie o tipo de animal que se pudiera determinar reglamentariamente.
-> Artículo 11. Identificación de animales de compañía.
-> Las obligaciones con respecto a la identificación de los animales de compañía y silvestres en […]
-
 **Artículo 16**
 
 > […] deberá recogerlo en el plazo de 5 días hábiles a contar desde la recepción de la notificación, abonando previamente la totalidad de los gastos causados por la recogida y estancia del animal en el centro de protección animal, incluidos los gastos veterinarios necesarios que pudiera requerir el animal, y presentando la licencia correspondiente en caso de tratarse de un animal potencialmente peligroso. Transcurrido el citado plazo sin que se haya recuperado el animal extraviado, éste pasará a tener la condición de abandonado y podrá ser dado en adopción tan pronto como el veterinario responsable del centro determine que cumple las condiciones […]
 
-**Artículo 21**
-
-> […] o persona autorizada por éste, deberá recogerlo en el plazo de 5 días hábiles a contar desde la recepción de la notificación, abonando previamente la totalidad de los gastos causados por la recogida y estancia del animal en el centro de acogida, incluidos los gastos veterinarios necesarios, y presentando la licencia correspondiente en caso de tratarse de un animal potencialmente peligroso. Transcurrido el citado plazo sin que se haya recuperado el animal extraviado, éste pasará a tener la condición de abandonado y podrá ser dado en adopción tan pronto como el veterinario responsable del centro determine que cumple las condiciones […]
-
 ### Curso o formación
-
-**Artículo 7**
-
-> […] esta norma.
-> k) Exhibir animales en locales de ocio o diversión.
-> l) Ejercer la mendicidad o cualquier actividad ambulante utilizando animales como reclamo.
-> m) Regalar animales como recompensa o premio, o rifarlos.
-> n) Utilizar animales en carruseles de ferias.
-> ñ) La participación de animales en ferias, exposiciones, concursos, exhibiciones, filmaciones, sesiones fotográficas o cinematográficas con fines publicitarios o cualquier otra actividad similar, sin la correspondiente autorización del Ayuntamiento en cuyo Municipio se desarrolle esta actividad.
-> o) La utilización de animales para la filmación de escenas no simuladas para cine, […]
 
 **Artículo 19**
 
-> Artículo 19. Requisitos.
->
-> 1. La participación de animales en ferias, exposiciones, concursos, filmaciones, exhibiciones o cualquier otra actividad, requerirá la autorización previa del Ayuntamiento en cuyo municipio se desarrolle esta actividad.
-> 2. Los locales destinados a exposiciones o concursos deberán cumplir con los siguientes requisitos:
->    a) Disponer de un espacio en el que un facultativo veterinario […]
-
-**Artículo 24**
-
 > […] y realizará las necesarias campañas en esta materia. 2. La Consejería competente en protección animal regulará la formación en materia de protección de animales de compañía, incluyendo la necesaria para la cualificación de las personas que trabajen con animales de compañía, fijando los requisitos de los programas, cursos y entidades que la impartan.
-> Artículo 24. Procedimiento y competencia.
->
-> 1. Sin perjuicio de lo dispuesto en la legislación sobre procedimiento administrativo común, el procedimiento sancionador se sustanciará de conformidad con lo previsto en la normativa reglamentaria que regule el ejercicio de la potestad […]
+> Se modifica por el art. 9.16 de la Ley 7/2024, de 26 de diciembre. Ref. BOE-A-2025-5522
+> Su anterior numeración era art. 24.
 
 **Artículo 28**
 
@@ -4470,16 +4257,12 @@ _(y 5 artículos más en este tema)_
 
 **Artículo 7**
 
-> […] actividad.
-> o) La utilización de animales para la filmación de escenas no simuladas para cine, televisión o Internet, artísticas o publicitarias, que conlleven crueldad, maltrato, muerte o sufrimiento de los animales.
-> p) Mantener en el mismo domicilio un total superior a 5 animales pertenecientes a la especie canina, felina o cualquier otra que se determine reglamentariamente, salvo que el Ayuntamiento correspondiente lo autorice.
-> q) Mantener animales en vehículos estacionados sin la ventilación y temperatura adecuada.
-> r) Mantener animales en vehículos de forma permanente.
-> s) Trasladar animales en los maleteros de vehículos que no estén […]
+> […] por profesionales veterinarios colegiados y otras excepciones que se establezcan reglamentariamente. En el caso de perros utilizados para actividades específicas y profesionales, se permitirá el uso de collares de impulso para su entrenamiento y el desarrollo de su trabajo, en el menor grado en el que resulten eficaces, y siempre que no ocasionen daños ni lesiones al animal.
+> c) Abandonarlos intencionadamente en espacios cerrados o abiertos, especialmente en el medio natural donde pueden ocasionar daños posteriores por asilvestramiento o por su condición de especies exóticas potencialmente invasoras.
+> d) Dejar animales sueltos o en […]
 
 **Artículo 12**
 
-> […] adquisición con los datos de la persona que se hace cargo de ellos, adoptante o comprador.
 > Artículo 12. Gestión del Registro de identificación de animales de compañía de la Comunidad de Madrid.
 >
 > 1. El Registro será gestionado por el Colegio Oficial de Veterinarios de Madrid en tanto en cuanto se mantengan las directrices fijadas reglamentariamente.
@@ -4487,59 +4270,28 @@ _(y 5 artículos más en este tema)_
 >    Se modifica por el art. 9.7 y 8 de la Ley 7/2024, de 26 de diciembre. Ref. BOE-A-2025-5522
 >    Su anterior […]
 
-**Artículo 15**
-
-> Artículo 15. Gestión del Registro.
->
-> 1. El Registro será gestionado por el Colegio Oficial de Veterinarios de Madrid en tanto en cuanto se mantengan las directrices fijadas reglamentariamente.
-> 2. En el caso de que se incumplan las directrices fijadas reglamentariamente podrá retirarse la gestión, asumiendo la misma la Consejería con competencia en materia de protección animal.
->    Artículo 15. Empleo de animales en actividades culturales y festivas.
-> 3. Las condiciones generales del […]
-
 **Artículo 16**
 
 > […] Los derechos y obligaciones de ambas partes deberán reflejarse contractualmente. El centro mantendrá una relación actualizada de estas casas de acogida, a disposición de la consejería competente en materia de protección animal y del ayuntamiento donde se ubiquen. 16. En aquellas ubicaciones en las que existan colonias felinas, corresponde a las entidades locales su gestión al objeto de controlar la población de los gastos comunitarios y reducir progresivamente su población, respetando siempre los términos establecidos en la Ley 7/2023, de 28 de marzo, de protección de los derechos y el bienestar de los animales. 17. Los centros de […]
 
-**Artículo 18**
+**Disposición adicional quinta**
 
-> […] centros de venta que cumplan las condiciones de salubridad, espacio, etc. que se determinen reglamentariamente en el plazo de seis meses desde la aprobación de esta Ley. Dichos centros tendrán un plazo máximo de adaptación de 24 meses a dichas condiciones. 3. Los centros de venta podrán disponer para su venta de peces, reptiles, roedores, conejos, hurones y pájaros de jaula criados en cautividad, siempre que cumplan con los requisitos de espacio que se establecerán reglamentariamente. La Consejería competente revisará el listado de especies y los requisitos y condiciones para la venta de cada una de ellas en el plazo de dos […]
+> Disposición adicional quinta. Transporte de animales, colonias felinas, y otros.
+> Serán de aplicación en el transporte de animales y en colonias felinas y en todo aquello no recogido en la presente ley, los preceptos establecidos Ley 7/2023, de 28 de marzo.
+> Se añade por el art. 9.25 de la Ley 7/2024, de 26 de diciembre. Ref. BOE-A-2025-5522
 
-_(y 4 artículos más en este tema)_
+**Disposición transitoria tercera**
+
+> Disposición transitoria tercera. Prohibición de determinadas especies como animales de compañía.
+> Hasta la aprobación y publicación del listado positivo al que corresponda la especie (mamíferos, aves, reptiles, anfibios, peces o invertebrados) referido en la Ley 7/2023, de 28 de marzo, de protección de los derechos y el bienestar de los animales, queda prohibida la tenencia como animales de compañía de los animales pertenecientes a especies que cumplan alguno de los siguientes criterios, relativos a su peligrosidad y a la necesidad de […]
 
 ### Vía pública y excrementos
 
-**Artículo 4**
-
-> […] cinegético. No se entenderán como fauna silvestre los animales de dichas especies que se mantienen como animales de compañía o como animales de producción. 4. Animales abandonados: se considera animal de compañía abandonado todo aquel que pudiendo estar o no identificado de su origen o propietario, circule por la vía pública sin acompañamiento de persona alguna y del cual no se haya denunciado su pérdida o sustracción, o aquel que no sea retirado del centro de recogida por su propietario o persona autorizada en los plazos establecidos en esta Ley. 5. Animales perdidos o extraviados: aquellos animales de compañía que, estando identificados […]
-
 **Artículo 6**
 
-> […] vigente, garantizando la seguridad vial y la comodidad de los animales durante el transporte, incluido el transporte en vehículos particulares.
-> c) Adoptar las medidas necesarias para evitar los perjuicios que pudieran causar los animales que estén bajo su custodia.
-> d) Impedir que los animales depositen sus deyecciones en aceras, paseos, jardines y en general en espacios públicos o privados de uso común, procediendo, en todo caso, a su retirada y limpieza inmediata.
-> e) Proporcionar a los animales aquellos tratamientos preventivos que fueran declarados obligatorios, así como cualquier otro tipo de tratamiento veterinario […]
-
-**Artículo 13**
-
-> […] del animal y del veterinario actuante, en el plazo máximo de tres días hábiles. El alta podrá tramitarse por medio del veterinario que ha realizado el marcaje. 3. El código asignado e implantado se constatará en la cartilla sanitaria o pasaporte oficial del animal. 4. La retirada de animales muertos en carreteras o vía pública se realizará previa comprobación de su identificación y aviso a su propietario, en su caso.
-> Artículo 13. Requisitos de núcleos zoológicos de animales de compañía.
-> Los núcleos zoológicos de animales de compañía deberán reunir los siguientes requisitos, sin perjuicio de los que se establezcan reglamentariamente:
-> a) […]
-
-**Artículo 18**
-
-> […] de animales criados fuera del territorio nacional su venta no podrá realizarse antes de que los cachorros hayan cumplido los tres meses y quince días, siendo obligatorio que sean entregados con la vacuna de la rabia. 13. Los animales destinados a la venta no se podrán exhibir en escaparates o zonas expuestas a la vía pública.
-> Artículo 18. Profesión veterinaria.
->
-> 1. Los veterinarios colegiados en la Comunidad de Madrid, podrán ser reconocidos como colaboradores de la Comunidad de Madrid, a través de la Dirección General competente en materia de protección animal, siempre y cuando cumplan y mantengan los siguientes requisitos, sin perjuicio […]
-
-**Artículo 27**
-
-> […] plazos establecidos.
-> h) No someter a los animales a pruebas de sociabilidad y educación, cuando el carácter del animal y su comportamiento así lo aconsejen.
-> i) La no adopción por los propietarios, poseedores o responsables de los animales de compañía, de las medidas oportunas para evitar que el animal ensucie con sus deyecciones los espacios públicos o privados de uso común, o la no recogida inmediata de estas deyecciones.
-> j) No mantener actualizados los datos de los animales en el Registro de Identificación de Animales de Compañía de la Comunidad de Madrid por parte de los propietarios de los mismos.
-> k) Cualquier acción u omisión que […]
+> […] o circulación ocasione molestias, peligros o amenazas o daños a las personas, otros animales o a las cosas, sin perjuicio de los ocasionados por los perros de caza a especies cinegéticas en cotos de caza y por los perros pastores en su trabajo de guarda y custodia del ganado.
+> Entre estas medidas se incluirá el uso de correa en caso de que los animales que paseen se encuentren en zonas en las que paste ganado en régimen extensivo, al que puedan causar molestias o lesiones
+> d) Adoptar las medidas necesarias para evitar la reproducción incontrolada de los animales de compañía. La cría sólo podrá ser llevada a cabo por personas responsables […]
 
 ### Transporte
 
@@ -4559,19 +4311,18 @@ _(y 4 artículos más en este tema)_
 
 **Artículo 6**
 
-> […] protección frente a las inclemencias meteorológicas, y que permita su control con una frecuencia al menos diaria; compañía en caso de animales gregarios, que en ningún caso podrán mantenerse aislados del hombre u otros animales; y en general, una atención y manejo acordes con las necesidades de cada uno de ellos.
-> b) Transportar a los animales adecuadamente y siempre en los términos previstos en la legislación vigente, garantizando la seguridad vial y la comodidad de los animales durante el transporte, incluido el transporte en vehículos particulares.
-> c) Adoptar las medidas necesarias para evitar los perjuicios que pudieran causar los […]
+> […] tenencia. Las condiciones para cada especie se desarrollarán reglamentariamente.
+> b) Educar y manejar al animal con métodos que no provoquen sufrimiento o maltrato al animal, ni le causen estados de ansiedad o miedo.
+> c) Ejercer sobre los animales la adecuada vigilancia y evitar su huida.
+> d) No dejarlos solos dentro de vehículos cerrados, expuestos a condiciones térmicas o de cualquier otra índole que puedan poner su vida en peligro.
+> e) Prestar al animal los cuidados sanitarios necesarios para garantizar su salud y, en todo caso, los estipulados como obligatorios según su normativa específica, así como facilitarles un reconocimiento […]
 
 **Artículo 7**
 
-> […] que conlleven crueldad, maltrato, muerte o sufrimiento de los animales.
-> p) Mantener en el mismo domicilio un total superior a 5 animales pertenecientes a la especie canina, felina o cualquier otra que se determine reglamentariamente, salvo que el Ayuntamiento correspondiente lo autorice.
-> q) Mantener animales en vehículos estacionados sin la ventilación y temperatura adecuada.
-> r) Mantener animales en vehículos de forma permanente.
-> s) Trasladar animales en los maleteros de vehículos que no estén adaptados especialmente para ello.
-> t) Llevar animales atados a vehículos a motor en marcha.
-> u) Disparar o agredir a los animales con armas de […]
+> […] sin perjuicio de las actividades necesarias para el desarrollo correcto de su tarea, realizadas por perros de caza en cotos y por perros pastores cuando guardan y custodian al ganado.
+> p) Mantener de forma habitual a perros y gatos en terrazas, balcones, azoteas, trasteros, sótanos, patios y similares o vehículos, con la excepción de los perros utilizados en actividades específicas, que se podrán mantener en patios adecuadamente acondicionados.
+> q) Llevar animales atados a vehículos a motor en marcha.
+> r) La puesta en libertad o introducción en el medio natural de animales de cualquier especie de animal de compañía que se […]
 
 **Artículo 14**
 
@@ -4607,7 +4358,9 @@ _(y 1 artículos más en este tema)_
 
 **Artículo 4**
 
-> […] como destino su consumo o el aprovechamiento de sus producciones, o no se lleve a cabo, en general, con fines comerciales o lucrativos. 2. Animales de producción: aquellos animales de producción, reproducción, cebo o sacrificio, incluidos los animales de peletería o de actividades cinegéticas, mantenidos, cebados o criados para la producción de alimentos o productos de origen animal, para cualquier uso industrial y otro fin comercial o lucrativo. 3. Fauna silvestre: el conjunto de especies, subespecies, población e individuos animales que viven y se reproducen de forma natural en estado silvestre, incluidos los que se encuentran en […]
+> […] cuyo titular dispone de una licencia de caza emitida por el órgano competente en la materia de cualquier comunidad autónoma, que se emplea en una actividad cinegética autorizada y está dado de alta como tal en el Registro de Identificación de Animales de Compañía correspondiente.
+> ñ) Ave de cetrería: aquella ave rapaz criada, enseñada y utilizada para la caza.
+> o) Animal utilizado en actividades profesionales: aquellos animales de compañía que se dedican a una actividad o cometido concreto realizado conjuntamente con su responsable en un entorno profesional o laboral, como los perros de rescate, animales de compañía utilizados en […]
 
 **Artículo 5**
 
@@ -4624,13 +4377,10 @@ _(y 1 artículos más en este tema)_
 
 **Artículo 7**
 
-> Artículo 7. Prohibiciones.
-> Se prohíben las siguientes prácticas:
-> a) El sacrificio de animales.
-> b) El maltrato de animales.
-> c) El abandono de animales.
-> c bis) La cría y venta de animales con fines comerciales sin los permisos correspondientes.
-> d) Las mutilaciones de animales, excepto las precisas por necesidad médico quirúrgica, por esterilización o por suponer un beneficio futuro para el animal, que en todo caso serán realizadas por un veterinario. Esta excepción no incluye las […]
+> […] Utilizarlos de forma ambulante como reclamo. Sin que este precepto cuestione el derecho de las personas sin hogar a ir acompañadas de sus animales de compañía.
+> g) Someterlos a trabajos inadecuados o excesivos en tiempo o intensidad respecto a las características y estado de salud de los animales.
+> h) La tenencia, cría y comercio de aves fringílidas capturadas del medio natural en tanto se infrinjan los requisitos del apartado primero, letra f), del artículo 61 y 4 de la Ley 42/2007, de 13 de diciembre.
+> i) Alimentarlos con vísceras, cadáveres y otros despojos procedentes de animales que no hayan superado los oportunos controles […]
 
 **Artículo 9**
 
@@ -4638,7 +4388,7 @@ _(y 1 artículos más en este tema)_
 > e) Registro de criadores de animales de compañía de la Comunidad de Madrid: tiene como objeto la inscripción de personas responsables de la actividad de la cría de animales de compañía. Para ello en este registro se incluirán los datos identificativos de la persona criadora y de sus ejemplares reproductores.
 > Se modifica por el art. 9.5 […]
 
-_(y 5 artículos más en este tema)_
+_(y 2 artículos más en este tema)_
 
 ### Abandono y sacrificio
 
@@ -4657,38 +4407,36 @@ _(y 5 artículos más en este tema)_
 
 **Artículo 4**
 
-> […] que habiten, y los équidos utilizados con fines de ocio o deportivo, siempre que su tenencia no tenga como destino su consumo o el aprovechamiento de sus producciones, o no se lleve a cabo, en general, con fines comerciales o lucrativos. 2. Animales de producción: aquellos animales de producción, reproducción, cebo o sacrificio, incluidos los animales de peletería o de actividades cinegéticas, mantenidos, cebados o criados para la producción de alimentos o productos de origen animal, para cualquier uso industrial y otro fin comercial o lucrativo. 3. Fauna silvestre: el conjunto de especies, subespecies, población e individuos animales que […]
+> […] si se incluye en el listado positivo de animales de compañía, de lo contrario, será considerado como silvestre en cautividad, sin perjuicio de la sujeción de los animales silvestres de producción a la Ley 32/2007, de 7 de noviembre, para el cuidado de los animales, en su explotación, transporte, experimentación y sacrificio.
+> e) Animal abandonado: todo animal incluido en el ámbito de aplicación de esta ley, que vaga sin el acompañamiento o supervisión de persona alguna, estando o no identificado su origen o persona titular o responsable y no habiendo sido comunicada o denunciada su desaparición en la forma y plazos establecidos. […]
 
 **Artículo 7**
 
-> Artículo 7. Prohibiciones.
-> Se prohíben las siguientes prácticas:
-> a) El sacrificio de animales.
-> b) El maltrato de animales.
-> c) El abandono de animales.
-> c bis) La cría y venta de animales con fines comerciales sin los permisos correspondientes.
-> d) Las mutilaciones de animales, excepto las precisas por necesidad médico quirúrgica, por esterilización o por suponer un beneficio futuro para el animal, […]
-
-**Artículo 9**
-
-> Artículo 9. Del sacrificio y la eutanasia de los animales
->
-> 1. Se prohíbe el sacrificio de los animales de compañía excepto por motivos de sanidad animal, de seguridad de las personas o animales, o de existencia de riesgo para la salud pública o medioambiental. El sacrificio será realizado siempre que sea posible, y según lo dictado en esta […]
+> […] que se establezcan reglamentariamente. En el caso de perros utilizados para actividades específicas y profesionales, se permitirá el uso de collares de impulso para su entrenamiento y el desarrollo de su trabajo, en el menor grado en el que resulten eficaces, y siempre que no ocasionen daños ni lesiones al animal.
+> c) Abandonarlos intencionadamente en espacios cerrados o abiertos, especialmente en el medio natural donde pueden ocasionar daños posteriores por asilvestramiento o por su condición de especies exóticas potencialmente invasoras.
+> d) Dejar animales sueltos o en condiciones de causar daños en lugares públicos o privados de acceso […]
 
 **Artículo 16**
 
-> Artículo 16. Requisitos de los centros de animales de compañía.
+> Artículo 16. Recogida y atención de animales extraviados y abandonados.
 >
-> 1. Se consideran centros de animales de compañía los pertenecientes a las siguientes clasificaciones zootécnicas: centros de venta, criaderos, residencias, escuelas de adiestramiento, centros de acogida de animales abandonados, centros veterinarios, centros de tratamiento higiénico, rehalas, perreras deportivas, instalaciones para albergar animales en aeropuertos, centros de terapia con animales, colecciones particulares, circos, granjas escuela, establecimientos para la equitación, centros de rescate, o cualquier otro centro que […]
+> 1. Corresponderá a los ayuntamientos la recogida de animales extraviados y abandonados en su municipio y su alojamiento en un centro de protección animal. Para ello deberán contar con un servicio de urgencia para la recogida y atención veterinaria de estos animales, disponible las veinticuatro horas del día. Los […]
 
-**Artículo 18**
+**Artículo 23**
 
-> […] y de la venta de animales.
+> […] el infractor deberá reparar, mediante la correspondiente indemnización, los daños causados.
+> El infractor deberá abonar la totalidad de los gastos causados como consecuencia de la infracción cometida y, especialmente, los derivados de la recogida, mantenimiento y tratamientos sanitarios de los animales, perdidos o abandonados.
+> Se modifica por el art. 9.20 de la Ley 7/2024, de 26 de diciembre. Ref. BOE-A-2025-5522
+> Su anterior numeración era art. 33.
+
+**Artículo 25**
+
+> Artículo 25. Prescripción de infracción y sanción.
 >
-> 1. La cría con fines comerciales y la venta de animales se realizará necesariamente desde criaderos y centros de venta registrados y destinados para ello. Los centros de venta facilitarán la adopción de animales de compañía mediante la colaboración con los centros de acogida de animales abandonados, en los términos que reglamentariamente se determinen.
-> 2. La venta de perros y gatos en los centros antes citados, se deberá realizar a través de catálogos y medios similares que no requieran la presencia física de los animales en la tienda. No obstante, la Consejería competente podrá autorizar la presencia de […]
+> 1. Las infracciones administrativas muy graves y por abandono prescribirán en el plazo de cinco años, las graves en tres años y las leves en un año.
+> 2. Las sanciones impuestas por faltas muy graves y por abandono prescribirán a los cinco años, las graves a los tres años y las leves al año, contados desde el día siguiente a aquel en que adquiera firmeza la resolución por la que […]
 
-_(y 7 artículos más en este tema)_
+_(y 3 artículos más en este tema)_
 
 ### Infracciones y sanciones
 
@@ -4696,13 +4444,8 @@ _(y 7 artículos más en este tema)_
 
 > […] el cumplimiento de las obligaciones y evitar la realización de las prohibiciones contempladas en esta Ley. 2. Los Ayuntamientos podrán ordenar la retirada de los animales, así como su inmovilización, internamiento obligatorio, aislamiento, o sometimiento a un tratamiento o terapia, siempre que existan indicios de infracción que lo aconsejen, sin perjuicio de las actuaciones que puedan llevar a cabo las Consejerías competentes en materia de sanidad animal, protección animal, medio ambiente o salud pública en situaciones de grave riesgo para los animales o las personas.
 
-**Artículo 18**
-
-> […] venta en el Registro de Centros de Animales de Compañía, así como el número de identificación del animal en su caso. 7. El criadero o centro de venta entregará al comprador en formato papel o en formato electrónico toda la información necesaria sobre su origen, características, cuidados y manejo, así como sobre las infracciones y sanciones que conllevan el maltrato y abandono de los animales regulados en esta Ley. 8. Los animales se venderán sanos, desparasitados y con las vacunas obligatorias, entregándose al comprador un certificado oficial emitido por el veterinario responsable del establecimiento que acredite su buen estado […]
-
 **Artículo 20**
 
-> […] de aplicación de esta Ley. La Comunidad de Madrid podrá conveniar con las Comunidades Autónomas limítrofes para que los centros de recogida y alojamiento de animales situados en ellas puedan recoger y alojar animales, siempre que cumplan todos los requisitos de esta ley, especialmente el sacrificio 0.
 > Artículo 20. Infracciones.
 >
 > 1. Constituyen infracciones administrativas en materia de protección y derecho de los animales, las acciones u omisiones contrarias a lo establecido en la presente ley.
@@ -4710,19 +4453,20 @@ _(y 7 artículos más en este tema)_
 
 **Artículo 21**
 
-> […] los cuidados a los animales. 8. Los centros de acogida deberán comunicar a la Consejería competente en materia de protección animal con una periodicidad trimestral toda la información referente a las entradas, salidas y destino de los animales, así como las incidencias sanitarias más significativas.
 > Artículo 21. Sanciones.
 > Las sanciones, así como las medidas accesorias aplicables por las infracciones previstas en esta ley, y las condiciones para su graduación y responsabilidad civil serán las contempladas en la Ley 7/2023, de 28 de marzo, de protección de los derechos y el bienestar de los animales.
 > Se modifica por el art. 9.13 y 19 […]
 
 **Artículo 22**
 
-> […] de los anteriores requisitos podrá dar lugar a la retirada de la declaración de entidad colaboradora de la Consejería competente en materia de protección animal.
-> 2 bis. Las entidades de protección animal, declaradas entidades colaboradoras, podrán ser reconocidas como parte interesada en los procedimientos sancionadores abiertos en materia de protección animal. Igualmente, podrán participar en las inspecciones realizadas por la autoridad, en las condiciones que reglamentariamente se establezcan. 3. Las entidades de defensa de los animales remitirán anualmente a la Dirección General competente en materia protección animal una […]
+> Artículo 22. Medidas provisionales.
+>
+> 1. Son medidas provisionales, que no tienen el carácter de sanción, las siguientes:
+>    a) La retirada provisional de aquellos animales objeto de protección, siempre que existan indicios de infracción de las disposiciones de la presente Ley, que aconsejen una retirada inmediata y urgente de los animales.
+>    b) La clausura o cierre de establecimientos, instalaciones o servicios que no […]
 
 **Artículo 23**
 
-> […] veterinario colaborador de la Consejería competente en materia de protección animal.
 > Artículo 23. Daños y gastos.
 >
 > 1. En todos los casos, el infractor deberá reparar, mediante la correspondiente indemnización, los daños causados.
@@ -4730,7 +4474,15 @@ _(y 7 artículos más en este tema)_
 >    Se modifica por el art. 9.20 de la Ley 7/2024, de 26 de diciembre. Ref. BOE-A-2025-5522
 >    Su anterior numeración era art. 33.
 
-_(y 14 artículos más en este tema)_
+**Artículo 24**
+
+> Artículo 24. Procedimiento y competencia.
+>
+> 1. Sin perjuicio de lo dispuesto en la legislación sobre procedimiento administrativo común, el procedimiento sancionador se sustanciará de conformidad con lo previsto en la normativa reglamentaria que regule el ejercicio de la potestad sancionadora en la Comunidad de Madrid con las especialidades establecidas en esta Ley.
+> 2. Serán competentes para imponer las sanciones previstas en la presente Ley:
+>    a) La Consejería competente en […]
+
+_(y 13 artículos más en este tema)_
 
 ## Región de Murcia
 
@@ -5132,7 +4884,8 @@ _(y 9 artículos más en este tema)_
 
 **Artículo 6**
 
-> […] Adoptar las medidas necesarias para evitar la reproducción incontrolada de los animales, esterilizándolos o utilizando cualquier otro método de control compatible con lo regulado en esta ley foral. Los perros y los gatos que puedan tener contacto no controlado con otros perros o gatos deberán estar esterilizados. 7. Identificar a sus animales, de acuerdo con lo establecido en esta ley foral y en la normativa que la desarrolla. 8. Comunicar la pérdida o la muerte de un animal, cualquier cambio de los datos del animal o propietario/a, en los plazos reglamentariamente determinados, así como mantener actualizados los registros obligatorios […]
+> […] esterilizados.
+> Los animales definidos en los apartados 3 y 3 bis del artículo 5, durante su participación en actividades cinegéticas autorizadas, en entrenamientos para la caza o los perros pastores durante su actividad, no se considerarán como perros que pueden tener contacto no controlado con otros animales. 7. Identificar a sus animales, de acuerdo con lo establecido en esta ley foral y en la normativa que la desarrolla. 8. Comunicar la pérdida o la muerte de un animal, cualquier cambio de los datos del animal o propietario/a, en los plazos reglamentariamente determinados, así como mantener actualizados los registros obligatorios […]
 
 **Artículo 8**
 
@@ -5195,7 +4948,9 @@ _(y 3 artículos más en este tema)_
 
 **Artículo 6**
 
-> […] sanitario. 6. Adoptar las medidas necesarias para evitar la reproducción incontrolada de los animales, esterilizándolos o utilizando cualquier otro método de control compatible con lo regulado en esta ley foral. Los perros y los gatos que puedan tener contacto no controlado con otros perros o gatos deberán estar esterilizados. 7. Identificar a sus animales, de acuerdo con lo establecido en esta ley foral y en la normativa que la desarrolla. 8. Comunicar la pérdida o la muerte de un animal, cualquier cambio de los datos del animal o propietario/a, en los plazos reglamentariamente determinados, así como mantener actualizados los registros […]
+> […] incontrolada de los animales, utilizando cualquier método de control compatible con lo regulado en esta ley foral, entendiendo como reproducción incontrolada la no provocada intencionadamente por su propietario.
+> Los perros y los gatos que puedan tener contacto no controlado con otros perros o gatos deberán estar esterilizados.
+> Los animales definidos en los apartados 3 y 3 bis del artículo 5, durante su participación en actividades cinegéticas autorizadas, en entrenamientos para la caza o los perros pastores durante su actividad, no se considerarán como perros que pueden tener contacto no controlado con otros animales. 7. Identificar a […]
 
 **Artículo 16**
 
@@ -5222,7 +4977,7 @@ _(y 3 artículos más en este tema)_
 
 **Artículo 7**
 
-> […] dolores, sufrimientos o angustia innecesarios. 15. Hacerlos participar en espectáculos, fiestas populares, ferias, exposiciones, concursos, exhibiciones, filmaciones, sesiones fotográficas o cinematográficas con fines publicitarios o cualquier otra actividad similar, que no tenga la correspondiente autorización o licencia para que puedan celebrarse. 16. Exhibirlos en escaparates que estén en vías públicas, en locales de ocio o de diversión, así como exhibirlos para la venta en zonas visibles desde la vía pública o desde pasillos internos de establecimientos comerciales. 17. Utilizarlos en carruseles, atracciones de ferias o en […]
+> […] en espectáculos, fiestas populares, ferias, exposiciones, concursos, exhibiciones, filmaciones, sesiones fotográficas o cinematográficas con fines publicitarios o cualquier otra actividad similar, como las ferias, exposiciones o filmaciones de actividades cinegéticas, que no tengan la correspondiente autorización o licencia para que puedan celebrarse. 16. Exhibirlos en escaparates que estén en vías públicas, en locales de ocio o de diversión, así como exhibirlos para la venta en zonas visibles desde la vía pública o desde pasillos internos de establecimientos comerciales. 17. Utilizarlos en carruseles, atracciones de ferias o en […]
 
 **Artículo 9**
 
@@ -5332,7 +5087,7 @@ _(y 3 artículos más en este tema)_
 
 **Artículo 7**
 
-> […] o cinematográficas con fines publicitarios o cualquier otra actividad similar, que no tenga la correspondiente autorización o licencia para que puedan celebrarse. 16. Exhibirlos en escaparates que estén en vías públicas, en locales de ocio o de diversión, así como exhibirlos para la venta en zonas visibles desde la vía pública o desde pasillos internos de establecimientos comerciales. 17. Utilizarlos en carruseles, atracciones de ferias o en circos. 18. Mantenerlos en vehículos estacionados como alojamiento habitual o sin la ventilación y temperatura adecuadas. 19. Transportarlos sin respetar las particularidades propias de la especie o en […]
+> […] como las ferias, exposiciones o filmaciones de actividades cinegéticas, que no tengan la correspondiente autorización o licencia para que puedan celebrarse. 16. Exhibirlos en escaparates que estén en vías públicas, en locales de ocio o de diversión, así como exhibirlos para la venta en zonas visibles desde la vía pública o desde pasillos internos de establecimientos comerciales. 17. Utilizarlos en carruseles, atracciones de ferias o en circos. 18. Mantenerlos en vehículos estacionados como alojamiento habitual o sin la ventilación y temperatura adecuadas. 19. Transportarlos sin respetar las particularidades propias de la especie o en […]
 
 **Artículo 8**
 
@@ -5423,7 +5178,7 @@ _(y 2 artículos más en este tema)_
 
 **Artículo 5**
 
-> […] que se encuentren incluidas en los listados o catálogos estatales o autonómicos de especies con régimen de protección especial, de especies amenazadas o de especies exóticas invasoras y cuya tenencia no esté legalmente permitida. 2. Animales de producción: aquellos animales de producción, reproducción, cebo o sacrificio, incluidos los animales de peletería o de actividades cinegéticas, mantenidos, cebados o criados para la producción de alimentos o productos de origen animal, para cualquier uso industrial u otro fin comercial o lucrativo. 3. Animales de trabajo: aquellos animales de compañía que se dedican a una actividad o […]
+> […] que se encuentren incluidas en los listados o catálogos estatales o autonómicos de especies con régimen de protección especial, de especies amenazadas o de especies exóticas invasoras y cuya tenencia no esté legalmente permitida. 2. Animales de producción: aquellos animales de producción, reproducción, cebo o sacrificio, incluidos los animales de peletería o de actividades cinegéticas, mantenidos, cebados o criados para la producción de alimentos o productos de origen animal, para cualquier uso industrial u otro fin comercial o lucrativo. 3. Animales de trabajo, auxiliares o con función social o deportiva: aquellos animales que se […]
 
 **Artículo 7**
 
@@ -5917,3 +5672,202 @@ _(y 15 artículos más en este tema)_
 > […] y el animal no será devuelto a la persona presuntamente responsable hasta que se haya resuelto al respecto. 3. Transcurrido dicho plazo sin que el titular lo hubiere recuperado se dará al animal el destino previsto en el apartado primero, sin perjuicio de serle impuesta a la referida persona la correspondiente sanción por abandono.
 
 _(y 17 artículos más en este tema)_
+
+## Cataluña (perros potencialmente peligrosos)
+
+- **Norma**: Ley 10/1999, de 30 de julio, sobre tenencia de perros considerados potencialmente peligrosos.
+- **Identificador**: `BOE-A-1999-18004`
+- **Fuente oficial**: https://www.boe.es/buscar/act.php?id=BOE-A-1999-18004
+- **Publicación**: 19990824 · **Vigencia**: 19991109
+- **Última actualización del consolidado**: 20251218T180434Z
+- **Artículos**: 17
+
+### Seguro de responsabilidad civil
+
+**Artículo 3**
+
+> […] menores de edad y las que hayan sido privadas judicialmente o gubernativamente de la tenencia de dichos animales. 4. Como condición indispensable para la tenencia y la posterior inclusión en el registro a que hace referencia el apartado 1, los propietarios de perros potencialmente peligrosos han de contratar una póliza de seguros de responsabilidad civil derivada de los daños que pueda ocasionar el perro con un mínimo de 150.253,03 euros por siniestro.
+> En la póliza contratada debe de constar el número de identificación del perro. La Generalidad puede actualizar anualmente este límite, mediante la ley de presupuestos.
+> Se modifica el […]
+
+**Artículo 7**
+
+> […] perro en el Registro específico del correspondiente municipio.
+> b) No señalizar las instalaciones que alberguen a perros potencialmente peligrosos. 3. Son infracciones graves:
+> a) No cumplir las medidas de seguridad establecidas para las instalaciones que alberguen a perros potencialmente peligrosos.
+> b) No contratar el seguro de responsabilidad civil.
+> c) Realizar actividades de adiestramiento sin acreditación profesional oficial.
+> d) No llevar a cabo los test de comportamiento de los perros progenitores en los centros de cría.
+> e) Llevar a los perros desatados y sin bozal en las vías públicas, en las partes comunes de los inmuebles […]
+
+**Artículo 12**
+
+> Artículo 12. Responsabilidad e indemnizaciones.
+> La imposición de cualquiera de las sanciones establecidas en la presente Ley no excluye de la responsabilidad civil de la persona sancionada ni la indemnización que se le pueda exigir por daños y perjuicios.
+
+### Censo y registro municipal
+
+**Artículo 7**
+
+> Artículo 7. Tipificación de las infracciones.
+>
+> 1. A efectos de la presente Ley, las infracciones se clasifican en leves, graves y muy graves.
+> 2. Son infracciones leves:
+>    a) No inscribir al perro en el Registro específico del correspondiente municipio.
+>    b) No señalizar las instalaciones que alberguen a perros potencialmente peligrosos.
+> 3. Son infracciones graves:
+>    a) No cumplir las medidas de seguridad establecidas para las instalaciones que alberguen a perros potencialmente peligrosos.
+>    b) No contratar […]
+
+### Esterilización
+
+**Artículo 6**
+
+> Artículo 6. Aplicación de otras medidas.
+> En los casos concretos de perros que presenten comportamientos agresivos patológicos no solucionados con las técnicas de adiestramiento y terapéutica existentes, puede considerarse, bajo criterio facultativo, la adopción de medidas consistentes en la castración o el sacrificio del animal.
+
+### Perros potencialmente peligrosos
+
+**Artículo 1**
+
+> Artículo 1. Definición.
+> Tienen la consideración de perros potencialmente peligrosos, y les es de aplicación la presente Ley, aquellos que presenten una o más de las siguientes circunstancias:
+> a) Perros que han tenido episodios de agresiones a personas u otros perros.
+> b) Perros que han sido adiestrados para el ataque y la defensa.
+> c) Perros que pertenecen a una de las siguientes razas o a sus […]
+
+**Artículo 2**
+
+> […] en los transportes públicos y en los lugares y espacios de uso público en general, los perros a que se hace referencia en el artículo 1 deben ir atados y provistos del correspondiente bozal, y en ningún caso pueden ser conducidos por menores de dieciséis años. 2. Las instalaciones que alberguen a los perros potencialmente peligrosos deben tener la siguientes características, a fin de evitar que los animales salgan de la misma y cometan daños a terceros:
+> a) La paredes y vallas deben ser suficientemente altas y consistentes y deben estar fijadas a fin de soportar el peso y la presión del animal.
+> b) Las puertas de las instalaciones deben ser tan […]
+
+**Artículo 3**
+
+> […] del Ayuntamiento que corresponda deben especificarse la raza y demás circunstancias que sean determinantes de la posible peligrosidad de estos perros. 2. En la base de datos de identificación de animales de compañía del Registro censal de los Ayuntamientos, deben incluirse un apartado específico para los perros potencialmente peligrosos. 3. No pueden adquirir perros considerados potencialmente peligrosos las personas menores de edad y las que hayan sido privadas judicialmente o gubernativamente de la tenencia de dichos animales. 4. Como condición indispensable para la tenencia y la posterior inclusión en el registro a que hace referencia el […]
+
+**Artículo 7**
+
+> Artículo 7. Tipificación de las infracciones.
+>
+> 1. A efectos de la presente Ley, las infracciones se clasifican en leves, graves y muy graves.
+> 2. Son infracciones leves:
+>    a) No inscribir al perro en el Registro específico del correspondiente municipio.
+>    b) No señalizar las instalaciones que alberguen a perros potencialmente peligrosos.
+> 3. Son infracciones graves:
+>    a) No cumplir las medidas de seguridad establecidas para las instalaciones que alberguen a perros potencialmente peligrosos.
+>    b) No contratar el seguro de responsabilidad civil.
+>    c) Realizar actividades de adiestramiento sin acreditación profesional oficial.
+>    d) No llevar a cabo los test de […]
+
+### Colonias felinas y CES
+
+**Artículo 1**
+
+> […] y les es de aplicación la presente Ley, aquellos que presenten una o más de las siguientes circunstancias:
+> a) Perros que han tenido episodios de agresiones a personas u otros perros.
+> b) Perros que han sido adiestrados para el ataque y la defensa.
+> c) Perros que pertenecen a una de las siguientes razas o a sus cruces: Bullmastiff, dobermann, dogo argentino, dogo de Burdeos, fila brasileiro, mastín napolitano, pit bull, de presa canario, rottweiler, staffordshire americano y tosa japonés.
+
+### Vía pública y excrementos
+
+**Artículo 2**
+
+> Artículo 2. Medidas de seguridad.
+>
+> 1. En las vías públicas, en las partes comunes de los inmuebles colectivos, en los transportes públicos y en los lugares y espacios de uso público en general, los perros a que se hace referencia en el artículo 1 deben ir atados y provistos del correspondiente bozal, y en ningún caso pueden ser conducidos por menores de dieciséis años.
+> 2. Las instalaciones que alberguen a los perros potencialmente peligrosos deben tener la siguientes características, a fin de evitar que los animales salgan de la misma y cometan daños a terceros:
+>    a) La paredes y vallas deben ser suficientemente […]
+
+**Artículo 7**
+
+> […] que alberguen a perros potencialmente peligrosos.
+> b) No contratar el seguro de responsabilidad civil.
+> c) Realizar actividades de adiestramiento sin acreditación profesional oficial.
+> d) No llevar a cabo los test de comportamiento de los perros progenitores en los centros de cría.
+> e) Llevar a los perros desatados y sin bozal en las vías públicas, en las partes comunes de los inmuebles colectivos y en los lugares y espacios públicos en general.
+> f) Adquirir un perro potencialmente peligroso personas menores de edad o privadas judicialmente o gubernativamente de su tenencia.
+> g) Poseer un perro potencialmente peligroso sin identificación en […]
+
+### Transporte
+
+**Artículo 2**
+
+> Artículo 2. Medidas de seguridad.
+>
+> 1. En las vías públicas, en las partes comunes de los inmuebles colectivos, en los transportes públicos y en los lugares y espacios de uso público en general, los perros a que se hace referencia en el artículo 1 deben ir atados y provistos del correspondiente bozal, y en ningún caso pueden ser conducidos por menores de dieciséis años.
+> 2. Las instalaciones que alberguen a los perros potencialmente peligrosos […]
+
+### Cría y venta
+
+**Artículo 4**
+
+> Artículo 4. Control de los centros de cría.
+>
+> 1. Sólo se autoriza la cría de perros incluidos en el artículo 1 en los centros de cría autorizados e inscritos en el Registro Oficial de Núcleos Zoológicos de Cataluña.
+> 2. Los animales que se quiera utilizar para la reproducción deben superar los tests de comportamiento que garanticen la ausencia de comportamientos […]
+
+**Artículo 7**
+
+> […] establecidas para las instalaciones que alberguen a perros potencialmente peligrosos.
+> b) No contratar el seguro de responsabilidad civil.
+> c) Realizar actividades de adiestramiento sin acreditación profesional oficial.
+> d) No llevar a cabo los test de comportamiento de los perros progenitores en los centros de cría.
+> e) Llevar a los perros desatados y sin bozal en las vías públicas, en las partes comunes de los inmuebles colectivos y en los lugares y espacios públicos en general.
+> f) Adquirir un perro potencialmente peligroso personas menores de edad o privadas judicialmente o gubernativamente de su tenencia.
+> g) Poseer un perro […]
+
+### Abandono y sacrificio
+
+**Artículo 6**
+
+> Artículo 6. Aplicación de otras medidas.
+> En los casos concretos de perros que presenten comportamientos agresivos patológicos no solucionados con las técnicas de adiestramiento y terapéutica existentes, puede considerarse, bajo criterio facultativo, la adopción de medidas consistentes en la castración o el sacrificio del animal.
+
+### Infracciones y sanciones
+
+**Artículo 7**
+
+> Artículo 7. Tipificación de las infracciones.
+>
+> 1. A efectos de la presente Ley, las infracciones se clasifican en leves, graves y muy graves.
+> 2. Son infracciones leves:
+>    a) No inscribir al perro en el Registro específico del correspondiente municipio.
+>    b) No señalizar las instalaciones que alberguen a perros potencialmente peligrosos.
+> 3. Son infracciones […]
+
+**Artículo 8**
+
+> Artículo 8. Prescripción.
+>
+> 1. Los plazos de prescripción de la infracciones son de tres años para las muy graves, dos años para las graves y seis meses para las leves, a contar desde la fecha de la comisión de la infracción.
+> 2. Los plazos de prescripción de las sanciones son de tres años para las muy graves, dos años para las graves y un año para las leves, a contar desde la fecha en que […]
+
+**Artículo 9**
+
+> Artículo 9. Tramitación.
+>
+> 1. El procedimiento sancionador debe ajustarse al procedimiento vigente.
+> 2. Si se aprecia que los hechos objeto de un expediente sancionador pueden ser constitutivos de delito o falta, la Administración debe trasladar las actuaciones a la autoridad judicial competente y dejar en suspenso el procedimiento sancionador hasta que ésta no se […]
+
+**Artículo 10**
+
+> Artículo 10. Sanciones.
+>
+> 1. Las infracciones cometidas contra lo dispuesto por esta ley son sancionadas con multas de 300 euros a 45.000 euros.
+> 2. La imposición de la sanción puede suponer el decomiso de los animales objeto de la infracción.
+>    Se modifica el apartado 1 por el art. 142.2 de la Ley 5/2020, de 29 de abril. Ref. BOE-A-2020-5569
+
+**Artículo 11**
+
+> Artículo 11. Graduación de las sanciones.
+>
+> 1. Las infracciones leves se sancionan con una multa de 300 euros a 3.000 euros; las graves, con una multa de 3.001 euros a 9.000 euros, y las muy graves, con una multa de 9.001 euros a 45.000 euros.
+> 2. En la imposición de las sanciones debe tenerse en cuenta, para graduar la cuantía de las multas y la imposición […]
+
+**Artículo 12**
+
+> Artículo 12. Responsabilidad e indemnizaciones.
+> La imposición de cualquiera de las sanciones establecidas en la presente Ley no excluye de la responsabilidad civil de la persona sancionada ni la indemnización que se le pueda exigir por daños y perjuicios.
+
+_(y 2 artículos más en este tema)_

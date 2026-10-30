@@ -1,0 +1,58 @@
+---
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import { textosPara, traductor } from '@/i18n/catalogos';
+import Consulta from '@/islas/consulta/Consulta';
+import Base from '@/layouts/Base.astro';
+import { SITUACIONES } from '@/lib/contenido/situaciones';
+import { grandesCiudades } from '@/lib/datos';
+import { TEXTOS_TARJETA } from '@/ui/TarjetaObligacion';
+
+const t = traductor('consulta');
+const tc = traductor('comun');
+const ciudades = grandesCiudades().map((c) => ({
+  slug: c.slug,
+  nombre: c.nombre,
+}));
+const ts = traductor('situaciones.guias');
+const situaciones = SITUACIONES.map((s) => ({
+  slug: s.slug,
+  titulo: ts(`${s.slug}.corto`),
+  animales: [...s.animales],
+}));
+---
+
+<Base
+  ruta="/consulta"
+  titulo={t('metaTitulo')}
+  descripcion={t('metaDescripcion')}
+>
+  <CabeceraPagina titulo={t('titulo')} entradilla={t('entradilla')} solape />
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <!--
+      Solo cliente: el estado vive en la URL y el resultado se calcula en el
+      navegador. Mientras carga se ve el marco de la tarjeta.
+    -->
+    <Consulta
+      client:only="preact"
+      ciudades={ciudades}
+      situaciones={situaciones}
+      textos={textosPara([
+        'consulta',
+        'resultado',
+        'especies',
+        'situaciones.consulta',
+        ...TEXTOS_TARJETA,
+      ])}
+    >
+      <div
+        slot="fallback"
+        class="rounded-[28px] border border-borde bg-superficie p-8 shadow-alta"
+      >
+        <p class="text-texto-3">{tc('cargando')}…</p>
+        <noscript>
+          <p class="mt-3 text-texto">{t('sinJs')}</p>
+        </noscript>
+      </div>
+    </Consulta>
+  </div>
+</Base>

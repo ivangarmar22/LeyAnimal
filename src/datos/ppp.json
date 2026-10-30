@@ -1,0 +1,155 @@
+{
+ "comunidades": [
+  {
+   "comunidad": "01",
+   "razas": {
+    "articulo": "decreto-42-2008-perros-peligrosos-andalucia#Anexo",
+    "anadidas": ["doberman"]
+   },
+   "seguro": {
+    "articulo": "decreto-42-2008-perros-peligrosos-andalucia#Artículo 4.2.f",
+    "importe": 175000
+   },
+   "otros": [
+    {
+     "clave": "cursoAdiestramiento",
+     "articulo": "decreto-42-2008-perros-peligrosos-andalucia#Artículo 4.2.e"
+    }
+   ],
+   "avisos": []
+  },
+  {
+   "comunidad": "05",
+   "razas": null,
+   "seguro": {
+    "articulo": "decreto-30-2018-perros-peligrosos-canarias#Artículo 8.5",
+    "importe": 200000
+   },
+   "otros": [],
+   "avisos": []
+  },
+  {
+   "comunidad": "06",
+   "razas": null,
+   "seguro": null,
+   "otros": [],
+   "avisos": [
+    {
+     "clave": "guardaDefensa",
+     "url": "https://racic.cantabria.es/racic/public/Informacion/AnimalesPeligrosos.do"
+    }
+   ]
+  },
+  {
+   "comunidad": "07",
+   "razas": {
+    "articulo": "decreto-134-1999-reglamento-animales-castilla-y-leon#Anexo",
+    "anadidas": ["dogo-del-tibet"]
+   },
+   "seguro": {
+    "articulo": "decreto-134-1999-reglamento-animales-castilla-y-leon#Artículo 23.3",
+    "importe": 180303.63,
+    "soloRazas": [
+     "american-staffordshire-terrier",
+     "dogo-argentino",
+     "dogo-del-tibet",
+     "fila-brasileiro",
+     "pit-bull-terrier",
+     "rottweiler",
+     "staffordshire-bull-terrier",
+     "tosa-inu"
+    ]
+   },
+   "otros": [],
+   "avisos": []
+  },
+  {
+   "comunidad": "09",
+   "razas": {
+    "articulo": "ley-perros-peligrosos-cataluna#Artículo 1",
+    "anadidas": [
+     "bullmastiff",
+     "doberman",
+     "dogo-de-burdeos",
+     "mastin-napolitano",
+     "presa-canario"
+    ]
+   },
+   "seguro": {
+    "articulo": "ley-perros-peligrosos-cataluna#Artículo 3",
+    "importe": 150253.03
+   },
+   "otros": [],
+   "avisos": []
+  },
+  {
+   "comunidad": "10",
+   "razas": {
+    "articulo": "decreto-145-2000-perros-peligrosos-comunitat-valenciana#Anexo II.1",
+    "anadidas": [
+     "bull-terrier",
+     "bullmastiff",
+     "doberman",
+     "dogo-de-burdeos",
+     "mastin-napolitano",
+     "presa-canario",
+     "presa-mallorquin"
+    ]
+   },
+   "seguro": {
+    "articulo": "decreto-145-2000-perros-peligrosos-comunitat-valenciana#Artículo 3",
+    "importe": 120202.42
+   },
+   "otros": [],
+   "avisos": []
+  },
+  {
+   "comunidad": "11",
+   "razas": {
+    "articulo": "ley-animales-extremadura#Disposición adicional quinta",
+    "anadidas": [
+     "bullmastiff",
+     "doberman",
+     "dogo-de-burdeos",
+     "mastin-napolitano",
+     "presa-canario"
+    ]
+   },
+   "seguro": null,
+   "otros": [],
+   "avisos": []
+  },
+  {
+   "comunidad": "12",
+   "razas": {
+    "articulo": "ley-animales-galicia#Artículo 16",
+    "anadidas": [
+     "bull-terrier",
+     "bullmastiff",
+     "doberman",
+     "dogo-de-burdeos",
+     "dogo-del-tibet",
+     "mastin-napolitano",
+     "presa-canario",
+     "presa-mallorquin"
+    ]
+   },
+   "seguro": {
+    "articulo": "decreto-90-2002-perros-peligrosos-galicia#Artículo 3.3",
+    "importe": 125000
+   },
+   "otros": [],
+   "avisos": []
+  },
+  {
+   "comunidad": "16",
+   "razas": {
+    "articulo": "decreto-44-2020-perros-pais-vasco#Artículo decimoctavo",
+    "anadidas": ["akita-americano", "american-bully", "bandogg"]
+   },
+   "seguro": null,
+   "otros": [],
+   "avisos": []
+  }
+ ]
+}

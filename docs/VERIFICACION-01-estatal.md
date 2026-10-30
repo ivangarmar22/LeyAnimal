@@ -1,7 +1,12 @@
 # Ficha de verificación 01 — marco estatal
 
-**Estado: PENDIENTE DE TU APROBACIÓN.** Nada de esto está cargado en la base de
-datos. No entrará hasta que lo apruebes.
+> **Documento histórico (fase 1, septiembre de 2026).** Lo aprobado está en
+> `src/datos/estatal.json`; las comunidades, sanciones y listas de razas que
+> esta ficha daba por pendientes se cubrieron después (DECISIONES.md, D54 a
+> D58).
+
+**Estado en su momento: pendiente de aprobación.** Nada de esto estaba cargado
+en la base de datos.
 
 Todo el texto citado se ha extraído del **texto consolidado del BOE** vía su API
 de datos abiertos (`Accept: application/xml`), no de resúmenes ni de webs de

@@ -1,0 +1,54 @@
+---
+/**
+ * Obligaciones de un territorio para un perro y un gato adultos de
+ * referencia. Lo que de verdad aplica a cada persona lo da la consulta.
+ */
+import { traductor } from '@/i18n/catalogos';
+import { gato, perro } from '@/lib/contenido/ilustraciones';
+import { obligacionesDeReferencia } from '@/lib/datos/evaluacion';
+import { ORDEN_ESTADOS } from '@/lib/dominio/estados';
+import { Ilustracion } from '@/ui/Ilustracion';
+import { TarjetaObligacion } from '@/ui/TarjetaObligacion';
+
+interface Props {
+  territorio: { comunidad: string; provincia?: string; municipio?: string };
+  titulos: { perro: string; gato: string };
+  nota: string;
+}
+
+const { territorio, titulos, nota } = Astro.props;
+const t = traductor();
+const bloques = (['perro', 'gato'] as const).map((especie) => ({
+  especie,
+  Icono: especie === 'perro' ? perro : gato,
+  lista: obligacionesDeReferencia(territorio, especie).sort(
+    (a, b) =>
+      ORDEN_ESTADOS.indexOf(a.resultado.estado) -
+      ORDEN_ESTADOS.indexOf(b.resultado.estado),
+  ),
+}));
+---
+
+<div class="grid gap-14">
+  {bloques.map(({ especie, Icono, lista }) => (
+    <section aria-labelledby={`obligaciones-${especie}`}>
+      <h2
+        id={`obligaciones-${especie}`}
+        class="titulo-3 flex items-center gap-3"
+      >
+        <span class="caja-icono size-11">
+          <Ilustracion icono={Icono} />
+        </span>
+        {titulos[especie]}
+      </h2>
+      <div class="mt-6 grid gap-4 xl:grid-cols-2">
+        {lista.map((o) => (
+          <TarjetaObligacion obligacion={o} t={t} />
+        ))}
+      </div>
+    </section>
+  ))}
+  <p class="text-sm text-texto-3">
+    {nota} <span class="font-medium text-texto-2">{t('comun.descargo')}</span>
+  </p>
+</div>

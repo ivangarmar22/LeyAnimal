@@ -1,153 +1,209 @@
+<div align="center">
+
+<img src="public/favicon.svg" alt="" width="72" height="78" />
+
 # LeyAnimal
 
-Aplicación web que responde a una pregunta concreta: **¿qué me obliga a mí, hoy,
-en mi municipio, con este animal?**
+**Lo que la ley te exige con tu animal, en tu municipio y al día.**
 
-Para cada obligación se muestra su estado real (obligatoria, obligatoria pero
-pendiente de reglamento, recomendada, no aplica o sin datos verificados), el
-ámbito que la impone, la norma y el artículo concretos con la cita literal y el
-enlace a la fuente oficial, y la fecha de última verificación.
+Cada obligación, con su norma, su artículo, la cita literal y el enlace oficial.
 
-> Información divulgativa. No es asesoramiento jurídico.
+[![Despliegue](https://github.com/ivangarmar22/LeyAnimal/actions/workflows/despliegue.yml/badge.svg)](https://github.com/ivangarmar22/LeyAnimal/actions/workflows/despliegue.yml)
+![Astro](https://img.shields.io/badge/Astro-7-ff5d01?logo=astro&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)
+![Sitio estático](https://img.shields.io/badge/sitio-100%25%20est%C3%A1tico-23a36a)
 
-## Estado: V1 informativa
+[**Abrir la web**](https://ivangarmar22.github.io/LeyAnimal) ·
+[Metodología](https://ivangarmar22.github.io/LeyAnimal/metodologia) ·
+[Avisar de un error](https://ivangarmar22.github.io/LeyAnimal/colabora) ·
+[Colaborar](https://ivangarmar22.github.io/LeyAnimal/apoya)
 
-La V1 es una web informativa con buscador y consulta, **sin cuentas de usuario
-ni base de datos** (DECISIONES.md, D39 y D49). Es un sitio
-**100 % estático** hecho con Astro: todas las páginas, incluidas las 8.132
-fichas de municipio en los dos idiomas, se generan al compilar, y lo
-interactivo (consulta, buscador, verificador…) son islas Preact que calculan en
-el navegador con el mismo motor de reglas (D48). Incluye:
+<img src="public/og/leyanimal.png" alt="Portada de LeyAnimal" width="720" />
 
-- Consulta en 4 pasos (`/consulta`) con resultado calculado por el motor de
-  reglas, traza «¿Por qué me sale esto?», impresión y enlace para compartir.
-- Normativa (`/normativa`) con explorador y ficha por norma.
-- Guías por tema (`/temas`), comunidades, provincias y las 8.132 fichas de
-  municipio, mapa por comunidades.
-- Verificador de perros potencialmente peligrosos, guía del seguro, calculadora
-  de multas con tramos literales, «Qué hacer si…», preguntas frecuentes.
-- Cambios normativos con RSS, metodología, colabora, páginas legales.
-- Español e inglés. Tema claro, oscuro y del sistema.
+</div>
 
-Lo relativo a usuarios (área privada, avisos por email, panel de
-administración) queda para la V2 (IDEAS.md).
+---
 
-## Requisitos
+## Qué es
 
-| Herramienta | Versión     | Nota                           |
-| ----------- | ----------- | ------------------------------ |
-| Node.js     | 24.20.0 LTS | Astro 7 exige 22.12 o superior |
-| pnpm        | 11.25.0     | Gestor del monorepo            |
+Tener un perro, un gato o un hurón en España implica obligaciones que vienen de
+tres sitios a la vez: la Ley 7/2023 de bienestar animal, la ley de cada
+comunidad autónoma y la ordenanza de cada ayuntamiento. Parte de la ley estatal
+depende además de reglamentos que siguen sin publicarse.
 
-No hace falta base de datos ni Docker: el contenido legal son ficheros JSON
-dentro de la web (ver «Contenido legal»).
+LeyAnimal responde a una sola pregunta: **¿qué me exige a mí, hoy, donde vivo,
+con este animal?** Y para cada obligación muestra:
 
-## Arranque local
+- su **estado real**: obligatoria, pendiente de reglamento, recomendada, no
+  aplica o sin datos verificados;
+- el **ámbito** que la impone: estatal, autonómico o municipal;
+- la **norma y el artículo**, con la **cita literal** y el enlace al boletín
+  oficial;
+- la **fecha** en que se verificó.
 
-```bash
-pnpm install
-cp .env.example apps/web/.env.local   # solo PUBLIC_SITE_URL
-pnpm dev                               # http://localhost:4321
+> [!NOTE]
+> Es información divulgativa, no asesoramiento jurídico. Ante un caso concreto,
+> consulta la norma enlazada, tu ayuntamiento o un profesional.
+
+## Qué incluye
+
+| Sección                      | Qué ofrece                                                            |
+| ---------------------------- | --------------------------------------------------------------------- |
+| **Consulta**                 | Cuatro pasos y el resultado de tu caso, con «¿Por qué me sale esto?»  |
+| **Situaciones**              | Comprar o adoptar, mudarte, viajar por España o al extranjero…        |
+| **Guías**                    | Seguro, identificación, curso, esterilización y perros peligrosos     |
+| **Normativa**                | Explorador de normas con su ficha y sus artículos                     |
+| **Comunidades y municipios** | 19 comunidades y ciudades autónomas, 52 provincias y 8.132 municipios |
+| **Herramientas**             | Verificador de perros PPP, calculadora de multas, «Qué hacer si…»     |
+| **Cambios**                  | Novedades normativas, también por RSS                                 |
+
+Sin registro, sin cookies, sin analítica y sin publicidad.
+
+## Cómo funciona
+
+```
+BOE e INE ──► scripts de contenido ──► src/datos/*.json ──► motor de reglas ──► páginas
+                (citas literales)        (comprobados)        (TypeScript)       (estáticas)
 ```
 
-Para ver la versión de producción: `pnpm build` (unos 3 minutos: genera
-unas 16.500 páginas en `apps/web/dist/`) y después `pnpm start`.
+- **Las citas no se escriben a mano.** Los scripts descargan el texto
+  consolidado del BOE y extraen cada frase de su artículo. La comprobación
+  falla si una cita no aparece literalmente en la norma o si el BOE anuncia una
+  reforma que el consolidado aún no recoge.
+- **Un motor de reglas** (`src/lib/reglas`) decide qué norma prevalece en cada
+  territorio y por qué. Es TypeScript sin dependencias y tiene sus propios
+  tests.
+- **Todo es estático.** Astro genera las 8.286 páginas al compilar. Lo
+  interactivo (la consulta, el buscador de municipios, el verificador) son islas
+  de Preact que calculan en el navegador con el mismo motor. No hay servidor ni
+  base de datos.
 
-## Despliegue
+## Tecnología
 
-`apps/web/dist/` es una carpeta de ficheros estáticos: vale cualquier
-alojamiento estático (Cloudflare Pages, Netlify, Vercel…). Hay que configurar
-`PUBLIC_SITE_URL` con el dominio definitivo antes de compilar, porque se usa en
-canónicas, hreflang, sitemap, RSS e imagen social. Ocupa alrededor de 1,1 GB en
-unos 16.600 ficheros (13 KB por ficha de municipio con gzip): conviene un
-alojamiento sin límite bajo de tamaño total (GitHub Pages recomienda 1 GB).
+[Astro 7](https://astro.build) · [Preact](https://preactjs.com) ·
+[Tailwind CSS 4](https://tailwindcss.com) · TypeScript ·
+[Vitest](https://vitest.dev) · [Lucide](https://lucide.dev) ·
+[Fluent Emoji](https://github.com/microsoft/fluentui-emoji) ·
+[Web3Forms](https://web3forms.com) para el formulario de avisos.
 
-## Comandos
+## Desarrollo
 
-| Comando                  | Qué hace                                                         |
-| ------------------------ | ---------------------------------------------------------------- |
-| `pnpm dev`               | Servidor de desarrollo de la web                                 |
-| `pnpm build`             | Genera el sitio estático en `apps/web/dist/`                     |
-| `pnpm start`             | Sirve el sitio compilado para revisarlo                          |
-| `pnpm og`                | Regenera las imágenes para compartir (necesita Chrome)           |
-| `pnpm lint`              | ESLint en todos los paquetes                                     |
-| `pnpm typecheck`         | `astro check` en la web y `tsc --noEmit` en el motor             |
-| `pnpm test`              | Tests de todos los paquetes (motor de reglas)                    |
-| `pnpm verificar`         | Formato + contenido legal + lint + tipos + tests, antes de subir |
-| `pnpm format`            | Formatea todo el repositorio con Prettier                        |
-| `pnpm datos:comprobar`   | Comprueba el contenido legal (fuentes, citas, referencias)       |
-| `pnpm datos:autonomicas` | Citas autonómicas desde el BOE (`--escribir` para guardarlas)    |
-| `pnpm datos:referencia`  | Artículos estatales de referencia desde el BOE                   |
-| `pnpm datos:geografia`   | Comunidades, provincias y municipios desde el INE                |
-| `pnpm datos:extraer`     | Ficha de revisión de las leyes autonómicas (`docs/`)             |
+Requisitos: **Node.js 22.12 o superior** (se usa la 24) y **pnpm 11**, que
+`corepack` activa con la versión exacta del proyecto.
+
+```bash
+corepack enable
+pnpm install
+cp .env.example .env.local
+pnpm dev                     # http://localhost:4321
+```
+
+Para ver la versión de producción: `pnpm build` (alrededor de un minuto) y
+`pnpm start`.
+
+| Comando                  | Qué hace                                                    |
+| ------------------------ | ----------------------------------------------------------- |
+| `pnpm dev`               | Servidor de desarrollo                                      |
+| `pnpm build`             | Genera el sitio estático en `dist/`                         |
+| `pnpm start`             | Sirve el sitio compilado                                    |
+| `pnpm verificar`         | Formato, contenido legal, lint, tipos y tests               |
+| `pnpm test`              | Tests del motor de reglas                                   |
+| `pnpm datos:comprobar`   | Comprueba fuentes, citas y referencias del contenido legal  |
+| `pnpm datos:extraer`     | Descarga las leyes autonómicas del BOE                      |
+| `pnpm datos:autonomicas` | Genera las citas autonómicas (`--escribir` para guardarlas) |
+| `pnpm datos:referencia`  | Genera los artículos estatales de referencia                |
+| `pnpm datos:geografia`   | Comunidades, provincias y municipios desde el INE           |
+| `pnpm og`                | Regenera la imagen para compartir (necesita Chrome)         |
+| `pnpm iconos`            | Descarga los iconos a color                                 |
+
+> [!TIP]
+> En Windows, el repositorio fuerza finales de línea LF (`.gitattributes`). Si
+> `pnpm format:check` falla en todos los ficheros, normaliza la copia con
+> `git add --renormalize .`.
 
 ## Estructura
 
 ```
-apps/web/
-  src/pages/[...lang]/   Todas las páginas, por idioma (es sin prefijo, en en /en)
-  src/pages/             Sitemaps, RSS, robots.txt, 404 y los JSON que
-                         descargan las islas (datos/municipios.json…)
-  src/layouts/           Plantilla común: cabecera, pie y SEO de cada página
-  src/componentes/       Piezas .astro sin JavaScript: layout, marca, inicio,
-                         pagina, obligaciones, legal, seo
-  src/islas/             Componentes Preact que se hidratan en el navegador
-  src/ui/                Piezas Preact compartidas (chips, cita, combobox…)
-  src/datos/             Contenido en JSON (ver «Contenido legal»)
-  src/lib/datos/         Acceso al contenido, evaluación y búsqueda
-  src/i18n/              Traductor propio y catálogos {es,en} por área
-  src/estilos/global.css Paleta, tipografía y piezas visuales (Tailwind 4)
-  src/scripts/           Efectos de scroll y animaciones (sin framework)
-  src/assets/fotos/      Fotografías de Unsplash, con sus créditos
-  public/                Fuentes, favicon e imágenes para compartir
-  scripts/contenido/     Generadores desde el BOE y el INE, y comprobación
-  scripts/generar-og.mjs Imágenes para compartir (public/og/)
-packages/reglas/         MOTOR DE REGLAS. TypeScript puro, sin dependencias
-docs/                    Fichas de verificación legal y auditoría
+src/pages/          Páginas, sitemaps, RSS y los JSON que descargan las islas
+src/layouts/        Plantilla común: cabecera, pie y SEO
+src/componentes/    Piezas .astro sin JavaScript
+src/islas/          Componentes Preact que se hidratan en el navegador
+src/ui/             Piezas Preact compartidas (chips, citas, tarjetas…)
+src/datos/          Contenido legal y geográfico en JSON
+src/lib/reglas/     Motor de reglas, con sus tests
+src/lib/datos/      Acceso al contenido, evaluación y búsqueda
+src/i18n/           Textos de la interfaz y su traductor
+src/estilos/        Sistema de diseño (Tailwind 4)
+scripts/contenido/  Generadores desde el BOE y el INE, y comprobaciones
+docs/               Fichas de verificación legal y auditorías
 ```
+
+Las decisiones de diseño y de criterio legal están en
+[DECISIONES.md](DECISIONES.md).
 
 ## Contenido legal
 
-Vive en `apps/web/src/datos/`, repartido según su origen:
+Vive en `src/datos/`:
 
-| Fichero                   | Origen                                                      |
-| ------------------------- | ----------------------------------------------------------- |
-| `estatal.json`            | A mano: normas estatales, requisitos, reglas y sus fuentes  |
-| `autonomico.json`         | BOE, con `pnpm datos:autonomicas --escribir`                |
-| `referencia-estatal.json` | BOE, con `pnpm datos:referencia`                            |
-| `geografia.json`          | INE, con `pnpm datos:geografia` (junto a `municipios.json`) |
-| `catalogo.json`           | A mano: especies, razas y temas                             |
-| `cambios.json`            | A mano: cambios normativos publicados                       |
+| Fichero                   | Origen                                              |
+| ------------------------- | --------------------------------------------------- |
+| `estatal.json`            | Normas estatales, requisitos, reglas y sus fuentes  |
+| `autonomico.json`         | BOE, con `pnpm datos:autonomicas --escribir`        |
+| `referencia-estatal.json` | BOE, con `pnpm datos:referencia`                    |
+| `geografia.json`          | INE, con `pnpm datos:geografia`                     |
+| `externas.json`           | Decretos que el BOE no recoge, copiados del boletín |
+| `ppp.json`                | Razas y seguro de perros PPP de cada comunidad      |
+| `catalogo.json`           | Especies, razas y temas                             |
+| `cambios.json`            | Cambios normativos publicados                       |
+
+**Regla fija:** ninguna afirmación legal entra en la web sin norma, artículo,
+enlace oficial y fecha de verificación.
 
 Para añadir una obligación autonómica:
 
-1. Añade a la selección de `scripts/contenido/generar-autonomicas.mjs` la
-   norma, el artículo, la frase que localiza la cita y las especies a las que
-   se aplica. El texto no se copia a mano: el script lo extrae del consolidado
-   del BOE.
-2. `pnpm datos:autonomicas` muestra la tabla para revisar;
-   `pnpm datos:autonomicas --escribir` la guarda.
-3. `pnpm datos:comprobar`: ninguna obligación sin fuente, ninguna cita que no
-   esté literalmente en su artículo, ninguna regla sin especies.
-4. Revisa el diff de los JSON y documenta en DECISIONES.md cualquier criterio
-   que no sea evidente.
+1. Añade a `scripts/contenido/generar-autonomicas.mjs` la norma, el artículo,
+   la frase que localiza la cita y las especies a las que se aplica.
+2. Revisa la tabla con `pnpm datos:autonomicas` y guárdala con `--escribir`.
+3. Ejecuta `pnpm datos:comprobar` y revisa el diff de los JSON.
 
-En `estatal.json` la cita se copia del texto del artículo que se guarda al
-lado; la comprobación falla si no aparece literalmente en él.
+Para refrescar el texto del BOE: `pnpm datos:extraer --actualizar` y
+`pnpm datos:referencia --actualizar`.
 
-Regla fija: ninguna afirmación legal entra en la aplicación sin norma,
-artículo, enlace oficial y fecha de verificación.
+## Despliegue
 
-## Idiomas
+Cada push a `main` ejecuta [`despliegue.yml`](.github/workflows/despliegue.yml):
+comprueba el proyecto con `pnpm verificar`, compila y publica `dist/` en GitHub
+Pages.
 
-Español (por defecto, sin prefijo en la URL) e inglés (bajo `/en`). Se traducen
-la interfaz, las explicaciones y las guías. **El texto literal de las normas se
-muestra siempre en español**, marcado con su idioma, porque una traducción no es
-el texto legal.
+La URL pública sale de `PUBLIC_SITE_URL`, que admite subcarpeta. Por defecto es
+`https://ivangarmar22.github.io/LeyAnimal`. Para pasar al dominio propio:
 
-## Pendiente antes de publicar
+1. Crea la variable `PUBLIC_SITE_URL=https://leyanimal.es` en
+   _Settings › Secrets and variables › Actions › Variables_.
+2. Configura el dominio en _Settings › Pages_ y sus DNS según la
+   [guía de GitHub](https://docs.github.com/es/pages/configuring-a-custom-domain-for-your-github-pages-site).
 
-- Email de contacto definitivo (`EMAIL_CONTACTO` en `apps/web/src/lib/sitio.ts`).
-- Datos del titular para el aviso legal (`TITULAR` en el mismo fichero).
-- `PUBLIC_SITE_URL` con el dominio definitivo.
-- Proveedor de alojamiento, para nombrarlo en la política de privacidad.
+El sitio compilado ocupa unos 450 MB, por debajo del límite de 1 GB de GitHub
+Pages.
+
+## Colaborar
+
+- **¿Falta una ordenanza o hay un dato mal?** Usa
+  [Avisar de un error](https://ivangarmar22.github.io/LeyAnimal/colabora) o
+  abre un issue con el enlace a la norma oficial.
+- **¿Te ha servido?** LeyAnimal es gratuito y altruista. Si quieres, puedes
+  [apoyar el proyecto](https://ivangarmar22.github.io/LeyAnimal/apoya) con un
+  donativo.
+
+## Créditos
+
+Normas del [BOE](https://www.boe.es) y boletines autonómicos; municipios del
+[INE](https://www.ine.es). Iconos de Lucide (ISC) y Fluent Emoji de Microsoft
+(MIT). Tipografías Sora, Geist y Source Serif 4 (SIL OFL). Fotografía de
+Robert Larsson en Unsplash.
+
+---
+
+<div align="center">
+Hecho con cariño por <a href="https://github.com/ivangarmar22">Iván García</a> para quienes conviven con animales.
+</div>

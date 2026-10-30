@@ -1,0 +1,57 @@
+[
+ {
+  "id": "2026-09-29-revision-autonomica",
+  "tipo": "correccion",
+  "titulo": "Revisión completa de la normativa autonómica",
+  "resumen": "Revisadas de nuevo, contra su texto vigente, las 17 leyes autonómicas, los decretos de perros potencialmente peligrosos y los reglamentos de Ceuta y Melilla. Novedades: identificación y censo municipal en Illes Balears, Canarias, Cantabria, Castilla y León y Extremadura; la identificación de la Ley 7/2023 para perros, gatos, hurones y aves en toda España; las razas y los seguros de perros potencialmente peligrosos de cada comunidad; el cuadro de multas de cada ley autonómica, y la corrección del seguro de Madrid, que ya no existe.",
+  "publicadoEn": "2026-09-29",
+  "ambito": null,
+  "norma": null,
+  "requisito": null,
+  "comunidad": null
+ },
+ {
+  "id": "2026-07-13-cataluna-ley-11-2026",
+  "tipo": "modificacion",
+  "titulo": "Cataluña sube las multas de su ley de protección animal",
+  "resumen": "El artículo 121 de la Ley 11/2026, de 9 de julio, fija nuevas cuantías en el artículo 46 del texto refundido de la Ley de protección de los animales: de 500 a 10.000 € las leves, de 10.001 a 50.000 € las graves y de 50.001 a 200.000 € las muy graves, las mismas que la Ley 7/2023. En vigor desde el 14 de julio de 2026.",
+  "publicadoEn": "2026-07-13",
+  "ambito": "autonomico",
+  "norma": "ley-11-2026-medidas-cataluna",
+  "requisito": null,
+  "comunidad": "09"
+ },
+ {
+  "id": "2025-05-28-rd-409-2025",
+  "tipo": "nueva_norma",
+  "titulo": "Real Decreto 409/2025: acceso y bienestar de los perros de asistencia",
+  "resumen": "Regula en toda España dónde pueden entrar los perros de asistencia (playas, hostelería, transporte y puesto de trabajo, sin pagar nada más), los únicos casos en que se puede limitar su acceso y las obligaciones de las personas usuarias. En vigor desde el 17 de junio de 2025. Lo recoge la guía «Mi perro es de asistencia».",
+  "publicadoEn": "2025-05-28",
+  "ambito": "estatal",
+  "norma": "rd-409-2025-perros-asistencia",
+  "requisito": null,
+  "comunidad": null
+ },
+ {
+  "id": "2024-12-27-madrid-ley-7-2024",
+  "tipo": "modificacion",
+  "titulo": "Madrid suprime el seguro obligatorio de su ley de protección animal",
+  "resumen": "La Ley 7/2024, de 26 de diciembre, reescribió el artículo 6 de la Ley 4/2016: ya no obliga a contratar un seguro de responsabilidad civil, y la identificación (artículo 11) y las sanciones (artículo 21) remiten a la Ley 7/2023. En vigor desde el 28 de diciembre de 2024. En Madrid rige el seguro estatal, pendiente de reglamento.",
+  "publicadoEn": "2024-12-27",
+  "ambito": "autonomico",
+  "norma": "ley-animales-comunidad-de-madrid",
+  "requisito": "seguro_rc_perros",
+  "comunidad": "13"
+ },
+ {
+  "id": "2024-07-10-comunitat-valenciana-aves",
+  "tipo": "modificacion",
+  "titulo": "La Comunitat Valenciana obliga a identificar también a las aves",
+  "resumen": "El Decreto-ley 7/2024, de 9 de julio, reformó el artículo 10.2 de la Ley 2/2023 para incluir a las aves entre los animales de identificación obligatoria, junto a perros, gatos y hurones. En vigor desde el 11 de julio de 2024; la Ley 6/2024, de 5 de diciembre, mantuvo esa redacción.",
+  "publicadoEn": "2024-07-10",
+  "ambito": "autonomico",
+  "norma": "ley-animales-comunitat-valenciana",
+  "requisito": "identificacion_animales",
+  "comunidad": "10"
+ }
+]

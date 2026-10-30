@@ -1,0 +1,44 @@
+---
+/**
+ * Cabecera de las paginas interiores: banda menta que se funde con el blanco.
+ * La cabecera fija del sitio es transparente arriba y se apoya en ella.
+ *
+ * `solape` deja sitio para que el primer bloque de contenido suba por encima
+ * del borde inferior.
+ */
+
+interface Props {
+  titulo: string;
+  entradilla?: string;
+  solape?: boolean;
+  class?: string;
+}
+
+const { titulo, entradilla, solape = false, class: clase } = Astro.props;
+---
+
+<section
+  class:list={[
+    'cabecera-pagina tinte',
+    solape && 'cabecera-pagina--solape',
+    clase,
+  ]}
+>
+  <div class="fondo-rejilla" aria-hidden="true"></div>
+  <div class="fondo-brillo" aria-hidden="true"></div>
+  <div class="contenedor">
+    <h1 class="titulo-pagina max-w-[22ch]" data-intro>
+      {titulo}
+    </h1>
+    {entradilla ? (
+      <p class="entradilla mt-5" data-intro style="--i: 1">
+        {entradilla}
+      </p>
+    ) : null}
+    {Astro.slots.has('default') ? (
+      <div class="mt-8" data-intro style="--i: 2">
+        <slot />
+      </div>
+    ) : null}
+  </div>
+</section>

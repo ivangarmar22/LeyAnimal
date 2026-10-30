@@ -23,4 +23,4 @@ Thumbs.db
 .idea/
 
 # Descargas del BOE y del INE de los scripts de contenido (se rehacen solas)
-apps/web/scripts/contenido/.cache/
+scripts/contenido/.cache/

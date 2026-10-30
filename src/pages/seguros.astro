@@ -1,0 +1,171 @@
+---
+import { CircleCheck, Home, Info } from 'lucide-preact';
+import FuentePlegable from '@/componentes/legal/FuentePlegable.astro';
+import TablaComunidades from '@/componentes/obligaciones/TablaComunidades.astro';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import PanelCta from '@/componentes/pagina/PanelCta.astro';
+import { traductor } from '@/i18n/catalogos';
+import Base from '@/layouts/Base.astro';
+import { aviso, balanza } from '@/lib/contenido/ilustraciones';
+import {
+  articulo,
+  comunidades,
+  norma,
+  pppDeComunidad,
+  reglasDeRequisito,
+  SEGURO_PPP_ESTATAL,
+} from '@/lib/datos';
+import { requisitoPorComunidad } from '@/lib/datos/evaluacion';
+import { formatearEuros } from '@/lib/fechas';
+import { ChipAmbito, ChipEstado } from '@/ui/Chips';
+import { CitaLegal } from '@/ui/CitaLegal';
+import { Ilustracion } from '@/ui/Ilustracion';
+
+const tg = traductor();
+const t = tg.en('seguros');
+
+const cita = (id: string) => {
+  const a = articulo(id);
+  const n = a ? norma(a.norma) : undefined;
+  if (!a || !n) throw new Error(`Falta el articulo ${id}`);
+  return { a, n };
+};
+const estatal = (clave: string) =>
+  reglasDeRequisito(clave).find((r) => r.ambito === 'estatal')?.estado;
+const bloques = [
+  {
+    titulo: t('estatal'),
+    texto: t('estatalTexto'),
+    estado: estatal('seguro_rc_perros'),
+    Icono: balanza,
+    ...cita('ley-7-2023-bienestar-animal#art. 30.3'),
+  },
+  {
+    titulo: t('ppp'),
+    texto: t('pppTexto'),
+    estado: estatal('licencia_ppp'),
+    Icono: aviso,
+    ...cita('rd-287-2002-animales-potencialmente-peligrosos#art. 3.1.e'),
+  },
+];
+const preguntas = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'] as const;
+
+// Comunidades cuyo seguro minimo para un perro PPP supera el estatal.
+const seguroPpp = comunidades().flatMap((c) => {
+  const s = pppDeComunidad(c.codigoIne)?.seguro;
+  return s && s.importe > SEGURO_PPP_ESTATAL
+    ? [
+        {
+          nombre: c.nombre,
+          importe: s.importe,
+          soloRazas: Boolean(s.soloRazas),
+          fuente: s.fuente,
+        },
+      ]
+    : [];
+});
+---
+
+<Base
+  ruta="/seguros"
+  titulo={t('metaTitulo')}
+  descripcion={t('metaDescripcion')}
+>
+  <CabeceraPagina titulo={t('titulo')} entradilla={t('entradilla')} solape>
+    <p class="flex gap-2 text-sm text-texto-3">
+      <Info class="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+      {t('aviso')}
+    </p>
+  </CabeceraPagina>
+
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <div class="grid gap-5 lg:grid-cols-2">
+      {bloques.map(({ titulo, texto, estado, Icono, a, n }) => (
+        <section class="tarjeta gap-4 shadow-alta">
+          <div class="flex flex-wrap gap-2">
+            {estado ? <ChipEstado estado={estado} t={tg} /> : null}
+            <ChipAmbito ambito="estatal" t={tg} />
+          </div>
+          <h2 class="titulo-3 flex items-center gap-3">
+            <Ilustracion icono={Icono} class="size-8 shrink-0" />
+            {titulo}
+          </h2>
+          <p>{texto}</p>
+          {titulo === t('ppp') ? (
+            <ul class="grid gap-1">
+              {seguroPpp.map((x) => (
+                <li class="border-b border-borde pb-1 last:border-b-0">
+                  <p class="flex flex-wrap items-baseline justify-between gap-x-4">
+                    <span class="font-medium text-texto">{x.nombre}</span>
+                    <span class="cifras font-semibold">
+                      {formatearEuros(x.importe)}
+                      {x.soloRazas ? (
+                        <span class="ml-1 font-normal text-texto-3">
+                          ({t('pppSoloRazas')})
+                        </span>
+                      ) : null}
+                    </span>
+                  </p>
+                  <FuentePlegable fuentes={[x.fuente]} />
+                </li>
+              ))}
+            </ul>
+          ) : null}
+          <CitaLegal norma={n} articulo={a} t={tg} />
+        </section>
+      ))}
+    </div>
+
+    <section class="mt-20" aria-labelledby="territorios">
+      <h2 id="territorios" class="titulo-2">
+        {t('territorios')}
+      </h2>
+      <p class="entradilla mt-4">{t('territoriosTexto')}</p>
+      <div class="mt-8">
+        <TablaComunidades
+          filas={requisitoPorComunidad('seguro_rc_perros')}
+          caption={t('territorios')}
+        />
+      </div>
+    </section>
+
+    <section class="mt-20 grid gap-10 lg:grid-cols-2 lg:gap-16">
+      <div>
+        <h2 class="titulo-3 flex items-center gap-3">
+          <Home class="size-6 text-marca-600" aria-hidden="true" />
+          {t('hogar')}
+        </h2>
+        <p class="mt-4 max-w-[60ch]">{t('hogarTexto')}</p>
+      </div>
+      <div class="tarjeta seccion--suave gap-4">
+        <h2 class="titulo-3">{t('preguntas')}</h2>
+        <ul class="grid gap-4">
+          {preguntas.map((p) => (
+            <li class="flex gap-3">
+              <CircleCheck
+                class="mt-0.5 size-5 shrink-0 text-marca-600"
+                aria-hidden="true"
+              />
+              <span>
+                <span class="font-medium text-texto">{t(p)}</span>
+                {p === 'p2' ? (
+                  <span class="mt-1 block text-sm text-texto-3">
+                    {t('p2nota')}
+                  </span>
+                ) : null}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <p class="mt-12 text-sm font-medium text-texto-2">{tg('comun.descargo')}</p>
+  </div>
+
+  <PanelCta
+    titulo={tg('inicio.cta.titulo')}
+    texto={tg('inicio.cta.texto')}
+    boton={tg('inicio.cta.boton')}
+  />
+</Base>

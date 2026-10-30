@@ -1,0 +1,8 @@
+# Finales de linea LF en todas las plataformas: Prettier los exige y, sin
+# esto, core.autocrlf de Windows convierte la copia de trabajo a CRLF y
+# `pnpm format:check` falla en todos los ficheros.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.woff2 binary

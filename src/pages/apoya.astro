@@ -1,0 +1,214 @@
+---
+/**
+ * Apoya el proyecto: por que existe LeyAnimal y como ayudar a mantenerlo con
+ * un donativo voluntario (Bizum o PayPal). La web es gratuita y lo sigue
+ * siendo sin donativos; no hay pasarela de pago propia ni se guarda nada.
+ */
+import {
+  ArrowRight,
+  Check,
+  Copy,
+  ExternalLink,
+  Heart,
+  HeartHandshake,
+  Info,
+  Share2,
+  Smartphone,
+  Wallet,
+} from 'lucide-preact';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import { traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import Base from '@/layouts/Base.astro';
+import { balanza, corazonVerde, huellas } from '@/lib/contenido/ilustraciones';
+import { DONATIVOS } from '@/lib/sitio';
+import { Ilustracion } from '@/ui/Ilustracion';
+
+const t = traductor('apoya');
+
+// "652308536" -> "652 308 536", como se dicta un telefono.
+const bizumLegible = DONATIVOS.bizum.replace(
+  /(\d{3})(\d{3})(\d{3})/,
+  '$1 $2 $3',
+);
+const usuarioPaypal = DONATIVOS.paypal.split('/').at(-1);
+const motivos = [
+  { clave: 'gratis', Icono: corazonVerde },
+  { clave: 'independiente', Icono: balanza },
+  { clave: 'tiempo', Icono: huellas },
+];
+---
+
+<Base ruta="/apoya" titulo={t('metaTitulo')} descripcion={t('metaDescripcion')}>
+  <CabeceraPagina titulo={t('titulo')} entradilla={t('entradilla')} solape />
+
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <div class="grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+      <section class="tarjeta gap-6 shadow-alta" aria-labelledby="h-historia">
+        <div class="flex items-center gap-3">
+          <span class="grid size-11 shrink-0 place-items-center rounded-2xl bg-marca-50 text-marca-700">
+            <Heart class="size-5" aria-hidden="true" />
+          </span>
+          <h2 id="h-historia" class="titulo-3">
+            {t('historiaTitulo')}
+          </h2>
+        </div>
+        <div class="grid gap-4 text-[1.0625rem] leading-relaxed">
+          <p>{t('historia1')}</p>
+          <p>{t('historia2')}</p>
+          <p>{t('historia3')}</p>
+        </div>
+        <ul class="mt-auto grid gap-4 border-t border-borde pt-6">
+          {motivos.map(({ clave, Icono }) => (
+            <li class="flex gap-4">
+              <span class="caja-icono size-11 shrink-0">
+                <Ilustracion icono={Icono} />
+              </span>
+              <span>
+                <span class="block font-display font-semibold text-texto">
+                  {t(`motivos.${clave}.titulo`)}
+                </span>
+                <span class="mt-0.5 block text-[0.9375rem] text-texto-2">
+                  {t(`motivos.${clave}.texto`)}
+                </span>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <div class="grid content-start gap-5">
+        <section class="tarjeta gap-5 shadow-media" aria-labelledby="h-bizum">
+          <div class="flex items-center gap-3">
+            <span class="grid size-11 shrink-0 place-items-center rounded-2xl bg-marca-50 text-marca-700">
+              <Smartphone class="size-5" aria-hidden="true" />
+            </span>
+            <h2 id="h-bizum" class="titulo-3">
+              Bizum
+            </h2>
+          </div>
+          <p>{t('bizumTexto')}</p>
+          <p
+            class="cifras rounded-2xl border border-borde bg-superficie-2 px-5 py-4 text-center font-display text-[clamp(1.6rem,6vw,2.1rem)] font-semibold tracking-wide text-texto"
+            aria-label={t('bizumNumero', { numero: bizumLegible })}
+          >
+            {bizumLegible}
+          </p>
+          <button
+            type="button"
+            class="boton boton--principal hidden w-full [.js_&]:inline-flex"
+            data-copiar={DONATIVOS.bizum}
+            data-copiado={t('copiado')}
+          >
+            <Copy aria-hidden="true" data-icono-copiar />
+            <Check aria-hidden="true" class="hidden" data-icono-copiado />
+            <span data-texto aria-live="polite">
+              {t('copiar')}
+            </span>
+          </button>
+          <p class="text-sm text-texto-3">{t('bizumConcepto')}</p>
+        </section>
+
+        <section class="tarjeta gap-5 shadow-media" aria-labelledby="h-paypal">
+          <div class="flex items-center gap-3">
+            <span class="grid size-11 shrink-0 place-items-center rounded-2xl bg-marca-50 text-marca-700">
+              <Wallet class="size-5" aria-hidden="true" />
+            </span>
+            <h2 id="h-paypal" class="titulo-3">
+              PayPal
+            </h2>
+          </div>
+          <p>{t('paypalTexto')}</p>
+          <div class="grid items-center gap-5 sm:grid-cols-[auto_minmax(0,1fr)]">
+            <img
+              src={ruta('/apoya/paypal-qr.svg')}
+              alt={t('qrAlt')}
+              width="168"
+              height="168"
+              class="mx-auto size-42 rounded-2xl border border-borde bg-white p-2"
+              loading="lazy"
+            />
+            <div class="grid gap-3">
+              <a
+                href={DONATIVOS.paypal}
+                target="_blank"
+                rel="noreferrer noopener"
+                class="boton boton--principal w-full"
+              >
+                {t('paypalBoton')}
+                <ExternalLink aria-hidden="true" />
+                <span class="sr-only">{t('abreEnPestana')}</span>
+              </a>
+              <p class="text-center text-sm text-texto-3 sm:text-left">
+                paypal.me/
+                <span class="font-medium text-texto-2">{usuarioPaypal}</span>
+              </p>
+              <p class="text-sm text-texto-3">{t('qrTexto')}</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <p class="mx-auto mt-6 flex max-w-3xl gap-3 rounded-2xl border border-borde bg-superficie p-4 text-sm text-texto-2">
+      <Info class="mt-0.5 size-5 shrink-0 text-marca-600" aria-hidden="true" />
+      {t('aviso')}
+    </p>
+
+    <section class="mt-16 grid gap-5 md:grid-cols-2" aria-labelledby="h-otras">
+      <h2 id="h-otras" class="titulo-3 md:col-span-2">
+        {t('otrasTitulo')}
+      </h2>
+      <div class="tarjeta tarjeta--menta flex-row gap-3">
+        <Share2
+          class="mt-1 size-5 shrink-0 text-marca-600"
+          aria-hidden="true"
+        />
+        <div class="grid content-start gap-2">
+          <p class="font-display text-lg font-semibold text-texto">
+            {t('compartirTitulo')}
+          </p>
+          <p class="text-[0.9375rem]">{t('compartirTexto')}</p>
+        </div>
+      </div>
+      <div class="tarjeta tarjeta--menta flex-row gap-3">
+        <HeartHandshake
+          class="mt-1 size-5 shrink-0 text-marca-600"
+          aria-hidden="true"
+        />
+        <div class="grid content-start justify-items-start gap-2">
+          <p class="font-display text-lg font-semibold text-texto">
+            {t('avisarTitulo')}
+          </p>
+          <p class="text-[0.9375rem]">{t('avisarTexto')}</p>
+          <a href={ruta('/colabora')} class="enlace-flecha mt-1">
+            {t('avisarBoton')}
+            <ArrowRight aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <p class="mt-12 text-lg font-medium text-texto">{t('gracias')}</p>
+  </div>
+</Base>
+
+<script>
+  // Copiar el numero de Bizum. Si el portapapeles no esta disponible, el
+  // numero sigue a la vista para copiarlo a mano.
+  for (const boton of document.querySelectorAll<HTMLButtonElement>(
+    '[data-copiar]',
+  )) {
+    boton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(boton.dataset.copiar ?? '');
+      } catch {
+        return;
+      }
+      const texto = boton.querySelector('[data-texto]');
+      if (texto) texto.textContent = boton.dataset.copiado ?? '';
+      boton.querySelector('[data-icono-copiar]')?.classList.add('hidden');
+      boton.querySelector('[data-icono-copiado]')?.classList.remove('hidden');
+    });
+  }
+</script>

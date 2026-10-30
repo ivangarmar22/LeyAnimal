@@ -1,7 +1,5 @@
-packages:
-  - 'apps/*'
-  - 'packages/*'
-
+# Un solo proyecto (la web). Este fichero solo guarda ajustes de pnpm.
+#
 # Scripts de instalacion: se deniegan. Los dos paquetes que los traen
 # (esbuild, que usa Vite, y sharp, que optimiza las imagenes) funcionan con
 # sus binarios precompilados.

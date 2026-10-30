@@ -1,0 +1,2026 @@
+{
+ "requisitos": [
+  {
+   "clave": "identificacion_animales",
+   "tema": "identificacion",
+   "titulo": "Identificar a tu animal",
+   "descripcionCorta": "Hay que identificar al animal, en perros, gatos y hurones con microchip.",
+   "explicacion": "La Ley 7/2023 obliga en toda España a identificar con microchip a perros, gatos y hurones, y con anilla a las aves. Muchas comunidades lo exigían ya en su propia ley, con plazos y especies propios: la cita de tu comunidad, cuando la hay, es la que manda en el plazo.",
+   "tipo": "obligacion",
+   "periodicidad": "unica",
+   "plazo": "Varía según la comunidad",
+   "quienLoExige": "Estado y comunidad autónoma",
+   "exigeNormaTerritorial": false,
+   "orden": 5
+  },
+  {
+   "clave": "censo_municipal",
+   "tema": "identificacion",
+   "titulo": "Inscribir a tu animal en el censo municipal",
+   "descripcionCorta": "Tu comunidad obliga a inscribirlo en el censo de tu ayuntamiento.",
+   "explicacion": "El censo lo lleva tu ayuntamiento, pero quien obliga a inscribirse es la ley de tu comunidad. El plazo concreto figura en la cita.",
+   "tipo": "tramite",
+   "periodicidad": "unica",
+   "plazo": "Varía según la comunidad",
+   "quienLoExige": "Ayuntamiento",
+   "exigeNormaTerritorial": true,
+   "orden": 6
+  }
+ ],
+ "normas": [
+  {
+   "slug": "ley-perros-asistencia-comunitat-valenciana",
+   "ambito": "autonomico",
+   "comunidad": "10",
+   "tipo": "ley",
+   "numero": "7/2025",
+   "anio": 2025,
+   "titulo": "Ley 7/2025, de 26 de diciembre, de la Generalitat, reguladora del acceso al entorno de las personas con discapacidad usuarias de perro de asistencia.",
+   "tituloCorto": "Ley 7/2025 de la Comunitat Valenciana",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2026-992",
+   "identificadorBoletin": "BOE-A-2026-992",
+   "fechaPublicacion": "2026-01-17",
+   "fechaEntradaVigor": "2025-12-30",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-comunitat-valenciana",
+   "ambito": "autonomico",
+   "comunidad": "10",
+   "tipo": "ley",
+   "numero": "2/2023",
+   "anio": 2023,
+   "titulo": "Ley 2/2023, de 13 de marzo, de Protección, Bienestar y Tenencia de animales de compañía y otras medidas de bienestar animal.",
+   "tituloCorto": "Ley 2/2023 de la Comunitat Valenciana",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7421",
+   "identificadorBoletin": "BOE-A-2023-7421",
+   "fechaPublicacion": "2023-03-22",
+   "fechaEntradaVigor": "2023-03-15",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-aragon",
+   "ambito": "autonomico",
+   "comunidad": "02",
+   "tipo": "ley",
+   "numero": "14/2023",
+   "anio": 2023,
+   "titulo": "Ley 14/2023, de 30 de marzo, de perros de asistencia en Aragón.",
+   "tituloCorto": "Ley 14/2023 de Aragón",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-10879",
+   "identificadorBoletin": "BOE-A-2023-10879",
+   "fechaPublicacion": "2023-05-06",
+   "fechaEntradaVigor": "2023-07-17",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-pais-vasco",
+   "ambito": "autonomico",
+   "comunidad": "16",
+   "tipo": "ley",
+   "numero": "9/2022",
+   "anio": 2022,
+   "titulo": "Ley 9/2022, de 30 de junio, de protección de los animales domésticos.",
+   "tituloCorto": "Ley 9/2022 del País Vasco",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-14086",
+   "identificadorBoletin": "BOE-A-2022-14086",
+   "fechaPublicacion": "2022-08-25",
+   "fechaEntradaVigor": "2022-08-18",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-andalucia",
+   "ambito": "autonomico",
+   "comunidad": "01",
+   "tipo": "ley",
+   "numero": "11/2021",
+   "anio": 2021,
+   "titulo": "Ley 11/2021, de 28 de diciembre, por la que se regulan los perros de asistencia a personas con discapacidad en Andalucía.",
+   "tituloCorto": "Ley 11/2021 de Andalucía",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-759",
+   "identificadorBoletin": "BOE-A-2022-759",
+   "fechaPublicacion": "2022-01-18",
+   "fechaEntradaVigor": "2022-01-23",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-castilla-la-mancha",
+   "ambito": "autonomico",
+   "comunidad": "08",
+   "tipo": "ley",
+   "numero": "7/2020",
+   "anio": 2020,
+   "titulo": "Ley 7/2020, de 31 de agosto, de Bienestar, Protección y Defensa de los Animales de Castilla-La Mancha.",
+   "tituloCorto": "Ley 7/2020 de Castilla-La Mancha",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2020-13916",
+   "identificadorBoletin": "BOE-A-2020-13916",
+   "fechaPublicacion": "2020-11-10",
+   "fechaEntradaVigor": "2021-03-07",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-principado-de-asturias",
+   "ambito": "autonomico",
+   "comunidad": "03",
+   "tipo": "ley",
+   "numero": "2/2020",
+   "anio": 2020,
+   "titulo": "Ley 2/2020, de 23 de diciembre, reguladora del derecho de acceso al entorno de las personas usuarias de perros de asistencia.",
+   "tituloCorto": "Ley 2/2020 del Principado de Asturias",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2021-430",
+   "identificadorBoletin": "BOE-A-2021-430",
+   "fechaPublicacion": "2021-01-12",
+   "fechaEntradaVigor": "2021-06-30",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-comunidad-foral-de-navarra",
+   "ambito": "autonomico",
+   "comunidad": "15",
+   "tipo": "ley",
+   "numero": "19/2019",
+   "anio": 2019,
+   "titulo": "Ley Foral 19/2019, de 4 de abril, de protección de los animales de compañía en Navarra.",
+   "tituloCorto": "Ley Foral 19/2019 de Navarra",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2019-6779",
+   "identificadorBoletin": "BOE-A-2019-6779",
+   "fechaPublicacion": "2019-05-08",
+   "fechaEntradaVigor": "2019-07-11",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-castilla-y-leon",
+   "ambito": "autonomico",
+   "comunidad": "07",
+   "tipo": "ley",
+   "numero": "11/2019",
+   "anio": 2019,
+   "titulo": "Ley 11/2019, de 3 de abril, de acceso al entorno de las personas usuarias de perro de asistencia en la Comunidad de Castilla y León",
+   "tituloCorto": "Ley 11/2019 de Castilla y León",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2019-6613",
+   "identificadorBoletin": "BOE-A-2019-6613",
+   "fechaPublicacion": "2019-05-04",
+   "fechaEntradaVigor": "2019-10-08",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-la-rioja",
+   "ambito": "autonomico",
+   "comunidad": "17",
+   "tipo": "ley",
+   "numero": "6/2018",
+   "anio": 2018,
+   "titulo": "Ley 6/2018, de 26 de noviembre, de protección de los animales en la Comunidad Autónoma de La Rioja.",
+   "tituloCorto": "Ley 6/2018 de La Rioja",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-17064",
+   "identificadorBoletin": "BOE-A-2018-17064",
+   "fechaPublicacion": "2018-12-14",
+   "fechaEntradaVigor": "2018-11-30",
+   "estado": "derogada",
+   "resumen": "Derogada por la Ley 10/2023, de 7 de agosto, cuyo artículo único la deroga sin sustituirla. La Rioja no tiene hoy ley autonómica de protección animal: rige el marco estatal.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-castilla-la-mancha",
+   "ambito": "autonomico",
+   "comunidad": "08",
+   "tipo": "ley",
+   "numero": "5/2018",
+   "anio": 2018,
+   "titulo": "Ley 5/2018, de 21 de diciembre, de acceso al entorno de las personas con discapacidad acompañadas de perros de asistencia.",
+   "tituloCorto": "Ley 5/2018 de Castilla-La Mancha",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2019-1695",
+   "identificadorBoletin": "BOE-A-2019-1695",
+   "fechaPublicacion": "2019-02-08",
+   "fechaEntradaVigor": "2019-01-27",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-galicia",
+   "ambito": "autonomico",
+   "comunidad": "12",
+   "tipo": "ley",
+   "numero": "4/2017",
+   "anio": 2017,
+   "titulo": "Ley 4/2017, de 3 de octubre, de protección y bienestar de los animales de compañía en Galicia.",
+   "tituloCorto": "Ley 4/2017 de Galicia",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-12357",
+   "identificadorBoletin": "BOE-A-2017-12357",
+   "fechaPublicacion": "2017-10-30",
+   "fechaEntradaVigor": "2018-01-11",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-region-de-murcia",
+   "ambito": "autonomico",
+   "comunidad": "14",
+   "tipo": "ley",
+   "numero": "6/2017",
+   "anio": 2017,
+   "titulo": "Ley 6/2017, de 8 de noviembre, de protección y defensa de los animales de compañía de la Región de Murcia.",
+   "tituloCorto": "Ley 6/2017 de la Región de Murcia",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-15288",
+   "identificadorBoletin": "BOE-A-2017-15288",
+   "fechaPublicacion": "2017-12-22",
+   "fechaEntradaVigor": "2017-12-23",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-canarias",
+   "ambito": "autonomico",
+   "comunidad": "05",
+   "tipo": "ley",
+   "numero": "3/2017",
+   "anio": 2017,
+   "titulo": "Ley 3/2017, de 26 de abril, de perros de asistencia para personas con discapacidad en la Comunidad Autónoma de Canarias.",
+   "tituloCorto": "Ley 3/2017 de Canarias",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-7821",
+   "identificadorBoletin": "BOE-A-2017-7821",
+   "fechaPublicacion": "2017-07-06",
+   "fechaEntradaVigor": "2017-06-08",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-cantabria",
+   "ambito": "autonomico",
+   "comunidad": "06",
+   "tipo": "ley",
+   "numero": "6/2017",
+   "anio": 2017,
+   "titulo": "Ley 6/2017, de 5 de julio, de acceso al entorno de personas con discapacidad que precisan el acompañamiento de perros de asistencia.",
+   "tituloCorto": "Ley 6/2017 de Cantabria",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-9487",
+   "identificadorBoletin": "BOE-A-2017-9487",
+   "fechaPublicacion": "2017-08-09",
+   "fechaEntradaVigor": "2017-07-15",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-la-rioja",
+   "ambito": "autonomico",
+   "comunidad": "17",
+   "tipo": "ley",
+   "numero": "8/2017",
+   "anio": 2017,
+   "titulo": "Ley 8/2017, de 19 de septiembre, de perros de asistencia de La Rioja.",
+   "tituloCorto": "Ley 8/2017 de La Rioja",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-11508",
+   "identificadorBoletin": "BOE-A-2017-11508",
+   "fechaPublicacion": "2017-10-07",
+   "fechaEntradaVigor": "2017-09-26",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-comunidad-de-madrid",
+   "ambito": "autonomico",
+   "comunidad": "13",
+   "tipo": "ley",
+   "numero": "4/2016",
+   "anio": 2016,
+   "titulo": "Ley 4/2016, de 22 de julio, de Protección de los Animales de Compañía de la Comunidad de Madrid.",
+   "tituloCorto": "Ley 4/2016 de la Comunidad de Madrid",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-11097",
+   "identificadorBoletin": "BOE-A-2016-11097",
+   "fechaPublicacion": "2016-11-25",
+   "fechaEntradaVigor": "2017-02-10",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-comunidad-de-madrid",
+   "ambito": "autonomico",
+   "comunidad": "13",
+   "tipo": "ley",
+   "numero": "2/2015",
+   "anio": 2015,
+   "titulo": "Ley 2/2015, de 10 de marzo, de Acceso al Entorno de Personas con Discapacidad que Precisan el Acompañamiento de Perros de Asistencia.",
+   "tituloCorto": "Ley 2/2015 de la Comunidad de Madrid",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-6129",
+   "identificadorBoletin": "BOE-A-2015-6129",
+   "fechaPublicacion": "2015-06-03",
+   "fechaEntradaVigor": "2015-03-14",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-comunidad-foral-de-navarra",
+   "ambito": "autonomico",
+   "comunidad": "15",
+   "tipo": "ley",
+   "numero": "3/2015",
+   "anio": 2015,
+   "titulo": "Ley Foral 3/2015, de 2 de febrero, reguladora de la libertad de acceso al entorno, de deambulación y permanencia en espacios abiertos y otros delimitados, de personas con discapacidad acompañadas de perros de asistencia.",
+   "tituloCorto": "Ley Foral 3/2015 de Navarra",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-2339",
+   "identificadorBoletin": "BOE-A-2015-2339",
+   "fechaPublicacion": "2015-03-05",
+   "fechaEntradaVigor": "2015-02-18",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-region-de-murcia",
+   "ambito": "autonomico",
+   "comunidad": "14",
+   "tipo": "ley",
+   "numero": "4/2015",
+   "anio": 2015,
+   "titulo": "Ley 4/2015, de 3 de marzo, de perros de asistencia para personas con discapacidad.",
+   "tituloCorto": "Ley 4/2015 de la Región de Murcia",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-3276",
+   "identificadorBoletin": "BOE-A-2015-3276",
+   "fechaPublicacion": "2015-03-27",
+   "fechaEntradaVigor": "2015-04-05",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-extremadura",
+   "ambito": "autonomico",
+   "comunidad": "11",
+   "tipo": "ley",
+   "numero": "11/2014",
+   "anio": 2014,
+   "titulo": "Ley 11/2014, de 9 de diciembre, de accesibilidad universal de Extremadura.",
+   "tituloCorto": "Ley 11/2014 de Extremadura",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-13629",
+   "identificadorBoletin": "BOE-A-2014-13629",
+   "fechaPublicacion": "2014-12-30",
+   "fechaEntradaVigor": "2014-12-12",
+   "estado": "vigente",
+   "resumen": "Extremadura no tiene ley propia de perros de asistencia. Esta ley de accesibilidad reconoce, en su disposición adicional tercera, el derecho de acceso de las personas acompañadas de apoyo animal, que según su anexo incluye a los perros de asistencia.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-illes-balears",
+   "ambito": "autonomico",
+   "comunidad": "04",
+   "tipo": "ley",
+   "numero": "1/2014",
+   "anio": 2014,
+   "titulo": "Ley 1/2014, de 21 de febrero, de perros de asistencia.",
+   "tituloCorto": "Ley 1/2014 de las Illes Balears",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-3754",
+   "identificadorBoletin": "BOE-A-2014-3754",
+   "fechaPublicacion": "2014-04-09",
+   "fechaEntradaVigor": "2014-03-02",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-cataluna",
+   "ambito": "autonomico",
+   "comunidad": "09",
+   "tipo": "ley",
+   "numero": "19/2009",
+   "anio": 2009,
+   "titulo": "Ley 19/2009, de 26 de noviembre, del acceso al entorno de las personas acompañadas de perros de asistencia.",
+   "tituloCorto": "Ley 19/2009 de Cataluña",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2009-20771",
+   "identificadorBoletin": "BOE-A-2009-20771",
+   "fechaPublicacion": "2009-12-24",
+   "fechaEntradaVigor": "2010-02-03",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-cataluna",
+   "ambito": "autonomico",
+   "comunidad": "09",
+   "tipo": "ley",
+   "numero": "2/2008",
+   "anio": 2008,
+   "titulo": "Decreto Legislativo 2/2008, de 15 de abril, por el que se aprueba el Texto refundido de la Ley de protección de los animales.",
+   "tituloCorto": "Decreto Legislativo 2/2008 de Cataluña",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=DOGC-f-2008-90016",
+   "identificadorBoletin": "DOGC-f-2008-90016",
+   "fechaPublicacion": "2008-04-17",
+   "fechaEntradaVigor": "2008-04-18",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-pais-vasco",
+   "ambito": "autonomico",
+   "comunidad": "16",
+   "tipo": "ley",
+   "numero": "10/2007",
+   "anio": 2007,
+   "titulo": "Ley 10/2007, de 29 de junio, sobre Perros de Asistencia para la Atención a Personas con Discapacidad.",
+   "tituloCorto": "Ley 10/2007 del País Vasco",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2011-16753",
+   "identificadorBoletin": "BOE-A-2011-16753",
+   "fechaPublicacion": "2011-10-26",
+   "fechaEntradaVigor": "2007-07-21",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-andalucia",
+   "ambito": "autonomico",
+   "comunidad": "01",
+   "tipo": "ley",
+   "numero": "11/2003",
+   "anio": 2003,
+   "titulo": "Ley 11/2003, de 24 de noviembre, de protección de los animales.",
+   "tituloCorto": "Ley 11/2003 de Andalucía",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23292",
+   "identificadorBoletin": "BOE-A-2003-23292",
+   "fechaPublicacion": "2003-12-19",
+   "fechaEntradaVigor": "2003-12-11",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-aragon",
+   "ambito": "autonomico",
+   "comunidad": "02",
+   "tipo": "ley",
+   "numero": "11/2003",
+   "anio": 2003,
+   "titulo": "Ley 11/2003, de 19 de marzo, de Protección Animal en la Comunidad Autónoma de Aragón.",
+   "tituloCorto": "Ley 11/2003 de Aragón",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-8225",
+   "identificadorBoletin": "BOE-A-2003-8225",
+   "fechaPublicacion": "2003-04-22",
+   "fechaEntradaVigor": "2003-06-26",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-asistencia-galicia",
+   "ambito": "autonomico",
+   "comunidad": "12",
+   "tipo": "ley",
+   "numero": "10/2003",
+   "anio": 2003,
+   "titulo": "Ley 10/2003, de 26 de diciembre, sobre el acceso al entorno de las personas con discapacidad acompañadas de perros de asistencia.",
+   "tituloCorto": "Ley 10/2003 de Galicia",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2004-1675",
+   "identificadorBoletin": "BOE-A-2004-1675",
+   "fechaPublicacion": "2004-01-29",
+   "fechaEntradaVigor": "2004-01-01",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-extremadura",
+   "ambito": "autonomico",
+   "comunidad": "11",
+   "tipo": "ley",
+   "numero": "5/2002",
+   "anio": 2002,
+   "titulo": "Ley 5/2002, de 23 de mayo, de Protección de los Animales en la Comunidad Autónoma de Extremadura.",
+   "tituloCorto": "Ley 5/2002 de Extremadura",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-16784",
+   "identificadorBoletin": "BOE-A-2002-16784",
+   "fechaPublicacion": "2002-08-22",
+   "fechaEntradaVigor": "2002-09-18",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-principado-de-asturias",
+   "ambito": "autonomico",
+   "comunidad": "03",
+   "tipo": "ley",
+   "numero": "13/2002",
+   "anio": 2002,
+   "titulo": "Ley 13/2002, de 23 de diciembre, de tenencia, protección y derechos de los animales.",
+   "tituloCorto": "Ley 13/2002 del Principado de Asturias",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-2102",
+   "identificadorBoletin": "BOE-A-2003-2102",
+   "fechaPublicacion": "2003-02-01",
+   "fechaEntradaVigor": "2003-01-20",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-perros-peligrosos-cataluna",
+   "ambito": "autonomico",
+   "comunidad": "09",
+   "tipo": "ley",
+   "numero": "10/1999",
+   "anio": 1999,
+   "titulo": "Ley 10/1999, de 30 de julio, sobre tenencia de perros considerados potencialmente peligrosos.",
+   "tituloCorto": "Ley 10/1999 de Cataluña",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-1999-18004",
+   "identificadorBoletin": "BOE-A-1999-18004",
+   "fechaPublicacion": "1999-08-24",
+   "fechaEntradaVigor": "1999-11-09",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-castilla-y-leon",
+   "ambito": "autonomico",
+   "comunidad": "07",
+   "tipo": "ley",
+   "numero": "5/1997",
+   "anio": 1997,
+   "titulo": "Ley 5/1997, de 24 de abril, de protección de los animales de compañía.",
+   "tituloCorto": "Ley 5/1997 de Castilla y León",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-1997-14412",
+   "identificadorBoletin": "BOE-A-1997-14412",
+   "fechaPublicacion": "1997-07-01",
+   "fechaEntradaVigor": "1997-07-30",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-cantabria",
+   "ambito": "autonomico",
+   "comunidad": "06",
+   "tipo": "ley",
+   "numero": "3/1992",
+   "anio": 1992,
+   "titulo": "Ley de Cantabria 3/1992, de 18 de marzo, de Protección de los Animales.",
+   "tituloCorto": "Ley de Cantabria 3/1992",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-1992-11685",
+   "identificadorBoletin": "BOE-A-1992-11685",
+   "fechaPublicacion": "1992-05-23",
+   "fechaEntradaVigor": "1992-04-16",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-illes-balears",
+   "ambito": "autonomico",
+   "comunidad": "04",
+   "tipo": "ley",
+   "numero": "1/1992",
+   "anio": 1992,
+   "titulo": "Ley 1/1992, de 8 de abril, de Protección de los Animales que viven en el entorno humano.",
+   "tituloCorto": "Ley 1/1992 de las Illes Balears",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-1992-14038",
+   "identificadorBoletin": "BOE-A-1992-14038",
+   "fechaPublicacion": "1992-06-17",
+   "fechaEntradaVigor": "1992-05-15",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-animales-canarias",
+   "ambito": "autonomico",
+   "comunidad": "05",
+   "tipo": "ley",
+   "numero": "8/1991",
+   "anio": 1991,
+   "titulo": "Ley 8/1991, de 30 de abril, de protección de los animales.",
+   "tituloCorto": "Ley 8/1991 de Canarias",
+   "urlOficial": "https://www.boe.es/buscar/act.php?id=BOE-A-1991-16425",
+   "identificadorBoletin": "BOE-A-1991-16425",
+   "fechaPublicacion": "1991-06-26",
+   "fechaEntradaVigor": "1991-06-02",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  }
+ ],
+ "articulos": [
+  {
+   "id": "ley-animales-andalucia#Artículo 17",
+   "norma": "ley-animales-andalucia",
+   "referencia": "Artículo 17",
+   "epigrafe": null,
+   "textoLiteral": "Los perros y gatos, así como otros animales que reglamentariamente se determinen, deberán ser identificados individualmente mediante sistema de identificación electrónica normalizado, implantado por veterinario, dentro del plazo máximo de tres meses desde su nacimiento.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23292#a1-9"
+  },
+  {
+   "id": "ley-animales-andalucia#Artículo 18",
+   "norma": "ley-animales-andalucia",
+   "referencia": "Artículo 18",
+   "epigrafe": null,
+   "textoLiteral": "Los propietarios de perros y gatos, así como otros animales que se determinen reglamentariamente, deberán inscribirlos en el Registro Municipal de Animales de Compañía del Ayuntamiento donde habitualmente viva el animal, en el plazo máximo de tres meses desde la fecha de su nacimiento o en el de un mes desde su adquisición o cambio de residencia.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23292#a1-10"
+  },
+  {
+   "id": "ley-animales-andalucia#Artículo 41",
+   "norma": "ley-animales-andalucia",
+   "referencia": "Artículo 41",
+   "epigrafe": null,
+   "textoLiteral": "Las infracciones indicadas en el artículo anterior serán sancionadas con multas de: a) 75 a 500 euros para las leves. b) 501 a 2.000 euros para las graves. c) 2.001 a 30.000 euros para las muy graves.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23292#a4-3"
+  },
+  {
+   "id": "ley-animales-andalucia#Artículo 8",
+   "norma": "ley-animales-andalucia",
+   "referencia": "Artículo 8",
+   "epigrafe": null,
+   "textoLiteral": "La vacunación antirrábica será obligatoria para todos los perros y gatos.Reglamentariamente se establecerá la periodicidad de la misma.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23292#a8"
+  },
+  {
+   "id": "ley-animales-aragon#Artículo 15",
+   "norma": "ley-animales-aragon",
+   "referencia": "Artículo 15",
+   "epigrafe": null,
+   "textoLiteral": "Los poseedores de perros que lo sean por cualquier título, y, en su caso, sus propietarios, deberán censarlos en el Ayuntamiento del municipio donde residan habitualmente los animales, dentro de un plazo máximo de tres meses a partir de la fecha de la adquisición de su propiedad o posesión.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-8225#a1-7"
+  },
+  {
+   "id": "ley-animales-aragon#Artículo 16",
+   "norma": "ley-animales-aragon",
+   "referencia": "Artículo 16",
+   "epigrafe": null,
+   "textoLiteral": "Los poseedores y, en su caso, los propietarios de perros deberán distinguirlos e identificarlos individualmente mediante un procedimiento permanente y homologado que se determinará reglamentariamente.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-8225#a1-8"
+  },
+  {
+   "id": "ley-animales-aragon#Artículo 71",
+   "norma": "ley-animales-aragon",
+   "referencia": "Artículo 71",
+   "epigrafe": null,
+   "textoLiteral": "Las infracciones administrativas tipificadas en la presente Ley se sancionarán con la siguiente escala: a) Infracciones leves, con multa de sesenta euros (60 euros) a seiscientos un euros (601 euros). b) Infracciones graves, con multa de seiscientos un euros con un céntimo de euro (601,01 euros) a seis mil diez euros (6.010 euros). c) Infracciones muy graves, con multa de seis mil diez euros con un céntimo de euro (6.010,01 euros) a ciento cincuenta mil doscientos cincuenta y tres euros (150.253 euros).",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-8225#a7-3"
+  },
+  {
+   "id": "ley-animales-canarias#Artículo 11",
+   "norma": "ley-animales-canarias",
+   "referencia": "Artículo 11",
+   "epigrafe": null,
+   "textoLiteral": "Los propietarios de perros deberán identificarlos como reglamentariamente se establezca y censarlos en el Ayuntamiento donde habitualmente viva el animal, dentro del plazo máximo de tres meses, contados a partir de la fecha de nacimiento, o de un mes después de su adquisición. El animal deberá llevar necesariamente su identificación censal de forma permanente. […] Los perros deberán ser vacunados con carácter obligatorio.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1991-16425#a1-3"
+  },
+  {
+   "id": "ley-animales-canarias#Artículo 26",
+   "norma": "ley-animales-canarias",
+   "referencia": "Artículo 26",
+   "epigrafe": null,
+   "textoLiteral": "Las infracciones leves serán sancionadas con multas de 5.000 a 25.000 pesetas; las graves, con multas de 25.001 a 250.000 pesetas; y las muy graves, con multa de 250.001 a 2.500.000 pesetas.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1991-16425#a2-8"
+  },
+  {
+   "id": "ley-animales-cantabria#Artículo 10",
+   "norma": "ley-animales-cantabria",
+   "referencia": "Artículo 10",
+   "epigrafe": null,
+   "textoLiteral": "Los poseedores de perros, que lo sean por cualquier título, deberán censarlos en el Ayuntamiento donde residan habitualmente, dentro del plazo máximo de tres meses a partir de la fecha de su nacimiento o de un mes desde su adquisición; el animal deberá llevar de forma permanente su identificación censal.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1992-11685#a1-2"
+  },
+  {
+   "id": "ley-animales-cantabria#Artículo 39",
+   "norma": "ley-animales-cantabria",
+   "referencia": "Artículo 39",
+   "epigrafe": null,
+   "textoLiteral": "Las referidas infracciones serán sancionadas con las siguientes multas: Infracciones leves, de cinco mil a cuarenta y cinco mil (5.000 a 45.000) pesetas. Infracciones graves, de cuarenta y cinco mil una a cien mil (45.001 a 100.000) pesetas. Infracciones muy graves de cien mil una a dos millones y medio (100.001 a 2.500.000) de pesetas.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1992-11685#a3-11"
+  },
+  {
+   "id": "ley-animales-castilla-la-mancha#Artículo 14",
+   "norma": "ley-animales-castilla-la-mancha",
+   "referencia": "Artículo 14",
+   "epigrafe": null,
+   "textoLiteral": "Los perros, gatos y hurones deberán ser identificados individualmente mediante sistemas normalizados, implantados por personal veterinario.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2020-13916#a1-6"
+  },
+  {
+   "id": "ley-animales-castilla-la-mancha#Artículo 15",
+   "norma": "ley-animales-castilla-la-mancha",
+   "referencia": "Artículo 15",
+   "epigrafe": null,
+   "textoLiteral": "La identificación de los perros, gatos y hurones se realizará antes de los tres meses de edad, pudiéndose establecer reglamentariamente los plazos de identificación de otras especies.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2020-13916#a1-7"
+  },
+  {
+   "id": "ley-animales-castilla-la-mancha#Artículo 4",
+   "norma": "ley-animales-castilla-la-mancha",
+   "referencia": "Artículo 4",
+   "epigrafe": null,
+   "textoLiteral": "a) Identificar al animal e inscribirle en los registros y censos que en cada caso correspondan, según lo dispuesto en la normativa vigente.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2020-13916#a4"
+  },
+  {
+   "id": "ley-animales-castilla-la-mancha#Artículo 44",
+   "norma": "ley-animales-castilla-la-mancha",
+   "referencia": "Artículo 44",
+   "epigrafe": null,
+   "textoLiteral": "Las infracciones serán sancionadas con multas de 300 a 60.000 euros, de acuerdo a la siguiente escala: a) De 300 a 3.000 euros para las leves. b) De 3.001 a 9.000 euros para las graves. c) De 9.001 a 60.000 las muy graves.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2020-13916#a4-6"
+  },
+  {
+   "id": "ley-animales-castilla-y-leon#Artículo 29",
+   "norma": "ley-animales-castilla-y-leon",
+   "referencia": "Artículo 29",
+   "epigrafe": null,
+   "textoLiteral": "Las infracciones tipificadas en el artículo anterior serán sancionadas con multas de: a) 150 a 600 euros para las leves. b) 601 a 3.000 euros para las graves. c) 3.001 a 30.000 euros para las muy graves.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1997-14412#a2-11"
+  },
+  {
+   "id": "ley-animales-castilla-y-leon#Artículo 9",
+   "norma": "ley-animales-castilla-y-leon",
+   "referencia": "Artículo 9",
+   "epigrafe": null,
+   "textoLiteral": "Los propietarios o poseedores de perros deberán censarlos en el Ayuntamiento del municipio donde residan habitualmente, en el plazo máximo de tres meses a contar desde la fecha de nacimiento o de adquisición. El animal deberá llevar necesariamente su identificación censal, de forma permanente.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1997-14412#a9"
+  },
+  {
+   "id": "ley-animales-cataluna#Artículo 11",
+   "norma": "ley-animales-cataluna",
+   "referencia": "Artículo 11",
+   "epigrafe": null,
+   "textoLiteral": "Los animales de compañía que son objeto de comercialización o transacción deben ser esterilizados, excepto en los casos que se establezcan por reglamento.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=DOGC-f-2008-90016#a11"
+  },
+  {
+   "id": "ley-animales-cataluna#Artículo 14",
+   "norma": "ley-animales-cataluna",
+   "referencia": "Artículo 14",
+   "epigrafe": null,
+   "textoLiteral": "La persona propietaria o poseedora de un perro, un gato o un hurón tiene un plazo de tres meses desde el nacimiento del animal o de treinta días desde la fecha de adquisición del animal, el cambio de residencia, la muerte del animal o la modificación de otros datos incluidos en el censo para comunicarlo al censo municipal o al Registro general.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=DOGC-f-2008-90016#a14"
+  },
+  {
+   "id": "ley-animales-cataluna#Artículo 15",
+   "norma": "ley-animales-cataluna",
+   "referencia": "Artículo 15",
+   "epigrafe": null,
+   "textoLiteral": "Los perros, los gatos y los hurones deben ser identificados mediante: a) Una identificación electrónica con la implantación de un microchip homologado.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=DOGC-f-2008-90016#a15"
+  },
+  {
+   "id": "ley-animales-comunidad-de-madrid#Artículo 21",
+   "norma": "ley-animales-comunidad-de-madrid",
+   "referencia": "Artículo 21",
+   "epigrafe": null,
+   "textoLiteral": "Las sanciones, así como las medidas accesorias aplicables por las infracciones previstas en esta ley, y las condiciones para su graduación y responsabilidad civil serán las contempladas en la Ley 7/2023, de 28 de marzo, de protección de los derechos y el bienestar de los animales.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-11097#a2-3"
+  },
+  {
+   "id": "ley-animales-comunidad-de-madrid#Artículo 6",
+   "norma": "ley-animales-comunidad-de-madrid",
+   "referencia": "Artículo 6",
+   "epigrafe": null,
+   "textoLiteral": "h) Superar la formación en tenencia responsable reglamentada para cada especie de animal de compañía.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-11097#a6"
+  },
+  {
+   "id": "ley-animales-comunidad-de-madrid#Artículo 7",
+   "norma": "ley-animales-comunidad-de-madrid",
+   "referencia": "Artículo 7",
+   "epigrafe": null,
+   "textoLiteral": "t) Dejar sin supervisión a cualquier animal de compañía durante más de tres días consecutivos; en el caso de la especie canina, este plazo no podrá ser superior a veinticuatro horas consecutivas. […] aa) Mantener en el mismo domicilio un total superior a 5 animales pertenecientes a la especie canina, felina o cualquier otra que se determine reglamentariamente, salvo que el ayuntamiento lo autorice.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-11097#a7"
+  },
+  {
+   "id": "ley-animales-comunidad-foral-de-navarra#Artículo 10",
+   "norma": "ley-animales-comunidad-foral-de-navarra",
+   "referencia": "Artículo 10",
+   "epigrafe": null,
+   "textoLiteral": "En el caso de perros y gatos, cuya vacunación antirrábica es obligatoria, es de obligado cumplimiento una visita veterinaria anual o bianual con un control de salud que se acreditará documentalmente con el sellado de la vacuna en el pasaporte del animal e informe sobre el estado general.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2019-6779#ar-10"
+  },
+  {
+   "id": "ley-animales-comunidad-foral-de-navarra#Artículo 27",
+   "norma": "ley-animales-comunidad-foral-de-navarra",
+   "referencia": "Artículo 27",
+   "epigrafe": null,
+   "textoLiteral": "Las sanciones que se aplicarán por las infracciones previstas en esta ley foral serán: a) Por infracciones leves, multa de 200 hasta 1.000 euros. En caso de infracciones leves en las que no se aprecie intencionalidad en el infractor y este no hubiera sido sancionado en vía administrativa por la comisión de cualquier otra infracción de las previstas en la presente ley foral en los tres años inmediatamente anteriores, la sanción podrá consistir en un apercibimiento, sin perjuicio de las sanciones accesorias que conforme a lo dispuesto en el artículo siguiente pudiesen imponerse. b) Por infracciones graves, multa de 1.001 a 6.000 euros. c) Por infracciones muy graves, multa de 6.001 a 100.000 euros.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2019-6779#ar-27"
+  },
+  {
+   "id": "ley-animales-comunidad-foral-de-navarra#Artículo 6",
+   "norma": "ley-animales-comunidad-foral-de-navarra",
+   "referencia": "Artículo 6",
+   "epigrafe": null,
+   "textoLiteral": "Los perros y los gatos que puedan tener contacto no controlado con otros perros o gatos deberán estar esterilizados.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2019-6779#ar-6"
+  },
+  {
+   "id": "ley-animales-comunidad-foral-de-navarra#Artículo 8",
+   "norma": "ley-animales-comunidad-foral-de-navarra",
+   "referencia": "Artículo 8",
+   "epigrafe": null,
+   "textoLiteral": "Es obligatoria la identificación de perros, gatos y hurones mediante microchip homologado, portador de un código único validado por el Registro de Identificación de Animales de Compañía de Navarra.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2019-6779#ar-8"
+  },
+  {
+   "id": "ley-animales-comunitat-valenciana#Artículo 10",
+   "norma": "ley-animales-comunitat-valenciana",
+   "referencia": "Artículo 10",
+   "epigrafe": null,
+   "textoLiteral": "Están obligatoriamente sujetos a identificación los animales de la especie canina, felina, mustélidos domésticos, los animales que habiten en santuarios que no estén sujetos a identificación individual, las aves y las especies de animales que se determine reglamentariamente.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7421#a1-2"
+  },
+  {
+   "id": "ley-animales-comunitat-valenciana#Artículo 14",
+   "norma": "ley-animales-comunitat-valenciana",
+   "referencia": "Artículo 14",
+   "epigrafe": null,
+   "textoLiteral": "El Registro Supramunicipal de Identificación de Animales de Compañía de la Comunitat Valenciana tendrá carácter censal a los efectos de establecer los censos municipales y las obligaciones que se deriven de ello.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7421#a1-6"
+  },
+  {
+   "id": "ley-animales-comunitat-valenciana#Artículo 43",
+   "norma": "ley-animales-comunitat-valenciana",
+   "referencia": "Artículo 43",
+   "epigrafe": null,
+   "textoLiteral": "Por cometer infracciones en materia de protección de los animales, podrán imponerse las sanciones pecuniarias siguientes, como leves, graves y muy graves en sus grados mínimo, medio y máximo en función de los criterios de graduación de la sanción: a) Las infracciones leves se sancionan con una multa de 100 a 3.000 euros. En grado mínimo, de 100 a 500 euros, o advertencia. La advertencia solo se impone si no ha mediado dolo y en los últimos tres años el responsable no ha sido sancionado en vía administrativa por la comisión de cualquier otra infracción de las descritas en esta ley. En el grado medio, de 501 a 1.500 euros. En el grado máximo, de 1.501 a 3.000 euros. b) Las infracciones graves se sancionarán con una multa de 3.001 a 9.000 euros. En grado mínimo, de 3.001 a 4.500 euros. En grado medio, de 4.501 a 6.000 euros. En grado máximo, de 6.001 a 9.000 euros. c) Las infracciones muy graves, de 9.001 a 45.000 euros. En grado mínimo, de 9.001 a 16.000 euros. En grado medio, de 16.001 a 30.000 euros. En grado máximo, de 30.001 a 45.000 euros.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7421#a4-5"
+  },
+  {
+   "id": "ley-animales-comunitat-valenciana#Artículo 6",
+   "norma": "ley-animales-comunitat-valenciana",
+   "referencia": "Artículo 6",
+   "epigrafe": null,
+   "textoLiteral": "La persona responsable legal o temporal de los animales de la especie canina debe realizar un acompañamiento adecuado por las vías públicas, desplazándose en todo momento por medio de una correa o similar inferior a dos metros de longitud. […] a) Obligación de esterilizar a los animales de las especies canina y felina, de los que no se puede ejercer un control reproductivo, que se mantienen en polígonos industriales, obras, zonas urbanas y periurbanas, fincas rústicas o apartadas del casco urbano o similares, y aquellos que tienen acceso al exterior de las viviendas y pueden tener contacto no controlado con otros animales de la misma especie, excepto prescripción veterinaria.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7421#a6"
+  },
+  {
+   "id": "ley-animales-extremadura#Artículo 17",
+   "norma": "ley-animales-extremadura",
+   "referencia": "Artículo 17",
+   "epigrafe": null,
+   "textoLiteral": "Los poseedores de perros que lo sean por cualquier título, deberán identificarlos electrónicamente y censarlos en el Ayuntamiento donde habitualmente viva el animal, dentro del plazo máximo de tres meses contado a partir de la fecha de nacimiento, o en su caso, un mes después de su adquisición. El animal deberá llevar necesariamente su identificación censal de forma permanente.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-16784#a1-9"
+  },
+  {
+   "id": "ley-animales-extremadura#Artículo 33",
+   "norma": "ley-animales-extremadura",
+   "referencia": "Artículo 33",
+   "epigrafe": null,
+   "textoLiteral": "A las infracciones a que se refiere la presente Ley, le serán de aplicación las siguientes sanciones: a) Infracciones leves: Multa de 60 a 300 euros. b) Infracciones graves: Multa de 301 a 1.500 euros. c) Infracciones muy graves: Multa de 1.501 a 15.025 euros.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-16784#a3-5"
+  },
+  {
+   "id": "ley-animales-extremadura#Disposición adicional quinta",
+   "norma": "ley-animales-extremadura",
+   "referencia": "Disposición adicional quinta",
+   "epigrafe": null,
+   "textoLiteral": "c) Perros que pertenecen a una de las siguientes razas o a sus cruces: bullmastiff, dobermann, dogo argentino, dogo de Burdeos, fila brasileiro, mastín napolitano, pit bull, de presa canario, rottweiler, terrier staffordshire americano y tosa japonés.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-16784#da-5"
+  },
+  {
+   "id": "ley-animales-galicia#Artículo 12",
+   "norma": "ley-animales-galicia",
+   "referencia": "Artículo 12",
+   "epigrafe": null,
+   "textoLiteral": "A efectos de la presente ley, la identificación de los animales de la especie canina es obligatoria sin excepción. El animal deberá ser identificado dentro de los tres primeros meses de vida y, en todo caso, antes de ser objeto de transmisión.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-12357#a1-4"
+  },
+  {
+   "id": "ley-animales-galicia#Artículo 16",
+   "norma": "ley-animales-galicia",
+   "referencia": "Artículo 16",
+   "epigrafe": null,
+   "textoLiteral": "a) Perros que por sus características raciales pudiesen ser aptos para el adiestramiento para la guarda y defensa, y en concreto los perros pertenecientes a las siguientes razas: american stafforshire terrier, pit bull terrier, bullmastif, dobermann, dogo argentino, dogo de Burdeos, dogo del Tíbet, fila brasileño, mastín napolitano, presa canario, presa mallorquín (ca de bou), rottweiler, bull terrier, staffordshire bull terrier, tosa inu y akita inu, y las restantes razas que pudieran determinarse en la normativa estatal sobre animales potencialmente peligrosos de obligado cumplimiento. También serán considerados potencialmente peligrosos los cruces en primera generación de estas razas o cruces de estas razas con otras.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-12357#a1-8"
+  },
+  {
+   "id": "ley-animales-galicia#Artículo 41",
+   "norma": "ley-animales-galicia",
+   "referencia": "Artículo 41",
+   "epigrafe": null,
+   "textoLiteral": "Las infracciones administrativas tipificadas en el capítulo anterior serán objeto de las sanciones siguientes: a) Las infracciones leves, apercibimiento o sanción económica de 100 a 500 euros. b) Las graves, con multas de 501 a 5.000 euros. c) Las muy graves, con multas de 5.001 a 30.000 euros.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-12357#a4-3"
+  },
+  {
+   "id": "ley-animales-galicia#Artículo 7",
+   "norma": "ley-animales-galicia",
+   "referencia": "Artículo 7",
+   "epigrafe": null,
+   "textoLiteral": "En el caso de los perros, a estos deberán llevarlos provistos de correa y collar u otros elementos de retención, salvo los supuestos establecidos en las actividades autorizadas en las que los animales precisan transitar en libertad o en aquellos lugares en los que se permita que transiten en libertad, y, en todo caso, bajo el control y responsabilidad de las personas propietarias o poseedoras de los mismos, evitando daños o molestias a las personas viandantes o a otros animales.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-12357#a7"
+  },
+  {
+   "id": "ley-animales-illes-balears#Artículo 14",
+   "norma": "ley-animales-illes-balears",
+   "referencia": "Artículo 14",
+   "epigrafe": null,
+   "textoLiteral": "Los poseedores de perros, que lo sean por cualquier título, deberán censarlos en el Ayuntamiento del municipio donde residan habitualmente dentro del plazo máximo de seis meses, contado a partir de la fecha de nacimiento del animal. El animal deberá llevar, necesariamente, su identificación censal de forma permanente.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1992-14038#a1-6"
+  },
+  {
+   "id": "ley-animales-illes-balears#Artículo 48",
+   "norma": "ley-animales-illes-balears",
+   "referencia": "Artículo 48",
+   "epigrafe": null,
+   "textoLiteral": "Las infracciones leves serán sancionadas con multa de 10.000 a 50.000 pesetas; las graves, con multa de 50.001 a 250.000 pesetas; las muy graves lo serán con multa de 250.001 a 2.500.000 pesetas.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1992-14038#a4-10"
+  },
+  {
+   "id": "ley-animales-pais-vasco#Artículo 4",
+   "norma": "ley-animales-pais-vasco",
+   "referencia": "Artículo 4",
+   "epigrafe": null,
+   "textoLiteral": "A este respecto, la esterilización será obligatoria en la transmisión (onerosa o gratuita) de perros y gatos por parte de los titulares o responsables. Asimismo, las personas titulares de perros potencialmente peligrosos, con la excepción de los núcleos zoológicos autorizados para la cría y cruce de estas razas, deberán esterilizarlos, mediante cirugía, por un servicio veterinario oficial o habilitado, antes de los 12 meses de edad. […] En el caso de los animales de la especie canina, en las vías y espacios públicos urbanos, así como en las partes comunes de los inmuebles colectivos, se mantendrán sujetos por una correa adecuada a las características del animal y con una longitud máxima de dos metros. […] m) Contratar un seguro de responsabilidad civil para la tenencia de perros, y para aquellas especies que se determine reglamentariamente. […] m) Queda prohibido dejar solo a cualquier animal durante 24 horas consecutivas y, en el caso de la especie canina, este plazo no podrá ser superior a 12 horas consecutivas, salvo perros de pastoreo durante el tiempo que estén trabajando y con un plazo máximo de 48 horas consecutivas.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-14086#a4"
+  },
+  {
+   "id": "ley-animales-pais-vasco#Artículo 40",
+   "norma": "ley-animales-pais-vasco",
+   "referencia": "Artículo 40",
+   "epigrafe": null,
+   "textoLiteral": "Las infracciones de la presente ley serán sancionadas con multas de 100 a 100.000 euros, de acuerdo con la siguiente escala: a) Las infracciones leves, con multas de 100 a 3.000 euros. b) Las infracciones graves, con multa de 3.001 a 10.000 euros. c) Las infracciones muy graves, con multa de 10.001 a 100.000 euros.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-14086#a4-2"
+  },
+  {
+   "id": "ley-animales-pais-vasco#Artículo 9",
+   "norma": "ley-animales-pais-vasco",
+   "referencia": "Artículo 9",
+   "epigrafe": null,
+   "textoLiteral": "Serán objeto de identificación individual obligatoria los perros, hurones, gatos del ámbito doméstico y todas aquellas otras especies en las que se exija reglamentariamente, de forma que se garantice su trazabilidad. Las personas titulares de estos animales que lo sean por cualquier título deberán tenerlos correctamente identificados en el plazo de dos meses desde el nacimiento, y en todo caso antes de que abandone su lugar de nacimiento y siempre antes de cualquier transmisión de titularidad.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-14086#a9"
+  },
+  {
+   "id": "ley-animales-principado-de-asturias#Artículo 12",
+   "norma": "ley-animales-principado-de-asturias",
+   "referencia": "Artículo 12",
+   "epigrafe": null,
+   "textoLiteral": "Los perros y gatos deberán ser identificados individualmente mediante la implantación de un microchip en las condiciones que reglamentariamente se determinen y, en todo caso, deberán estar identificados antes de su venta o cesión. La identificación será obligatoria antes de los tres meses. […] Los perros y gatos deberán ser censados en el Concejo en que se encuentren habitualmente en el plazo de tres meses a contar desde la fecha de nacimiento o de quince días a contar desde la fecha de adquisición.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-2102#a12"
+  },
+  {
+   "id": "ley-animales-principado-de-asturias#Artículo 44",
+   "norma": "ley-animales-principado-de-asturias",
+   "referencia": "Artículo 44",
+   "epigrafe": null,
+   "textoLiteral": "Las infracciones tipificadas en la sección anterior serán sancionadas con multas de: a) Leves: 60,1 euros a 601,01 euros. b) Graves: 601,02 euros a 3.005,06 euros. c) Muy graves: 3.005,07 euros a 90.151 euros.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-2102#a44"
+  },
+  {
+   "id": "ley-animales-region-de-murcia#Artículo 14",
+   "norma": "ley-animales-region-de-murcia",
+   "referencia": "Artículo 14",
+   "epigrafe": null,
+   "textoLiteral": "En el caso de perros, gatos y hurones la identificación se llevará a cabo mediante la implantación de un identificador electrónico, acompañado del correspondiente documento de identificación.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-15288#a1-6"
+  },
+  {
+   "id": "ley-animales-region-de-murcia#Artículo 4",
+   "norma": "ley-animales-region-de-murcia",
+   "referencia": "Artículo 4",
+   "epigrafe": null,
+   "textoLiteral": "b) Tener debidamente identificado su animal en la forma y condiciones impuestas por la normativa aplicable, e inscrito en los registros que en cada caso correspondan. […] f) Contratar un seguro de responsabilidad civil en aquellos casos que se determine reglamentariamente.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-15288#a4"
+  },
+  {
+   "id": "ley-animales-region-de-murcia#Artículo 40",
+   "norma": "ley-animales-region-de-murcia",
+   "referencia": "Artículo 40",
+   "epigrafe": null,
+   "textoLiteral": "Las infracciones tipificadas en esta ley serán sancionadas con multas de: a) 100 a 1.500 euros para las infracciones leves. b) 1.501 a 6.000 euros para las infracciones graves. c) 6.001 a 30.000 euros para las infracciones muy graves.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-15288#a4-2"
+  },
+  {
+   "id": "ley-perros-peligrosos-cataluna#Artículo 1",
+   "norma": "ley-perros-peligrosos-cataluna",
+   "referencia": "Artículo 1",
+   "epigrafe": null,
+   "textoLiteral": "c) Perros que pertenecen a una de las siguientes razas o a sus cruces: Bullmastiff, dobermann, dogo argentino, dogo de Burdeos, fila brasileiro, mastín napolitano, pit bull, de presa canario, rottweiler, staffordshire americano y tosa japonés.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1999-18004#a1"
+  },
+  {
+   "id": "ley-perros-peligrosos-cataluna#Artículo 3",
+   "norma": "ley-perros-peligrosos-cataluna",
+   "referencia": "Artículo 3",
+   "epigrafe": null,
+   "textoLiteral": "Como condición indispensable para la tenencia y la posterior inclusión en el registro a que hace referencia el apartado 1, los propietarios de perros potencialmente peligrosos han de contratar una póliza de seguros de responsabilidad civil derivada de los daños que pueda ocasionar el perro con un mínimo de 150.253,03 euros por siniestro.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1999-18004#a3"
+  }
+ ],
+ "reglas": [
+  {
+   "id": "09c95faf-ca12-7712-e474-f8756f22a197",
+   "requisito": "censo_municipal",
+   "ambito": "autonomico",
+   "comunidad": "09",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato",
+     "huron"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2008-04-18",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "0f6d8c10-66b7-e52f-abe3-107835663a53",
+   "requisito": "censo_municipal",
+   "ambito": "autonomico",
+   "comunidad": "04",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "eq",
+    "valor": "perro"
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "1992-05-15",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Plazo: seis meses desde el nacimiento.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "1a1dc92d-fff7-8683-dbb9-b35201a2d88e",
+   "requisito": "censo_municipal",
+   "ambito": "autonomico",
+   "comunidad": "06",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "eq",
+    "valor": "perro"
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "1992-04-16",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Plazo: tres meses desde el nacimiento o un mes desde la adquisición.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "311764ed-509b-3e60-301a-0683a08496dc",
+   "requisito": "censo_municipal",
+   "ambito": "autonomico",
+   "comunidad": "07",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "eq",
+    "valor": "perro"
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "1997-07-30",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Plazo: tres meses desde el nacimiento o la adquisición.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "3cffec23-89d2-6c1b-64d0-5d858b080547",
+   "requisito": "censo_municipal",
+   "ambito": "autonomico",
+   "comunidad": "01",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2003-12-11",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Plazo: tres meses desde el nacimiento o un mes desde la adquisición o el cambio de residencia. La remisión reglamentaria solo alcanza a «otros animales».",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "5d277728-ac57-c639-c318-c613838c91c5",
+   "requisito": "censo_municipal",
+   "ambito": "autonomico",
+   "comunidad": "03",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2003-01-20",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Plazo: tres meses desde el nacimiento o quince días desde la adquisición.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "5d3bb43e-6771-9b84-9fff-d41d1a112a48",
+   "requisito": "censo_municipal",
+   "ambito": "autonomico",
+   "comunidad": "08",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato",
+     "huron"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2021-03-07",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "El deber alcanza a los censos «que en cada caso correspondan». Se aplica a las especies de identificación obligatoria en la misma ley (artículo 14): perros, gatos y hurones.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "6119478a-169b-d74f-b3ff-d3f00ec71fb3",
+   "requisito": "censo_municipal",
+   "ambito": "autonomico",
+   "comunidad": "10",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato",
+     "huron",
+     "ave"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2023-03-15",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "No es un trámite aparte: el animal queda en el censo al identificarlo, porque el registro autonómico en el que se inscribe tiene carácter censal.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "7a7e7126-ee26-1290-3d91-39d5020bbe21",
+   "requisito": "censo_municipal",
+   "ambito": "autonomico",
+   "comunidad": "05",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "eq",
+    "valor": "perro"
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "1991-06-02",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Plazo: tres meses desde el nacimiento o un mes desde la adquisición.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "952e1b48-9010-f78a-3747-728c5920d38c",
+   "requisito": "censo_municipal",
+   "ambito": "autonomico",
+   "comunidad": "02",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "eq",
+    "valor": "perro"
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2003-06-26",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Deber directo de censar en el ayuntamiento, con plazo de tres meses. Las remisiones del artículo afectan al contenido del censo, no al deber.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "9f095c55-49e6-fbbd-d522-54912b525bac",
+   "requisito": "censo_municipal",
+   "ambito": "autonomico",
+   "comunidad": "11",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "eq",
+    "valor": "perro"
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2002-09-18",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Plazo: tres meses desde el nacimiento o un mes desde la adquisición.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "1f005d4f-c5a9-bfe0-37bb-01ccc1a6f71a",
+   "requisito": "identificacion_animales",
+   "ambito": "autonomico",
+   "comunidad": "09",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato",
+     "huron"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2008-04-18",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "2f7abbf7-5882-57f6-743c-17182767fb59",
+   "requisito": "identificacion_animales",
+   "ambito": "autonomico",
+   "comunidad": "04",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "eq",
+    "valor": "perro"
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "1992-05-15",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "La ley balear exige que el perro lleve de forma permanente su identificación censal; el microchip lo exige además la Ley 7/2023.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "407310b6-41a6-0e32-fa76-f0add0f456a5",
+   "requisito": "identificacion_animales",
+   "ambito": "autonomico",
+   "comunidad": "05",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "eq",
+    "valor": "perro"
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "1991-06-02",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "El reglamento fija cómo se identifica, no si hay que hacerlo. Plazo: tres meses desde el nacimiento o un mes desde la adquisición.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "4648206b-02df-8d2a-7eb7-072894b589bc",
+   "requisito": "identificacion_animales",
+   "ambito": "autonomico",
+   "comunidad": "03",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2003-01-20",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "La remisión regula las condiciones del microchip, no la existencia del deber, que además se refuerza con «en todo caso».",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "60e127e2-4d8a-1cb9-98b1-4bc054b79878",
+   "requisito": "identificacion_animales",
+   "ambito": "autonomico",
+   "comunidad": "06",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "eq",
+    "valor": "perro"
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "1992-04-16",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "La ley cántabra exige que el perro lleve de forma permanente su identificación censal; el microchip lo exige además la Ley 7/2023.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "6ca96957-b010-75c9-a497-9d522038f96d",
+   "requisito": "identificacion_animales",
+   "ambito": "autonomico",
+   "comunidad": "10",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato",
+     "huron",
+     "ave"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2023-03-15",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Perros, gatos, hurones y aves quedan sujetos directamente (el apartado se reformó en 2024 para incluir las aves); la remisión solo alcanza a especies adicionales.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "75fe4692-7917-9037-5b6d-9c21b5306f92",
+   "requisito": "identificacion_animales",
+   "ambito": "autonomico",
+   "comunidad": "16",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato",
+     "huron"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2022-08-18",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Plazo: dos meses desde el nacimiento y siempre antes de cualquier transmisión. Para los gatos y hurones nacidos antes de la ley se prevé un periodo de carencia; la Ley 7/2023 los obliga en todo caso.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "80069e67-a97b-c481-e43b-e67fd7566edf",
+   "requisito": "identificacion_animales",
+   "ambito": "autonomico",
+   "comunidad": "08",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato",
+     "huron"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2021-03-07",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "8b410655-05d7-dc09-2960-33525f186ceb",
+   "requisito": "identificacion_animales",
+   "ambito": "autonomico",
+   "comunidad": "02",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "eq",
+    "valor": "perro"
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2003-06-26",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "El reglamento fija el procedimiento de identificación, no si hay que identificar al perro, que es un deber directo.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "8f890128-17f3-c2dc-79ad-efabc9dc2c16",
+   "requisito": "identificacion_animales",
+   "ambito": "autonomico",
+   "comunidad": "07",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "eq",
+    "valor": "perro"
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "1997-07-30",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "La identificación censal puede hacerse con tatuaje o con microchip (artículo 9.2); el microchip lo exige además la Ley 7/2023.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "c4383c09-b6fa-3024-a0d1-868b157c6747",
+   "requisito": "identificacion_animales",
+   "ambito": "autonomico",
+   "comunidad": "01",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2003-12-11",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "La remisión reglamentaria solo alcanza a «otros animales»: para perros y gatos el deber es directo, con plazo de tres meses desde el nacimiento.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "c76be30c-66ff-fe3d-30ed-88c2e1919c48",
+   "requisito": "identificacion_animales",
+   "ambito": "autonomico",
+   "comunidad": "12",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "eq",
+    "valor": "perro"
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2018-01-11",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "La ley gallega la exige sin excepción a los perros y declara voluntaria la del resto de especies, salvo las potencialmente peligrosas. A gatos, hurones y aves los obliga en todo caso la Ley 7/2023.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "c8a3c4a9-4659-8a62-debc-67a4fd880c5d",
+   "requisito": "identificacion_animales",
+   "ambito": "autonomico",
+   "comunidad": "15",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato",
+     "huron"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2019-07-11",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Plazo: antes de los tres meses de edad; en gatos y hurones puede esperar a la primera vacuna antirrábica (Decreto Foral 94/2022, artículo 6.1.a).",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "c90b503c-1a5e-7466-e74e-0525a4eca9dc",
+   "requisito": "identificacion_animales",
+   "ambito": "autonomico",
+   "comunidad": "14",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato",
+     "huron"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2017-12-23",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "El artículo 14.2 fija el microchip para perros, gatos y hurones, y el 4.2.b obliga al propietario a tener identificado a su animal.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "ce32f5df-6580-3e83-4b8d-d2ddffe5fe03",
+   "requisito": "identificacion_animales",
+   "ambito": "autonomico",
+   "comunidad": "11",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "eq",
+    "valor": "perro"
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2002-09-18",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "La remisión reglamentaria fija la modalidad de la identificación electrónica, no el deber. Plazo: tres meses desde el nacimiento o un mes desde la adquisición.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "75a5face-0209-281b-4b5b-9212b8a27b3d",
+   "requisito": "seguro_rc_perros",
+   "ambito": "autonomico",
+   "comunidad": "14",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "eq",
+    "valor": "perro"
+   },
+   "estado": "obligatorio_pendiente_reglamento",
+   "parametros": {},
+   "vigenteDesde": "2017-12-23",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Remite a reglamento para determinar los casos, y ese reglamento no se ha publicado.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "ff4dac09-5c8f-7c43-8fc3-5c1ca8650a7f",
+   "requisito": "seguro_rc_perros",
+   "ambito": "autonomico",
+   "comunidad": "16",
+   "provincia": null,
+   "municipio": null,
+   "condiciones": {
+    "campo": "especie",
+    "op": "eq",
+    "valor": "perro"
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2022-08-18",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Para perros el deber es directo; la remisión solo alcanza a «aquellas especies que se determine reglamentariamente».",
+   "verificadaEn": "2026-09-29"
+  }
+ ],
+ "fuentes": [
+  {
+   "regla": "09c95faf-ca12-7712-e474-f8756f22a197",
+   "articulo": "ley-animales-cataluna#Artículo 14",
+   "cita": "La persona propietaria o poseedora de un perro, un gato o un hurón tiene un plazo de tres meses desde el nacimiento del animal o de treinta días desde la fecha de adquisición del animal, el cambio de residencia, la muerte del animal o la modificación de otros datos incluidos en el censo para comunicarlo al censo municipal o al Registro general."
+  },
+  {
+   "regla": "0f6d8c10-66b7-e52f-abe3-107835663a53",
+   "articulo": "ley-animales-illes-balears#Artículo 14",
+   "cita": "Los poseedores de perros, que lo sean por cualquier título, deberán censarlos en el Ayuntamiento del municipio donde residan habitualmente dentro del plazo máximo de seis meses, contado a partir de la fecha de nacimiento del animal."
+  },
+  {
+   "regla": "1a1dc92d-fff7-8683-dbb9-b35201a2d88e",
+   "articulo": "ley-animales-cantabria#Artículo 10",
+   "cita": "Los poseedores de perros, que lo sean por cualquier título, deberán censarlos en el Ayuntamiento donde residan habitualmente, dentro del plazo máximo de tres meses a partir de la fecha de su nacimiento o de un mes desde su adquisición; el animal deberá llevar de forma permanente su identificación censal."
+  },
+  {
+   "regla": "1f005d4f-c5a9-bfe0-37bb-01ccc1a6f71a",
+   "articulo": "ley-animales-cataluna#Artículo 15",
+   "cita": "Los perros, los gatos y los hurones deben ser identificados mediante: a) Una identificación electrónica con la implantación de un microchip homologado."
+  },
+  {
+   "regla": "2f7abbf7-5882-57f6-743c-17182767fb59",
+   "articulo": "ley-animales-illes-balears#Artículo 14",
+   "cita": "Los poseedores de perros, que lo sean por cualquier título, deberán censarlos en el Ayuntamiento del municipio donde residan habitualmente dentro del plazo máximo de seis meses, contado a partir de la fecha de nacimiento del animal. El animal deberá llevar, necesariamente, su identificación censal de forma permanente."
+  },
+  {
+   "regla": "311764ed-509b-3e60-301a-0683a08496dc",
+   "articulo": "ley-animales-castilla-y-leon#Artículo 9",
+   "cita": "Los propietarios o poseedores de perros deberán censarlos en el Ayuntamiento del municipio donde residan habitualmente, en el plazo máximo de tres meses a contar desde la fecha de nacimiento o de adquisición."
+  },
+  {
+   "regla": "3cffec23-89d2-6c1b-64d0-5d858b080547",
+   "articulo": "ley-animales-andalucia#Artículo 18",
+   "cita": "Los propietarios de perros y gatos, así como otros animales que se determinen reglamentariamente, deberán inscribirlos en el Registro Municipal de Animales de Compañía del Ayuntamiento donde habitualmente viva el animal, en el plazo máximo de tres meses desde la fecha de su nacimiento o en el de un mes desde su adquisición o cambio de residencia."
+  },
+  {
+   "regla": "407310b6-41a6-0e32-fa76-f0add0f456a5",
+   "articulo": "ley-animales-canarias#Artículo 11",
+   "cita": "Los propietarios de perros deberán identificarlos como reglamentariamente se establezca y censarlos en el Ayuntamiento donde habitualmente viva el animal, dentro del plazo máximo de tres meses, contados a partir de la fecha de nacimiento, o de un mes después de su adquisición. El animal deberá llevar necesariamente su identificación censal de forma permanente."
+  },
+  {
+   "regla": "4648206b-02df-8d2a-7eb7-072894b589bc",
+   "articulo": "ley-animales-principado-de-asturias#Artículo 12",
+   "cita": "Los perros y gatos deberán ser identificados individualmente mediante la implantación de un microchip en las condiciones que reglamentariamente se determinen y, en todo caso, deberán estar identificados antes de su venta o cesión. La identificación será obligatoria antes de los tres meses."
+  },
+  {
+   "regla": "5d277728-ac57-c639-c318-c613838c91c5",
+   "articulo": "ley-animales-principado-de-asturias#Artículo 12",
+   "cita": "Los perros y gatos deberán ser censados en el Concejo en que se encuentren habitualmente en el plazo de tres meses a contar desde la fecha de nacimiento o de quince días a contar desde la fecha de adquisición."
+  },
+  {
+   "regla": "5d3bb43e-6771-9b84-9fff-d41d1a112a48",
+   "articulo": "ley-animales-castilla-la-mancha#Artículo 4",
+   "cita": "a) Identificar al animal e inscribirle en los registros y censos que en cada caso correspondan, según lo dispuesto en la normativa vigente."
+  },
+  {
+   "regla": "60e127e2-4d8a-1cb9-98b1-4bc054b79878",
+   "articulo": "ley-animales-cantabria#Artículo 10",
+   "cita": "Los poseedores de perros, que lo sean por cualquier título, deberán censarlos en el Ayuntamiento donde residan habitualmente, dentro del plazo máximo de tres meses a partir de la fecha de su nacimiento o de un mes desde su adquisición; el animal deberá llevar de forma permanente su identificación censal."
+  },
+  {
+   "regla": "6119478a-169b-d74f-b3ff-d3f00ec71fb3",
+   "articulo": "ley-animales-comunitat-valenciana#Artículo 14",
+   "cita": "El Registro Supramunicipal de Identificación de Animales de Compañía de la Comunitat Valenciana tendrá carácter censal a los efectos de establecer los censos municipales y las obligaciones que se deriven de ello."
+  },
+  {
+   "regla": "6ca96957-b010-75c9-a497-9d522038f96d",
+   "articulo": "ley-animales-comunitat-valenciana#Artículo 10",
+   "cita": "Están obligatoriamente sujetos a identificación los animales de la especie canina, felina, mustélidos domésticos, los animales que habiten en santuarios que no estén sujetos a identificación individual, las aves y las especies de animales que se determine reglamentariamente."
+  },
+  {
+   "regla": "75a5face-0209-281b-4b5b-9212b8a27b3d",
+   "articulo": "ley-animales-region-de-murcia#Artículo 4",
+   "cita": "f) Contratar un seguro de responsabilidad civil en aquellos casos que se determine reglamentariamente."
+  },
+  {
+   "regla": "75fe4692-7917-9037-5b6d-9c21b5306f92",
+   "articulo": "ley-animales-pais-vasco#Artículo 9",
+   "cita": "Serán objeto de identificación individual obligatoria los perros, hurones, gatos del ámbito doméstico y todas aquellas otras especies en las que se exija reglamentariamente, de forma que se garantice su trazabilidad. Las personas titulares de estos animales que lo sean por cualquier título deberán tenerlos correctamente identificados en el plazo de dos meses desde el nacimiento, y en todo caso antes de que abandone su lugar de nacimiento y siempre antes de cualquier transmisión de titularidad."
+  },
+  {
+   "regla": "7a7e7126-ee26-1290-3d91-39d5020bbe21",
+   "articulo": "ley-animales-canarias#Artículo 11",
+   "cita": "Los propietarios de perros deberán identificarlos como reglamentariamente se establezca y censarlos en el Ayuntamiento donde habitualmente viva el animal, dentro del plazo máximo de tres meses, contados a partir de la fecha de nacimiento, o de un mes después de su adquisición."
+  },
+  {
+   "regla": "80069e67-a97b-c481-e43b-e67fd7566edf",
+   "articulo": "ley-animales-castilla-la-mancha#Artículo 14",
+   "cita": "Los perros, gatos y hurones deberán ser identificados individualmente mediante sistemas normalizados, implantados por personal veterinario."
+  },
+  {
+   "regla": "80069e67-a97b-c481-e43b-e67fd7566edf",
+   "articulo": "ley-animales-castilla-la-mancha#Artículo 15",
+   "cita": "La identificación de los perros, gatos y hurones se realizará antes de los tres meses de edad, pudiéndose establecer reglamentariamente los plazos de identificación de otras especies."
+  },
+  {
+   "regla": "8b410655-05d7-dc09-2960-33525f186ceb",
+   "articulo": "ley-animales-aragon#Artículo 16",
+   "cita": "Los poseedores y, en su caso, los propietarios de perros deberán distinguirlos e identificarlos individualmente mediante un procedimiento permanente y homologado que se determinará reglamentariamente."
+  },
+  {
+   "regla": "8f890128-17f3-c2dc-79ad-efabc9dc2c16",
+   "articulo": "ley-animales-castilla-y-leon#Artículo 9",
+   "cita": "Los propietarios o poseedores de perros deberán censarlos en el Ayuntamiento del municipio donde residan habitualmente, en el plazo máximo de tres meses a contar desde la fecha de nacimiento o de adquisición. El animal deberá llevar necesariamente su identificación censal, de forma permanente."
+  },
+  {
+   "regla": "952e1b48-9010-f78a-3747-728c5920d38c",
+   "articulo": "ley-animales-aragon#Artículo 15",
+   "cita": "Los poseedores de perros que lo sean por cualquier título, y, en su caso, sus propietarios, deberán censarlos en el Ayuntamiento del municipio donde residan habitualmente los animales, dentro de un plazo máximo de tres meses a partir de la fecha de la adquisición de su propiedad o posesión."
+  },
+  {
+   "regla": "9f095c55-49e6-fbbd-d522-54912b525bac",
+   "articulo": "ley-animales-extremadura#Artículo 17",
+   "cita": "Los poseedores de perros que lo sean por cualquier título, deberán identificarlos electrónicamente y censarlos en el Ayuntamiento donde habitualmente viva el animal, dentro del plazo máximo de tres meses contado a partir de la fecha de nacimiento, o en su caso, un mes después de su adquisición."
+  },
+  {
+   "regla": "c4383c09-b6fa-3024-a0d1-868b157c6747",
+   "articulo": "ley-animales-andalucia#Artículo 17",
+   "cita": "Los perros y gatos, así como otros animales que reglamentariamente se determinen, deberán ser identificados individualmente mediante sistema de identificación electrónica normalizado, implantado por veterinario, dentro del plazo máximo de tres meses desde su nacimiento."
+  },
+  {
+   "regla": "c76be30c-66ff-fe3d-30ed-88c2e1919c48",
+   "articulo": "ley-animales-galicia#Artículo 12",
+   "cita": "A efectos de la presente ley, la identificación de los animales de la especie canina es obligatoria sin excepción. El animal deberá ser identificado dentro de los tres primeros meses de vida y, en todo caso, antes de ser objeto de transmisión."
+  },
+  {
+   "regla": "c8a3c4a9-4659-8a62-debc-67a4fd880c5d",
+   "articulo": "ley-animales-comunidad-foral-de-navarra#Artículo 8",
+   "cita": "Es obligatoria la identificación de perros, gatos y hurones mediante microchip homologado, portador de un código único validado por el Registro de Identificación de Animales de Compañía de Navarra."
+  },
+  {
+   "regla": "c90b503c-1a5e-7466-e74e-0525a4eca9dc",
+   "articulo": "ley-animales-region-de-murcia#Artículo 14",
+   "cita": "En el caso de perros, gatos y hurones la identificación se llevará a cabo mediante la implantación de un identificador electrónico, acompañado del correspondiente documento de identificación."
+  },
+  {
+   "regla": "c90b503c-1a5e-7466-e74e-0525a4eca9dc",
+   "articulo": "ley-animales-region-de-murcia#Artículo 4",
+   "cita": "b) Tener debidamente identificado su animal en la forma y condiciones impuestas por la normativa aplicable, e inscrito en los registros que en cada caso correspondan."
+  },
+  {
+   "regla": "ce32f5df-6580-3e83-4b8d-d2ddffe5fe03",
+   "articulo": "ley-animales-extremadura#Artículo 17",
+   "cita": "Los poseedores de perros que lo sean por cualquier título, deberán identificarlos electrónicamente y censarlos en el Ayuntamiento donde habitualmente viva el animal, dentro del plazo máximo de tres meses contado a partir de la fecha de nacimiento, o en su caso, un mes después de su adquisición. El animal deberá llevar necesariamente su identificación censal de forma permanente."
+  },
+  {
+   "regla": "ff4dac09-5c8f-7c43-8fc3-5c1ca8650a7f",
+   "articulo": "ley-animales-pais-vasco#Artículo 4",
+   "cita": "m) Contratar un seguro de responsabilidad civil para la tenencia de perros, y para aquellas especies que se determine reglamentariamente."
+  }
+ ],
+ "referencias": [
+  {
+   "comunidad": "01",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-animales-andalucia#Artículo 41",
+   "cita": "Las infracciones indicadas en el artículo anterior serán sancionadas con multas de: a) 75 a 500 euros para las leves. b) 501 a 2.000 euros para las graves. c) 2.001 a 30.000 euros para las muy graves."
+  },
+  {
+   "comunidad": "02",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-animales-aragon#Artículo 71",
+   "cita": "Las infracciones administrativas tipificadas en la presente Ley se sancionarán con la siguiente escala: a) Infracciones leves, con multa de sesenta euros (60 euros) a seiscientos un euros (601 euros). b) Infracciones graves, con multa de seiscientos un euros con un céntimo de euro (601,01 euros) a seis mil diez euros (6.010 euros). c) Infracciones muy graves, con multa de seis mil diez euros con un céntimo de euro (6.010,01 euros) a ciento cincuenta mil doscientos cincuenta y tres euros (150.253 euros)."
+  },
+  {
+   "comunidad": "03",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-animales-principado-de-asturias#Artículo 44",
+   "cita": "Las infracciones tipificadas en la sección anterior serán sancionadas con multas de: a) Leves: 60,1 euros a 601,01 euros. b) Graves: 601,02 euros a 3.005,06 euros. c) Muy graves: 3.005,07 euros a 90.151 euros."
+  },
+  {
+   "comunidad": "04",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-animales-illes-balears#Artículo 48",
+   "cita": "Las infracciones leves serán sancionadas con multa de 10.000 a 50.000 pesetas; las graves, con multa de 50.001 a 250.000 pesetas; las muy graves lo serán con multa de 250.001 a 2.500.000 pesetas."
+  },
+  {
+   "comunidad": "05",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-animales-canarias#Artículo 26",
+   "cita": "Las infracciones leves serán sancionadas con multas de 5.000 a 25.000 pesetas; las graves, con multas de 25.001 a 250.000 pesetas; y las muy graves, con multa de 250.001 a 2.500.000 pesetas."
+  },
+  {
+   "comunidad": "06",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-animales-cantabria#Artículo 39",
+   "cita": "Las referidas infracciones serán sancionadas con las siguientes multas: Infracciones leves, de cinco mil a cuarenta y cinco mil (5.000 a 45.000) pesetas. Infracciones graves, de cuarenta y cinco mil una a cien mil (45.001 a 100.000) pesetas. Infracciones muy graves de cien mil una a dos millones y medio (100.001 a 2.500.000) de pesetas."
+  },
+  {
+   "comunidad": "07",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-animales-castilla-y-leon#Artículo 29",
+   "cita": "Las infracciones tipificadas en el artículo anterior serán sancionadas con multas de: a) 150 a 600 euros para las leves. b) 601 a 3.000 euros para las graves. c) 3.001 a 30.000 euros para las muy graves."
+  },
+  {
+   "comunidad": "08",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-animales-castilla-la-mancha#Artículo 44",
+   "cita": "Las infracciones serán sancionadas con multas de 300 a 60.000 euros, de acuerdo a la siguiente escala: a) De 300 a 3.000 euros para las leves. b) De 3.001 a 9.000 euros para las graves. c) De 9.001 a 60.000 las muy graves."
+  },
+  {
+   "comunidad": "10",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-animales-comunitat-valenciana#Artículo 43",
+   "cita": "Por cometer infracciones en materia de protección de los animales, podrán imponerse las sanciones pecuniarias siguientes, como leves, graves y muy graves en sus grados mínimo, medio y máximo en función de los criterios de graduación de la sanción: a) Las infracciones leves se sancionan con una multa de 100 a 3.000 euros. En grado mínimo, de 100 a 500 euros, o advertencia. La advertencia solo se impone si no ha mediado dolo y en los últimos tres años el responsable no ha sido sancionado en vía administrativa por la comisión de cualquier otra infracción de las descritas en esta ley. En el grado medio, de 501 a 1.500 euros. En el grado máximo, de 1.501 a 3.000 euros. b) Las infracciones graves se sancionarán con una multa de 3.001 a 9.000 euros. En grado mínimo, de 3.001 a 4.500 euros. En grado medio, de 4.501 a 6.000 euros. En grado máximo, de 6.001 a 9.000 euros. c) Las infracciones muy graves, de 9.001 a 45.000 euros. En grado mínimo, de 9.001 a 16.000 euros. En grado medio, de 16.001 a 30.000 euros. En grado máximo, de 30.001 a 45.000 euros."
+  },
+  {
+   "comunidad": "11",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-animales-extremadura#Artículo 33",
+   "cita": "A las infracciones a que se refiere la presente Ley, le serán de aplicación las siguientes sanciones: a) Infracciones leves: Multa de 60 a 300 euros. b) Infracciones graves: Multa de 301 a 1.500 euros. c) Infracciones muy graves: Multa de 1.501 a 15.025 euros."
+  },
+  {
+   "comunidad": "12",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-animales-galicia#Artículo 41",
+   "cita": "Las infracciones administrativas tipificadas en el capítulo anterior serán objeto de las sanciones siguientes: a) Las infracciones leves, apercibimiento o sanción económica de 100 a 500 euros. b) Las graves, con multas de 501 a 5.000 euros. c) Las muy graves, con multas de 5.001 a 30.000 euros."
+  },
+  {
+   "comunidad": "13",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-animales-comunidad-de-madrid#Artículo 21",
+   "cita": "Las sanciones, así como las medidas accesorias aplicables por las infracciones previstas en esta ley, y las condiciones para su graduación y responsabilidad civil serán las contempladas en la Ley 7/2023, de 28 de marzo, de protección de los derechos y el bienestar de los animales."
+  },
+  {
+   "comunidad": "14",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-animales-region-de-murcia#Artículo 40",
+   "cita": "Las infracciones tipificadas en esta ley serán sancionadas con multas de: a) 100 a 1.500 euros para las infracciones leves. b) 1.501 a 6.000 euros para las infracciones graves. c) 6.001 a 30.000 euros para las infracciones muy graves."
+  },
+  {
+   "comunidad": "15",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-animales-comunidad-foral-de-navarra#Artículo 27",
+   "cita": "Las sanciones que se aplicarán por las infracciones previstas en esta ley foral serán: a) Por infracciones leves, multa de 200 hasta 1.000 euros. En caso de infracciones leves en las que no se aprecie intencionalidad en el infractor y este no hubiera sido sancionado en vía administrativa por la comisión de cualquier otra infracción de las previstas en la presente ley foral en los tres años inmediatamente anteriores, la sanción podrá consistir en un apercibimiento, sin perjuicio de las sanciones accesorias que conforme a lo dispuesto en el artículo siguiente pudiesen imponerse. b) Por infracciones graves, multa de 1.001 a 6.000 euros. c) Por infracciones muy graves, multa de 6.001 a 100.000 euros."
+  },
+  {
+   "comunidad": "16",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-animales-pais-vasco#Artículo 40",
+   "cita": "Las infracciones de la presente ley serán sancionadas con multas de 100 a 100.000 euros, de acuerdo con la siguiente escala: a) Las infracciones leves, con multas de 100 a 3.000 euros. b) Las infracciones graves, con multa de 3.001 a 10.000 euros. c) Las infracciones muy graves, con multa de 10.001 a 100.000 euros."
+  },
+  {
+   "comunidad": "09",
+   "grupo": "ppp",
+   "clave": "razas",
+   "articulo": "ley-perros-peligrosos-cataluna#Artículo 1",
+   "cita": "c) Perros que pertenecen a una de las siguientes razas o a sus cruces: Bullmastiff, dobermann, dogo argentino, dogo de Burdeos, fila brasileiro, mastín napolitano, pit bull, de presa canario, rottweiler, staffordshire americano y tosa japonés."
+  },
+  {
+   "comunidad": "09",
+   "grupo": "ppp",
+   "clave": "seguro",
+   "articulo": "ley-perros-peligrosos-cataluna#Artículo 3",
+   "cita": "Como condición indispensable para la tenencia y la posterior inclusión en el registro a que hace referencia el apartado 1, los propietarios de perros potencialmente peligrosos han de contratar una póliza de seguros de responsabilidad civil derivada de los daños que pueda ocasionar el perro con un mínimo de 150.253,03 euros por siniestro."
+  },
+  {
+   "comunidad": "11",
+   "grupo": "ppp",
+   "clave": "razas",
+   "articulo": "ley-animales-extremadura#Disposición adicional quinta",
+   "cita": "c) Perros que pertenecen a una de las siguientes razas o a sus cruces: bullmastiff, dobermann, dogo argentino, dogo de Burdeos, fila brasileiro, mastín napolitano, pit bull, de presa canario, rottweiler, terrier staffordshire americano y tosa japonés."
+  },
+  {
+   "comunidad": "12",
+   "grupo": "ppp",
+   "clave": "razas",
+   "articulo": "ley-animales-galicia#Artículo 16",
+   "cita": "a) Perros que por sus características raciales pudiesen ser aptos para el adiestramiento para la guarda y defensa, y en concreto los perros pertenecientes a las siguientes razas: american stafforshire terrier, pit bull terrier, bullmastif, dobermann, dogo argentino, dogo de Burdeos, dogo del Tíbet, fila brasileño, mastín napolitano, presa canario, presa mallorquín (ca de bou), rottweiler, bull terrier, staffordshire bull terrier, tosa inu y akita inu, y las restantes razas que pudieran determinarse en la normativa estatal sobre animales potencialmente peligrosos de obligado cumplimiento. También serán considerados potencialmente peligrosos los cruces en primera generación de estas razas o cruces de estas razas con otras."
+  },
+  {
+   "comunidad": "01",
+   "grupo": "obligacion",
+   "clave": "vacunacion",
+   "articulo": "ley-animales-andalucia#Artículo 8",
+   "cita": "La vacunación antirrábica será obligatoria para todos los perros y gatos.Reglamentariamente se establecerá la periodicidad de la misma."
+  },
+  {
+   "comunidad": "05",
+   "grupo": "obligacion",
+   "clave": "vacunacion",
+   "articulo": "ley-animales-canarias#Artículo 11",
+   "cita": "Los perros deberán ser vacunados con carácter obligatorio."
+  },
+  {
+   "comunidad": "15",
+   "grupo": "obligacion",
+   "clave": "vacunacion",
+   "articulo": "ley-animales-comunidad-foral-de-navarra#Artículo 10",
+   "cita": "En el caso de perros y gatos, cuya vacunación antirrábica es obligatoria, es de obligado cumplimiento una visita veterinaria anual o bianual con un control de salud que se acreditará documentalmente con el sellado de la vacuna en el pasaporte del animal e informe sobre el estado general."
+  },
+  {
+   "comunidad": "15",
+   "grupo": "obligacion",
+   "clave": "esterilizacion",
+   "articulo": "ley-animales-comunidad-foral-de-navarra#Artículo 6",
+   "cita": "Los perros y los gatos que puedan tener contacto no controlado con otros perros o gatos deberán estar esterilizados."
+  },
+  {
+   "comunidad": "10",
+   "grupo": "obligacion",
+   "clave": "esterilizacion",
+   "articulo": "ley-animales-comunitat-valenciana#Artículo 6",
+   "cita": "a) Obligación de esterilizar a los animales de las especies canina y felina, de los que no se puede ejercer un control reproductivo, que se mantienen en polígonos industriales, obras, zonas urbanas y periurbanas, fincas rústicas o apartadas del casco urbano o similares, y aquellos que tienen acceso al exterior de las viviendas y pueden tener contacto no controlado con otros animales de la misma especie, excepto prescripción veterinaria."
+  },
+  {
+   "comunidad": "16",
+   "grupo": "obligacion",
+   "clave": "esterilizacion",
+   "articulo": "ley-animales-pais-vasco#Artículo 4",
+   "cita": "A este respecto, la esterilización será obligatoria en la transmisión (onerosa o gratuita) de perros y gatos por parte de los titulares o responsables. Asimismo, las personas titulares de perros potencialmente peligrosos, con la excepción de los núcleos zoológicos autorizados para la cría y cruce de estas razas, deberán esterilizarlos, mediante cirugía, por un servicio veterinario oficial o habilitado, antes de los 12 meses de edad."
+  },
+  {
+   "comunidad": "09",
+   "grupo": "obligacion",
+   "clave": "esterilizacion",
+   "articulo": "ley-animales-cataluna#Artículo 11",
+   "cita": "Los animales de compañía que son objeto de comercialización o transacción deben ser esterilizados, excepto en los casos que se establezcan por reglamento."
+  },
+  {
+   "comunidad": "13",
+   "grupo": "obligacion",
+   "clave": "formacion",
+   "articulo": "ley-animales-comunidad-de-madrid#Artículo 6",
+   "cita": "h) Superar la formación en tenencia responsable reglamentada para cada especie de animal de compañía."
+  },
+  {
+   "comunidad": "13",
+   "grupo": "obligacion",
+   "clave": "maximoAnimales",
+   "articulo": "ley-animales-comunidad-de-madrid#Artículo 7",
+   "cita": "aa) Mantener en el mismo domicilio un total superior a 5 animales pertenecientes a la especie canina, felina o cualquier otra que se determine reglamentariamente, salvo que el ayuntamiento lo autorice."
+  },
+  {
+   "comunidad": "13",
+   "grupo": "obligacion",
+   "clave": "tiempoSolo",
+   "articulo": "ley-animales-comunidad-de-madrid#Artículo 7",
+   "cita": "t) Dejar sin supervisión a cualquier animal de compañía durante más de tres días consecutivos; en el caso de la especie canina, este plazo no podrá ser superior a veinticuatro horas consecutivas."
+  },
+  {
+   "comunidad": "16",
+   "grupo": "obligacion",
+   "clave": "tiempoSolo",
+   "articulo": "ley-animales-pais-vasco#Artículo 4",
+   "cita": "m) Queda prohibido dejar solo a cualquier animal durante 24 horas consecutivas y, en el caso de la especie canina, este plazo no podrá ser superior a 12 horas consecutivas, salvo perros de pastoreo durante el tiempo que estén trabajando y con un plazo máximo de 48 horas consecutivas."
+  },
+  {
+   "comunidad": "10",
+   "grupo": "obligacion",
+   "clave": "correa",
+   "articulo": "ley-animales-comunitat-valenciana#Artículo 6",
+   "cita": "La persona responsable legal o temporal de los animales de la especie canina debe realizar un acompañamiento adecuado por las vías públicas, desplazándose en todo momento por medio de una correa o similar inferior a dos metros de longitud."
+  },
+  {
+   "comunidad": "16",
+   "grupo": "obligacion",
+   "clave": "correa",
+   "articulo": "ley-animales-pais-vasco#Artículo 4",
+   "cita": "En el caso de los animales de la especie canina, en las vías y espacios públicos urbanos, así como en las partes comunes de los inmuebles colectivos, se mantendrán sujetos por una correa adecuada a las características del animal y con una longitud máxima de dos metros."
+  },
+  {
+   "comunidad": "12",
+   "grupo": "obligacion",
+   "clave": "correa",
+   "articulo": "ley-animales-galicia#Artículo 7",
+   "cita": "En el caso de los perros, a estos deberán llevarlos provistos de correa y collar u otros elementos de retención, salvo los supuestos establecidos en las actividades autorizadas en las que los animales precisan transitar en libertad o en aquellos lugares en los que se permita que transiten en libertad, y, en todo caso, bajo el control y responsabilidad de las personas propietarias o poseedoras de los mismos, evitando daños o molestias a las personas viandantes o a otros animales."
+  }
+ ]
+}

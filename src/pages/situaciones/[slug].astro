@@ -1,0 +1,283 @@
+---
+/**
+ * Guia de una situacion: que necesita tu animal, punto por punto, con su
+ * estado y los articulos que lo respaldan. El filtro por animal es CSS
+ * (global.css, .guia); el script solo lo recuerda en la URL (?animal=gato) y
+ * anuncia cuantos puntos quedan a los lectores de pantalla.
+ */
+import { ArrowRight, ExternalLink, MapPin, ShieldAlert } from 'lucide-preact';
+import FuentePlegable from '@/componentes/legal/FuentePlegable.astro';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import PanelCta from '@/componentes/pagina/PanelCta.astro';
+import { traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import Base from '@/layouts/Base.astro';
+import { ICONOS_SITUACION } from '@/lib/contenido/iconos';
+import { sirena } from '@/lib/contenido/ilustraciones';
+import {
+  ACCESOS,
+  OFICIALES,
+  SITUACIONES,
+  situacion,
+} from '@/lib/contenido/situaciones';
+import { comunidades, normas } from '@/lib/datos';
+import { nombreNorma } from '@/lib/datos/textos';
+import { ChipEstado, ChipNeutro } from '@/ui/Chips';
+import { Ilustracion } from '@/ui/Ilustracion';
+
+export function getStaticPaths() {
+  return SITUACIONES.map((s) => ({ params: { slug: s.slug } }));
+}
+
+const s = situacion(String(Astro.params.slug));
+if (!s) throw new Error(`Situacion desconocida: ${Astro.params.slug}`);
+const tg = traductor();
+const t = tg.en('situaciones');
+const tgu = t.en(`guias.${s.slug}`);
+const filtrable = s.animales.length > 1;
+const otras = [
+  ...SITUACIONES.filter((o) => o.slug !== s.slug).map((o) => ({
+    clave: o.slug,
+    href: `/situaciones/${o.slug}`,
+    titulo: t(`guias.${o.slug}.corto`),
+  })),
+  ...ACCESOS.map((a) => ({
+    clave: a.clave,
+    href: a.href,
+    titulo: t(`accesos.${a.clave}.titulo`),
+  })),
+];
+const Icono = ICONOS_SITUACION[s.slug];
+
+// Perros de asistencia: el reconocimiento lo hace cada comunidad (RD 409/2025,
+// art. 6.1), asi que la guia enlaza la ley de cada una.
+const leyesAsistencia =
+  s.slug === 'perro-de-asistencia'
+    ? comunidades().flatMap((c) => {
+        const n = normas().find(
+          (x) =>
+            x.comunidad === c.codigoIne &&
+            x.slug.startsWith('ley-perros-asistencia-'),
+        );
+        return n ? [{ comunidad: c.nombre, n }] : [];
+      })
+    : [];
+---
+
+<Base
+  ruta={`/situaciones/${s.slug}`}
+  titulo={tgu('metaTitulo')}
+  descripcion={tgu('metaDescripcion')}
+>
+  <CabeceraPagina
+    titulo={tgu('titulo')}
+    entradilla={tgu('entradilla')}
+    solape
+  />
+
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-14">
+      <div class="guia grid min-w-0 content-start gap-5">
+        {filtrable ? (
+          <fieldset class="tarjeta min-w-0 gap-3 shadow-media">
+            <legend class="etiqueta float-left mb-0 w-full">
+              {t('animal.pregunta')}
+            </legend>
+            <p class="ayuda mb-1">{t('animal.ayuda')}</p>
+            <div class="flex flex-wrap gap-2">
+              {['todos', ...s.animales].map((animal) => (
+                <label class="opcion">
+                  <input
+                    type="radio"
+                    name="animal"
+                    value={animal}
+                    checked={animal === 'todos'}
+                  />
+                  {t(`animal.${animal}`)}
+                </label>
+              ))}
+            </div>
+            <p
+              class="sr-only"
+              aria-live="polite"
+              data-recuento
+              data-plantilla={t('mostrando', {
+                n: '__N__',
+                total: s.puntos.length,
+              })}
+            />
+          </fieldset>
+        ) : null}
+
+        {s.intro ? (
+          <section
+            class="tarjeta tarjeta--menta gap-4"
+            aria-labelledby="h-intro"
+          >
+            <div class="flex items-center gap-4">
+              {Icono ? (
+                <span class="caja-icono shrink-0">
+                  <Ilustracion icono={Icono} />
+                </span>
+              ) : null}
+              <h2 id="h-intro" class="titulo-3">
+                {tgu('intro.titulo')}
+              </h2>
+            </div>
+            <p>{tgu('intro.texto')}</p>
+            <div class="border-t border-borde pt-2">
+              <FuentePlegable ids={s.intro} />
+            </div>
+          </section>
+        ) : null}
+
+        <ul class="grid gap-5">
+          {s.puntos.map((p) => {
+            const tp = tgu.en(`puntos.${p.clave}`);
+            return (
+              <li
+                id={p.clave}
+                class="tarjeta scroll-mt-28 gap-4 shadow-suave"
+                data-punto
+                data-animales={p.animales?.join(' ')}
+              >
+                <div class="flex flex-wrap items-center gap-2">
+                  {p.estado === 'depende' ? (
+                    <ChipNeutro Icono={MapPin} texto={t('depende')} />
+                  ) : (
+                    <ChipEstado estado={p.estado} t={tg} />
+                  )}
+                  {p.ppp ? (
+                    <ChipNeutro Icono={ShieldAlert} texto={t('soloPpp')} />
+                  ) : null}
+                </div>
+                <h2 class="titulo-3">{tp('titulo')}</h2>
+                <p>{tp('texto')}</p>
+                {p.ids.length > 0 ? (
+                  <div class="border-t border-borde pt-2">
+                    <FuentePlegable ids={p.ids} />
+                  </div>
+                ) : null}
+                {p.oficiales ? (
+                  <div class="grid gap-1.5 text-sm">
+                    <p class="rotulo">{t('oficiales')}</p>
+                    <ul class="grid gap-1">
+                      {p.oficiales.map((clave) => (
+                        <li>
+                          <a
+                            href={OFICIALES[clave]}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            class="inline-flex min-h-11 items-center gap-2 font-medium text-marca-700 underline-offset-2 hover:underline"
+                          >
+                            {t(`oficial.${clave}`)}
+                            <ExternalLink class="size-4" aria-hidden="true" />
+                            <span class="sr-only">
+                              {tg('comun.abreEnPestana')}
+                            </span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+                {p.enlace ? (
+                  <a href={ruta(p.enlace)} class="enlace-flecha self-start">
+                    {tp('enlace')}
+                    <ArrowRight aria-hidden="true" />
+                  </a>
+                ) : null}
+              </li>
+            );
+          })}
+        </ul>
+        {leyesAsistencia.length > 0 ? (
+          <section class="tarjeta gap-4" aria-labelledby="h-leyes">
+            <h2 id="h-leyes" class="titulo-3">
+              {t('leyesAsistencia.titulo')}
+            </h2>
+            <p>{t('leyesAsistencia.texto')}</p>
+            <ul class="grid gap-x-8 sm:grid-cols-2">
+              {leyesAsistencia.map(({ comunidad, n }) => (
+                <li class="border-b border-borde py-2">
+                  <span class="block text-sm text-texto-3">{comunidad}</span>
+                  <a
+                    href={ruta(`/normativa/${n.slug}`)}
+                    class="font-medium text-marca-700 underline-offset-2 hover:underline"
+                  >
+                    {nombreNorma(n)}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p class="text-sm text-texto-3">{t('leyesAsistencia.sinLey')}</p>
+          </section>
+        ) : null}
+        <p class="mt-4 text-sm font-medium text-texto-2">
+          {tg('comun.descargo')}
+        </p>
+      </div>
+
+      <aside class="grid content-start gap-6 lg:sticky lg:top-[calc(var(--cabecera)+32px)] lg:self-start">
+        <nav class="indice" aria-labelledby="h-otras">
+          <p id="h-otras" class="rotulo mb-3">
+            {t('otras')}
+          </p>
+          {otras.map(({ href, titulo }) => (
+            <a href={ruta(href)}>{titulo}</a>
+          ))}
+        </nav>
+        <a
+          href={ruta('/que-hacer-si')}
+          class="flex items-start gap-3 rounded-2xl border border-borde bg-superficie p-4 text-sm transition-colors hover:border-marca-300"
+        >
+          <Ilustracion icono={sirena} class="size-6 shrink-0" />
+          <span>
+            <span class="block font-semibold text-texto">
+              {t('accesos.incidencia.titulo')}
+            </span>
+            <span class="mt-0.5 block text-texto-3">
+              {tg('navegacion.queHacerSi')}
+            </span>
+          </span>
+        </a>
+      </aside>
+    </div>
+  </div>
+
+  <PanelCta
+    titulo={tg('inicio.cta.titulo')}
+    texto={tg('inicio.cta.texto')}
+    boton={tg('inicio.cta.boton')}
+  />
+</Base>
+
+<script>
+  const radios = document.querySelectorAll<HTMLInputElement>(
+    'input[name="animal"]',
+  );
+  const recuento = document.querySelector<HTMLElement>('[data-recuento]');
+
+  function anunciar() {
+    if (!recuento) return;
+    const visibles = [
+      ...document.querySelectorAll<HTMLElement>('[data-punto]'),
+    ].filter((p) => p.offsetParent !== null).length;
+    recuento.textContent = (recuento.dataset.plantilla ?? '').replace(
+      '__N__',
+      String(visibles),
+    );
+  }
+
+  const elegido = new URLSearchParams(location.search).get('animal');
+  for (const radio of radios) {
+    if (radio.value === elegido) radio.checked = true;
+    radio.addEventListener('change', () => {
+      const url = new URL(location.href);
+      if (radio.value === 'todos') url.searchParams.delete('animal');
+      else url.searchParams.set('animal', radio.value);
+      history.replaceState(null, '', url);
+      anunciar();
+    });
+  }
+</script>

@@ -1,0 +1,164 @@
+---
+import PaginaTexto from '@/componentes/pagina/PaginaTexto.astro';
+import Base from '@/layouts/Base.astro';
+import { ruta } from '@/lib/rutas';
+import { EMAIL_CONTACTO, TITULAR, URL_SITIO } from '@/lib/sitio';
+
+const LSSI = 'https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758';
+const LPI = 'https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930';
+const sitio = new URL(ruta('/'), URL_SITIO).toString();
+---
+
+<Base
+  ruta="/aviso-legal"
+  titulo="Aviso legal"
+  descripcion="Aviso legal de LeyAnimal: titular, objeto, condiciones de uso, responsabilidad, propiedad intelectual y legislación aplicable."
+>
+  <PaginaTexto
+    titulo="Aviso legal"
+    entradilla="Quién gestiona LeyAnimal y en qué condiciones puedes usar la web."
+    actualizado="2026-10-30"
+  >
+    <h2>1. Datos identificativos</h2>
+    <p>
+      En cumplimiento del deber de información del artículo 10 de la{' '}
+      <a href={LSSI}>
+        Ley 34/2002, de servicios de la sociedad de la información y de comercio
+        electrónico
+      </a>{' '}
+      (LSSI), estos son los datos del responsable de la web:
+    </p>
+    <dl class="grid rounded-2xl border border-borde">
+      <div class="fila-dato">
+        <dt>Titular</dt>
+        <dd>{TITULAR}</dd>
+      </div>
+      <div class="fila-dato">
+        <dt>Correo electrónico</dt>
+        <dd>
+          <a href={`mailto:${EMAIL_CONTACTO}`} class="break-all">
+            {EMAIL_CONTACTO}
+          </a>
+        </dd>
+      </div>
+      <div class="fila-dato">
+        <dt>Sitio web</dt>
+        <dd class="break-all">{sitio}</dd>
+      </div>
+      <div class="fila-dato">
+        <dt>Naturaleza</dt>
+        <dd>
+          Proyecto personal, divulgativo y sin ánimo de lucro. No vende
+          productos ni servicios ni muestra publicidad.
+        </dd>
+      </div>
+    </dl>
+
+    <h2>2. Objeto</h2>
+    <p>
+      LeyAnimal es una web informativa y gratuita que explica las obligaciones
+      legales de quienes conviven con animales de compañía en España. Cada
+      afirmación va acompañada de la norma y el artículo que la respaldan, con
+      su cita literal y el enlace a la publicación oficial. No hace falta
+      registrarse para usarla.
+    </p>
+
+    <h2>3. Condiciones de uso</h2>
+    <p>
+      El acceso es libre y gratuito. Al usar la web te comprometes a hacerlo
+      conforme a la ley y a la buena fe, y en particular a no:
+    </p>
+    <ul>
+      <li>utilizarla con fines ilícitos o que perjudiquen a terceros;</li>
+      <li>
+        dañarla, sobrecargarla o impedir que otras personas la usen con
+        normalidad;
+      </li>
+      <li>
+        enviar a través de sus formularios contenidos falsos, ofensivos o
+        publicitarios.
+      </li>
+    </ul>
+
+    <h2>4. Carácter informativo y responsabilidad</h2>
+    <p>
+      La información de LeyAnimal es divulgativa y{' '}
+      <strong>no constituye asesoramiento jurídico</strong>. Se elabora a partir
+      de fuentes oficiales y se revisa de forma periódica, pero puede contener
+      errores u omisiones o no reflejar las últimas modificaciones normativas.
+      Solo los textos publicados en los boletines oficiales tienen validez
+      jurídica.
+    </p>
+    <p>
+      Antes de tomar una decisión, contrasta la información con la norma
+      enlazada, con tu ayuntamiento o con un profesional. En la medida en que lo
+      permita la ley, el titular no responde de los daños que pudieran derivarse
+      del uso de la información publicada ni de interrupciones del servicio.
+    </p>
+
+    <h2>5. Enlaces a otros sitios</h2>
+    <p>
+      La web enlaza a boletines oficiales y a otras páginas de terceros para que
+      puedas consultar las fuentes. El titular no controla esos sitios ni
+      responde de sus contenidos, conforme al artículo 17 de la{' '}
+      <a href={LSSI}>LSSI</a>. Si detectas un enlace roto o un contenido ilícito
+      enlazado desde aquí, puedes comunicarlo en{' '}
+      <a href={ruta('/colabora')}>Avisar de un error</a>.
+    </p>
+
+    <h2>6. Propiedad intelectual e industrial</h2>
+    <p>
+      Las normas y resoluciones citadas no son objeto de propiedad intelectual,
+      según el artículo 13 del{' '}
+      <a href={LPI}>texto refundido de la Ley de Propiedad Intelectual</a>. Los
+      textos explicativos, el diseño y el logotipo de LeyAnimal pertenecen a su
+      titular. Puedes citarlos y compartirlos indicando la fuente y enlazando a
+      la página original.
+    </p>
+    <p>Los elementos de terceros se usan conforme a sus licencias:</p>
+    <ul>
+      <li>
+        Tipografías Sora, Geist y Source Serif 4: licencia SIL Open Font
+        License.
+      </li>
+      <li>
+        Iconos de Lucide (licencia ISC) y de Fluent Emoji de Microsoft (licencia
+        MIT).
+      </li>
+      <li>Fotografía de Robert Larsson en Unsplash (licencia Unsplash).</li>
+      <li>
+        Datos de normas del BOE (reutilización de datos abiertos) y del
+        nomenclátor de municipios del INE.
+      </li>
+    </ul>
+
+    <h2>7. Donativos</h2>
+    <p>
+      Los donativos son voluntarios y no dan derecho a contraprestación alguna:
+      la web es gratuita para todo el mundo. Los gestionan Bizum, a través de tu
+      banco, y PayPal, con sus propias condiciones. Los recibe una persona
+      física, no una entidad sin ánimo de lucro, por lo que no son deducibles.
+    </p>
+
+    <h2>8. Protección de datos</h2>
+    <p>
+      El tratamiento de los datos personales se explica en la{' '}
+      <a href={ruta('/privacidad')}>política de privacidad</a>, y el uso de
+      cookies, en la <a href={ruta('/cookies')}>política de cookies</a>.
+    </p>
+
+    <h2>9. Modificaciones</h2>
+    <p>
+      El titular puede actualizar este aviso para adaptarlo a cambios legales o
+      del propio proyecto. La versión vigente es siempre la publicada en esta
+      página, con su fecha de última actualización.
+    </p>
+
+    <h2>10. Legislación aplicable</h2>
+    <p>
+      Este aviso legal se rige por la legislación española. Para cualquier
+      consulta sobre él puedes escribir a{' '}
+      <a href={`mailto:${EMAIL_CONTACTO}`}>{EMAIL_CONTACTO}</a>.
+    </p>
+  </PaginaTexto>
+</Base>

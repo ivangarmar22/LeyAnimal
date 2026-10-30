@@ -1,0 +1,61 @@
+---
+/**
+ * Rejilla de situaciones: las guias propias y las que ya existen en otra
+ * pagina (perros potencialmente peligrosos). La usan su indice y la portada.
+ */
+import { ArrowRight } from 'lucide-preact';
+import { traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import { ICONOS_SITUACION } from '@/lib/contenido/iconos';
+import { ACCESOS, SITUACIONES } from '@/lib/contenido/situaciones';
+import { Ilustracion } from '@/ui/Ilustracion';
+
+const t = traductor('situaciones');
+const tarjetas = [
+  ...SITUACIONES.map(({ slug }) => ({
+    clave: slug,
+    href: `/situaciones/${slug}`,
+    titulo: t(`guias.${slug}.titulo`),
+    texto: t(`guias.${slug}.resumen`),
+  })),
+  ...ACCESOS.map(({ clave, href }) => ({
+    clave,
+    href,
+    titulo: t(`accesos.${clave}.titulo`),
+    texto: t(`accesos.${clave}.texto`),
+  })),
+];
+---
+
+<ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-escalonado>
+  {tarjetas.map(({ clave, href, titulo, texto }) => {
+    const Icono = ICONOS_SITUACION[clave];
+    return (
+      <li>
+        <a href={ruta(href)} class="tarjeta foco-luz h-full gap-5">
+          <span class="esquinas" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+            <i />
+          </span>
+          {Icono ? (
+            <span class="caja-icono">
+              <Ilustracion icono={Icono} />
+            </span>
+          ) : null}
+          <span>
+            <span class="titulo-3 block font-display font-semibold text-texto">
+              {titulo}
+            </span>
+            <span class="mt-2 block">{texto}</span>
+          </span>
+          <span class="enlace-flecha mt-auto text-[0.9375rem]">
+            {t('leer')}
+            <ArrowRight aria-hidden="true" />
+          </span>
+        </a>
+      </li>
+    );
+  })}
+</ul>

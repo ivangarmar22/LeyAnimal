@@ -1,0 +1,94 @@
+---
+import PaginaTexto from '@/componentes/pagina/PaginaTexto.astro';
+import Base from '@/layouts/Base.astro';
+import { visto } from '@/lib/contenido/ilustraciones';
+import { ruta } from '@/lib/rutas';
+import { Ilustracion } from '@/ui/Ilustracion';
+
+const LSSI = 'https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758';
+---
+
+<Base
+  ruta="/cookies"
+  titulo="Política de cookies"
+  descripcion="LeyAnimal no usa cookies ni guarda información en tu dispositivo. Por eso no verás ningún banner de consentimiento."
+>
+  <PaginaTexto
+    titulo="Cookies"
+    entradilla="LeyAnimal no usa cookies ni guarda información en tu dispositivo. Por eso no verás ningún banner de consentimiento."
+    actualizado="2026-10-30"
+  >
+    <div class="flex gap-4 rounded-2xl border border-marca-100 bg-marca-50 p-5">
+      <Ilustracion icono={visto} class="size-8 shrink-0" />
+      <div>
+        <p class="font-display font-semibold text-texto">Qué no hay</p>
+        <p class="mt-1 text-[0.9375rem]">
+          Ni cookies propias ni de terceros, ni analítica, ni publicidad, ni
+          botones de redes sociales.
+        </p>
+      </div>
+    </div>
+
+    <h2>1. Qué son las cookies</h2>
+    <p>
+      Las cookies son pequeños ficheros que una web guarda en tu navegador para
+      recordar información entre visitas: una sesión iniciada, unas preferencias
+      o tu actividad con fines de analítica o publicidad. Otras técnicas
+      parecidas, como el almacenamiento local del navegador, cumplen la misma
+      función.
+    </p>
+
+    <h2>2. Qué usa esta web</h2>
+    <p>
+      <strong>Nada.</strong> LeyAnimal no instala cookies propias ni de terceros
+      y no usa el almacenamiento local del navegador ni técnicas similares. Las
+      tipografías, las imágenes y los programas de la página se sirven desde el
+      propio sitio, así que al visitarla tu navegador no contacta con otros
+      servicios.
+    </p>
+    <p>
+      Tampoco hace falta para la consulta: tus respuestas viajan en la propia
+      dirección de la página y desaparecen al cerrarla.
+    </p>
+
+    <h2>3. Por qué no hay banner de consentimiento</h2>
+    <p>
+      El artículo 22.2 de la{' '}
+      <a href={LSSI}>
+        Ley 34/2002, de servicios de la sociedad de la información
+      </a>{' '}
+      exige pedir tu consentimiento para guardar o leer información en tu
+      dispositivo. Como esta web no lo hace, no hay nada que aceptar ni que
+      rechazar.
+    </p>
+
+    <h2>4. Servicios de terceros</h2>
+    <p>Solo intervienen si tú decides usarlos:</p>
+    <ul>
+      <li>
+        al enviar el formulario de{' '}
+        <a href={ruta('/colabora')}>Avisar de un error</a>, tu navegador conecta
+        con Web3Forms para entregar el mensaje;
+      </li>
+      <li>
+        al pulsar «Donar con PayPal» sales a la web de PayPal, que aplica su
+        propia política de cookies.
+      </li>
+    </ul>
+
+    <h2>5. Cómo gestionar las cookies en tu navegador</h2>
+    <p>
+      Aunque aquí no haya ninguna, puedes ver y borrar las cookies de cualquier
+      web desde la configuración de privacidad de tu navegador (Chrome, Firefox,
+      Safari o Edge), y también bloquearlas por completo.
+    </p>
+
+    <h2>6. Cambios en esta política</h2>
+    <p>
+      Si en el futuro la web incorporase cookies, se actualizaría esta página y,
+      cuando la ley lo exija, se pediría tu consentimiento antes de instalarlas.
+      Más información en la{' '}
+      <a href={ruta('/privacidad')}>política de privacidad</a>.
+    </p>
+  </PaginaTexto>
+</Base>

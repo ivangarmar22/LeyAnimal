@@ -1,0 +1,125 @@
+---
+import { ArrowRight } from 'lucide-preact';
+import FuentePlegable from '@/componentes/legal/FuentePlegable.astro';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import PanelCta from '@/componentes/pagina/PanelCta.astro';
+import { traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import Base from '@/layouts/Base.astro';
+import {
+  brujula,
+  corazonRoto,
+  lupa,
+  paloma,
+  perroEntero,
+  tirita,
+} from '@/lib/contenido/ilustraciones';
+import { Ilustracion } from '@/ui/Ilustracion';
+
+const t = traductor('queHacerSi');
+const tc = traductor('comun');
+const tcta = traductor('inicio.cta');
+
+const L7 = 'ley-7-2023-bienestar-animal';
+const RD = 'rd-287-2002-animales-potencialmente-peligrosos';
+const CASOS = [
+  {
+    clave: 'perdido',
+    Icono: lupa,
+    ids: [`${L7}#art. 24.2.g`, `${L7}#art. 22.1`, `${RD}#art. 8.6`],
+  },
+  { clave: 'encontrado', Icono: perroEntero, ids: [`${L7}#art. 22.1`] },
+  {
+    clave: 'mordedura',
+    Icono: tirita,
+    ids: [`${L7}#art. 24.3`, `${RD}#art. 2.2`],
+  },
+  {
+    clave: 'maltrato',
+    Icono: corazonRoto,
+    ids: [`${L7}#art. 74.k`, `${L7}#art. 75.a`],
+  },
+  { clave: 'muerte', Icono: paloma, ids: [`${L7}#art. 26.j`] },
+];
+---
+
+<Base
+  ruta="/que-hacer-si"
+  titulo={t('metaTitulo')}
+  descripcion={t('metaDescripcion')}
+>
+  <CabeceraPagina titulo={t('titulo')} entradilla={t('entradilla')} solape />
+
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <div class="grid gap-10 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-14">
+      <nav
+        class="indice hidden lg:sticky lg:top-[calc(var(--cabecera)+32px)] lg:block lg:self-start lg:pt-40"
+        aria-label={t('indice')}
+      >
+        <p class="rotulo mb-3">{t('indice')}</p>
+        {CASOS.map(({ clave }) => (
+          <a href={`#${clave}`}>{t(`casos.${clave}.titulo`)}</a>
+        ))}
+      </nav>
+
+      <div class="grid gap-5">
+        {CASOS.map(({ clave, Icono, ids }) => (
+          <section
+            id={clave}
+            class="tarjeta scroll-mt-28 gap-6 shadow-media"
+            aria-labelledby={`h-${clave}`}
+          >
+            <div class="flex items-center gap-4">
+              <span class="caja-icono">
+                <Ilustracion icono={Icono} />
+              </span>
+              <h2 id={`h-${clave}`} class="titulo-3">
+                {t(`casos.${clave}.titulo`)}
+              </h2>
+            </div>
+            <ol class="grid gap-3">
+              {(t.raw(`casos.${clave}.pasos`) as string[]).map((paso, n) => (
+                <li class="flex gap-4">
+                  <span class="grid size-7 shrink-0 place-items-center rounded-full bg-marca-50 text-xs font-semibold text-marca-700">
+                    {n + 1}
+                  </span>
+                  <span class="pt-0.5">{paso}</span>
+                </li>
+              ))}
+            </ol>
+            {ids.length > 0 ? (
+              <div class="border-t border-borde pt-2">
+                <FuentePlegable ids={ids} />
+              </div>
+            ) : null}
+          </section>
+        ))}
+        <a
+          href={ruta('/situaciones')}
+          class="tarjeta tarjeta--menta foco-luz gap-4 sm:flex-row sm:items-center"
+        >
+          <span class="caja-icono shrink-0">
+            <Ilustracion icono={brujula} />
+          </span>
+          <span class="flex-1">
+            <span class="block font-display text-lg font-semibold text-texto">
+              {t('situaciones.titulo')}
+            </span>
+            <span class="mt-1 block">{t('situaciones.texto')}</span>
+          </span>
+          <span class="enlace-flecha shrink-0 text-[0.9375rem]">
+            {t('situaciones.enlace')}
+            <ArrowRight aria-hidden="true" />
+          </span>
+        </a>
+        <p class="mt-6 text-sm font-medium text-texto-2">{tc('descargo')}</p>
+      </div>
+    </div>
+  </div>
+
+  <PanelCta
+    titulo={tcta('titulo')}
+    texto={tcta('texto')}
+    boton={tcta('boton')}
+  />
+</Base>

@@ -1,0 +1,616 @@
+{
+  "normativa": {
+    "metaTitulo": "Normativa sobre animales de compañía en España",
+    "metaDescripcion": "Las leyes estatales y autonómicas que regulan la tenencia de perros, gatos y otros animales, con su estado, los artículos que citamos y el enlace oficial.",
+    "titulo": "Las normas que te aplican, verificadas una a una",
+    "entradilla": "Leyes estatales y autonómicas con su estado real, los artículos que citamos y el enlace a su texto consolidado oficial.",
+    "buscar": "Buscar por título o número",
+    "ambito": "Ámbito",
+    "comunidad": "Comunidad",
+    "estado": "Estado",
+    "vista": "Vista",
+    "lista": "Lista",
+    "tabla": "Tabla",
+    "colNorma": "Norma",
+    "colAmbito": "Ámbito",
+    "colEstado": "Estado",
+    "colArticulos": "Artículos citados",
+    "colVerificada": "Verificada",
+    "articulos": "{n, plural, =0 {Sin artículos citados} one {# artículo citado} other {# artículos citados}}",
+    "sinResultados": "Ninguna norma coincide con estos filtros.",
+    "nota": "Solo mostramos normas comprobadas contra su texto oficial: el consolidado del BOE y, para los decretos autonómicos y los reglamentos de Ceuta y Melilla que no recoge, su boletín oficial."
+  },
+  "norma": {
+    "metaDescripcion": "{titulo} Estado, artículos citados, obligaciones que genera y enlace al texto oficial.",
+    "datos": "Datos de la norma",
+    "identificador": "Identificador oficial",
+    "ambito": "Ámbito",
+    "territorio": "Territorio",
+    "espana": "España",
+    "publicacion": "Publicación",
+    "vigor": "Entrada en vigor",
+    "verificada": "Última verificación",
+    "resumen": "En resumen",
+    "articulos": "Artículos que citamos",
+    "sinArticulos": "No citamos ningún artículo de esta norma: la enlazamos para que sepas que existe, pero ninguna obligación de la consulta se apoya en ella.",
+    "obligaciones": "Obligaciones que se apoyan en esta norma",
+    "sinObligaciones": "Ninguna obligación de la consulta se apoya todavía en esta norma.",
+    "boletin": "Leer el texto consolidado oficial",
+    "historial": "Historial de cambios",
+    "sinHistorial": "No hemos registrado cambios en esta norma desde que la verificamos.",
+    "enComunidad": "Ver qué exige {comunidad}"
+  },
+  "paginaTemas": {
+    "metaTitulo": "Guías sobre las obligaciones con tu animal",
+    "metaDescripcion": "Guías por tema sobre lo que exige la ley en España a quien tiene perro o gato: seguro, identificación, curso, perros potencialmente peligrosos y esterilización.",
+    "titulo": "Guías por tema",
+    "entradilla": "Qué exige la ley, qué es exigible hoy y cómo cambia de una comunidad a otra. Todo con el artículo detrás.",
+    "recursos": "Más recursos"
+  },
+  "guia": {
+    "metaTitulo": "{tema} en España ({anio})",
+    "estatal": "Lo que dice la norma estatal",
+    "variacion": "Cómo cambia por comunidad",
+    "variacionTexto": "Estado de esta obligación para {especie} adulto en cada comunidad, según las normas que hemos verificado.",
+    "unPerro": "un perro",
+    "unGato": "un gato",
+    "unPerroPpp": "un perro potencialmente peligroso",
+    "colComunidad": "Comunidad",
+    "colEstado": "Estado",
+    "colNorma": "Norma que lo determina",
+    "normas": "Normas relacionadas",
+    "consulta": "Comprueba tu caso",
+    "consultaTexto": "La guía es general. Tu resultado depende de tu municipio y de tu animal.",
+    "enlacesPpp": "Usa el verificador de razas",
+    "enlacesSeguro": "Lee la guía completa del seguro"
+  },
+  "comunidades": {
+    "metaTitulo": "Obligaciones con tu animal por comunidad autónoma",
+    "metaDescripcion": "Qué exige cada comunidad autónoma a quien tiene perro o gato: identificación, censo municipal y seguro, con la ley y el artículo de cada obligación.",
+    "titulo": "Qué exige cada comunidad",
+    "entradilla": "Identificación, censo municipal y seguro dependen en buena parte de la ley de cada comunidad. Así está cada una según lo que hemos verificado.",
+    "comparativa": "Comparativa para un perro adulto",
+    "colComunidad": "Comunidad",
+    "colLey": "Ley autonómica",
+    "colIdentificacion": "Identificación",
+    "colCenso": "Censo municipal",
+    "colSeguro": "Seguro RC",
+    "mapa": "Verlo en el mapa"
+  },
+  "comunidad": {
+    "metaTitulo": "Obligaciones con perros y gatos en {comunidad} ({anio})",
+    "metaDescripcion": "Qué te exige la ley en {comunidad} si tienes perro o gato: seguro, identificación, censo y más, con la norma y el artículo de cada obligación.",
+    "entradillaReglas": "Lo que exige la ley si vives en {comunidad} y tienes perro o gato, según su ley autonómica y la estatal.",
+    "entradillaSinLey": "{comunidad} derogó su ley de protección animal sin sustituirla. Hoy rige solo el marco estatal.",
+    "entradillaOrdenanzas": "{comunidad} es una ciudad autónoma sin potestad legislativa: regula a los animales con su propio reglamento. Abajo tienes lo que exige, junto a lo que exige la ley estatal.",
+    "perro": "Si tienes perro",
+    "gato": "Si tienes gato",
+    "referencia": "Perfil de referencia: animal adulto, no considerado potencialmente peligroso. Para tu caso concreto, haz la consulta.",
+    "provincias": "Provincias",
+    "municipios": "{n, plural, one {# municipio} other {# municipios}}",
+    "capital": "Capital: {capital}",
+    "ctaTitulo": "¿Vives en {comunidad}?",
+    "ctaTexto": "Haz la consulta con los datos de tu animal y tu municipio.",
+    "entradillaRemite": "{comunidad} tiene ley propia de protección animal, pero en seguro, identificación y censo no añade obligaciones a las estatales: remite a la Ley 7/2023. Abajo tienes lo que exige hoy la ley y lo que sí añade la suya.",
+    "anade": "Lo que añade la normativa de {comunidad}",
+    "anadeTexto": "Otras obligaciones de su ley o su reglamento que conviene conocer, con la cita literal de cada una.",
+    "destacados": {
+      "vacunacion": "Vacuna antirrábica obligatoria",
+      "esterilizacion": "Esterilización obligatoria en algunos casos",
+      "formacion": "Formación en tenencia responsable",
+      "maximoAnimales": "Máximo de animales por vivienda",
+      "tiempoSolo": "Cuánto tiempo puede quedarse solo",
+      "correa": "Con correa por la calle"
+    },
+    "ppp": "Perros potencialmente peligrosos en {comunidad}",
+    "pppRazas": "Además de las ocho razas de la lista estatal, su normativa incluye: {razas}.",
+    "pppSeguro": "El seguro mínimo es de {importe}, por encima de los 120.000 € estatales.",
+    "pppSoloRazas": "Se exige para las razas de su lista; para el resto rige el estatal.",
+    "pppEstatal": "Rigen la lista de razas y el seguro mínimo estatales (120.000 €).",
+    "pppAvisos": {
+      "guardaDefensa": "Cantabria regula aparte, en el Decreto 64/1999, las razas de guarda y defensa, y su registro oficial publica la lista."
+    },
+    "pppOtros": {
+      "cursoAdiestramiento": "Para obtener la licencia se exige además un curso de adiestramiento básico."
+    },
+    "multas": "Multas de la normativa de {comunidad}",
+    "multasTexto": "Tramos que fija su propia ley. La Ley 7/2023 también tiene su cuadro y rige en toda España: cuál se aplica a cada caso lo decide la administración que sanciona."
+  },
+  "provincia": {
+    "metaTitulo": "Obligaciones con perros y gatos en la provincia de {provincia} ({anio})",
+    "metaDescripcion": "Los {n} municipios de la provincia de {provincia} y lo que exige la ley en ellos a quien tiene perro o gato.",
+    "entradilla": "Los {n} municipios de la provincia de {provincia}. Elige el tuyo para ver sus obligaciones.",
+    "resumen": "En {comunidad}, para un perro adulto",
+    "verComunidad": "Ver lo que exige {comunidad}",
+    "filtrar": "Filtrar municipios",
+    "filtrarMarcador": "Escribe para filtrar",
+    "capital": "capital",
+    "municipios": "Municipios"
+  },
+  "municipio": {
+    "metaTitulo": "Obligaciones para tener perro o gato en {municipio} ({anio})",
+    "metaDescripcion": "Qué te exige la ley en {municipio} ({provincia}) si tienes perro o gato: seguro, microchip, censo, licencia de perro peligroso y más, con la norma y el artículo.",
+    "titulo": "Tener perro o gato en {municipio}",
+    "entradilla": "Lo que exige hoy la ley en {municipio}, según las normas estatales y autonómicas que hemos verificado.",
+    "oficial": "Nombre oficial: {nombre}",
+    "perro": "Si tienes perro",
+    "gato": "Si tienes gato",
+    "referencia": "Perfil de referencia: animal adulto, no considerado potencialmente peligroso.",
+    "ctaBoton": "Consultar en {municipio}",
+    "ppp": "¿Perro potencialmente peligroso?",
+    "pppTexto": "Necesitas licencia del Ayuntamiento de {municipio} y un seguro de al menos {importe}.",
+    "pppEnlace": "Qué implica",
+    "cercanos": "Otros municipios de {provincia}",
+    "verProvincia": "Ver los {n} municipios de {provincia}",
+    "verComunidad": "Ver la normativa de {comunidad}"
+  },
+  "mapa": {
+    "metaTitulo": "Mapa de obligaciones por comunidad autónoma",
+    "metaDescripcion": "Mapa de España por comunidades con el estado del seguro de responsabilidad civil, la identificación y el censo municipal de perros según las normas verificadas.",
+    "titulo": "España, comunidad a comunidad",
+    "entradilla": "Elige qué quieres ver: seguro, identificación o censo municipal para un perro adulto, según lo que hemos verificado en cada comunidad.",
+    "capa": "Qué mostrar",
+    "seguro": "Seguro RC",
+    "identificacion": "Identificación",
+    "censo": "Censo municipal",
+    "leyenda": "Leyenda",
+    "nota": "El mosaico es orientativo: cada casilla es una comunidad, no su forma real.",
+    "curso": "El curso de tenencia responsable está pendiente de reglamento en toda España, así que no cambia de una comunidad a otra.",
+    "listado": "Ver como tabla"
+  },
+  "ppp": {
+    "metaTitulo": "Perros potencialmente peligrosos: razas, licencia y seguro",
+    "metaDescripcion": "Comprueba si tu perro se considera potencialmente peligroso y qué implica: licencia municipal, seguro de al menos 120.000 € (más en algunas comunidades), bozal, correa y registro, con cada artículo.",
+    "titulo": "¿Tu perro se considera potencialmente peligroso?",
+    "entradilla": "Elige la raza y tu comunidad. Te decimos si figura en la lista legal y qué implica, con el artículo de cada cosa.",
+    "raza": "Raza",
+    "razaOtra": "Otra raza o mestizo",
+    "comunidad": "Comunidad",
+    "elegir": "Elige…",
+    "siTitulo": "Sí: {raza} se considera potencialmente peligroso",
+    "siTexto": "Figura en el anexo I del RD 287/2002, que se aplica en toda España.",
+    "noTitulo": "No figura en la lista de razas",
+    "noTexto": "Aun así se considera potencialmente peligroso si es un cruce de esas razas, si reúne todas o la mayoría de las características del anexo II o si la autoridad lo declara por su conducta.",
+    "pendienteElegir": "Elige una raza para ver el resultado.",
+    "implica": "Qué implica tener un perro potencialmente peligroso",
+    "licencia": "Licencia municipal",
+    "licenciaTexto": "La concede tu ayuntamiento. Exige ser mayor de edad, no tener determinadas condenas o sanciones, capacidad física y aptitud psicológica, y un seguro.",
+    "seguro": "Seguro de al menos 120.000 €",
+    "seguroTexto": "De responsabilidad civil por daños a terceros. Es requisito para obtener y renovar la licencia. Varias comunidades exigen más: lo ves en la tabla de abajo.",
+    "validez": "Validez de cinco años",
+    "validezTexto": "La licencia se renueva por periodos iguales y pierde su vigencia si dejas de cumplir los requisitos.",
+    "bozal": "Bozal en lugares públicos",
+    "bozalTexto": "Apropiado para la tipología racial de cada animal.",
+    "correa": "Correa corta y uno por persona",
+    "correaTexto": "Cadena o correa no extensible de menos de 2 metros, sin llevar más de uno de estos perros por persona.",
+    "documentos": "Llevar la licencia encima",
+    "documentosTexto": "Quien lo conduzca debe llevar la licencia y el certificado de inscripción en el registro municipal.",
+    "microchip": "Microchip",
+    "microchipTexto": "Todos los perros potencialmente peligrosos deben estar identificados con microchip.",
+    "perdida": "Pérdida o robo: 48 horas",
+    "perdidaTexto": "Hay que comunicarlo al registro municipal en un máximo de 48 horas.",
+    "sanciones": "Si no se cumple",
+    "sancionesTexto": "Tenerlo sin licencia es infracción muy grave; llevarlo sin bozal o sin sujetar, grave.",
+    "multas": "Ver los tramos de multa",
+    "razas": "Las razas del anexo I",
+    "conducta": "También por su conducta",
+    "errata": "El BOE escribe «American Staffodshire Terrier»: la errata es del texto oficial.",
+    "siTextoAutonomico": "No está en la lista estatal, pero sí en {norma}, que se aplica en {comunidad}.",
+    "listaPropia": "{comunidad} añade a la lista estatal: {razas}.",
+    "listaEstatal": "{comunidad} no añade razas: se aplica la lista estatal.",
+    "seguroComunidad": "Seguro mínimo en {comunidad}: {importe}.",
+    "dependeTitulo": "Depende de tu comunidad",
+    "dependeTexto": "No está en la lista estatal, pero se considera potencialmente peligroso en {comunidades}. Elige tu comunidad para verlo.",
+    "otrasComunidades": "Sí lo es en {comunidades}.",
+    "porComunidad": "Lo que cambia en cada comunidad",
+    "porComunidadTexto": "La lista del RD 287/2002 y su seguro mínimo de 120.000 € rigen en toda España. Estas comunidades añaden razas o exigen un seguro mayor, cada una con su norma.",
+    "colComunidad": "Comunidad",
+    "colRazas": "Razas que añade",
+    "colSeguro": "Seguro mínimo",
+    "colFuente": "Norma",
+    "ninguna": "Ninguna",
+    "estatalSeguro": "El estatal",
+    "resto": "En el resto de comunidades rigen la lista y el seguro estatales."
+  },
+  "seguros": {
+    "metaTitulo": "Seguro de responsabilidad civil para perros: qué exige la ley",
+    "metaDescripcion": "Qué cobertura exige hoy cada territorio al seguro de tu perro, qué depende de un reglamento pendiente, si sirve el seguro de hogar y qué preguntar a tu aseguradora.",
+    "titulo": "El seguro de tu perro, sin letra pequeña",
+    "entradilla": "Qué cobertura exige cada territorio hoy, qué depende de un reglamento pendiente y qué preguntar antes de contratar.",
+    "aviso": "Guía informativa. No vendemos seguros ni tenemos acuerdos con ninguna aseguradora.",
+    "estatal": "Lo que dice la ley estatal",
+    "estatalTexto": "La Ley 7/2023 obliga a tener un seguro de responsabilidad civil durante toda la vida del perro, pero deja la cuantía a un reglamento que no se ha publicado. Mientras no exista, a nivel estatal no es exigible.",
+    "ppp": "Si tu perro es potencialmente peligroso",
+    "pppTexto": "Aquí no hay nada pendiente: el RD 287/2002 exige un seguro de al menos 120.000 € para obtener y renovar la licencia municipal. Algunas comunidades exigen más:",
+    "territorios": "Qué exige cada comunidad",
+    "territoriosTexto": "Estado del seguro para un perro adulto que no es potencialmente peligroso.",
+    "hogar": "¿Me sirve el seguro de hogar?",
+    "hogarTexto": "Depende de tu póliza. Algunas incluyen la responsabilidad civil por los animales de la casa y otras no, o la limitan. Pide a tu aseguradora que te confirme por escrito si cubre los daños que tu perro cause fuera de casa y con qué límite.",
+    "preguntas": "Qué preguntar a tu aseguradora",
+    "p1": "¿Cuál es el límite de indemnización por siniestro y por año?",
+    "p2": "¿Cubre a cualquier persona que pasee a mi perro?",
+    "p2nota": "La Ley 7/2023 pide que el seguro incluya a las personas responsables del animal.",
+    "p3": "¿Tiene franquicia? ¿De cuánto?",
+    "p4": "¿Excluye alguna raza o a los perros potencialmente peligrosos?",
+    "p5": "¿Cubre los daños fuera de casa y en toda España?",
+    "p6": "¿Qué documento me dais para acreditarlo si me lo piden?",
+    "pppSoloRazas": "para las razas de su lista"
+  },
+  "multas": {
+    "metaTitulo": "Multas por incumplir la ley de protección animal: tramos oficiales",
+    "metaDescripcion": "Calculadora informativa de sanciones: elige la infracción y ve su clasificación y el tramo de multa que fija la ley, con el texto literal del artículo.",
+    "titulo": "Cuánto puede costar incumplir",
+    "entradilla": "Elige una infracción y te mostramos su clasificación y el tramo de multa que fija la ley, con el texto literal. Sin estimaciones inventadas.",
+    "regimen": "¿De qué animal se trata?",
+    "general": "Cualquier animal · Ley 7/2023",
+    "especial": "Perro potencialmente peligroso · Ley 50/1999",
+    "infraccion": "Infracción",
+    "elegir": "Elige una infracción",
+    "clasificacion": "Clasificación",
+    "tramo": "Tramo de multa",
+    "leve": "Leve",
+    "grave": "Grave",
+    "muyGrave": "Muy grave",
+    "t7leve": "Apercibimiento o multa de 500 a 10.000 €",
+    "t7grave": "De 10.001 a 50.000 €",
+    "t7muyGrave": "De 50.001 a 200.000 €",
+    "t50leve": "De 150,25 a 300,51 €",
+    "t50grave": "De 300,52 a 2.404,05 €",
+    "t50muyGrave": "De 2.404,06 a 15.025,30 €",
+    "porQue": "Por qué se clasifica así",
+    "cuanto": "Cuánto dice la ley",
+    "vacio": "Elige una infracción para ver su tramo.",
+    "aviso": "La multa concreta la decide la administración competente dentro del tramo.",
+    "reincidencia": "Reincidir en una infracción leve, o que sea continuada, impide que se sancione solo con un apercibimiento.",
+    "quien": "Quién sanciona",
+    "tablaTitulo": "Todos los tramos",
+    "i": {
+      "identificacion": "No identificar a tu animal",
+      "abandono": "Abandonar a un animal",
+      "terraza": "Tener a un perro o gato de forma permanente en la terraza, el balcón o similares",
+      "metodos": "Educarlo con métodos agresivos o violentos",
+      "muerte": "Incumplir la ley causando la muerte del animal, si no es delito",
+      "peleas": "Usarlo o adiestrarlo para peleas",
+      "otrasLeve": "Otros incumplimientos sin daño para el animal",
+      "sinLicencia": "Tener un perro potencialmente peligroso sin licencia",
+      "abandonoPpp": "Abandonar un animal potencialmente peligroso o cualquier perro",
+      "suelto": "Dejarlo suelto o no evitar que se escape",
+      "sinBozal": "Llevarlo en lugares públicos sin bozal o sin sujetar",
+      "sinIdentificar": "No identificarlo",
+      "sinRegistro": "No inscribirlo en el registro",
+      "otrasPpp": "Otros incumplimientos de la Ley 50/1999"
+    },
+    "autonomicas": "El cuadro de cada comunidad",
+    "autonomicasTexto": "La Ley 7/2023 es legislación básica y su cuadro rige en toda España, pero las leyes autonómicas también fijan sus propias multas. Qué cuadro se aplica a un hecho concreto lo decide la comunidad o el ayuntamiento que sanciona. Estos son los tramos de cada ley autonómica:",
+    "pesetas": "La ley conserva las cuantías en pesetas.",
+    "sinCuadro": "La Rioja, Ceuta y Melilla no tienen cuadro propio en una ley: rige el de la Ley 7/2023."
+  },
+  "queHacerSi": {
+    "metaTitulo": "Qué hacer si pierdes a tu animal, encuentras uno o hay una mordedura",
+    "metaDescripcion": "Pasos prácticos, con la norma detrás, para cuando pierdes a tu animal, encuentras uno abandonado, hay una mordedura, ves un caso de maltrato o tu animal muere.",
+    "titulo": "Qué hacer si…",
+    "entradilla": "Pasos prácticos para las situaciones más habituales, con la norma que hay detrás de cada uno.",
+    "indice": "Situaciones",
+    "casos": {
+      "perdido": {
+        "titulo": "Has perdido a tu animal",
+        "pasos": [
+          "Comunícalo a la autoridad competente en un máximo de 48 horas desde que ocurrió.",
+          "Avisa a tu ayuntamiento: le corresponde recoger a los animales extraviados y abandonados.",
+          "Si está identificado con microchip, comprueba que tus datos de contacto en el registro están al día.",
+          "Si es un perro potencialmente peligroso, comunícalo también al registro municipal en el mismo plazo."
+        ]
+      },
+      "encontrado": {
+        "titulo": "Encuentras un animal perdido o abandonado",
+        "pasos": [
+          "Avisa al ayuntamiento o a la policía local: la recogida de animales extraviados y abandonados corresponde a los ayuntamientos.",
+          "Una clínica veterinaria puede leer su microchip para localizar a su responsable.",
+          "Si está herido o en peligro inmediato, llama al 112."
+        ]
+      },
+      "mordedura": {
+        "titulo": "Tu perro muerde a alguien o causa daños",
+        "pasos": [
+          "Atiende primero a la persona herida y, si hace falta, llama al 112.",
+          "Intercambia tus datos y los de tu seguro: como responsable del animal, respondes de los daños que cause.",
+          "Ten a mano la documentación de identificación de tu perro: pueden pedírtela.",
+          "Un perro que haya protagonizado agresiones puede ser considerado potencialmente peligroso por la autoridad competente."
+        ]
+      },
+      "maltrato": {
+        "titulo": "Ves un caso de maltrato o abandono",
+        "pasos": [
+          "Si hay peligro inmediato para el animal o para alguien, llama al 112.",
+          "Puedes denunciarlo ante la policía local, la Guardia Civil (062) o tu ayuntamiento.",
+          "Anota lo que puedas: lugar, fecha y hora, y fotos o vídeos si es seguro hacerlos.",
+          "El abandono es una infracción grave, y las conductas que causan la muerte del animal, si no son delito, muy graves."
+        ]
+      },
+      "muerte": {
+        "titulo": "Tu animal muere",
+        "pasos": [
+          "Si estaba identificado, comunica la retirada del cadáver a la administración competente.",
+          "La baja debe ir acompañada del documento que acredite su incineración o enterramiento por una empresa reconocida oficialmente.",
+          "Tu clínica veterinaria o la empresa que se ocupe del cadáver pueden orientarte en el trámite."
+        ]
+      }
+    },
+    "situaciones": {
+      "titulo": "¿Vas a mudarte, viajar o sumar un animal?",
+      "texto": "Para lo que tienes previsto (comprar o adoptar, mudarte, viajar por España o al extranjero, perros de asistencia), mira las guías por situación.",
+      "enlace": "Ver las situaciones"
+    }
+  },
+  "cambios": {
+    "metaTitulo": "Cambios normativos y verificaciones",
+    "metaDescripcion": "Registro público de cambios en la normativa sobre animales de compañía y de las verificaciones que hacemos contra el texto oficial. También por RSS.",
+    "titulo": "Qué ha cambiado y qué hemos verificado",
+    "entradilla": "Registro público de los cambios en la normativa y de cada verificación contra el texto oficial.",
+    "rss": "Suscribirse por RSS",
+    "cambiosTitulo": "Cambios normativos",
+    "sinCambios": "Todavía no hemos registrado ningún cambio normativo desde que empezamos a verificar. Cuando se publique uno —por ejemplo, el reglamento que fije la cuantía del seguro o el contenido del curso— aparecerá aquí y en el RSS.",
+    "verificaciones": "Registro de verificación",
+    "verificacionesTexto": "Cada norma, con la fecha en que la comprobamos por última vez contra su texto consolidado.",
+    "colNorma": "Norma",
+    "colAmbito": "Ámbito",
+    "colEstado": "Estado",
+    "colVerificada": "Verificada",
+    "tipos": {
+      "nueva_norma": "Nueva norma",
+      "modificacion": "Modificación",
+      "derogacion": "Derogación",
+      "entrada_en_vigor": "Entrada en vigor",
+      "cambio_estado": "Cambio de estado",
+      "correccion": "Corrección"
+    },
+    "rssTitulo": "LeyAnimal · Cambios normativos",
+    "rssDescripcion": "Cambios en la normativa sobre animales de compañía en España."
+  },
+  "faq": {
+    "metaTitulo": "Preguntas frecuentes sobre las obligaciones con tu animal",
+    "metaDescripcion": "Respuestas cortas y con la norma detrás: seguro obligatorio, curso, perros potencialmente peligrosos, gatos, multas, pérdida del animal y más.",
+    "titulo": "Preguntas frecuentes",
+    "entradilla": "Respuestas cortas, con la norma detrás. Si tu duda depende de dónde vives, haz la consulta.",
+    "preguntas": {
+      "seguro": {
+        "p": "¿Es obligatorio el seguro para perros?",
+        "r": "La Ley 7/2023 lo exige para todos los perros, pero la cuantía mínima depende de un reglamento que no se ha publicado, así que hoy no es exigible a nivel estatal. Hay excepciones: en el País Vasco su ley ya lo exige para perros, y si tu perro es potencialmente peligroso necesitas un seguro de al menos 120.000 €, más en algunas comunidades."
+      },
+      "curso": {
+        "p": "¿Tengo que hacer el curso de tenencia responsable?",
+        "r": "La ley lo exige a quien quiera tener un perro: es gratuito y vale para siempre. Pero su contenido depende de un reglamento pendiente y, mientras no se publique, no existe un curso oficial que puedas hacer."
+      },
+      "ppp": {
+        "p": "¿Qué perros son potencialmente peligrosos?",
+        "r": "Los de las razas del anexo I del RD 287/2002 (Pit Bull Terrier, Staffordshire Bull Terrier, American Staffordshire Terrier, Rottweiler, Dogo Argentino, Fila Brasileiro, Tosa Inu y Akita Inu) y sus cruces, los que reúnan las características del anexo II y los que la autoridad declare así por su conducta. Varias comunidades añaden razas: el dóberman, por ejemplo, lo es en Andalucía, Cataluña, Extremadura, Galicia y la Comunitat Valenciana."
+      },
+      "gatos": {
+        "p": "¿Hay que esterilizar a los gatos?",
+        "r": "Sí. La Ley 7/2023 obliga a identificar con microchip y esterilizar a todos los gatos antes de los seis meses, salvo los inscritos como reproductores a nombre de un criador registrado. No depende de ningún reglamento: es exigible."
+      },
+      "pendiente": {
+        "p": "¿Qué significa «pendiente de reglamento»?",
+        "r": "Que la ley enuncia la obligación pero deja un aspecto esencial (la cuantía, el contenido o los casos) a una norma de desarrollo que todavía no existe. Mientras tanto no se puede exigir."
+      },
+      "sinDatos": {
+        "p": "¿Qué significa «sin datos verificados»?",
+        "r": "Que todavía no hemos comprobado lo que dice tu comunidad o tu ayuntamiento sobre esa obligación. No equivale a «no te afecta»: es un «aún no lo sabemos», y preferimos decírtelo."
+      },
+      "multas": {
+        "p": "¿De cuánto son las multas?",
+        "r": "La Ley 7/2023 fija multas de 500 a 10.000 € para las infracciones leves (o un apercibimiento), de 10.001 a 50.000 € para las graves y de 50.001 a 200.000 € para las muy graves. Los perros potencialmente peligrosos tienen su propio cuadro en la Ley 50/1999."
+      },
+      "perdida": {
+        "p": "¿Qué hago si pierdo a mi animal?",
+        "r": "La Ley 7/2023 obliga a comunicar la pérdida o sustracción a la autoridad competente en un máximo de 48 horas. Si es un perro potencialmente peligroso, hay que comunicarlo también al registro municipal en el mismo plazo."
+      },
+      "solo": {
+        "p": "¿Cuánto tiempo puedo dejar solo a mi perro?",
+        "r": "La Ley 7/2023 prohíbe dejar sin supervisión a cualquier animal de compañía más de tres días seguidos, y a los perros, más de veinticuatro horas seguidas."
+      },
+      "terraza": {
+        "p": "¿Puedo tener a mi perro en la terraza?",
+        "r": "No de forma habitual. La Ley 7/2023 prohíbe mantener de forma habitual a perros y gatos en terrazas, balcones, azoteas, trasteros, sótanos, patios y similares o en vehículos."
+      },
+      "excrementos": {
+        "p": "¿Tengo que limpiar los orines de mi perro?",
+        "r": "La Ley 7/2023 obliga a evitar que depositen excrementos y orines en lugares de paso habitual, como fachadas, puertas o entradas a establecimientos, y a retirarlos o limpiarlos con productos biodegradables. Tu ordenanza municipal puede concretar más."
+      },
+      "asesoramiento": {
+        "p": "¿Esto es asesoramiento jurídico?",
+        "r": "No. Es información divulgativa elaborada a partir de fuentes oficiales. Ante un caso concreto, consulta a tu ayuntamiento o a un profesional."
+      },
+      "fuentes": {
+        "p": "¿De dónde sale la información?",
+        "r": "Del texto consolidado del BOE, a través de su API de datos abiertos; del boletín oficial de cada comunidad para los decretos que el BOE no recoge, y del INE para la geografía. Cada afirmación enlaza al artículo exacto y muestra cuándo lo verificamos."
+      }
+    }
+  },
+  "metodologia": {
+    "metaTitulo": "Metodología: cómo verificamos la información",
+    "metaDescripcion": "De dónde sale cada dato de LeyAnimal, cómo lo verificamos contra el texto oficial y cómo resolvemos los conflictos entre normas estatales, autonómicas y municipales.",
+    "titulo": "Solo afirmamos lo que podemos citar",
+    "entradilla": "De dónde sale cada dato, cómo lo comprobamos y cómo decidimos qué te sale cuando dos normas dicen cosas distintas.",
+    "indice": "En esta página",
+    "fuentes": "De dónde sale la información",
+    "fuentesTexto": [
+      "El texto de las normas lo obtenemos del texto consolidado del Boletín Oficial del Estado, a través de su API de datos abiertos. El consolidado incorpora las modificaciones posteriores, así que citamos la versión vigente, no la original.",
+      "Algunas normas no están en ese consolidado: los decretos autonómicos que fijan razas de perros potencialmente peligrosos, seguros o plazos de identificación, y los reglamentos de Ceuta y Melilla. Esas las citamos de su boletín oficial, con enlace y fecha de verificación.",
+      "El estado de cada norma (vigente o derogada) lo comprobamos con sus metadatos oficiales. La geografía —comunidades, provincias y los 8.132 municipios— procede del Instituto Nacional de Estadística."
+    ],
+    "verificacion": "Cómo verificamos",
+    "verificacionLista": [
+      "Una persona elige el artículo que crea cada obligación. Se descartan los artículos de infracciones, que describen el incumplimiento pero no crean el deber, y los deberes que recaen en otras personas, como veterinarios, criadores o vendedores.",
+      "La cita no se transcribe a mano: un programa la copia del texto oficial a partir de una frase de referencia. Si el texto oficial cambia y esa frase ya no aparece, el programa se detiene y la norma se vuelve a revisar.",
+      "Antes de citar un artículo, el programa comprueba que el BOE no anuncia una reforma que su texto consolidado aún no recoge. Si la hay, se detiene, y se cita la nueva redacción desde la norma que reforma.",
+      "Cada regla se limita a las especies que nombra su artículo, y se comprueba automáticamente que ninguna obligación quede sin norma, sin especies o con una cita vacía o truncada.",
+      "Cada cita muestra su fecha de verificación y enlaza al artículo exacto del texto oficial."
+    ],
+    "estados": "Qué significa cada estado",
+    "conflictos": "Cómo resolvemos los conflictos entre normas",
+    "conflictosTexto": "Una misma obligación puede estar regulada a la vez por el Estado, tu comunidad y tu ayuntamiento. El motor de reglas aplica siempre este orden:",
+    "conflictosLista": [
+      "Solo cuentan las reglas vigentes en la fecha de la consulta y cuyas condiciones se cumplen para tu animal.",
+      "Prevalece la norma más cercana a ti: la municipal sobre la provincial, la provincial sobre la autonómica y la autonómica sobre la estatal.",
+      "A igual ámbito, gana la más exigente: obligatorio, después pendiente de reglamento, después recomendado y, por último, no aplica.",
+      "Si aún hay empate, decide la prioridad asignada a la regla y, después, la de vigencia más reciente.",
+      "Si una obligación depende de lo que diga tu comunidad o tu ayuntamiento y no tenemos esa norma verificada, el resultado es «sin datos verificados», nunca «no aplica»."
+    ],
+    "conflictosDuda": "Además, si una regla que habría prevalecido no se puede evaluar porque falta un dato que marcaste como «no lo sé», el resultado es «sin datos verificados»: no damos por buena una respuesta que podría ser falsa. Cada tarjeta del resultado incluye el desplegable «¿Por qué me sale esto?» con este razonamiento aplicado a tu caso.",
+    "versionado": "Cómo guardamos el contenido",
+    "versionadoTexto": [
+      "El contenido legal vive en ficheros de datos dentro del propio proyecto: los generadores lo extraen del BOE y del INE y una comprobación automática revisa cada cita antes de publicar. No hay una base de datos detrás de cada visita.",
+      "Cada cambio queda registrado en el historial del proyecto línea a línea, de modo que cualquier modificación de una cita o de un estado se puede revisar y deshacer."
+    ],
+    "limites": "Lo que todavía no cubrimos",
+    "limitesLista": [
+      "Ordenanzas municipales: solo están los reglamentos de Ceuta y Melilla; las del resto de ayuntamientos, todavía no.",
+      "Vacuna antirrábica: la citamos donde la impone la propia ley autonómica o el reglamento de la ciudad (Andalucía, Canarias, Navarra, Ceuta y Melilla). En el resto la fijan decretos y órdenes que aún no hemos cargado.",
+      "Reglamentos autonómicos: hemos cargado los que fijan razas de perros potencialmente peligrosos, seguros mínimos o plazos de identificación; el resto de su desarrollo, no.",
+      "Especies distintas de perro, gato, hurón y ave: su identificación depende de un reglamento estatal que no se ha publicado, igual que el listado positivo de especies."
+    ],
+    "revision": "Si encuentras un error",
+    "revisionTexto": "Cada cita muestra cuándo se verificó por última vez. Si detectas un error o falta algo, avísanos: lo revisamos contra la fuente oficial antes de cambiar nada.",
+    "revisionCta": "Avisar de un error"
+  },
+  "colabora": {
+    "metaTitulo": "Colabora: avísanos de un error o de una ordenanza",
+    "metaDescripcion": "Avísanos si falta la ordenanza de tu municipio, ves un dato incorrecto o un enlace roto. Lo revisaremos contra la fuente oficial.",
+    "titulo": "Ayúdanos a completar y corregir",
+    "entradilla": "Si falta la ordenanza de tu municipio, ves un dato incorrecto o un enlace roto, cuéntanoslo. Lo revisaremos contra la fuente oficial.",
+    "tipo": "Qué quieres contarnos",
+    "tipos": {
+      "falta_ordenanza": "Falta una ordenanza",
+      "dato_incorrecto": "Un dato es incorrecto",
+      "enlace_roto": "Un enlace no funciona",
+      "sugerencia": "Una sugerencia"
+    },
+    "municipio": "Municipio",
+    "url": "Página o enlace relacionado",
+    "urlAyuda": "Si puedes, incluye el enlace a la norma oficial.",
+    "mensaje": "Mensaje",
+    "opcional": "(opcional)",
+    "enviar": "Enviar aviso",
+    "comoFunciona": "El aviso nos llega por correo a través de Web3Forms. Esta web no guarda nada de lo que escribes; si dejas tu correo, solo lo usamos para responderte.",
+    "asunto": "[LeyAnimal] {tipo}",
+    "error": "Escribe un mensaje antes de continuar.",
+    "otras": "Otras formas de ayudar",
+    "otras1": "Compártelo con quien tenga perro o gato.",
+    "otras2": "Si eres veterinario, trabajas en una protectora o eres jurista, escríbenos: tu revisión vale mucho.",
+    "enviando": "Enviando…",
+    "email": "Tu correo",
+    "emailAyuda": "Solo para responderte si necesitamos algún dato más.",
+    "emailError": "Revisa el correo: no parece una dirección válida.",
+    "enviadoTitulo": "¡Gracias! Hemos recibido tu aviso",
+    "enviadoTexto": "Lo revisaremos contra la fuente oficial y corregiremos la web si hace falta.",
+    "otroAviso": "Enviar otro aviso",
+    "fallo": "No se ha podido enviar. Inténtalo de nuevo en un momento o escríbenos a"
+  },
+  "sobre": {
+    "metaTitulo": "Sobre LeyAnimal",
+    "metaDescripcion": "Por qué existe LeyAnimal, qué encontrarás, qué principios sigue y cómo verificamos cada obligación.",
+    "titulo": "Por qué existe LeyAnimal",
+    "entradilla": "Porque saber qué te exige la ley con tu animal no debería exigir leer cinco normas ni fiarse de una web que vende seguros.",
+    "problema": "El problema",
+    "problemaTexto": "La Ley 7/2023 está en vigor desde el 29 de septiembre de 2023, pero parte de sus obligaciones depende de reglamentos que siguen sin publicarse. A eso se suman la ley de cada comunidad y la ordenanza de cada ayuntamiento. El resultado es que resulta muy difícil saber qué se te exige a ti, hoy, donde vives.",
+    "hacemos": "Lo que hacemos",
+    "hacemosTexto": "Reunimos las normas estatales y autonómicas, las cruzamos con tu municipio y con tu animal, y te decimos qué es exigible hoy, qué está pendiente y qué no sabemos todavía. Siempre con la cita literal del artículo y el enlace a la fuente oficial.",
+    "altFoto": "Un perro descansa en un sofá y mira a la cámara",
+    "encontraras": "Qué encontrarás",
+    "consulta": "Tu consulta",
+    "consultaTexto": "Indica tu animal y tu municipio y obtén la lista de lo que te exige la ley, con el fundamento de cada punto.",
+    "consultaEnlace": "Hacer la consulta",
+    "situaciones": "Guías por situación",
+    "situacionesTexto": "Qué necesita tu animal si vas a adoptar, mudarte, viajar o si es un perro de asistencia.",
+    "situacionesEnlace": "Ver las situaciones",
+    "normativa": "La normativa, tal cual",
+    "normativaTexto": "Cada norma estatal y autonómica con su estado, los artículos que citamos y el enlace al boletín oficial.",
+    "normativaEnlace": "Explorar la normativa",
+    "principios": "Principios",
+    "p1": "Honestidad radical",
+    "p1t": "Nunca decimos que algo es obligatorio si todavía no lo es. Si no lo sabemos, lo decimos.",
+    "p2": "Fuentes oficiales",
+    "p2t": "Cada afirmación lleva su norma, su artículo, su enlace oficial y su fecha de verificación.",
+    "p3": "Sin intereses comerciales",
+    "p3t": "No vendemos seguros, no cobramos comisiones y no hay publicidad ni analítica.",
+    "p4": "Para todas las personas",
+    "p4t": "Sin registro, accesible y en español e inglés. Las citas legales, siempre en su idioma oficial.",
+    "metodo": "Cómo trabajamos",
+    "metodoTexto": "Una obligación solo entra en LeyAnimal cuando la hemos leído en el texto oficial y sabemos desde cuándo es exigible.",
+    "m1": "Partimos del texto oficial",
+    "m1t": "Del texto consolidado del BOE y de los boletines autonómicos, nunca de resúmenes de terceros.",
+    "m2": "Citamos, no parafraseamos",
+    "m2t": "La cita se copia literal del artículo y se comprueba automáticamente que sigue ahí.",
+    "m3": "Distinguimos lo exigible de lo pendiente",
+    "m3t": "Si una obligación depende de un reglamento que no existe, lo decimos así, aunque la ley ya la enuncie.",
+    "m4": "Revisamos y lo contamos",
+    "m4t": "Cada norma lleva su fecha de verificación, y los cambios se publican en su página y por RSS.",
+    "metodoEnlace": "Leer la metodología",
+    "colaboraEnlace": "Avisar de un error"
+  },
+  "contacto": {
+    "metaTitulo": "Contacto",
+    "metaDescripcion": "Cómo contactar con LeyAnimal: el correo del proyecto y a dónde ir para avisar de un error o de una ordenanza que falta.",
+    "titulo": "Hablemos",
+    "entradilla": "Para avisar de un error, proponer una mejora o cualquier otra cosa.",
+    "correoTitulo": "Escríbenos",
+    "correoTexto": "Dudas sobre la web, propuestas, colaboraciones o prensa: todo llega aquí.",
+    "abrir": "Abrir el correo",
+    "copiar": "Copiar dirección",
+    "copiado": "Copiada",
+    "privacidad": "El mensaje sale de tu propio programa de correo: esta web no guarda nada de lo que escribes.",
+    "colaboraTitulo": "¿Un error o una ordenanza que falta?",
+    "colabora": "Usa mejor el formulario de Colabora: prepara el mensaje con lo que necesitamos para comprobarlo contra la fuente oficial.",
+    "colaboraBoton": "Ir a Colabora",
+    "casoTitulo": "¿Es un caso concreto?",
+    "noAsesoramiento": "No podemos resolver consultas jurídicas sobre casos concretos. Para eso, acude a tu ayuntamiento o a un profesional. Lo que sí puedes hacer aquí es ver qué te exige la ley según tu animal y tu municipio.",
+    "consultaBoton": "Hacer la consulta"
+  },
+  "legal": {
+    "indice": "En esta página",
+    "actualizado": "Última actualización: {fecha}"
+  },
+  "apoya": {
+    "metaTitulo": "Apoya LeyAnimal",
+    "metaDescripcion": "LeyAnimal es un proyecto altruista y gratuito. Si te ha sido útil, puedes ayudar a mantenerlo con un donativo por Bizum o PayPal.",
+    "titulo": "Un proyecto hecho por amor a los animales",
+    "entradilla": "LeyAnimal es gratuito, sin publicidad y sin intereses comerciales. Si te ha servido, puedes ayudar a que siga siéndolo.",
+    "historiaTitulo": "Por qué existe esta web",
+    "historia1": "Detrás de LeyAnimal hay una persona que adora a los animales y vive con los suyos. Como cualquiera que tiene mascota, me he visto en esas situaciones: una ley nueva que nadie explica bien, un viaje, una mudanza, la duda de si un seguro o un trámite es obligatorio o no.",
+    "historia2": "La información existe, pero está repartida entre el BOE, diecisiete leyes autonómicas, decretos y ordenanzas, y lo que circula por internet a menudo se contradice. Por eso hice esta web: para que cualquiera sepa qué le exige la ley con su animal, con el artículo exacto delante.",
+    "historia3": "La hago de forma altruista, en mi tiempo libre, para ayudar a las personas y, a través de ellas, a sus animales.",
+    "motivos": {
+      "gratis": {
+        "titulo": "Gratis para todo el mundo",
+        "texto": "Sin registro, sin muros de pago y sin anuncios. Lo seguirá siendo, dones o no."
+      },
+      "independiente": {
+        "titulo": "Sin intereses comerciales",
+        "texto": "No vendo seguros ni cobro comisiones de nadie: lo único que importa es que la información sea correcta."
+      },
+      "tiempo": {
+        "titulo": "Muchas horas detrás",
+        "texto": "Cada obligación se comprueba contra el texto oficial, y cada cambio en las leyes obliga a revisarlo todo otra vez."
+      }
+    },
+    "bizumTexto": "Desde la app de tu banco, entra en Bizum, elige «Enviar dinero» y usa este número:",
+    "bizumNumero": "Número de Bizum: {numero}",
+    "copiar": "Copiar número",
+    "copiado": "Número copiado",
+    "bizumConcepto": "Si quieres, pon «LeyAnimal» en el concepto. Cualquier cantidad ayuda.",
+    "paypalTexto": "Con tarjeta o con tu cuenta de PayPal, desde el enlace o escaneando el código con el móvil.",
+    "paypalBoton": "Donar con PayPal",
+    "abreEnPestana": "(se abre en otra pestaña)",
+    "qrAlt": "Código QR que abre paypal.me/ivangarmar22",
+    "qrTexto": "Apunta la cámara del móvil al código para abrir PayPal.",
+    "aviso": "Los donativos son voluntarios y los recibe una persona, no una entidad sin ánimo de lucro, así que no desgravan. Sirven para mantener la web: el dominio, el alojamiento y el tiempo de revisar las normas. Bizum y PayPal tratan tus datos según sus propias condiciones; yo solo veo lo que muestran al recibir el pago, normalmente tu nombre y el concepto.",
+    "otrasTitulo": "Otras formas de ayudar",
+    "compartirTitulo": "Compártela",
+    "compartirTexto": "Si conoces a alguien con perro, gato o cualquier otro animal, enséñale la web. Que llegue a más gente es la mejor ayuda.",
+    "avisarTitulo": "Avisa de un error",
+    "avisarTexto": "Si ves un dato mal, una ley que ha cambiado o una ordenanza que falta, cuéntalo: lo compruebo contra la fuente oficial.",
+    "avisarBoton": "Ir a Colabora",
+    "gracias": "Gracias por pasarte, por usarla y por cuidar de los tuyos."
+  }
+}

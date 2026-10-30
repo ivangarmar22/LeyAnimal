@@ -1,0 +1,228 @@
+---
+import { ArrowRight } from 'lucide-preact';
+import FuentePlegable from '@/componentes/legal/FuentePlegable.astro';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import PanelCta from '@/componentes/pagina/PanelCta.astro';
+import { textosPara, traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import Verificador, {
+  type ComunidadVerificador,
+  type RazaVerificador,
+} from '@/islas/Verificador';
+import Base from '@/layouts/Base.astro';
+import {
+  bolsaDinero,
+  calendario,
+  carne,
+  documento,
+  escudo,
+  etiqueta,
+  perro,
+  perroGuia,
+  sirena,
+} from '@/lib/contenido/ilustraciones';
+import {
+  articulo,
+  comunidades,
+  esPpp,
+  norma,
+  pppDeComunidad,
+  raza,
+  razas,
+  SEGURO_PPP_ESTATAL,
+} from '@/lib/datos';
+import { nombreNorma } from '@/lib/datos/textos';
+import { formatearEuros } from '@/lib/fechas';
+import { CitaLegal } from '@/ui/CitaLegal';
+import { Ilustracion } from '@/ui/Ilustracion';
+
+const tg = traductor();
+const t = tg.en('ppp');
+const tcta = tg.en('inicio.cta');
+
+const RD = 'rd-287-2002-animales-potencialmente-peligrosos';
+const L50 = 'ley-50-1999-animales-potencialmente-peligrosos';
+const IMPLICA = [
+  { clave: 'licencia', Icono: carne, ids: [`${RD}#art. 3.1`] },
+  { clave: 'seguro', Icono: escudo, ids: [`${RD}#art. 3.1.e`] },
+  { clave: 'validez', Icono: calendario, ids: [`${RD}#art. 3.3`] },
+  {
+    clave: 'bozal',
+    Icono: perro,
+    ids: [`${RD}#art. 8.2`, `${L50}#disp. adic. 1.ª`],
+  },
+  { clave: 'correa', Icono: perroGuia, ids: [`${RD}#art. 8.3`] },
+  { clave: 'documentos', Icono: documento, ids: [`${RD}#art. 8.1`] },
+  { clave: 'microchip', Icono: etiqueta, ids: [`${RD}#art. 9`] },
+  { clave: 'perdida', Icono: sirena, ids: [`${RD}#art. 8.6`] },
+  {
+    clave: 'sanciones',
+    Icono: bolsaDinero,
+    ids: [`${L50}#art. 13.1.b`, `${L50}#art. 13.2.d`],
+  },
+];
+
+const lista = comunidades();
+const catalogo: RazaVerificador[] = razas('perro')
+  .filter((r) => r.esPppEstatal !== null)
+  .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'))
+  .map((r) => ({
+    slug: r.slug,
+    nombre: r.nombre,
+    estatal: r.esPppEstatal === true,
+    porComunidad: Object.fromEntries(
+      lista.map((c) => [c.codigoIne, esPpp(r.slug, c.codigoIne)]),
+    ),
+  }));
+
+// Lo que cambia por comunidad: razas añadidas y seguro mayor que el estatal.
+const enumerar = new Intl.ListFormat('es', { type: 'conjunction' });
+const porComunidad = lista.map((c) => {
+  const ppp = pppDeComunidad(c.codigoIne);
+  const nombres = ppp?.razas?.anadidas.map((s) => raza(s)?.nombre ?? s) ?? [];
+  const seguro =
+    ppp?.seguro && ppp.seguro.importe > SEGURO_PPP_ESTATAL ? ppp.seguro : null;
+  return {
+    c,
+    razas: nombres.length ? enumerar.format(nombres) : null,
+    norma: ppp?.razas ? nombreNorma(ppp.razas.fuente.norma) : null,
+    seguro: seguro ? formatearEuros(seguro.importe) : null,
+    soloRazas: Boolean(seguro?.soloRazas),
+    fuentes: [
+      ...(ppp?.razas ? [ppp.razas.fuente] : []),
+      ...(seguro ? [seguro.fuente] : []),
+    ],
+  };
+});
+const verificadorComunidades: ComunidadVerificador[] = porComunidad.map(
+  ({ c, razas: r, norma: n, seguro }) => ({
+    codigo: c.codigoIne,
+    nombre: c.nombre,
+    razas: r,
+    norma: n,
+    seguro,
+  }),
+);
+const conCambios = porComunidad.filter((x) => x.razas || x.seguro);
+
+const rd = norma(RD);
+const anexo = articulo(`${RD}#anexo I`);
+const conducta = articulo(`${RD}#art. 2.2`);
+---
+
+<Base
+  ruta="/perros-potencialmente-peligrosos"
+  titulo={t('metaTitulo')}
+  descripcion={t('metaDescripcion')}
+>
+  <CabeceraPagina titulo={t('titulo')} entradilla={t('entradilla')} solape />
+
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <div class="rounded-[28px] border border-borde bg-superficie p-5 shadow-alta sm:p-8 lg:p-10">
+      <Verificador
+        client:visible
+        textos={textosPara(['ppp'])}
+        razas={catalogo}
+        comunidades={verificadorComunidades}
+      />
+    </div>
+
+    <section class="mt-20" aria-labelledby="implica">
+      <h2 id="implica" class="titulo-2 max-w-[24ch]">
+        {t('implica')}
+      </h2>
+      <ul
+        class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3"
+        data-escalonado
+      >
+        {IMPLICA.map(({ clave, Icono, ids }) => (
+          <li class="tarjeta gap-3">
+            <span class="caja-icono">
+              <Ilustracion icono={Icono} />
+            </span>
+            <h3 class="font-display text-lg font-semibold">{t(clave)}</h3>
+            <p class="text-[0.9375rem]">{t(`${clave}Texto`)}</p>
+            <div class="mt-auto border-t border-borde pt-2">
+              <FuentePlegable ids={ids} />
+            </div>
+          </li>
+        ))}
+      </ul>
+      <a href={ruta('/multas')} class="enlace-flecha mt-8">
+        {t('multas')}
+        <ArrowRight aria-hidden="true" />
+      </a>
+    </section>
+
+    <section class="mt-20" aria-labelledby="por-comunidad">
+      <h2 id="por-comunidad" class="titulo-2 max-w-[24ch]">
+        {t('porComunidad')}
+      </h2>
+      <p class="entradilla mt-3 max-w-[65ch]">{t('porComunidadTexto')}</p>
+      <div class="mt-8 rounded-[28px] border border-borde bg-superficie p-3 shadow-media sm:p-6">
+        <table class="tabla max-lg:apilada">
+          <thead>
+            <tr>
+              <th scope="col">{t('colComunidad')}</th>
+              <th scope="col">{t('colRazas')}</th>
+              <th scope="col">{t('colSeguro')}</th>
+              <th scope="col">{t('colFuente')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {conCambios.map((x) => (
+              <tr>
+                <th scope="row" data-etiqueta={t('colComunidad')}>
+                  {x.c.nombre}
+                </th>
+                <td data-etiqueta={t('colRazas')}>{x.razas ?? t('ninguna')}</td>
+                <td data-etiqueta={t('colSeguro')}>
+                  {x.seguro ? (
+                    <span class="cifras font-semibold">{x.seguro}</span>
+                  ) : (
+                    t('estatalSeguro')
+                  )}
+                  {x.soloRazas ? (
+                    <span class="block text-sm text-texto-3">
+                      {tg('seguros.pppSoloRazas')}
+                    </span>
+                  ) : null}
+                </td>
+                <td data-etiqueta={t('colFuente')}>
+                  <FuentePlegable fuentes={x.fuentes} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-sm text-texto-3">{t('resto')}</p>
+    </section>
+
+    {rd && anexo ? (
+      <section class="mt-20 grid gap-10 lg:grid-cols-2" aria-labelledby="razas">
+        <div class="grid content-start gap-4">
+          <h2 id="razas" class="titulo-3">
+            {t('razas')}
+          </h2>
+          <CitaLegal norma={rd} articulo={anexo} t={tg} />
+          <p class="text-sm text-texto-3">{t('errata')}</p>
+        </div>
+        {conducta ? (
+          <div class="grid content-start gap-4">
+            <h2 class="titulo-3">{t('conducta')}</h2>
+            <CitaLegal norma={rd} articulo={conducta} t={tg} />
+          </div>
+        ) : null}
+      </section>
+    ) : null}
+
+    <p class="mt-12 text-sm font-medium text-texto-2">{tg('comun.descargo')}</p>
+  </div>
+
+  <PanelCta
+    titulo={tcta('titulo')}
+    texto={tcta('texto')}
+    boton={tcta('boton')}
+  />
+</Base>

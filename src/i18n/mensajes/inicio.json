@@ -1,0 +1,96 @@
+{
+  "inicio": {
+    "hero": {
+      "titulo1": "Lo que la ley te exige con tu animal,",
+      "titulo2": "en tu municipio y al día",
+      "entradilla": "Seguro, microchip, curso, licencia de perro peligroso, censo… Te decimos qué es exigible de verdad en tu municipio y qué no, con el artículo y el enlace oficial detrás de cada respuesta.",
+      "selectorTitulo": "Empieza tu consulta",
+      "especie": "Tu animal",
+      "municipio": "Tu municipio",
+      "marcador": "Escribe tu municipio",
+      "boton": "Ver mis obligaciones",
+      "otraEspecie": "Otra especie",
+      "metodo": "Cómo lo verificamos"
+    },
+    "maqueta": {
+      "etiqueta": "Ejemplo real de resultado",
+      "perfil": "Perro · {raza} · 3 años",
+      "lugar": "{municipio} · {comunidad}",
+      "flotanteCobertura": "Cobertura mínima del seguro",
+      "flotanteVerificado": "Citas verificadas",
+      "flotanteVerificadoTexto": "el {fecha}"
+    },
+    "cifras": {
+      "comunidades": "comunidades y ciudades autónomas",
+      "municipios": "municipios con su ficha",
+      "normas": "normas cargadas y verificadas",
+      "articulos": "artículos citados literalmente"
+    },
+    "contraste": {
+      "titulo": "Lo que se suele leer, frente a lo que dice la norma",
+      "texto": "La Ley 7/2023 está en vigor, pero parte de ella depende de reglamentos que no se han publicado, y cada comunidad tiene su propia ley. Por eso circula tanta información contradictoria. Cada respuesta, con su artículo.",
+      "antes": "Se suele leer",
+      "despues": "Lo que dice la norma",
+      "p1a": "Desde 2023 el seguro es obligatorio para todos los perros.",
+      "p1b": "La Ley 7/2023 lo exige, pero deja la cuantía a un reglamento sin publicar: a nivel estatal todavía no es exigible.",
+      "p2a": "Ya tienes que hacer el curso para tener perro.",
+      "p2b": "El curso es obligatorio sobre el papel, pero su contenido depende de un reglamento que no existe: aún no se puede hacer.",
+      "p3a": "La nueva ley acabó con la normativa de perros peligrosos.",
+      "p3b": "La Ley 50/1999 y el RD 287/2002 siguen en vigor: licencia municipal y seguro de al menos 120.000 €, más en algunas comunidades.",
+      "p5a": "Solo los perros tienen que llevar microchip.",
+      "p5b": "La Ley 7/2023 exige microchip también a gatos y hurones, y anilla a las aves. Los gatos, además, tienen que estar esterilizados antes de los seis meses, salvo los reproductores de un criador registrado.",
+      "p4a": "En toda España se exige lo mismo.",
+      "p4b": "Cada comunidad tiene su ley: en el País Vasco el seguro para perros ya es obligatorio, y en Cataluña, Galicia o la Comunitat Valenciana el dóberman es perro potencialmente peligroso.",
+      "depende": "Depende de tu comunidad",
+      "enlace": "Qué exige cada comunidad"
+    },
+    "guias": {
+      "titulo": "Guías por tema",
+      "texto": "Cada obligación explicada: qué es exigible hoy y cómo cambia de una comunidad a otra.",
+      "leer": "Leer la guía",
+      "herramientas": "Herramientas",
+      "herramientasTexto": "Para comprobarlo por tu cuenta.",
+      "ppp": "Verificador de perros potencialmente peligrosos",
+      "multas": "Multas y sanciones",
+      "queHacer": "Qué hacer si…"
+    },
+    "confianza": {
+      "titulo": "Honestidad antes que respuestas cómodas",
+      "texto": "Nunca decimos que algo es obligatorio si todavía no lo es, y distinguimos siempre entre lo que dice la ley y lo que se puede exigir hoy.",
+      "f1": "Citas literales",
+      "f1t": "El texto de la norma tal cual, obtenido del BOE, con enlace al artículo exacto.",
+      "f2": "Fecha de verificación",
+      "f2t": "Cada cita dice cuándo la comprobamos por última vez.",
+      "f3": "Si no lo sabemos, lo decimos",
+      "f3t": "«Sin datos verificados» no es un «no te afecta». Es un «todavía no lo sabemos».",
+      "f4": "Sin intereses comerciales",
+      "f4t": "No vendemos seguros ni cobramos comisiones. No hay publicidad ni analítica.",
+      "resumen": "{citas} artículos citados literalmente · última verificación: {fecha}",
+      "metodo": "Lee nuestra metodología"
+    },
+    "comunidades": {
+      "titulo": "Tu comunidad cuenta",
+      "texto": "Identificación, censo y seguro dependen en gran parte de la ley de cada comunidad. Así está cada una, con su ley revisada artículo a artículo.",
+      "reglas": "{n, plural, =0 {Sin reglas verificadas aún} one {# obligación verificada} other {# obligaciones verificadas}}",
+      "sinLey": "Sin ley autonómica vigente",
+      "ordenanzas": "Regula con reglamento propio",
+      "mapa": "Ver el mapa",
+      "remite": "Remite a la ley estatal"
+    },
+    "cambios": {
+      "titulo": "Últimas verificaciones",
+      "verificada": "Verificada el {fecha}",
+      "todos": "Ver cambios y verificaciones"
+    },
+    "faq": {
+      "titulo": "Las dudas más habituales",
+      "todas": "Ver todas las preguntas"
+    },
+    "cta": {
+      "titulo": "Sal de dudas en dos minutos",
+      "texto": "Cuatro pasos, sin registro y con la norma detrás de cada respuesta.",
+      "boton": "Consultar mis obligaciones",
+      "secundario": "Explorar la normativa"
+    }
+  }
+}

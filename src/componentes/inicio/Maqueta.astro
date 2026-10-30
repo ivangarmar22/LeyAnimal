@@ -1,0 +1,187 @@
+---
+/**
+ * Maqueta del hero: un resultado REAL, calculado con el motor de reglas al
+ * generar la pagina. Si cambia el contenido legal, cambia la maqueta; nunca
+ * muestra una obligacion inventada.
+ */
+import type { EstadoRequisito } from '@/lib/reglas';
+import {
+  BadgeCheck,
+  Clock,
+  HelpCircle,
+  Lock,
+  ShieldAlert,
+  ShieldCheck,
+  type LucideIcon,
+} from 'lucide-preact';
+import { traductor } from '@/i18n/catalogos';
+import {
+  comunidad,
+  esPpp,
+  municipio,
+  raza,
+  ultimaVerificacion,
+} from '@/lib/datos';
+import { evaluar } from '@/lib/datos/evaluacion';
+import { nombreNorma, textosRequisito } from '@/lib/datos/textos';
+import { ORDEN_ESTADOS } from '@/lib/dominio/estados';
+import { formatearFecha, formatearNumero } from '@/lib/fechas';
+import { DOMINIO } from '@/lib/sitio';
+
+const tg = traductor();
+const t = tg.en('inicio.maqueta');
+
+/** Icono de cada estado en la ventana, con los colores de estado del sitio. */
+const CHIP: Partial<
+  Record<EstadoRequisito, { clase: string; Icono: LucideIcon }>
+> = {
+  obligatorio: {
+    clase: 'bg-obligatorio-fondo text-obligatorio-texto',
+    Icono: ShieldAlert,
+  },
+  obligatorio_pendiente_reglamento: {
+    clase: 'bg-pendiente-fondo text-pendiente-texto',
+    Icono: Clock,
+  },
+  sin_datos: {
+    clase: 'bg-sindatos-fondo text-sindatos-texto',
+    Icono: HelpCircle,
+  },
+};
+
+const m = municipio('29067'); // Malaga
+const r = raza('rottweiler');
+const c = m ? comunidad(m.comunidad) : undefined;
+
+const obligaciones =
+  m && r
+    ? evaluar({
+        especie: 'perro',
+        raza: r.slug,
+        es_ppp: esPpp(r.slug, m.comunidad),
+        edad_meses: 36,
+        comunidad: m.comunidad,
+        provincia: m.provincia,
+        municipio: m.codigoIne,
+      })
+        .filter((o) => o.resultado.estado !== 'no_aplica')
+        .sort(
+          (a, b) =>
+            ORDEN_ESTADOS.indexOf(a.resultado.estado) -
+            ORDEN_ESTADOS.indexOf(b.resultado.estado),
+        )
+    : [];
+
+const licencia = obligaciones.find((o) => o.requisito.clave === 'licencia_ppp');
+const cobertura = licencia?.resultado.parametros.cobertura_minima_eur;
+const fuenteCobertura = licencia?.fuentes.find(
+  (f) => f.articulo.referencia === 'art. 3.1.e',
+);
+const verificada = ultimaVerificacion();
+---
+
+{m && r ? (
+  <div class="maqueta" data-inclina role="img" aria-label={t('etiqueta')}>
+    <div class="maqueta__ventana" aria-hidden="true">
+      <div class="maqueta__barra">
+        <div class="maqueta__puntos">
+          <i />
+          <i />
+          <i />
+        </div>
+        <div class="maqueta__url">
+          <Lock class="size-3" />
+          <span class="truncate">{DOMINIO}/consulta</span>
+        </div>
+      </div>
+      <div class="p-5 sm:p-6">
+        <p class="text-[12px] font-medium text-texto-3">
+          {t('lugar', { municipio: m.nombre, comunidad: c?.nombre ?? '' })}
+        </p>
+        <p class="mt-1.5 font-display text-lg font-semibold text-texto">
+          {t('perfil', { raza: r.nombre })}
+        </p>
+        <ul class="mt-5 grid gap-2">
+          {obligaciones.slice(0, 5).map((o) => {
+            const chip = CHIP[o.resultado.estado];
+            const fuente = o.fuentes[0];
+            return (
+              <li class="flex items-start gap-3 rounded-2xl border border-borde bg-superficie-2 px-3.5 py-3">
+                {chip ? (
+                  <span
+                    class={`mt-0.5 grid size-8 shrink-0 place-items-center rounded-xl ${chip.clase}`}
+                  >
+                    <chip.Icono class="size-3.5" />
+                  </span>
+                ) : null}
+                <span class="min-w-0 flex-1">
+                  <span class="block truncate text-[13.5px] font-medium text-texto">
+                    {textosRequisito(o.requisito).titulo}
+                  </span>
+                  <span class="mt-0.5 block truncate text-[11.5px] text-texto-3">
+                    {tg(`estados.${o.resultado.estado}`)}
+                    {fuente
+                      ? ` · ${nombreNorma(fuente.norma)}, ${fuente.articulo.referencia}`
+                      : ''}
+                  </span>
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+
+    {typeof cobertura === 'number' && fuenteCobertura ? (
+      <div
+        class="maqueta__flotante -bottom-7 -left-6 hidden sm:block"
+        style="--profundidad: 34px"
+        aria-hidden="true"
+      >
+        <div class="tarjeta-flotante">
+          <span class="tarjeta-flotante__icono tarjeta-flotante__icono--calido">
+            <ShieldCheck />
+          </span>
+          <span>
+            <small>{t('flotanteCobertura')}</small>
+            <span class="cifras font-semibold">
+              {formatearNumero(cobertura, {
+                style: 'currency',
+                currency: 'EUR',
+                maximumFractionDigits: 0,
+              })}
+            </span>
+            <small>
+              {nombreNorma(fuenteCobertura.norma)},{' '}
+              {fuenteCobertura.articulo.referencia}
+            </small>
+          </span>
+        </div>
+      </div>
+    ) : null}
+
+    {verificada ? (
+      <div
+        class="maqueta__flotante -top-6 -right-4 hidden sm:block"
+        style="--profundidad: -26px; animation-delay: -3s"
+        aria-hidden="true"
+      >
+        <div class="tarjeta-flotante" style="animation-delay: -3.5s">
+          <span class="tarjeta-flotante__icono">
+            <BadgeCheck />
+          </span>
+          <span>
+            <small>{t('flotanteVerificado')}</small>
+            {t('flotanteVerificadoTexto', {
+              fecha: formatearFecha(verificada, {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric',
+              }),
+            })}
+          </span>
+        </div>
+      </div>
+    ) : null}
+  </div>
+) : null}

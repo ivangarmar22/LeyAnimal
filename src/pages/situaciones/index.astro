@@ -1,0 +1,53 @@
+---
+import { ArrowRight } from 'lucide-preact';
+import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
+import PanelCta from '@/componentes/pagina/PanelCta.astro';
+import TarjetasSituacion from '@/componentes/situaciones/TarjetasSituacion.astro';
+import { traductor } from '@/i18n/catalogos';
+import { ruta } from '@/lib/rutas';
+import Base from '@/layouts/Base.astro';
+import { ICONOS_SITUACION } from '@/lib/contenido/iconos';
+import { Ilustracion } from '@/ui/Ilustracion';
+
+const tg = traductor();
+const t = tg.en('situaciones');
+const Incidencia = ICONOS_SITUACION.incidencia;
+---
+
+<Base
+  ruta="/situaciones"
+  titulo={t('metaTitulo')}
+  descripcion={t('metaDescripcion')}
+>
+  <CabeceraPagina titulo={t('titulo')} entradilla={t('entradilla')} solape />
+  <div class="contenedor solape pb-[var(--seccion)]">
+    <TarjetasSituacion />
+
+    <a
+      href={ruta('/que-hacer-si')}
+      class="tarjeta tarjeta--menta foco-luz mt-4 gap-4 sm:flex-row sm:items-center"
+    >
+      {Incidencia ? (
+        <span class="caja-icono shrink-0">
+          <Ilustracion icono={Incidencia} />
+        </span>
+      ) : null}
+      <span class="flex-1">
+        <span class="block font-display text-lg font-semibold text-texto">
+          {t('accesos.incidencia.titulo')}
+        </span>
+        <span class="mt-1 block">{t('accesos.incidencia.texto')}</span>
+      </span>
+      <span class="enlace-flecha shrink-0 text-[0.9375rem]">
+        {tg('navegacion.queHacerSi')}
+        <ArrowRight aria-hidden="true" />
+      </span>
+    </a>
+  </div>
+
+  <PanelCta
+    titulo={tg('inicio.cta.titulo')}
+    texto={tg('inicio.cta.texto')}
+    boton={tg('inicio.cta.boton')}
+  />
+</Base>

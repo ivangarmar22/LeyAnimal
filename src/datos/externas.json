@@ -1,0 +1,440 @@
+{
+ "normas": [
+  {
+   "slug": "decreto-42-2008-perros-peligrosos-andalucia",
+   "ambito": "autonomico",
+   "comunidad": "01",
+   "tipo": "decreto",
+   "numero": "42/2008",
+   "anio": 2008,
+   "titulo": "Decreto 42/2008, de 12 de febrero, por el que se regula la tenencia de animales potencialmente peligrosos en la Comunidad Autónoma de Andalucía.",
+   "tituloCorto": "Decreto 42/2008 de Andalucía",
+   "urlOficial": "https://www.juntadeandalucia.es/boja/2008/47/3",
+   "identificadorBoletin": "BOJA núm. 47, de 7 de marzo de 2008",
+   "fechaPublicacion": "2008-03-07",
+   "fechaEntradaVigor": null,
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "decreto-30-2018-perros-peligrosos-canarias",
+   "ambito": "autonomico",
+   "comunidad": "05",
+   "tipo": "decreto",
+   "numero": "30/2018",
+   "anio": 2018,
+   "titulo": "Decreto 30/2018, de 5 de marzo, por el que se regula el régimen jurídico de la tenencia de animales potencialmente peligrosos en la Comunidad Autónoma de Canarias.",
+   "tituloCorto": "Decreto 30/2018 de Canarias",
+   "urlOficial": "https://www.gobiernodecanarias.org/boc/2018/051/001.html",
+   "identificadorBoletin": "BOC núm. 51, de 13 de marzo de 2018",
+   "fechaPublicacion": "2018-03-13",
+   "fechaEntradaVigor": null,
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "decreto-134-1999-reglamento-animales-castilla-y-leon",
+   "ambito": "autonomico",
+   "comunidad": "07",
+   "tipo": "decreto",
+   "numero": "134/1999",
+   "anio": 1999,
+   "titulo": "Decreto 134/1999, de 24 de junio, por el que se aprueba el Reglamento de la Ley 5/1997, de 24 de abril, de Protección de los Animales de Compañía.",
+   "tituloCorto": "Decreto 134/1999 de Castilla y León",
+   "urlOficial": "https://bocyl.jcyl.es/boletines/1999/06/30/pdf/BOCYL-D-30061999-1.pdf",
+   "identificadorBoletin": "BOCyL núm. 124, de 30 de junio de 1999",
+   "fechaPublicacion": "1999-06-30",
+   "fechaEntradaVigor": null,
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "decreto-145-2000-perros-peligrosos-comunitat-valenciana",
+   "ambito": "autonomico",
+   "comunidad": "10",
+   "tipo": "decreto",
+   "numero": "145/2000",
+   "anio": 2000,
+   "titulo": "Decreto 145/2000, de 26 de septiembre, del Gobierno Valenciano, por el que se regula, en la Comunidad Valenciana, la tenencia de animales potencialmente peligrosos.",
+   "tituloCorto": "Decreto 145/2000 de la Comunitat Valenciana",
+   "urlOficial": "https://dogv.gva.es/auto/dogv/docvpub/rlgv/2000/D_2000_145_ca_D_2015_016.pdf",
+   "identificadorBoletin": "DOGV núm. 3850, de 4 de octubre de 2000",
+   "fechaPublicacion": "2000-10-04",
+   "fechaEntradaVigor": null,
+   "estado": "vigente",
+   "resumen": "Sigue vigente por la disposición transitoria cuarta de la Ley 2/2023 mientras no se desarrolle esa ley. Se cita el texto consolidado de la propia Generalitat, que incluye la reforma del Decreto 16/2015.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "decreto-90-2002-perros-peligrosos-galicia",
+   "ambito": "autonomico",
+   "comunidad": "12",
+   "tipo": "decreto",
+   "numero": "90/2002",
+   "anio": 2002,
+   "titulo": "Decreto 90/2002, de 28 de febrero, por el que se regula la tenencia de animales potencialmente peligrosos en la Comunidad Autónoma de Galicia y se crean los registros gallegos de Identificación de Animales de Compañía y Potencialmente Peligrosos y de Adiestradores Caninos.",
+   "tituloCorto": "Decreto 90/2002 de Galicia",
+   "urlOficial": "https://www.xunta.gal/dog/Publicados/2002/20020402/Anuncio4412_es.html",
+   "identificadorBoletin": "DOG núm. 63, de 2 de abril de 2002",
+   "fechaPublicacion": "2002-04-02",
+   "fechaEntradaVigor": null,
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "decreto-foral-94-2022-reglamento-animales-navarra",
+   "ambito": "autonomico",
+   "comunidad": "15",
+   "tipo": "decreto",
+   "numero": "94/2022",
+   "anio": 2022,
+   "titulo": "Decreto Foral 94/2022, de 26 de octubre, por el que se aprueba el reglamento de desarrollo de la Ley Foral 19/2019, de 4 de abril, de protección de los animales de compañía en Navarra.",
+   "tituloCorto": "Decreto Foral 94/2022 de Navarra",
+   "urlOficial": "https://www.lexnavarra.navarra.es/detalle.asp?r=55382",
+   "identificadorBoletin": "BON núm. 238, de 29 de noviembre de 2022",
+   "fechaPublicacion": "2022-11-29",
+   "fechaEntradaVigor": "2022-11-30",
+   "estado": "vigente",
+   "resumen": null,
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "decreto-44-2020-perros-pais-vasco",
+   "ambito": "autonomico",
+   "comunidad": "16",
+   "tipo": "decreto",
+   "numero": "44/2020",
+   "anio": 2020,
+   "titulo": "Decreto 44/2020, de 24 de marzo, de modificación del Decreto sobre tenencia de animales de la especie canina en la Comunidad Autónoma del País Vasco.",
+   "tituloCorto": "Decreto 44/2020 del País Vasco",
+   "urlOficial": "https://www.euskadi.eus/gobierno-vasco/-//eli/es-pv/d/2020/03/24/44/dof/spa/html/",
+   "identificadorBoletin": "BOPV núm. 64, de 1 de abril de 2020",
+   "fechaPublicacion": "2020-04-01",
+   "fechaEntradaVigor": null,
+   "estado": "vigente",
+   "resumen": "Modifica el Decreto 101/2004, de 1 de junio, sobre tenencia de animales de la especie canina, y da nueva redacción a su anexo I, la relación de razas de perros potencialmente peligrosos.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "reglamento-2-2015-animales-ceuta",
+   "ambito": "municipal",
+   "comunidad": "18",
+   "provincia": "51",
+   "municipio": "51001",
+   "tipo": "ordenanza",
+   "numero": "2/2015",
+   "anio": 2015,
+   "titulo": "Reglamento 2/2015, de 23 de marzo, de tenencia, protección y bienestar de animales de compañía de la Ciudad Autónoma de Ceuta.",
+   "tituloCorto": "Reglamento 2/2015 de Ceuta",
+   "urlOficial": "https://www.ceuta.es/ceuta/component/jdownloads/finish/1513-abril/8299-bocce-5464-28-04-2015?Itemid=0",
+   "identificadorBoletin": "BOCCE núm. 5464, de 28 de abril de 2015",
+   "fechaPublicacion": "2015-04-28",
+   "fechaEntradaVigor": "2015-05-13",
+   "estado": "vigente",
+   "resumen": "Ceuta, sin potestad legislativa, regula los animales de compañía con este reglamento de la Ciudad. El decreto de 24 de septiembre de 2025 que declaró un foco de rabia lo cita como vigente.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "reglamento-sanidad-animal-melilla",
+   "ambito": "municipal",
+   "comunidad": "19",
+   "provincia": "52",
+   "municipio": "52001",
+   "tipo": "ordenanza",
+   "numero": null,
+   "anio": 2022,
+   "titulo": "Reglamento regulador de la Sanidad Animal de la Ciudad Autónoma de Melilla.",
+   "tituloCorto": "Reglamento de Sanidad Animal de Melilla",
+   "urlOficial": "https://bomemelilla.es/bome/BOME-B-2022-6024/articulo/1108",
+   "identificadorBoletin": "BOME núm. 6024, de 9 de diciembre de 2022",
+   "fechaPublicacion": "2022-12-09",
+   "fechaEntradaVigor": null,
+   "estado": "vigente",
+   "resumen": "Melilla, sin potestad legislativa, regula la sanidad y la tenencia de animales con este reglamento de la Ciudad. Se cita el texto íntegro publicado tras la modificación aprobada por la Asamblea el 10 de noviembre de 2022.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "slug": "ley-11-2026-medidas-cataluna",
+   "ambito": "autonomico",
+   "comunidad": "09",
+   "tipo": "ley",
+   "numero": "11/2026",
+   "anio": 2026,
+   "titulo": "Ley 11/2026, de 9 de julio, de medidas fiscales, financieras, administrativas y del sector público.",
+   "tituloCorto": "Ley 11/2026 de Cataluña",
+   "urlOficial": "https://www.boe.es/buscar/doc.php?id=DOGC-f-2026-90190",
+   "identificadorBoletin": "DOGC núm. 9706, de 13 de julio de 2026",
+   "fechaPublicacion": "2026-07-13",
+   "fechaEntradaVigor": "2026-07-14",
+   "estado": "vigente",
+   "resumen": "Ley de acompañamiento de los presupuestos. Su artículo 121 actualiza las multas del texto refundido de la Ley de protección de los animales de Cataluña; el consolidado del BOE todavía no recoge el cambio, así que la cuantía vigente se cita de aquí.",
+   "verificadaEn": "2026-09-29"
+  }
+ ],
+ "articulos": [
+  {
+   "id": "decreto-42-2008-perros-peligrosos-andalucia#Anexo",
+   "norma": "decreto-42-2008-perros-peligrosos-andalucia",
+   "referencia": "Anexo",
+   "epigrafe": "Razas de perros potencialmente peligrosas",
+   "textoLiteral": "RAZAS DE PERROS POTENCIALMENTE PELIGROSAS\n- Pitt Bull Terrier.\n- Staffordshire Bull Terrier.\n- American Staffordshire Terrier.\n- Rottweiler.\n- Dogo Argentino.\n- Fila Brasileiro.\n- Tosa Inu.\n- Akita Inu.\n- Doberman.",
+   "urlAncla": "https://www.juntadeandalucia.es/boja/2008/47/3"
+  },
+  {
+   "id": "decreto-42-2008-perros-peligrosos-andalucia#Artículo 4.2.e",
+   "norma": "decreto-42-2008-perros-peligrosos-andalucia",
+   "referencia": "Artículo 4.2.e",
+   "epigrafe": "Licencia. Curso de adiestramiento básico",
+   "textoLiteral": "e) En el caso de que la licencia sea para la tenencia de perros potencialmente peligrosos, la superación de un curso específico sobre adiestramiento básico de perros potencialmente peligrosos, organizado por un Colegio Oficial de Veterinarios, o por Asociación para la Protección de los Animales o Federación o Asociación de Cría y Adiestramiento de perros, debidamente reconocidas, e impartido por adiestradores acreditados.",
+   "urlAncla": "https://www.juntadeandalucia.es/boja/2008/47/3"
+  },
+  {
+   "id": "decreto-42-2008-perros-peligrosos-andalucia#Artículo 4.2.f",
+   "norma": "decreto-42-2008-perros-peligrosos-andalucia",
+   "referencia": "Artículo 4.2.f",
+   "epigrafe": "Licencia. Seguro de responsabilidad civil",
+   "textoLiteral": "f) Suscripción de un seguro de responsabilidad civil por daños personales y materiales a terceros, ocasionados por animales potencialmente peligrosos, con una cobertura no inferior a ciento setenta y cinco mil euros (175.000 €) por siniestro.",
+   "urlAncla": "https://www.juntadeandalucia.es/boja/2008/47/3"
+  },
+  {
+   "id": "decreto-30-2018-perros-peligrosos-canarias#Artículo 8.5",
+   "norma": "decreto-30-2018-perros-peligrosos-canarias",
+   "referencia": "Artículo 8.5",
+   "epigrafe": "Licencia. Seguro de responsabilidad civil",
+   "textoLiteral": "5. Las personas solicitantes de la licencia para la tenencia de animales potencialmente peligrosos deberán acreditar ante el Ayuntamiento competente para su emisión que se ha suscrito un seguro de responsabilidad civil por los daños personales y materiales que la tenencia de estos animales pudieran ocasionar a terceros, con una cobertura no inferior a doscientos mil (200.000) euros por siniestro, y que será renovado periódicamente.",
+   "urlAncla": "https://www.gobiernodecanarias.org/boc/2018/051/001.html"
+  },
+  {
+   "id": "decreto-134-1999-reglamento-animales-castilla-y-leon#Anexo",
+   "norma": "decreto-134-1999-reglamento-animales-castilla-y-leon",
+   "referencia": "Anexo",
+   "epigrafe": "Relación de razas caninas potencialmente agresivas",
+   "textoLiteral": "RELACIÓN DE RAZAS CANINAS POTENCIALMENTE AGRESIVAS\nAmericam Staffordshire Terrier\nPit Bull Terrier\nDogo Argentino\nDogo del Tibet\nFila Brasileiro\nRottweiler\nStaffordshire Bull Terrier\nTosa Inu",
+   "urlAncla": "https://bocyl.jcyl.es/boletines/1999/06/30/pdf/BOCYL-D-30061999-1.pdf"
+  },
+  {
+   "id": "decreto-134-1999-reglamento-animales-castilla-y-leon#Artículo 23.3",
+   "norma": "decreto-134-1999-reglamento-animales-castilla-y-leon",
+   "referencia": "Artículo 23.3",
+   "epigrafe": "Autorización municipal y seguro para las razas del anexo",
+   "textoLiteral": "3.– Los futuros propietarios de las razas caninas que se relacionan en el Anexo, o de sus cruces de primera generación, deberán obtener, previamente a su adquisición, una autorización municipal específica.\nPara obtener dicha autorización se precisarán los siguientes requisitos:\n• Ser mayor de edad.\n• Justificar la necesidad de la tenencia de un perro de esas características.\n• Suscripción previa de un seguro de responsabilidad civil que cubra las indemnizaciones a terceros de hasta treinta millones de pesetas.",
+   "urlAncla": "https://bocyl.jcyl.es/boletines/1999/06/30/pdf/BOCYL-D-30061999-1.pdf"
+  },
+  {
+   "id": "decreto-145-2000-perros-peligrosos-comunitat-valenciana#Artículo 3",
+   "norma": "decreto-145-2000-perros-peligrosos-comunitat-valenciana",
+   "referencia": "Artículo 3",
+   "epigrafe": "Licencia y seguro de responsabilidad civil",
+   "textoLiteral": "Los dueños de los animales potencialmente peligrosos recogidos en los anexos deberán suscribir un seguro de responsabilidad civil con una cobertura no inferior a 20.000.000 de pesetas, por su responsabilidad derivada de daños causados por el animal, aunque haya sido cedido a un tercero para su cuidado.",
+   "urlAncla": "https://dogv.gva.es/auto/dogv/docvpub/rlgv/2000/D_2000_145_ca_D_2015_016.pdf"
+  },
+  {
+   "id": "decreto-145-2000-perros-peligrosos-comunitat-valenciana#Anexo II.1",
+   "norma": "decreto-145-2000-perros-peligrosos-comunitat-valenciana",
+   "referencia": "Anexo II.1",
+   "epigrafe": "Razas potencialmente peligrosas",
+   "textoLiteral": "1. Los perros que pertenecen a las siguientes razas y los cruces entre ellos o con otras razas obteniendo una tipología similar.\nRazas potencialmente peligrosas:\nAmerican Staffordshire terrier.\nStarffordshire bull terrier.\nPerro de presa mallorquín.\nFila brasileño.\nPerro de presa canario.\nBullmastiff.\nAmerican pittbull terrier.\nRottweiler.\nBull terrier.\nDogo de Burdeos.\nTosa inu (japonés).\nAkita inu.\nDogo argentino.\nDoberman.\nMastín napolitano.",
+   "urlAncla": "https://dogv.gva.es/auto/dogv/docvpub/rlgv/2000/D_2000_145_ca_D_2015_016.pdf"
+  },
+  {
+   "id": "decreto-90-2002-perros-peligrosos-galicia#Artículo 3.3",
+   "norma": "decreto-90-2002-perros-peligrosos-galicia",
+   "referencia": "Artículo 3.3",
+   "epigrafe": "Seguro de responsabilidad civil",
+   "textoLiteral": "3. Los dueños de los animales potencialmente peligrosos subscribirán un seguro de responsabilidad civil con una cobertura mínima de ciento veinticinco mil euros (125.000 euros), que se renovará anualmente, por su responsabilidad derivada de los daños que el animal pueda causar a terceros, aunque el animal haya sido cedido a otra persona para su cuidado. La constitución del citado seguro será requisito indispensable y previo para la identificación de los animales e inscripción en el registro.",
+   "urlAncla": "https://www.xunta.gal/dog/Publicados/2002/20020402/Anuncio4412_es.html"
+  },
+  {
+   "id": "decreto-foral-94-2022-reglamento-animales-navarra#Artículo 6.1.a",
+   "norma": "decreto-foral-94-2022-reglamento-animales-navarra",
+   "referencia": "Artículo 6.1.a",
+   "epigrafe": "Plazo de identificación de perros, gatos y hurones",
+   "textoLiteral": "1. La identificación de los animales se realizará en los siguientes plazos:\na) Perros, gatos o hurones, antes de los tres meses de edad. No obstante, en gatos y hurones, la identificación podrá posponerse hasta el momento de la primovacunación antirrábica.",
+   "urlAncla": "https://www.lexnavarra.navarra.es/detalle.asp?r=55382"
+  },
+  {
+   "id": "decreto-44-2020-perros-pais-vasco#Artículo decimoctavo",
+   "norma": "decreto-44-2020-perros-pais-vasco",
+   "referencia": "Artículo decimoctavo",
+   "epigrafe": "Anexo I del Decreto 101/2004: razas de perros potencialmente peligrosos",
+   "textoLiteral": "«ANEXO I AL DECRETO 101/2004, DE 1 DE JUNIO\nRELACIÓN DE RAZAS CANINAS, TIPOLOGÍAS RACIALES O CRUCES INTERRACIALES\nPit Bull Terrier.\nStaffordshire Bull Terrier.\nAmerican Staffodshire Terrier.\nRottweiler.\nDogo Argentino.\nFila Brasileiro.\nTosa Inu.\nAkita Inu.\nAmerican Bully.\nAkita Americano.\nAmerican Pitbull Terrier.\nBandogg– American Bandogg Mastiff.»",
+   "urlAncla": "https://www.euskadi.eus/gobierno-vasco/-//eli/es-pv/d/2020/03/24/44/dof/spa/html/"
+  },
+  {
+   "id": "reglamento-2-2015-animales-ceuta#Artículo 16.1",
+   "norma": "reglamento-2-2015-animales-ceuta",
+   "referencia": "Artículo 16.1",
+   "epigrafe": "Identificación e inscripción en el Registro de Animales de Compañía",
+   "textoLiteral": "1. Los perros/as, gatos/as y hurones, así como, cualquier otro animal de compañía que se determine, deberán ser identificados individualmente mediante sistema de identificación electrónica normalizado, denominado transpondedor o microchip, implantado por veterinario/a identificador autorizado, dentro del plazo máximo de tres meses desde su nacimiento o un mes desde su adquisición, excepto aquellos para los que exista alguna imposibilidad de tipo físico o funcional.\nTras la implantación del microchip en el animal, el propietario/a del animal queda obligado a su inscripción en el censo o Registro de Animales de Compañía de la Ciudad de Ceuta (SIACE: Sistema de Identificación de Animales de Compañía de Ceuta), pudiendo realizarse en los centros clínicos veterinarios habilitados para ello, o mediante su comunicación por cualquier medio de los previstos en el art. 38.4 de la Ley 30/92, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del procedimiento administrativo común.",
+   "urlAncla": "https://www.ceuta.es/ceuta/component/jdownloads/finish/1513-abril/8299-bocce-5464-28-04-2015?Itemid=0"
+  },
+  {
+   "id": "reglamento-2-2015-animales-ceuta#Artículo 19",
+   "norma": "reglamento-2-2015-animales-ceuta",
+   "referencia": "Artículo 19",
+   "epigrafe": "Vacunación contra la rabia: especies y periodicidad",
+   "textoLiteral": "Todo perro, gato, hurón, deberá ser vacunado contra la rabia, en un centro clínico veterinario, a partir de los tres meses, al menos una vez al año y siempre con anterioridad a la fecha de vencimiento de la última inoculación antirrábica.",
+   "urlAncla": "https://www.ceuta.es/ceuta/component/jdownloads/finish/1513-abril/8299-bocce-5464-28-04-2015?Itemid=0"
+  },
+  {
+   "id": "reglamento-sanidad-animal-melilla#Artículo 4.1",
+   "norma": "reglamento-sanidad-animal-melilla",
+   "referencia": "Artículo 4.1",
+   "epigrafe": "Identificación electrónica",
+   "textoLiteral": "1.- Los propietarios o poseedores de animales de compañía están obligados a identificarlos por procedimiento electrónico, así como estar en posesión del documento que lo acredite.",
+   "urlAncla": "https://bomemelilla.es/bome/BOME-B-2022-6024/articulo/1108"
+  },
+  {
+   "id": "reglamento-sanidad-animal-melilla#Artículo 41.1",
+   "norma": "reglamento-sanidad-animal-melilla",
+   "referencia": "Artículo 41.1",
+   "epigrafe": "Vacunación antirrábica anual obligatoria",
+   "textoLiteral": "Será obligatoria la vacunación anual de perros, gatos y hurones mayores de tres meses, pudiendo realizarse mediante Convenios de Colaboración para su desarrollo o cualquier otro sistema que garantice su eficacia.",
+   "urlAncla": "https://bomemelilla.es/bome/BOME-B-2022-6024/articulo/1108"
+  },
+  {
+   "id": "reglamento-sanidad-animal-melilla#Artículo 41.2",
+   "norma": "reglamento-sanidad-animal-melilla",
+   "referencia": "Artículo 41.2",
+   "epigrafe": "Identificación con microchip de perros, gatos y hurones",
+   "textoLiteral": "Los perros, gatos y hurones censados en la ciudad deberán estar provistos de un sistema de identificación mediante microchips homologado.",
+   "urlAncla": "https://bomemelilla.es/bome/BOME-B-2022-6024/articulo/1108"
+  },
+  {
+   "id": "ley-11-2026-medidas-cataluna#Artículo 121.1",
+   "norma": "ley-11-2026-medidas-cataluna",
+   "referencia": "Artículo 121.1",
+   "epigrafe": "Nuevas multas de la Ley de protección de los animales (art. 46.1)",
+   "textoLiteral": "1. Se modifica el apartado 1 del artículo 46 del texto refundido de la Ley de protección de los animales, aprobado por el Decreto legislativo 2/2008, de 15 de abril, que queda redactado del siguiente modo:\n«1. Las infracciones leves se sancionan con una multa de 500 euros a 10.000 euros; las graves, con una multa de 10.001 euros a 50.000 euros, y las muy graves, con una multa de 50.001 euros a 200.000 euros.»",
+   "urlAncla": "https://www.boe.es/ccaa/dogc/2026/9706/f00001-00146.pdf"
+  }
+ ],
+ "fuentes": [
+  {
+   "regla": "c8a3c4a9-4659-8a62-debc-67a4fd880c5d",
+   "articulo": "decreto-foral-94-2022-reglamento-animales-navarra#Artículo 6.1.a",
+   "cita": "Perros, gatos o hurones, antes de los tres meses de edad. No obstante, en gatos y hurones, la identificación podrá posponerse hasta el momento de la primovacunación antirrábica."
+  },
+  {
+   "regla": "20000000-0000-4000-8000-000000000001",
+   "articulo": "reglamento-2-2015-animales-ceuta#Artículo 16.1",
+   "cita": "Los perros/as, gatos/as y hurones, así como, cualquier otro animal de compañía que se determine, deberán ser identificados individualmente mediante sistema de identificación electrónica normalizado, denominado transpondedor o microchip, implantado por veterinario/a identificador autorizado, dentro del plazo máximo de tres meses desde su nacimiento o un mes desde su adquisición, excepto aquellos para los que exista alguna imposibilidad de tipo físico o funcional."
+  },
+  {
+   "regla": "20000000-0000-4000-8000-000000000002",
+   "articulo": "reglamento-2-2015-animales-ceuta#Artículo 16.1",
+   "cita": "Tras la implantación del microchip en el animal, el propietario/a del animal queda obligado a su inscripción en el censo o Registro de Animales de Compañía de la Ciudad de Ceuta (SIACE: Sistema de Identificación de Animales de Compañía de Ceuta)"
+  },
+  {
+   "regla": "20000000-0000-4000-8000-000000000003",
+   "articulo": "reglamento-sanidad-animal-melilla#Artículo 41.2",
+   "cita": "Los perros, gatos y hurones censados en la ciudad deberán estar provistos de un sistema de identificación mediante microchips homologado."
+  },
+  {
+   "regla": "20000000-0000-4000-8000-000000000003",
+   "articulo": "reglamento-sanidad-animal-melilla#Artículo 4.1",
+   "cita": "Los propietarios o poseedores de animales de compañía están obligados a identificarlos por procedimiento electrónico, así como estar en posesión del documento que lo acredite."
+  }
+ ],
+ "reglas": [
+  {
+   "id": "20000000-0000-4000-8000-000000000001",
+   "requisito": "identificacion_animales",
+   "ambito": "municipal",
+   "comunidad": "18",
+   "provincia": "51",
+   "municipio": "51001",
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato",
+     "huron"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2015-05-13",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Plazo: tres meses desde el nacimiento o un mes desde la adquisición.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "20000000-0000-4000-8000-000000000002",
+   "requisito": "censo_municipal",
+   "ambito": "municipal",
+   "comunidad": "18",
+   "provincia": "51",
+   "municipio": "51001",
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato",
+     "huron"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": "2015-05-13",
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "Tras ponerle el microchip hay que inscribirlo en el Registro de Animales de Compañía de Ceuta (SIACE), que hace de censo; puede hacerse en una clínica veterinaria habilitada.",
+   "verificadaEn": "2026-09-29"
+  },
+  {
+   "id": "20000000-0000-4000-8000-000000000003",
+   "requisito": "identificacion_animales",
+   "ambito": "municipal",
+   "comunidad": "19",
+   "provincia": "52",
+   "municipio": "52001",
+   "condiciones": {
+    "campo": "especie",
+    "op": "in",
+    "valor": [
+     "perro",
+     "gato",
+     "huron"
+    ]
+   },
+   "estado": "obligatorio",
+   "parametros": {},
+   "vigenteDesde": null,
+   "vigenteHasta": null,
+   "prioridad": 0,
+   "nota": "El reglamento obliga a identificar por procedimiento electrónico a los animales de compañía y, en concreto, con microchip a perros, gatos y hurones.",
+   "verificadaEn": "2026-09-29"
+  }
+ ],
+ "referencias": [
+  {
+   "comunidad": "18",
+   "grupo": "obligacion",
+   "clave": "vacunacion",
+   "articulo": "reglamento-2-2015-animales-ceuta#Artículo 19",
+   "cita": "Todo perro, gato, hurón, deberá ser vacunado contra la rabia, en un centro clínico veterinario, a partir de los tres meses, al menos una vez al año y siempre con anterioridad a la fecha de vencimiento de la última inoculación antirrábica."
+  },
+  {
+   "comunidad": "19",
+   "grupo": "obligacion",
+   "clave": "vacunacion",
+   "articulo": "reglamento-sanidad-animal-melilla#Artículo 41.1",
+   "cita": "Será obligatoria la vacunación anual de perros, gatos y hurones mayores de tres meses, pudiendo realizarse mediante Convenios de Colaboración para su desarrollo o cualquier otro sistema que garantice su eficacia."
+  },
+  {
+   "comunidad": "09",
+   "grupo": "sanciones",
+   "clave": null,
+   "articulo": "ley-11-2026-medidas-cataluna#Artículo 121.1",
+   "cita": "Las infracciones leves se sancionan con una multa de 500 euros a 10.000 euros; las graves, con una multa de 10.001 euros a 50.000 euros, y las muy graves, con una multa de 50.001 euros a 200.000 euros."
+  }
+ ]
+}

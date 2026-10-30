@@ -1,0 +1,313 @@
+{
+  "situaciones": {
+    "metaTitulo": "¿Qué necesita tu animal? Guías por situación",
+    "metaDescripcion": "Qué necesitas si vas a comprar o adoptar un animal, mudarte, viajar por España o al extranjero, o si tu perro es de asistencia o potencialmente peligroso. Con el artículo de cada obligación.",
+    "titulo": "¿Qué vas a hacer?",
+    "entradilla": "Elige tu situación y te decimos qué necesita tu animal: lo que es obligatorio, lo que conviene y lo que depende de dónde vivas o adónde vayas. Cada obligación, con su artículo.",
+    "indice": "Situaciones",
+    "leer": "Ver qué necesitas",
+    "otras": "Otras situaciones",
+    "mostrando": "Se muestran {n} de {total} puntos.",
+    "animal": {
+      "pregunta": "¿Con qué animal?",
+      "ayuda": "Ocultamos lo que no le afecta.",
+      "todos": "Todos",
+      "perro": "Perro",
+      "gato": "Gato",
+      "huron": "Hurón",
+      "ave": "Ave",
+      "otro": "Otro"
+    },
+    "depende": "Depende del lugar",
+    "soloPpp": "Si es potencialmente peligroso",
+    "oficiales": "Información oficial",
+    "oficial": {
+      "ue": "Viajar con mascotas en la UE (Tu Europa)",
+      "mapa": "Viajar con animales de compañía (Ministerio de Agricultura)"
+    },
+    "accesos": {
+      "ppp": {
+        "titulo": "Mi perro es potencialmente peligroso",
+        "texto": "Licencia, seguro, bozal y registro, y un verificador de razas por comunidad."
+      },
+      "incidencia": {
+        "titulo": "Ha pasado algo",
+        "texto": "Se ha perdido, has encontrado uno, ha mordido a alguien o has visto maltrato."
+      }
+    },
+    "portada": {
+      "titulo": "¿Qué necesita tu animal?",
+      "texto": "Comprar o adoptar, mudarte, viajar… Cada situación tiene sus obligaciones. Elige la tuya.",
+      "todas": "Todas las situaciones"
+    },
+    "consulta": {
+      "titulo": "¿Tienes algo previsto?",
+      "texto": "Si vas a mudarte, viajar o sumar otro animal, hay obligaciones propias de cada caso."
+    },
+    "guias": {
+      "comprar-o-adoptar": {
+        "titulo": "Voy a comprar o adoptar un animal",
+        "corto": "Comprar o adoptar",
+        "resumen": "De quién puede venir, qué papeles te tienen que dar y qué trámites te tocan a ti.",
+        "metaTitulo": "Comprar o adoptar un animal: qué exige la ley",
+        "metaDescripcion": "Criador registrado, contrato, identificación, edad mínima, adopción en protectoras y trámites después de la compra, según la Ley 7/2023.",
+        "entradilla": "Antes de que llegue a casa: de quién puede venir, qué documentos te corresponden y qué queda de tu parte.",
+        "puntos": {
+          "identificado": {
+            "titulo": "Tiene que llegar identificado y a nombre de quien te lo da",
+            "texto": "Perros, gatos y hurones se identifican con microchip, y las aves con anilla. No se puede vender, ceder ni dar en adopción un animal sin identificar: tiene que estar inscrito a nombre de quien te lo entrega antes de la operación. Si no lo está, no sigas adelante."
+          },
+          "criador": {
+            "titulo": "Perros, gatos y hurones: solo del criador registrado",
+            "texto": "Solo puede venderlos directamente la persona criadora registrada, sin intermediarios. Las tiendas de animales no pueden venderlos ni exponerlos al público."
+          },
+          "tienda": {
+            "titulo": "Sin identificación individual: solo en tiendas",
+            "texto": "Los animales que no tienen un sistema de identificación individual solo pueden venderse en tiendas de animales de compañía."
+          },
+          "adopcion": {
+            "titulo": "Adopción: en un centro de protección animal o una protectora registrada",
+            "texto": "Solo pueden dar animales en adopción los centros públicos de protección animal y las entidades de protección animal registradas, con contrato de adopción. La adopción nunca es una venta: solo pueden pedirte la compensación de los gastos veterinarios básicos."
+          },
+          "contrato": {
+            "titulo": "Pide el contrato por escrito",
+            "texto": "Toda venta va con contrato escrito de compraventa, y la cesión gratuita, con un contrato de cesión que lo diga. Las cláusulas mínimas del contrato de compraventa se fijarán por reglamento."
+          },
+          "informacion": {
+            "titulo": "Te tienen que informar por escrito",
+            "texto": "Antes de la venta, el vendedor debe darte por escrito el origen del animal (con el nombre y el número de registro del criadero), su raza, sexo, edad y necesidades de cuidado. En la adopción recibes la información disponible y un certificado veterinario con sus tratamientos y cuidados."
+          },
+          "edad": {
+            "titulo": "Edad mínima de entrega",
+            "texto": "Perros y gatos no pueden venderse con menos de dos meses si se venden desde donde nacieron, ni con menos de cuatro si se venden desde otro lugar. Perros, gatos y hurones no pueden cederse con menos de ocho semanas."
+          },
+          "adoptado": {
+            "titulo": "Si lo adoptas: tratado, identificado y esterilizado",
+            "texto": "El animal adoptado debe llegar con los tratamientos preventivos o curativos que le correspondan, identificado y esterilizado, o con un compromiso de esterilización en un plazo si por salud no conviene hacerlo todavía."
+          },
+          "registro": {
+            "titulo": "El cambio de titular, en el registro",
+            "texto": "La venta se comunica al Registro de Animales de Compañía en los tres días hábiles siguientes, y como responsable del animal te toca comunicar los cambios de titularidad. Comprueba que queda inscrito a tu nombre."
+          },
+          "gatos": {
+            "titulo": "Gatos: microchip y esterilización antes de los seis meses",
+            "texto": "Todos los gatos deben llevar microchip y estar esterilizados antes de los seis meses de edad, salvo los inscritos como reproductores a nombre de un criador registrado."
+          },
+          "curso": {
+            "titulo": "Perros: curso de formación",
+            "texto": "La ley exige acreditar un curso de formación a quien vaya a ser titular de un perro. Será gratuito y valdrá para siempre, pero aún no es exigible: falta el reglamento que fije su contenido.",
+            "enlace": "Guía del curso"
+          },
+          "seguro": {
+            "titulo": "Perros: seguro de responsabilidad civil",
+            "texto": "La ley estatal obliga a contratar y mantener un seguro de responsabilidad civil durante toda la vida del perro, pero la cuantía mínima está pendiente de reglamento. En el País Vasco su ley ya lo exige por su cuenta.",
+            "enlace": "Guía del seguro"
+          },
+          "ppp": {
+            "titulo": "Licencia antes de la compra",
+            "texto": "Para vender, comprar o traspasar un perro potencialmente peligroso, el vendedor tiene que tener licencia vigente y tú, obtenerla antes. Después, la transmisión se inscribe en el registro de tu lugar de residencia en los quince días siguientes a obtener la licencia.",
+            "enlace": "Guía de perros potencialmente peligrosos"
+          },
+          "consulta": {
+            "titulo": "Comprueba lo que exigen tu comunidad y tu municipio",
+            "texto": "La identificación, el censo municipal y el seguro también dependen de la ley de tu comunidad. La consulta te dice qué te toca según dónde vivas.",
+            "enlace": "Hacer la consulta"
+          }
+        }
+      },
+      "mudanza": {
+        "titulo": "Me voy a mudar",
+        "corto": "Mudarme",
+        "resumen": "Qué actualizar al cambiar de casa, de municipio o de comunidad.",
+        "metaTitulo": "Mudarse con tu animal: qué tienes que actualizar",
+        "metaDescripcion": "Registro de identificación, censo municipal, cambio de comunidad y perros potencialmente peligrosos: qué hacer al mudarte con tu animal.",
+        "entradilla": "Cambiar de casa no cambia tus obligaciones, pero sí dónde tienen que constar tus datos. Y si cambias de comunidad, también cambia la ley autonómica que se te aplica.",
+        "puntos": {
+          "datos": {
+            "titulo": "Actualiza tu dirección en el registro de identificación",
+            "texto": "La ley obliga a mantener al animal localizado e identificado en todo momento. Al cambiar de domicilio, actualiza los datos del registro en el que está inscrito; pregunta en tu clínica veterinaria o en el registro de tu comunidad cómo hacerlo."
+          },
+          "comunidad": {
+            "titulo": "Si cambias de comunidad, cambia el registro",
+            "texto": "La inscripción se hace en el Registro de Animales de Compañía de cada comunidad autónoma. Si te mudas a otra, pregunta cómo pasar la inscripción al registro de la comunidad de destino y revisa qué exige su ley.",
+            "enlace": "Qué exige cada comunidad"
+          },
+          "censo": {
+            "titulo": "Censo municipal en tu nuevo ayuntamiento",
+            "texto": "En varias comunidades hay que inscribir al animal en el censo del municipio donde vive. Haz la consulta con tu nuevo municipio para saber si te toca.",
+            "enlace": "Hacer la consulta"
+          },
+          "ppp": {
+            "titulo": "Registro municipal y datos de la licencia",
+            "texto": "Si lo trasladas a otra comunidad de forma permanente o por más de tres meses, tienes que inscribirlo en los registros municipales que correspondan. Y cualquier cambio en los datos que figuran en tu licencia se comunica en quince días al ayuntamiento que la expidió.",
+            "enlace": "Guía de perros potencialmente peligrosos"
+          },
+          "escapadas": {
+            "titulo": "Que no se escape el día de la mudanza",
+            "texto": "La ley te obliga a vigilarlo y evitar su huida, y con puertas abiertas y ruido es fácil que un animal se asuste. Déjalo en una habitación cerrada, en su transportín o con alguien de confianza."
+          },
+          "traslado": {
+            "titulo": "El traslado, en condiciones",
+            "texto": "Durante el viaje tiene que ir en un medio adecuado a su especie y tamaño, con ventilación y temperatura correctas, agua y descansos. Si no viaja en el mismo espacio que tú, en un habitáculo adaptado.",
+            "enlace": "Viajar con tu animal"
+          },
+          "perdida": {
+            "titulo": "Si se pierde en la zona nueva",
+            "texto": "Tienes que comunicar la pérdida a la autoridad competente en un máximo de 48 horas. Con el registro al día será más fácil que te lo devuelvan.",
+            "enlace": "Qué hacer si se pierde"
+          }
+        }
+      },
+      "viajar-por-espana": {
+        "titulo": "Voy a viajar con mi animal",
+        "corto": "Viajar por España",
+        "resumen": "Coche, tren, avión y hoteles, y qué pasa si no puede venir contigo.",
+        "metaTitulo": "Viajar con tu animal por España: qué dice la ley",
+        "metaDescripcion": "Transporte en coche, tren, barco y avión, hoteles y restaurantes, playas y cuánto tiempo puede quedarse solo: lo que dice la Ley 7/2023.",
+        "entradilla": "Lo que dice la ley sobre el transporte, el acceso a establecimientos y cuánto tiempo puede quedarse solo si no viaja contigo.",
+        "puntos": {
+          "identificado": {
+            "titulo": "Llévalo identificado",
+            "texto": "Tiene que estar siempre localizado e identificado. Antes de salir, comprueba que el registro tiene tu teléfono actual y lleva su documentación sanitaria."
+          },
+          "coche": {
+            "titulo": "En el coche, bien colocado",
+            "texto": "Tiene que viajar en un habitáculo adaptado, salvo que vaya en el mismo espacio que tú. Y la norma de tráfico obliga a quien conduce a colocarlo de forma que no interfiera en la conducción: transportín, arnés sujeto al cinturón o rejilla separadora."
+          },
+          "aparcado": {
+            "titulo": "Nunca solo en un coche cerrado",
+            "texto": "No puedes dejarlo solo en un vehículo cerrado expuesto a calor u otras condiciones que pongan en peligro su vida. Si tiene que quedarse en el coche aparcado, la ventilación y la temperatura tienen que ser adecuadas."
+          },
+          "condiciones": {
+            "titulo": "Agua, descansos y temperatura",
+            "texto": "Quien transporta un animal tiene que asegurarse de que está en condiciones de viajar, de que el vehículo o el transportín tiene ventilación y temperatura adecuadas y de darle agua, comida y descansos suficientes."
+          },
+          "transporte": {
+            "titulo": "Tren, barco y avión: con las condiciones de cada compañía",
+            "texto": "Las compañías de tren, barco y avión tienen que adoptar medidas para que puedan viajar animales de compañía, pero cada una fija sus condiciones (peso, tamaño, transportín…). En taxi y VTC, la admisión es decisión del conductor. Mira las condiciones antes de comprar el billete."
+          },
+          "alojamiento": {
+            "titulo": "Hoteles, bares y restaurantes: pregunta antes",
+            "texto": "La ley les permite admitir animales, pero no les obliga, y nunca en las zonas donde se preparan o guardan alimentos. Si no los admiten, tienen que indicarlo con un distintivo visible desde fuera."
+          },
+          "playas": {
+            "titulo": "Playas y parques: lo decide cada ayuntamiento",
+            "texto": "Los ayuntamientos deben promover el acceso de animales a playas, parques y otros espacios públicos y habilitar zonas para perros, pero las condiciones concretas están en su ordenanza. Consulta la del municipio al que vas."
+          },
+          "solo": {
+            "titulo": "Si no viene contigo, que alguien lo atienda",
+            "texto": "Ningún animal de compañía puede quedarse sin supervisión más de tres días seguidos, y un perro, no más de 24 horas. Déjalo con alguien de confianza o en una residencia."
+          },
+          "ppp": {
+            "titulo": "Licencia, bozal y correa corta",
+            "texto": "En cualquier lugar público tienes que llevar contigo la licencia y el certificado de inscripción en el registro municipal, y el perro tiene que ir con bozal y con correa o cadena no extensible de menos de dos metros.",
+            "enlace": "Guía de perros potencialmente peligrosos"
+          }
+        }
+      },
+      "viajar-al-extranjero": {
+        "titulo": "Voy a viajar al extranjero",
+        "corto": "Viajar al extranjero",
+        "resumen": "Microchip, vacuna antirrábica, pasaporte europeo y lo que pida el país de destino.",
+        "metaTitulo": "Viajar al extranjero con tu perro, gato o hurón",
+        "metaDescripcion": "Microchip, vacuna de la rabia, pasaporte europeo, tratamiento contra la tenia y viajes fuera de la UE: qué necesita tu animal para salir de España y volver.",
+        "entradilla": "Para salir de España y volver, tu animal tiene que cumplir la normativa europea y la del país de destino. Empieza con tiempo: algunos requisitos tardan semanas.",
+        "puntos": {
+          "requisitos": {
+            "titulo": "Identificación, edad, vacunas y tratamientos al día",
+            "texto": "Los animales que salen de España o entran en ella tienen que cumplir los requisitos de identificación, edad, vacunación y tratamientos veterinarios de la normativa europea y la española, y en particular la vacuna antirrábica. Los de la UE se aplican a viajes sin venta ni cambio de dueño, con un máximo de cinco animales."
+          },
+          "microchip": {
+            "titulo": "Primero, el microchip",
+            "texto": "Perros, gatos y hurones tienen que llevar microchip. Para viajar, la vacuna antirrábica solo vale si se puso con el microchip ya implantado: si aún no lo tiene, empieza por ahí."
+          },
+          "rabia": {
+            "titulo": "Vacuna antirrábica, con 21 días de margen",
+            "texto": "Tiene que estar vacunado contra la rabia por un veterinario autorizado. La primera vacuna se pone con al menos doce semanas de edad, y después hay que esperar al menos 21 días para viajar. Los refuerzos, antes de que caduque la anterior."
+          },
+          "pasaporte": {
+            "titulo": "Pasaporte europeo para animales de compañía",
+            "texto": "Para viajar entre países de la UE, perros, gatos y hurones necesitan el pasaporte europeo, que expide un veterinario autorizado. Recoge el microchip y la vacuna antirrábica y vale mientras esta esté al día."
+          },
+          "tenia": {
+            "titulo": "Perros a Finlandia, Irlanda, Malta, Noruega o Irlanda del Norte",
+            "texto": "Necesitan un tratamiento contra la tenia Echinococcus multilocularis entre 24 y 120 horas antes de llegar, anotado en el pasaporte."
+          },
+          "fueraUe": {
+            "titulo": "Fuera de la UE: lo que pida el destino y la vuelta",
+            "texto": "Cada país fija sus condiciones de entrada: consúltalas con tiempo en su embajada o consulado. Para volver tiene que cumplir los requisitos de entrada en la UE y en España: según el país del que vengas, puede hacer falta un análisis de anticuerpos de la rabia y un certificado zoosanitario."
+          },
+          "otros": {
+            "titulo": "Otros animales: requisitos propios",
+            "texto": "Las normas del pasaporte europeo son para perros, gatos y hurones. Para aves, roedores, reptiles u otros animales los requisitos dependen de la especie y del destino: consúltalos antes de viajar."
+          },
+          "compania": {
+            "titulo": "La compañía de transporte pone sus condiciones",
+            "texto": "Aerolíneas, navieras y trenes admiten animales en las condiciones que fija cada una: peso, transportín, cabina o bodega. Revísalas antes de comprar el billete."
+          },
+          "ppp": {
+            "titulo": "Licencia y restricciones del destino",
+            "texto": "La entrada en España de un perro potencialmente peligroso exige licencia. Y algunos países restringen o prohíben ciertas razas: compruébalo antes de viajar.",
+            "enlace": "Guía de perros potencialmente peligrosos"
+          },
+          "traer": {
+            "titulo": "Si traes un animal de otro país",
+            "texto": "Al entrar tienes que tener la documentación que acredite que cumple los requisitos y su origen, y registrarlo a tu nombre en el Registro de Animales de Compañía en un máximo de 72 horas desde su llegada."
+          }
+        }
+      },
+      "perro-de-asistencia": {
+        "titulo": "Mi perro es de asistencia",
+        "corto": "Perro de asistencia",
+        "resumen": "Dónde puede entrar contigo, cuándo te pueden negar el acceso y qué te toca a ti.",
+        "metaTitulo": "Perros de asistencia: derechos de acceso y obligaciones",
+        "metaDescripcion": "Acceso a playas, hostelería, transporte y trabajo, límites y obligaciones de la persona usuaria según la Ley 7/2023 y el Real Decreto 409/2025.",
+        "entradilla": "El Real Decreto 409/2025 regula en toda España el acceso de los perros de asistencia y las obligaciones de quienes los usan. Tu comunidad reconoce la condición y el reconocimiento vale en todo el país.",
+        "intro": {
+          "titulo": "Qué es un perro de asistencia",
+          "texto": "Un perro que ha superado un proceso de selección y ha terminado su adiestramiento en una entidad especializada y reconocida oficialmente, para dar servicio a personas con discapacidad, incluidos los perros de aviso y los de apoyo a personas con trastorno del espectro autista. Las personas usuarias tienen reconocida una discapacidad del 33 % o más, y cada comunidad puede reconocer otras."
+        },
+        "puntos": {
+          "reconocimiento": {
+            "titulo": "Lo reconoce tu comunidad y vale en toda España",
+            "texto": "Cada comunidad autónoma fija el procedimiento para reconocer a un perro como de asistencia. Ese reconocimiento, y el de la unidad que formáis el perro y tú, vale en todo el país. Al final de esta guía tienes la ley de cada comunidad."
+          },
+          "acceso": {
+            "titulo": "Puede entrar contigo en cualquier espacio",
+            "texto": "Su acceso no es discrecional ni cuenta en los cupos. Incluye playas en cualquier época, piscinas, museos, comercios, supermercados, bares, restaurantes y alojamientos, y no te pueden cobrar nada por ir con él. También en tu puesto de trabajo y en las zonas comunes de tu comunidad de vecinos."
+          },
+          "transporte": {
+            "titulo": "Transporte sin pagar más",
+            "texto": "En el transporte colectivo tienes preferencia en los espacios reservados, el perro no cuenta como plaza ni en el cupo de perros, y no pueden pedirte billete ni pago por él. En avión, avisa antes a la compañía o a la agencia."
+          },
+          "limites": {
+            "titulo": "Solo te pueden negar el acceso en casos tasados",
+            "texto": "Cuando el perro muestre signos evidentes de no estar en condiciones higiénicas y sanitarias adecuadas, ante un riesgo inminente y grave, o en las excepciones del transporte aéreo. Te tienen que decir el motivo, y dártelo por escrito si lo pides. Nunca puede entrar en las zonas de manipulación de alimentos y de acceso exclusivo del personal de los restaurantes, en quirófanos y otras áreas sanitarias restringidas por higiene, en el agua de piscinas y parques acuáticos públicos ni en el interior de las atracciones."
+          },
+          "obligaciones": {
+            "titulo": "Lo que te toca a ti",
+            "texto": "Cuidar su bienestar y su salud, usarlo solo para las funciones para las que fue adiestrado, responder de su comportamiento, registrar la unidad que formáis, llevar su distintivo visible en el arnés o el collar y denunciar su pérdida en 48 horas."
+          },
+          "resto": {
+            "titulo": "Sigue siendo un perro: el resto de obligaciones también cuentan",
+            "texto": "La Ley 7/2023 se le aplica en todo lo que no regule su normativa específica: identificación, cuidados y las demás obligaciones de cualquier perro en tu comunidad.",
+            "enlace": "Hacer la consulta"
+          },
+          "extranjero": {
+            "titulo": "Perros de asistencia de otros países",
+            "texto": "Si un perro de asistencia reconocido en otro país acompaña a una persona que no reside en España, tiene el mismo acceso que los reconocidos aquí."
+          },
+          "denegacion": {
+            "titulo": "Si te niegan el acceso",
+            "texto": "Pide que te indiquen el motivo por escrito. Fuera de los casos previstos, negar el acceso a una persona con su perro de asistencia se considera una vulneración del derecho a la accesibilidad, la igualdad y la no discriminación, y puedes denunciarlo ante la administración competente."
+          }
+        }
+      }
+    },
+    "leyesAsistencia": {
+      "titulo": "La ley de perros de asistencia de cada comunidad",
+      "texto": "El reconocimiento y la acreditación los tramita tu comunidad. Esta es su norma, con enlace al texto oficial.",
+      "sinLey": "Ceuta y Melilla no tienen norma propia: rige el Real Decreto 409/2025."
+    }
+  }
+}
