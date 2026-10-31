@@ -9,6 +9,7 @@ import {
   comunidad,
   municipio,
   municipiosDe,
+  nombreRepetido,
   pppDeComunidad,
   provincia,
   SEGURO_PPP_ESTATAL,
@@ -29,6 +30,14 @@ const t = tg.en('municipio');
 const tr = tg.en('resultado');
 const p = provincia(m.provincia);
 const c = comunidad(m.comunidad);
+// Ningun titulo repetido: si el nombre se repite en otra provincia, lleva la
+// provincia; si es el de su comunidad (Ceuta, Melilla), se aclara que es el
+// municipio.
+const nombreTitulo = nombreRepetido(m.nombre)
+  ? `${m.nombre} (${p?.nombre ?? ''})`
+  : m.nombre === c?.nombre
+    ? `${m.nombre} (municipio)`
+    : m.nombre;
 
 // Seguro minimo de un perro PPP: el estatal o, si su comunidad exige mas a
 // cualquier perro PPP (no solo a las razas de su lista), el de su norma.
@@ -53,14 +62,19 @@ const colabora = `${ruta('/colabora')}?tipo=falta_ordenanza&municipio=${encodeUR
 
 <Base
   ruta={`/municipios/${m.slug}`}
-  titulo={t('metaTitulo', { municipio: m.nombre, anio: anioActual() })}
+  titulo={t('metaTitulo', { municipio: nombreTitulo, anio: anioActual() })}
+  tituloCompleto
   descripcion={t('metaDescripcion', {
     municipio: m.nombre,
     provincia: p?.nombre ?? '',
   })}
 >
   <CabeceraPagina
-    titulo={t('titulo', { municipio: m.nombre })}
+    titulo={t('titulo', {
+      municipio: nombreRepetido(m.nombre)
+        ? `${m.nombre} (${p?.nombre ?? ''})`
+        : m.nombre,
+    })}
     entradilla={t('entradilla', { municipio: m.nombre })}
     solape
   >

@@ -21,7 +21,7 @@
     "nota": "Solo mostramos normas comprobadas contra su texto oficial: el consolidado del BOE y, para los decretos autonómicos y los reglamentos de Ceuta y Melilla que no recoge, su boletín oficial."
   },
   "norma": {
-    "metaDescripcion": "{titulo} Estado, artículos citados, obligaciones que genera y enlace al texto oficial.",
+    "metaDescripcion": "{titulo}: en qué estado está, qué artículos citamos, qué obligaciones genera con tu animal y enlace al texto oficial.",
     "datos": "Datos de la norma",
     "identificador": "Identificador oficial",
     "ambito": "Ámbito",
@@ -78,7 +78,7 @@
     "mapa": "Verlo en el mapa"
   },
   "comunidad": {
-    "metaTitulo": "Obligaciones con perros y gatos en {comunidad} ({anio})",
+    "metaTitulo": "{comunidad}: obligaciones con perros y gatos ({anio})",
     "metaDescripcion": "Qué te exige la ley en {comunidad} si tienes perro o gato: seguro, identificación, censo y más, con la norma y el artículo de cada obligación.",
     "entradillaReglas": "Lo que exige la ley si vives en {comunidad} y tienes perro o gato, según su ley autonómica y la estatal.",
     "entradillaSinLey": "{comunidad} derogó su ley de protección animal sin sustituirla. Hoy rige solo el marco estatal.",
@@ -117,19 +117,20 @@
     "multasTexto": "Tramos que fija su propia ley. La Ley 7/2023 también tiene su cuadro y rige en toda España: cuál se aplica a cada caso lo decide la administración que sanciona."
   },
   "provincia": {
-    "metaTitulo": "Obligaciones con perros y gatos en la provincia de {provincia} ({anio})",
-    "metaDescripcion": "Los {n} municipios de la provincia de {provincia} y lo que exige la ley en ellos a quien tiene perro o gato.",
+    "metaTitulo": "{provincia}: perros y gatos en sus {n} municipios ({anio})",
+    "metaDescripcion": "Los {n} municipios de la provincia de {provincia} y lo que exige la ley en cada uno a quien tiene perro o gato: microchip, censo, seguro y perros peligrosos.",
     "entradilla": "Los {n} municipios de la provincia de {provincia}. Elige el tuyo para ver sus obligaciones.",
     "resumen": "En {comunidad}, para un perro adulto",
     "verComunidad": "Ver lo que exige {comunidad}",
     "filtrar": "Filtrar municipios",
     "filtrarMarcador": "Escribe para filtrar",
     "capital": "capital",
-    "municipios": "Municipios"
+    "municipios": "Municipios",
+    "titulo": "Provincia de {provincia}"
   },
   "municipio": {
-    "metaTitulo": "Obligaciones para tener perro o gato en {municipio} ({anio})",
-    "metaDescripcion": "Qué te exige la ley en {municipio} ({provincia}) si tienes perro o gato: seguro, microchip, censo, licencia de perro peligroso y más, con la norma y el artículo.",
+    "metaTitulo": "{municipio}: obligaciones con perros y gatos ({anio})",
+    "metaDescripcion": "Qué exige la ley en {municipio} ({provincia}) a quien tiene perro o gato: microchip, censo, seguro y perros peligrosos, con la norma y el artículo.",
     "titulo": "Tener perro o gato en {municipio}",
     "entradilla": "Lo que exige hoy la ley en {municipio}, según las normas estatales y autonómicas que hemos verificado.",
     "oficial": "Nombre oficial: {nombre}",
@@ -159,8 +160,8 @@
     "listado": "Ver como tabla"
   },
   "ppp": {
-    "metaTitulo": "Perros potencialmente peligrosos: razas, licencia y seguro",
-    "metaDescripcion": "Comprueba si tu perro se considera potencialmente peligroso y qué implica: licencia municipal, seguro de al menos 120.000 € (más en algunas comunidades), bozal, correa y registro, con cada artículo.",
+    "metaTitulo": "Perros peligrosos (PPP): razas, licencia y seguro",
+    "metaDescripcion": "Comprueba si tu perro es potencialmente peligroso y qué implica: licencia, seguro de al menos 120.000 €, bozal, correa y registro, con cada artículo.",
     "titulo": "¿Tu perro se considera potencialmente peligroso?",
     "entradilla": "Elige la raza y tu comunidad. Te decimos si figura en la lista legal y qué implica, con el artículo de cada cosa.",
     "raza": "Raza",
@@ -213,7 +214,7 @@
     "resto": "En el resto de comunidades rigen la lista y el seguro estatales."
   },
   "seguros": {
-    "metaTitulo": "Seguro de responsabilidad civil para perros: qué exige la ley",
+    "metaTitulo": "Seguro obligatorio para perros: qué exige la ley",
     "metaDescripcion": "Qué cobertura exige hoy cada territorio al seguro de tu perro, qué depende de un reglamento pendiente, si sirve el seguro de hogar y qué preguntar a tu aseguradora.",
     "titulo": "El seguro de tu perro, sin letra pequeña",
     "entradilla": "Qué cobertura exige cada territorio hoy, qué depende de un reglamento pendiente y qué preguntar antes de contratar.",
@@ -237,7 +238,7 @@
     "pppSoloRazas": "para las razas de su lista"
   },
   "multas": {
-    "metaTitulo": "Multas por incumplir la ley de protección animal: tramos oficiales",
+    "metaTitulo": "Multas de la ley de protección animal: tramos oficiales",
     "metaDescripcion": "Calculadora informativa de sanciones: elige la infracción y ve su clasificación y el tramo de multa que fija la ley, con el texto literal del artículo.",
     "titulo": "Cuánto puede costar incumplir",
     "entradilla": "Elige una infracción y te mostramos su clasificación y el tramo de multa que fija la ley, con el texto literal. Sin estimaciones inventadas.",
@@ -286,7 +287,7 @@
     "sinCuadro": "La Rioja, Ceuta y Melilla no tienen cuadro propio en una ley: rige el de la Ley 7/2023."
   },
   "queHacerSi": {
-    "metaTitulo": "Qué hacer si pierdes a tu animal, encuentras uno o hay una mordedura",
+    "metaTitulo": "Qué hacer si pierdes a tu animal o hay una mordedura",
     "metaDescripcion": "Pasos prácticos, con la norma detrás, para cuando pierdes a tu animal, encuentras uno abandonado, hay una mordedura, ves un caso de maltrato o tu animal muere.",
     "titulo": "Qué hacer si…",
     "entradilla": "Pasos prácticos para las situaciones más habituales, con la norma que hay detrás de cada uno.",
@@ -368,7 +369,7 @@
     "rssDescripcion": "Cambios en la normativa sobre animales de compañía en España."
   },
   "faq": {
-    "metaTitulo": "Preguntas frecuentes sobre las obligaciones con tu animal",
+    "metaTitulo": "Preguntas frecuentes sobre la ley y tu animal",
     "metaDescripcion": "Respuestas cortas y con la norma detrás: seguro obligatorio, curso, perros potencialmente peligrosos, gatos, multas, pérdida del animal y más.",
     "titulo": "Preguntas frecuentes",
     "entradilla": "Respuestas cortas, con la norma detrás. Si tu duda depende de dónde vives, haz la consulta.",
@@ -509,7 +510,7 @@
   },
   "sobre": {
     "metaTitulo": "Sobre LeyAnimal",
-    "metaDescripcion": "Por qué existe LeyAnimal, qué encontrarás, qué principios sigue y cómo verificamos cada obligación.",
+    "metaDescripcion": "Por qué existe LeyAnimal, qué encontrarás, qué principios sigue y cómo se verifica cada obligación contra el BOE y los boletines autonómicos.",
     "titulo": "Por qué existe LeyAnimal",
     "entradilla": "Porque saber qué te exige la ley con tu animal no debería exigir leer cinco normas ni fiarse de una web que vende seguros.",
     "problema": "El problema",
@@ -572,8 +573,8 @@
     "actualizado": "Última actualización: {fecha}"
   },
   "apoya": {
-    "metaTitulo": "Apoya LeyAnimal",
-    "metaDescripcion": "LeyAnimal es un proyecto altruista y gratuito. Si te ha sido útil, puedes ayudar a mantenerlo con un donativo por Bizum o PayPal. Una parte de los donativos va a protectoras de animales.",
+    "metaTitulo": "Colabora con un donativo",
+    "metaDescripcion": "LeyAnimal es gratuito y altruista. Si te ha sido útil, ayuda a mantenerlo con un donativo por Bizum o PayPal; una parte va a protectoras de animales.",
     "titulo": "Un proyecto hecho por amor a los animales",
     "entradilla": "LeyAnimal es gratuito, sin publicidad y sin intereses comerciales. Si te ha servido, puedes ayudar a que siga siéndolo, y una parte de los donativos va a protectoras de animales.",
     "historiaTitulo": "Por qué existe esta web",

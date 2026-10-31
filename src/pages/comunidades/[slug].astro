@@ -51,6 +51,7 @@ const provincias = provinciasDe(c.codigoIne).map((p) => {
 <Base
   ruta={`/comunidades/${c.slug}`}
   titulo={t('metaTitulo', { comunidad: c.nombre, anio: anioActual() })}
+  tituloCompleto
   descripcion={t('metaDescripcion', { comunidad: c.nombre })}
 >
   <CabeceraPagina titulo={c.nombre} entradilla={entradilla} solape>

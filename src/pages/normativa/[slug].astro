@@ -63,7 +63,7 @@ const rutaPagina = `/normativa/${n.slug}`;
 <Base
   ruta={rutaPagina}
   titulo={nombreNorma(n)}
-  descripcion={t('metaDescripcion', { titulo: n.titulo })}
+  descripcion={t('metaDescripcion', { titulo: nombreNorma(n) })}
 >
   <JsonLd
     slot="head"

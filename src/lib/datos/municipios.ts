@@ -25,6 +25,11 @@ export const capitales = indice.capitales;
 export const municipiosDe = (codigoProvincia: string) =>
   MUNICIPIOS.filter((m) => m.provincia === codigoProvincia);
 
+const veces = new Map<string, number>();
+for (const m of MUNICIPIOS) veces.set(m.nombre, (veces.get(m.nombre) ?? 0) + 1);
+/** Nombre que llevan varios municipios (Arroyomolinos en Caceres y Madrid). */
+export const nombreRepetido = (nombre: string) => (veces.get(nombre) ?? 0) > 1;
+
 /**
  * Las diez ciudades mas pobladas de Espana. Se usan como accesos rapidos, no
  * como "las mas consultadas": sin base de datos no medimos consultas.

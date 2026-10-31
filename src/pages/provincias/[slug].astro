@@ -48,14 +48,19 @@ const resumen = obligacionesDeReferencia(
 
 <Base
   ruta={`/provincias/${p.slug}`}
-  titulo={t('metaTitulo', { provincia: p.nombre, anio: anioActual() })}
+  tituloCompleto
+  titulo={t('metaTitulo', {
+    provincia: p.nombre,
+    n: municipios.length,
+    anio: anioActual(),
+  })}
   descripcion={t('metaDescripcion', {
     provincia: p.nombre,
     n: municipios.length,
   })}
 >
   <CabeceraPagina
-    titulo={p.nombre}
+    titulo={t('titulo', { provincia: p.nombre })}
     entradilla={t('entradilla', { n: municipios.length, provincia: p.nombre })}
     solape
   />
