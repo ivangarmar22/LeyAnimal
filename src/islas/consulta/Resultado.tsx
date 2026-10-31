@@ -297,7 +297,7 @@ export function Resultado({
           <section key={grupo.estado} aria-labelledby={`grupo-${grupo.estado}`}>
             <div class="flex items-start gap-3">
               <grupo.Icono
-                class={`mt-1 size-6 shrink-0 ${grupo.color}`}
+                class={`mt-0.5 size-6 shrink-0 sm:mt-1 ${grupo.color}`}
                 aria-hidden
               />
               <div>

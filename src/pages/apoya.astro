@@ -4,27 +4,21 @@
  * un donativo voluntario (Bizum o PayPal). La web es gratuita y lo sigue
  * siendo sin donativos; no hay pasarela de pago propia ni se guarda nada.
  */
-import {
-  ArrowRight,
-  Check,
-  Copy,
-  ExternalLink,
-  Heart,
-  HeartHandshake,
-  Info,
-  Share2,
-  Smartphone,
-  Wallet,
-} from 'lucide-preact';
+import { ArrowRight, Check, Copy, ExternalLink, Info } from 'lucide-preact';
 import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
 import { traductor } from '@/i18n/catalogos';
 import { ruta } from '@/lib/rutas';
 import Base from '@/layouts/Base.astro';
 import {
   balanza,
+  corazon,
   corazonVerde,
   huellas,
   manosCorazon,
+  megafono,
+  movil,
+  nota,
+  tarjetaPago,
 } from '@/lib/contenido/ilustraciones';
 import { DONATIVOS } from '@/lib/sitio';
 import { Ilustracion } from '@/ui/Ilustracion';
@@ -52,8 +46,8 @@ const motivos = [
     <div class="grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
       <section class="tarjeta gap-6 shadow-alta" aria-labelledby="h-historia">
         <div class="flex items-center gap-3">
-          <span class="grid size-11 shrink-0 place-items-center rounded-2xl bg-marca-50 text-marca-700">
-            <Heart class="size-5" aria-hidden="true" />
+          <span class="caja-icono size-11 shrink-0">
+            <Ilustracion icono={corazon} />
           </span>
           <h2 id="h-historia" class="titulo-3">
             {t('historiaTitulo')}
@@ -66,7 +60,7 @@ const motivos = [
         </div>
         <ul class="mt-auto grid gap-4 border-t border-borde pt-6">
           {motivos.map(({ clave, Icono }) => (
-            <li class="flex gap-4">
+            <li class="flex items-center gap-4">
               <span class="caja-icono size-11 shrink-0">
                 <Ilustracion icono={Icono} />
               </span>
@@ -89,8 +83,8 @@ const motivos = [
           aria-labelledby="h-bizum"
         >
           <div class="flex items-center gap-3">
-            <span class="grid size-11 shrink-0 place-items-center rounded-2xl bg-marca-50 text-marca-700">
-              <Smartphone class="size-5" aria-hidden="true" />
+            <span class="caja-icono size-11 shrink-0">
+              <Ilustracion icono={movil} />
             </span>
             <h2 id="h-bizum" class="titulo-3">
               Bizum
@@ -123,8 +117,8 @@ const motivos = [
           aria-labelledby="h-paypal"
         >
           <div class="flex items-center gap-3">
-            <span class="grid size-11 shrink-0 place-items-center rounded-2xl bg-marca-50 text-marca-700">
-              <Wallet class="size-5" aria-hidden="true" />
+            <span class="caja-icono size-11 shrink-0">
+              <Ilustracion icono={tarjetaPago} />
             </span>
             <h2 id="h-paypal" class="titulo-3">
               PayPal
@@ -172,10 +166,7 @@ const motivos = [
         {t('otrasTitulo')}
       </h2>
       <div class="tarjeta tarjeta--menta flex-row gap-3">
-        <Share2
-          class="mt-1 size-5 shrink-0 text-marca-600"
-          aria-hidden="true"
-        />
+        <Ilustracion icono={megafono} class="size-7 shrink-0" />
         <div class="grid content-start gap-2">
           <p class="font-display text-lg font-semibold text-texto">
             {t('compartirTitulo')}
@@ -184,10 +175,7 @@ const motivos = [
         </div>
       </div>
       <div class="tarjeta tarjeta--menta flex-row gap-3">
-        <HeartHandshake
-          class="mt-1 size-5 shrink-0 text-marca-600"
-          aria-hidden="true"
-        />
+        <Ilustracion icono={nota} class="size-7 shrink-0" />
         <div class="grid content-start justify-items-start gap-2">
           <p class="font-display text-lg font-semibold text-texto">
             {t('avisarTitulo')}

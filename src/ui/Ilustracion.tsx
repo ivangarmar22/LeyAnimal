@@ -1,9 +1,12 @@
 import type { IconoColor } from '@/lib/contenido/ilustraciones';
 import { cn } from '@/lib/cn';
+import { ruta } from '@/lib/rutas';
 
 /**
- * Icono a color (Fluent Emoji Flat). Decorativo salvo que lleve `etiqueta`.
- * Sirve igual en las paginas .astro que en las islas.
+ * Ilustracion a color (Fluent Emoji 3D), servida como WebP de 128 px: el
+ * navegador la descarga una vez para todo el sitio y se ve nitida hasta 3x.
+ * Cuadrada; el tamano lo pone la clase o el contenedor. Decorativa salvo que
+ * lleve `etiqueta`. Sirve igual en las paginas .astro que en las islas.
  */
 export function Ilustracion({
   icono,
@@ -15,14 +18,13 @@ export function Ilustracion({
   class?: string;
 }) {
   return (
-    <svg
-      viewBox={`0 0 ${icono.ancho} ${icono.alto}`}
+    <img
+      src={ruta(`/ilustraciones/${icono.nombre}.webp`)}
+      alt={etiqueta ?? ''}
+      width={32}
+      height={32}
+      decoding="async"
       class={cn('ilustracion', clase)}
-      role={etiqueta ? 'img' : undefined}
-      aria-label={etiqueta}
-      aria-hidden={etiqueta ? undefined : true}
-      focusable="false"
-      dangerouslySetInnerHTML={{ __html: icono.cuerpo }}
     />
   );
 }

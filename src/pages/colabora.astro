@@ -1,10 +1,11 @@
 ---
-import { HeartHandshake, Share2 } from 'lucide-preact';
 import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
 import { textosPara, traductor } from '@/i18n/catalogos';
 import FormularioColabora from '@/islas/FormularioColabora';
 import Base from '@/layouts/Base.astro';
+import { megafono, nota } from '@/lib/contenido/ilustraciones';
 import { EMAIL_CONTACTO } from '@/lib/sitio';
+import { Ilustracion } from '@/ui/Ilustracion';
 
 const t = traductor('colabora');
 ---
@@ -27,14 +28,11 @@ const t = traductor('colabora');
       <aside class="tarjeta h-fit gap-5 lg:sticky lg:top-[calc(var(--cabecera)+24px)]">
         <h2 class="font-display text-lg font-semibold">{t('otras')}</h2>
         <p class="flex items-center gap-3">
-          <Share2 class="size-5 shrink-0 text-marca-600" aria-hidden="true" />
+          <Ilustracion icono={megafono} class="size-6 shrink-0" />
           {t('otras1')}
         </p>
         <p class="flex items-center gap-3">
-          <HeartHandshake
-            class="size-5 shrink-0 text-marca-600"
-            aria-hidden="true"
-          />
+          <Ilustracion icono={nota} class="size-6 shrink-0" />
           {t('otras2')}
         </p>
       </aside>
