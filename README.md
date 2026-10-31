@@ -101,20 +101,21 @@ pnpm dev                     # http://localhost:4321
 Para ver la versión de producción: `pnpm build` (alrededor de un minuto) y
 `pnpm start`.
 
-| Comando                  | Qué hace                                                    |
-| ------------------------ | ----------------------------------------------------------- |
-| `pnpm dev`               | Servidor de desarrollo                                      |
-| `pnpm build`             | Genera el sitio estático en `dist/`                         |
-| `pnpm start`             | Sirve el sitio compilado                                    |
-| `pnpm verificar`         | Formato, contenido legal, lint, tipos y tests               |
-| `pnpm test`              | Tests del motor de reglas                                   |
-| `pnpm datos:comprobar`   | Comprueba fuentes, citas y referencias del contenido legal  |
-| `pnpm datos:extraer`     | Descarga las leyes autonómicas del BOE                      |
-| `pnpm datos:autonomicas` | Genera las citas autonómicas (`--escribir` para guardarlas) |
-| `pnpm datos:referencia`  | Genera los artículos estatales de referencia                |
-| `pnpm datos:geografia`   | Comunidades, provincias y municipios desde el INE           |
-| `pnpm og`                | Regenera la imagen para compartir (necesita Chrome)         |
-| `pnpm iconos`            | Descarga los iconos a color                                 |
+| Comando                  | Qué hace                                                        |
+| ------------------------ | --------------------------------------------------------------- |
+| `pnpm dev`               | Servidor de desarrollo                                          |
+| `pnpm build`             | Genera el sitio estático en `dist/`                             |
+| `pnpm start`             | Sirve el sitio compilado                                        |
+| `pnpm verificar`         | Formato, contenido legal, lint, tipos y tests                   |
+| `pnpm test`              | Tests del motor de reglas                                       |
+| `pnpm datos:comprobar`   | Comprueba fuentes, citas y referencias del contenido legal      |
+| `pnpm datos:extraer`     | Descarga las leyes autonómicas del BOE                          |
+| `pnpm datos:autonomicas` | Genera las citas autonómicas (`--escribir` para guardarlas)     |
+| `pnpm datos:referencia`  | Genera los artículos estatales de referencia                    |
+| `pnpm datos:geografia`   | Comunidades, provincias y municipios desde el INE               |
+| `pnpm og`                | Regenera la imagen para compartir (necesita Chrome)             |
+| `pnpm indexnow`          | Avisa a Bing y otros buscadores (IndexNow) de todas las páginas |
+| `pnpm iconos`            | Descarga los iconos a color                                     |
 
 > [!TIP]
 > En Windows, el repositorio fuerza finales de línea LF (`.gitattributes`). Si
