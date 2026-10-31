@@ -475,7 +475,7 @@
     "revisionCta": "Avisar de un error"
   },
   "colabora": {
-    "metaTitulo": "Colabora: avísanos de un error o de una ordenanza",
+    "metaTitulo": "Avisar de un error o de una ordenanza que falta",
     "metaDescripcion": "Avísanos si falta la ordenanza de tu municipio, ves un dato incorrecto o un enlace roto. Lo revisaremos contra la fuente oficial.",
     "titulo": "Ayúdanos a completar y corregir",
     "entradilla": "Si falta la ordenanza de tu municipio, ves un dato incorrecto o un enlace roto, cuéntanoslo. Lo revisaremos contra la fuente oficial.",
@@ -561,8 +561,8 @@
     "copiado": "Copiada",
     "privacidad": "El mensaje sale de tu propio programa de correo: esta web no guarda nada de lo que escribes.",
     "colaboraTitulo": "¿Un error o una ordenanza que falta?",
-    "colabora": "Usa mejor el formulario de Colabora: prepara el mensaje con lo que necesitamos para comprobarlo contra la fuente oficial.",
-    "colaboraBoton": "Ir a Colabora",
+    "colabora": "Usa mejor el formulario «Avisar de un error»: recoge lo que necesitamos para comprobarlo contra la fuente oficial.",
+    "colaboraBoton": "Ir al formulario",
     "casoTitulo": "¿Es un caso concreto?",
     "noAsesoramiento": "No podemos resolver consultas jurídicas sobre casos concretos. Para eso, acude a tu ayuntamiento o a un profesional. Lo que sí puedes hacer aquí es ver qué te exige la ley según tu animal y tu municipio.",
     "consultaBoton": "Hacer la consulta"
@@ -610,7 +610,7 @@
     "compartirTexto": "Si conoces a alguien con perro, gato o cualquier otro animal, enséñale la web. Que llegue a más gente es la mejor ayuda.",
     "avisarTitulo": "Avisa de un error",
     "avisarTexto": "Si ves un dato mal, una ley que ha cambiado o una ordenanza que falta, cuéntalo: lo compruebo contra la fuente oficial.",
-    "avisarBoton": "Ir a Colabora",
+    "avisarBoton": "Avisar de un error",
     "gracias": "Gracias por pasarte, por usarla y por cuidar de los tuyos."
   }
 }
