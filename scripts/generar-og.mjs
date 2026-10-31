@@ -1,6 +1,7 @@
 /**
- * Genera la imagen para compartir (Open Graph, 1200x630):
- * public/og/leyanimal.png.
+ * Genera la imagen para compartir (Open Graph, 1200x630,
+ * public/og/leyanimal.png) y el icono de pantalla de inicio de iOS
+ * (public/apple-touch-icon.png, 180x180).
  *
  * Se ejecuta a mano cuando cambian el logotipo o el titular de la portada:
  *   pnpm og
@@ -13,6 +14,7 @@ import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import sharp from 'sharp';
 import {
   ALMOHADILLA,
   DEDOS,
@@ -159,6 +161,18 @@ try {
     Buffer.from(foto.result.data, 'base64'),
   );
   console.log('public/og/leyanimal.png');
+
+  // iOS no usa el favicon SVG: el simbolo sobre blanco, con margen
+  const icono = await sharp(Buffer.from(simboloSvg('width="128" height="139"')))
+    .png()
+    .toBuffer();
+  await sharp({
+    create: { width: 180, height: 180, channels: 4, background: '#ffffff' },
+  })
+    .composite([{ input: icono, gravity: 'center' }])
+    .png()
+    .toFile(join(raiz, 'public/apple-touch-icon.png'));
+  console.log('public/apple-touch-icon.png');
   ws.close();
 } finally {
   chrome.kill();
