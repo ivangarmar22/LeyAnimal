@@ -573,9 +573,9 @@
   },
   "apoya": {
     "metaTitulo": "Apoya LeyAnimal",
-    "metaDescripcion": "LeyAnimal es un proyecto altruista y gratuito. Si te ha sido útil, puedes ayudar a mantenerlo con un donativo por Bizum o PayPal.",
+    "metaDescripcion": "LeyAnimal es un proyecto altruista y gratuito. Si te ha sido útil, puedes ayudar a mantenerlo con un donativo por Bizum o PayPal. Una parte de los donativos va a protectoras de animales.",
     "titulo": "Un proyecto hecho por amor a los animales",
-    "entradilla": "LeyAnimal es gratuito, sin publicidad y sin intereses comerciales. Si te ha servido, puedes ayudar a que siga siéndolo.",
+    "entradilla": "LeyAnimal es gratuito, sin publicidad y sin intereses comerciales. Si te ha servido, puedes ayudar a que siga siéndolo, y una parte de los donativos va a protectoras de animales.",
     "historiaTitulo": "Por qué existe esta web",
     "historia1": "Detrás de LeyAnimal hay una persona que adora a los animales y vive con los suyos. Como cualquiera que tiene mascota, me he visto en esas situaciones: una ley nueva que nadie explica bien, un viaje, una mudanza, la duda de si un seguro o un trámite es obligatorio o no.",
     "historia2": "La información existe, pero está repartida entre el BOE, diecisiete leyes autonómicas, decretos y ordenanzas, y lo que circula por internet a menudo se contradice. Por eso hice esta web: para que cualquiera sepa qué le exige la ley con su animal, con el artículo exacto delante.",
@@ -592,6 +592,10 @@
       "tiempo": {
         "titulo": "Muchas horas detrás",
         "texto": "Cada obligación se comprueba contra el texto oficial, y cada cambio en las leyes obliga a revisarlo todo otra vez."
+      },
+      "protectoras": {
+        "titulo": "Una parte, para protectoras",
+        "texto": "Parte de lo que se recibe se dona a protectoras de animales, que cuidan cada día de los que no tienen a nadie."
       }
     },
     "bizumTexto": "Desde la app de tu banco, entra en Bizum, elige «Enviar dinero» y usa este número:",
@@ -604,7 +608,7 @@
     "abreEnPestana": "(se abre en otra pestaña)",
     "qrAlt": "Código QR que abre paypal.me/ivangarmar22",
     "qrTexto": "Apunta la cámara del móvil al código para abrir PayPal.",
-    "aviso": "Los donativos son voluntarios y los recibe una persona, no una entidad sin ánimo de lucro, así que no desgravan. Sirven para mantener la web: el dominio, el alojamiento y el tiempo de revisar las normas. Bizum y PayPal tratan tus datos según sus propias condiciones; yo solo veo lo que muestran al recibir el pago, normalmente tu nombre y el concepto.",
+    "aviso": "Los donativos son voluntarios y los recibe una persona, no una entidad sin ánimo de lucro, así que no desgravan. Sirven para mantener la web (el dominio, el alojamiento y el tiempo de revisar las normas), y una parte se dona a protectoras de animales. Bizum y PayPal tratan tus datos según sus propias condiciones; yo solo veo lo que muestran al recibir el pago, normalmente tu nombre y el concepto.",
     "otrasTitulo": "Otras formas de ayudar",
     "compartirTitulo": "Compártela",
     "compartirTexto": "Si conoces a alguien con perro, gato o cualquier otro animal, enséñale la web. Que llegue a más gente es la mejor ayuda.",

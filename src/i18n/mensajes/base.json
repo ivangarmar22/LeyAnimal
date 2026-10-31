@@ -107,7 +107,8 @@
     "proyecto": "Proyecto",
     "descargo": "LeyAnimal es un proyecto divulgativo. La información procede de fuentes oficiales y se revisa periódicamente, pero no es asesoramiento jurídico: ante un caso concreto, consulta a tu ayuntamiento o a un profesional.",
     "datosAbiertos": "Datos: BOE (API de datos abiertos) e INE.",
-    "colaborar": "Colaborar con un donativo"
+    "colaborar": "Colaborar con un donativo",
+    "protectoras": "Una parte de los donativos va a protectoras de animales."
   },
   "noEncontrado": {
     "titulo": "Esta página no existe",

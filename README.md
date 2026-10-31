@@ -13,10 +13,10 @@ Cada obligación, con su norma, su artículo, la cita literal y el enlace oficia
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)
 ![Sitio estático](https://img.shields.io/badge/sitio-100%25%20est%C3%A1tico-23a36a)
 
-[**Abrir la web**](https://ivangarmar22.github.io/LeyAnimal) ·
-[Metodología](https://ivangarmar22.github.io/LeyAnimal/metodologia) ·
-[Avisar de un error](https://ivangarmar22.github.io/LeyAnimal/colabora) ·
-[Colaborar](https://ivangarmar22.github.io/LeyAnimal/apoya)
+[**Abrir la web**](https://leyanimal.es) ·
+[Metodología](https://leyanimal.es/metodologia) ·
+[Avisar de un error](https://leyanimal.es/colabora) ·
+[Colaborar](https://leyanimal.es/apoya)
 
 <img src="public/og/leyanimal.png" alt="Portada de LeyAnimal" width="720" />
 
@@ -175,13 +175,15 @@ Cada push a `main` ejecuta [`despliegue.yml`](.github/workflows/despliegue.yml):
 comprueba el proyecto con `pnpm verificar`, compila y publica `dist/` en GitHub
 Pages.
 
-La URL pública sale de `PUBLIC_SITE_URL`, que admite subcarpeta. Por defecto es
-`https://ivangarmar22.github.io/LeyAnimal`. Para pasar al dominio propio:
+La web se sirve en el dominio propio `leyanimal.es`, configurado en
+_Settings › Pages_. Sus DNS (IONOS) apuntan a GitHub Pages: cuatro registros A
+y cuatro AAAA en la raíz y un CNAME de `www` a `ivangarmar22.github.io`, según
+la [guía de GitHub](https://docs.github.com/es/pages/configuring-a-custom-domain-for-your-github-pages-site).
 
-1. Crea la variable `PUBLIC_SITE_URL=https://leyanimal.es` en
-   _Settings › Secrets and variables › Actions › Variables_.
-2. Configura el dominio en _Settings › Pages_ y sus DNS según la
-   [guía de GitHub](https://docs.github.com/es/pages/configuring-a-custom-domain-for-your-github-pages-site).
+La URL pública sale de `PUBLIC_SITE_URL` (variable del repositorio en
+_Settings › Secrets and variables › Actions › Variables_). Admite subcarpeta,
+por si la web volviera a publicarse sin dominio en
+`https://ivangarmar22.github.io/LeyAnimal`.
 
 El sitio compilado ocupa unos 450 MB, por debajo del límite de 1 GB de GitHub
 Pages.
@@ -189,10 +191,10 @@ Pages.
 ## Colaborar
 
 - **¿Falta una ordenanza o hay un dato mal?** Usa
-  [Avisar de un error](https://ivangarmar22.github.io/LeyAnimal/colabora) o
+  [Avisar de un error](https://leyanimal.es/colabora) o
   abre un issue con el enlace a la norma oficial.
-- **¿Te ha servido?** LeyAnimal es gratuito y altruista. Si quieres, puedes
-  [apoyar el proyecto](https://ivangarmar22.github.io/LeyAnimal/apoya) con un
+- **¿Te ha servido?** LeyAnimal es gratuito y altruista, y una parte de los donativos va a protectoras de animales. Si quieres, puedes
+  [apoyar el proyecto](https://leyanimal.es/apoya) con un
   donativo.
 
 ## Créditos

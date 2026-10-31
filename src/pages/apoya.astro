@@ -20,7 +20,12 @@ import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
 import { traductor } from '@/i18n/catalogos';
 import { ruta } from '@/lib/rutas';
 import Base from '@/layouts/Base.astro';
-import { balanza, corazonVerde, huellas } from '@/lib/contenido/ilustraciones';
+import {
+  balanza,
+  corazonVerde,
+  huellas,
+  manosCorazon,
+} from '@/lib/contenido/ilustraciones';
 import { DONATIVOS } from '@/lib/sitio';
 import { Ilustracion } from '@/ui/Ilustracion';
 
@@ -36,6 +41,7 @@ const motivos = [
   { clave: 'gratis', Icono: corazonVerde },
   { clave: 'independiente', Icono: balanza },
   { clave: 'tiempo', Icono: huellas },
+  { clave: 'protectoras', Icono: manosCorazon },
 ];
 ---
 

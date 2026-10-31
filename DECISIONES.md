@@ -1132,7 +1132,8 @@ idiomas, el sitio ocupaba 1,3 GB.
 - Publicación en GitHub Pages con `.github/workflows/despliegue.yml`. La URL
   sale de `PUBLIC_SITE_URL`, que puede llevar subcarpeta
   (`https://ivangarmar22.github.io/LeyAnimal`): `ruta()` (`src/lib/rutas.ts`)
-  la antepone a todos los enlaces. El dominio previsto es `leyanimal.es`.
+  la antepone a todos los enlaces. Desde el 31/10/2026 la web se sirve en el
+  dominio propio `leyanimal.es` (DNS en IONOS apuntando a GitHub Pages).
 - Para que quepa con margen, los iconos de Lucide pierden al compilar sus
   atributos repetidos, que pasan a una regla CSS
   (`scripts/compactar-iconos.mjs`), y el logotipo se define una vez por

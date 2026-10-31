@@ -1,8 +1,8 @@
 # Compila y publica la web en GitHub Pages en cada push a main.
 #
 # La URL publica sale de la variable del repositorio PUBLIC_SITE_URL
-# (Settings > Secrets and variables > Actions > Variables). Sin ella se usa la
-# de GitHub Pages. Con dominio propio basta con cambiarla a https://leyanimal.es.
+# (Settings > Secrets and variables > Actions > Variables). Sin ella se usa el
+# dominio propio, https://leyanimal.es.
 name: Despliegue
 
 on:
@@ -41,7 +41,7 @@ jobs:
       - name: Compilar
         run: pnpm build
         env:
-          PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL || 'https://ivangarmar22.github.io/LeyAnimal' }}
+          PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL || 'https://leyanimal.es' }}
 
       - uses: actions/upload-pages-artifact@v5
         with:
