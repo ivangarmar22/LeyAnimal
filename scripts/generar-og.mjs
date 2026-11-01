@@ -1,7 +1,8 @@
 /**
  * Genera la imagen para compartir (Open Graph, 1200x630,
  * public/og/leyanimal.png) y el icono de pantalla de inicio de iOS
- * (public/apple-touch-icon.png, 180x180).
+ * (public/apple-touch-icon.png, 180x180) y los favicons cuadrados
+ * (public/favicon.svg, favicon.ico e icono-192.png).
  *
  * Se ejecuta a mano cuando cambian el logotipo o el titular de la portada:
  *   pnpm og
@@ -20,6 +21,7 @@ import {
   DEDOS,
   ESCUDO,
   simboloSvg,
+  VIEWBOX_CUADRADO,
 } from '../src/componentes/marca/formas.ts';
 
 const raiz = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -173,6 +175,56 @@ try {
     .png()
     .toFile(join(raiz, 'public/apple-touch-icon.png'));
   console.log('public/apple-touch-icon.png');
+
+  // Favicons cuadrados para navegadores y buscadores (Google pide 1:1 y
+  // multiplos de 48 px; /favicon.ico es su ultimo recurso)
+  const cuadrado = simboloSvg('', VIEWBOX_CUADRADO);
+  await writeFile(join(raiz, 'public/favicon.svg'), cuadrado);
+  console.log('public/favicon.svg');
+  const png = (lado) =>
+    sharp(Buffer.from(cuadrado), { density: 72 * (lado / 49) * 2 })
+      .resize(lado, lado)
+      .png()
+      .toBuffer();
+  await writeFile(join(raiz, 'public/icono-192.png'), await png(192));
+  console.log('public/icono-192.png');
+  // A 16 px el filete y la sombra emborronan la huella: escudo liso y huella
+  // blanca algo mayor
+  const mini = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${VIEWBOX_CUADRADO}">
+  <defs><linearGradient id="m" x1="0.15" y1="0" x2="0.85" y2="1">
+    <stop offset="0" stop-color="#2bb877"/><stop offset="1" stop-color="#0f6640"/>
+  </linearGradient></defs>
+  <path d="${ESCUDO}" fill="url(#m)"/>
+  <g fill="#ffffff" transform="translate(24 27) scale(1.22) translate(-24 -27.5)">
+    <path d="${ALMOHADILLA}"/>${dedos(DEDOS)}
+  </g>
+</svg>`;
+  const png16 = await sharp(Buffer.from(mini), { density: 72 * (16 / 49) * 4 })
+    .resize(16, 16)
+    .png()
+    .toBuffer();
+  // ICO con PNG dentro (16, 32 y 48 px)
+  const tamanos = [16, 32, 48];
+  const imagenes = [png16, await png(32), await png(48)];
+  const cabecera = Buffer.alloc(6 + 16 * tamanos.length);
+  cabecera.writeUInt16LE(1, 2);
+  cabecera.writeUInt16LE(tamanos.length, 4);
+  let desplazamiento = cabecera.length;
+  tamanos.forEach((lado, i) => {
+    const o = 6 + 16 * i;
+    cabecera.writeUInt8(lado, o);
+    cabecera.writeUInt8(lado, o + 1);
+    cabecera.writeUInt16LE(1, o + 4);
+    cabecera.writeUInt16LE(32, o + 6);
+    cabecera.writeUInt32LE(imagenes[i].length, o + 8);
+    cabecera.writeUInt32LE(desplazamiento, o + 12);
+    desplazamiento += imagenes[i].length;
+  });
+  await writeFile(
+    join(raiz, 'public/favicon.ico'),
+    Buffer.concat([cabecera, ...imagenes]),
+  );
+  console.log('public/favicon.ico');
   ws.close();
 } finally {
   chrome.kill();

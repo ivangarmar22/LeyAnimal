@@ -67,7 +67,10 @@ export function capasSimbolo(p: string) {
   );
 }
 
+/** Encuadre cuadrado y centrado del simbolo: Google descarta favicons que no son 1:1. */
+export const VIEWBOX_CUADRADO = '-0.5 1.5 49 49';
+
 /** SVG completo e independiente (favicon, imagenes para compartir). */
-export function simboloSvg(atributos = '') {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 52"${atributos ? ` ${atributos}` : ''}><defs>${defsSimbolo('s')}</defs>${capasSimbolo('s')}</svg>`;
+export function simboloSvg(atributos = '', viewBox = '0 0 48 52') {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}"${atributos ? ` ${atributos}` : ''}><defs>${defsSimbolo('s')}</defs>${capasSimbolo('s')}</svg>`;
 }

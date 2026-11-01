@@ -128,7 +128,13 @@ const cifrasTira = [
       url: urlAbsoluta('/'),
       description: tm('descripcion'),
       inLanguage: 'es',
-      publisher: { '@type': 'Organization', name: 'LeyAnimal', url: URL_SITIO },
+      alternateName: 'leyanimal.es',
+      publisher: {
+        '@type': 'Organization',
+        name: 'LeyAnimal',
+        url: URL_SITIO,
+        logo: urlAbsoluta('/icono-192.png'),
+      },
     }}
   />
 
