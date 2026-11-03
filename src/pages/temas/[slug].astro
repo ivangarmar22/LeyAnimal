@@ -58,8 +58,6 @@ const tg = traductor();
 const t = tg.en('guia');
 const textos = textosTema(tg.en('temas'), tm);
 const lista = requisitosDelTema(tm.clave);
-// Las guias de dudas frecuentes no tienen requisito: van por puntos
-// (src/lib/contenido/guias.ts).
 const guia = guiaTema(tm.clave);
 const tt = tg.en(`temas.${tm.clave}`);
 const Icono = ICONOS_TEMA[tm.clave] ?? documento;
@@ -76,8 +74,6 @@ const normasRelacionadas = [
   ).values(),
 ];
 const rutaPagina = `/temas/${tm.slug}`;
-// Titulo SEO propio si el tema lo tiene (con la busqueda tipica); si no, el
-// patron comun.
 const metaTitulo = tt.has('metaTitulo')
   ? tt('metaTitulo', { anio: anioActual() })
   : t('metaTitulo', { tema: textos.nombre, anio: anioActual() });
@@ -104,11 +100,7 @@ const secciones = lista.map((req) => {
   };
 });
 
-/**
- * Casi todas las guias tienen un solo requisito: su titulo ya lo dice la
- * cabecera, asi que va solo en el resumen y la seccion no repite encabezado.
- * Con varios, el resumen hace de indice y cada seccion lleva su h2.
- */
+// Con un solo requisito, su titulo va en el resumen y la seccion no lo repite.
 const varias = guia !== undefined || secciones.length > 1;
 const Sub = varias ? 'h3' : 'h2';
 const indice = guia

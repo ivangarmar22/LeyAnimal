@@ -764,9 +764,7 @@ const SELECCION = [
     parrafos: ['A este respecto, sin perjuicio'],
   },
 
-  // --- Guias por tema sobre las dudas mas buscadas: dejarlo solo, paseos,
-  // cria, especies permitidas, educacion, gatos comunitarios, vecinos y
-  // familia (DECISIONES.md, D60) ---
+  // --- Ley 7/2023: guias de dudas frecuentes (D60) ---
   {
     norma: 'ley-7-2023-bienestar-animal',
     bloque: 'a3',

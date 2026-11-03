@@ -176,8 +176,7 @@ try {
     .toFile(join(raiz, 'public/apple-touch-icon.png'));
   console.log('public/apple-touch-icon.png');
 
-  // Favicons cuadrados para navegadores y buscadores (Google pide 1:1 y
-  // multiplos de 48 px; /favicon.ico es su ultimo recurso)
+  // Favicons cuadrados: Google pide 1:1 y multiplos de 48 px
   const cuadrado = simboloSvg('', VIEWBOX_CUADRADO);
   await writeFile(join(raiz, 'public/favicon.svg'), cuadrado);
   console.log('public/favicon.svg');

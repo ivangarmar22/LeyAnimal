@@ -1,22 +1,12 @@
 /**
- * Guias por tema sobre las dudas mas buscadas (DECISIONES.md, D60): dejarlo
- * solo, paseos, cria, especies permitidas, educacion, gatos comunitarios,
- * vecinos y familia. No son obligaciones que evalue el motor de la consulta,
- * asi que no tienen requisito: se escriben por puntos, como las guias por
- * situacion, con su estado y los articulos que los respaldan. El texto esta en
- * el catalogo (temas.<clave>.*).
- *
- * Las mismas reglas que en situaciones.ts: un punto obligatorio sin articulo,
- * o un articulo que no exista, lo rechaza `pnpm datos:comprobar`.
- *
- * Modulo sin dependencias: lo importan las paginas y el comprobador.
+ * Guias de dudas frecuentes (D60). No tienen requisito en el motor: van por
+ * puntos, con las mismas reglas que situaciones.ts. Texto en temas.<clave>.*
  */
 import type { Punto } from './situaciones';
 
 export type GuiaTema = {
-  /** Clave del tema en catalogo.json. */
   clave: string;
-  /** Articulos del bloque de introduccion (definiciones), si lo hay. */
+  /** Articulos de la introduccion (definiciones). */
   intro?: readonly string[];
   puntos: readonly Punto[];
 };

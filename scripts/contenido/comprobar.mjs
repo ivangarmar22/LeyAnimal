@@ -313,9 +313,7 @@ ok(
     .map((f) => `${f.articulo}: la cita no esta en el articulo`),
 );
 
-// Las guias por situacion y las de dudas frecuentes citan articulos sueltos:
-// ninguno puede faltar, y lo que se presenta como obligacion tiene que tener
-// al menos uno.
+// Ningun articulo citado puede faltar y toda obligacion necesita uno.
 const erroresDeGuia = (nombre, g) => [
   ...[...(g.intro ?? []), ...g.puntos.flatMap((p) => p.ids)]
     .filter((id) => !articuloPorId.has(id))

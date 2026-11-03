@@ -1,9 +1,6 @@
 /**
- * Avisa a los buscadores que usan IndexNow (Bing, y con el DuckDuckGo, Yahoo
- * y Yandex) de todas las paginas de la web, leidas de los sitemaps publicados.
- * Google no usa IndexNow: descubre la web por el sitemap de robots.txt.
- *
- * Se ejecuta a mano tras un cambio grande de contenido: pnpm indexnow
+ * Avisa por IndexNow (Bing y otros; Google no lo usa) de todas las paginas de
+ * los sitemaps publicados. A mano, tras un cambio grande: pnpm indexnow
  * La clave es publica: public/<clave>.txt demuestra que la web es nuestra.
  */
 const SITIO = 'https://leyanimal.es';

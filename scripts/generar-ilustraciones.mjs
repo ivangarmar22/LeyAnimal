@@ -1,20 +1,9 @@
 /**
- * Genera las ilustraciones a color del sitio:
+ * Genera las ilustraciones a color (pnpm iconos): PNG de Fluent Emoji 3D
+ * (Microsoft, MIT) reducidos a WebP de 128 px en public/ilustraciones/. Los SVG
+ * no sirven: sus filtros de desenfoque se ven borrosos con escalado.
  *
- *   pnpm iconos
- *
- * Son de Fluent Emoji 3D (Microsoft, licencia MIT), que se publican como PNG
- * de alta resolucion en https://github.com/microsoft/fluentui-emoji. Cada una
- * se reduce a un WebP de 128 px en public/ilustraciones/: nitido hasta 3x en
- * el tamano en que se muestran (como mucho 48 px) y de unos pocos KB. La web
- * las carga con <img>, asi que el navegador las descarga una vez para todas
- * las paginas. src/lib/contenido/ilustraciones.ts recoge su nombre.
- *
- * No se usan las versiones SVG: sus decenas de filtros de desenfoque se ven
- * borrosos en pantallas con escalado.
- *
- * Para cambiar o anadir una, se edita SELECCION (nombre de la carpeta del
- * emoji en el repositorio) y se vuelve a ejecutar.
+ * Para anadir una, se edita SELECCION y se vuelve a ejecutar.
  */
 import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
@@ -113,8 +102,7 @@ await mkdir(CARPETA, { recursive: true });
 const lineas = [];
 for (const [nombre, carpeta] of Object.entries(SELECCION)) {
   const png = await descargar(carpeta);
-  // Cada PNG trae un margen transparente distinto (la tarjeta, mucho arriba y
-  // poco abajo): se recorta y el dibujo se centra con el mismo margen en los
+  // Cada PNG trae un margen distinto: se recorta y se pone el mismo en los
   // cuatro lados, para que todas queden alineadas con su texto.
   const dibujo = await sharp(png).trim().toBuffer();
   await sharp(dibujo)
@@ -139,9 +127,7 @@ for (const [nombre, carpeta] of Object.entries(SELECCION)) {
 await writeFile(
   DESTINO,
   `/**
- * Ilustraciones a color del sitio. GENERADO por
- * scripts/generar-ilustraciones.mjs: no editar a mano (pnpm iconos). Cada una
- * es un WebP de public/ilustraciones/ que pinta src/ui/Ilustracion.tsx.
+ * GENERADO por scripts/generar-ilustraciones.mjs (pnpm iconos): no editar.
  *
  * Fluent Emoji, Copyright (c) Microsoft Corporation. Licencia MIT:
  * https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE

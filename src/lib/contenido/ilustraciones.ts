@@ -1,7 +1,5 @@
 /**
- * Ilustraciones a color del sitio. GENERADO por
- * scripts/generar-ilustraciones.mjs: no editar a mano (pnpm iconos). Cada una
- * es un WebP de public/ilustraciones/ que pinta src/ui/Ilustracion.tsx.
+ * GENERADO por scripts/generar-ilustraciones.mjs (pnpm iconos): no editar.
  *
  * Fluent Emoji, Copyright (c) Microsoft Corporation. Licencia MIT:
  * https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE

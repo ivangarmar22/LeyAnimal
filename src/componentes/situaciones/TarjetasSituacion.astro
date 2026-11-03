@@ -1,8 +1,7 @@
 ---
 /**
- * Rejilla de situaciones: las guias propias y las que ya existen en otra
- * pagina (perros potencialmente peligrosos, guias por tema). La usan su
- * indice, con todas, y la portada, con las de `claves`.
+ * Rejilla de situaciones y accesos a otras guias. La portada solo pinta las
+ * de `claves`.
  */
 import { ArrowRight } from 'lucide-preact';
 import { traductor } from '@/i18n/catalogos';
@@ -46,24 +45,24 @@ const tarjetas = claves
     const Icono = ICONOS_SITUACION[clave];
     return (
       <li>
-        <a href={ruta(href)} class="tarjeta foco-luz h-full gap-5">
+        <a href={ruta(href)} class="tarjeta foco-luz h-full gap-4">
           <span class="esquinas" aria-hidden="true">
             <i />
             <i />
             <i />
             <i />
           </span>
-          {Icono ? (
-            <span class="caja-icono">
-              <Ilustracion icono={Icono} />
-            </span>
-          ) : null}
-          <span>
-            <span class="titulo-3 block font-display font-semibold text-texto">
+          <span class="flex items-center gap-4 lg:flex-col lg:items-start lg:gap-5">
+            {Icono ? (
+              <span class="caja-icono shrink-0">
+                <Ilustracion icono={Icono} />
+              </span>
+            ) : null}
+            <span class="titulo-3 font-display font-semibold text-texto">
               {titulo}
             </span>
-            <span class="mt-2 block">{texto}</span>
           </span>
+          <span>{texto}</span>
           <span class="enlace-flecha mt-auto text-[0.9375rem]">
             {t('leer')}
             <ArrowRight aria-hidden="true" />

@@ -14,8 +14,7 @@ const ciudades = grandesCiudades().map((c) => ({
   nombre: c.nombre,
 }));
 const ts = traductor('situaciones.guias');
-// El resultado las ofrece como planes («¿Tienes algo previsto?»): el final de
-// la vida del animal no es uno de ellos.
+// Se ofrecen como planes: el final de la vida del animal no lo es.
 const situaciones = SITUACIONES.filter((s) => s.slug !== 'final-de-vida').map(
   (s) => ({
     slug: s.slug,

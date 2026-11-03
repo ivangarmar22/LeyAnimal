@@ -3,10 +3,8 @@ import { cn } from '@/lib/cn';
 import { ruta } from '@/lib/rutas';
 
 /**
- * Ilustracion a color (Fluent Emoji 3D), servida como WebP de 128 px: el
- * navegador la descarga una vez para todo el sitio y se ve nitida hasta 3x.
- * Cuadrada; el tamano lo pone la clase o el contenedor. Decorativa salvo que
- * lleve `etiqueta`. Sirve igual en las paginas .astro que en las islas.
+ * Ilustracion a color (WebP de 128 px). El tamano lo pone la clase o el
+ * contenedor; es decorativa salvo que lleve `etiqueta`.
  */
 export function Ilustracion({
   icono,
