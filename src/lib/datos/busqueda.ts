@@ -35,7 +35,8 @@ function similitud(a: Set<string>, b: Set<string>): number {
 
 /**
  * Puntua una clave normalizada frente a un termino normalizado.
- * Devuelve 0 si no hay coincidencia razonable.
+ * Devuelve 0 si no hay coincidencia razonable. `parecidoMinimo` es el umbral
+ * para dar por buena una errata.
  *
  * Orden: coincidencia exacta, empieza igual, alguna palabra empieza igual,
  * contiene el termino y, por ultimo, parecido por trigramas (erratas).
@@ -45,6 +46,7 @@ export function puntuar(
   termino: string,
   trigramasClave: () => Set<string>,
   trigramasTermino: Set<string>,
+  parecidoMinimo = 0.32,
 ): number {
   if (clave === termino) return 100;
   if (clave.startsWith(termino)) return 80;
@@ -54,5 +56,5 @@ export function puntuar(
   if (termino.length < 3) return 0;
 
   const parecido = similitud(trigramasClave(), trigramasTermino);
-  return parecido >= 0.32 ? Math.round(parecido * 45) : 0;
+  return parecido >= parecidoMinimo ? Math.round(parecido * 45) : 0;
 }

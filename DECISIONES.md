@@ -1239,3 +1239,23 @@ Revisado a 03/11/2026:
 - País Vasco: la Ley 9/2022 (art. 4) obliga a esterilizar a los PPP antes de
   los 12 meses. Se añade a `ppp.json` y, como el curso andaluz, se cita en
   la licencia.
+
+### D62. Búsquedas revisadas
+
+Se probaron los buscadores con todos los municipios, las razas y las
+respuestas de la consulta (95.760 combinaciones). El motor no dio fallos; los
+buscadores, sí:
+
+- **Razas**: solo se encontraba el nombre exacto, así que «pitbull»,
+  «dobermann» o «rotweiler» acababan en «no figura en la lista». El catálogo
+  lleva ahora `alias` y la búsqueda admite erratas con un umbral más alto que
+  el de municipios, para no proponer un Staffordshire a quien busca un
+  Yorkshire. Una raza escrita y no elegida vale si coincide con un nombre o
+  alias; si solo se parece, se pide elegirla.
+- **Municipios**: se añaden los nombres en castellano de uso común cuando el
+  oficial no se parece lo bastante («Lérida», «Mahón», «Tarrasa»…). Doce
+  nombres se mostraban mal porque el generador tomaba por artículo lo que
+  iba tras la coma («la/Villajoyosa Vila Joiosa»); los slugs no cambian.
+- **Elecciones obsoletas**: escribir en el buscador anula lo elegido antes,
+  y cambiar de especie borra la raza, el uso y el acceso al exterior.
+- **Normativa**: se busca cada palabra por separado.

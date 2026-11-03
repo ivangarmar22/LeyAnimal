@@ -88,7 +88,8 @@ export default function Consulta({
   const m =
     estado.municipio && indice ? indice.municipio(estado.municipio) : undefined;
   const p = m ? provincia(m.provincia) : undefined;
-  const r = estado.raza ? raza(estado.raza) : undefined;
+  const r =
+    estado.especie === 'perro' && estado.raza ? raza(estado.raza) : undefined;
   const alcanzable = pasoMaximoAlcanzable(estado);
   // No se puede saltar a un paso sin haber respondido los anteriores.
   const paso = Math.min(estado.paso, alcanzable);
@@ -160,7 +161,20 @@ export default function Consulta({
       <PasoEspecie
         estado={estado}
         t={tg}
-        onElegir={(especie) => ir({ especie, paso: 2 })}
+        onElegir={(especie) =>
+          // Raza, uso y acceso al exterior son de una especie concreta.
+          ir(
+            especie === estado.especie
+              ? { especie, paso: 2 }
+              : {
+                  especie,
+                  paso: 2,
+                  raza: undefined,
+                  uso: undefined,
+                  exterior: undefined,
+                },
+          )
+        }
         onSiguiente={() => ir({ paso: 2 })}
       />
     );
@@ -335,8 +349,12 @@ function PasoMunicipio({
 }) {
   const t = tg.en('consulta.municipio');
   const ta = tg.en('consulta.acciones');
+  // Mientras se escribe otro municipio, el elegido antes no cuenta.
+  const [escribiendo, setEscribiendo] = useState(false);
   const elegido =
-    estado.municipio && indice ? indice.municipio(estado.municipio) : undefined;
+    estado.municipio && indice && !escribiendo
+      ? indice.municipio(estado.municipio)
+      : undefined;
   const provinciaElegida = elegido ? provincia(elegido.provincia) : undefined;
 
   return (
@@ -364,6 +382,7 @@ function PasoMunicipio({
         marcador={t('marcador')}
         Icono={MapPin}
         onElegir={(m) => onElegir(m.valor)}
+        onCambiarTexto={() => setEscribiendo(true)}
       />
 
       <p class="mt-7 text-sm font-medium text-texto">{t('rapidos')}</p>
@@ -413,8 +432,8 @@ function PasoMunicipio({
           <button
             type="button"
             class="boton boton--principal min-w-0 flex-1 lg:flex-none"
-            disabled={!estado.municipio}
-            onClick={() => estado.municipio && onElegir(estado.municipio)}
+            disabled={!elegido}
+            onClick={() => elegido && onElegir(elegido.slug)}
           >
             {ta('siguiente')}
             <ArrowRight aria-hidden />

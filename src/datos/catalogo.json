@@ -37,6 +37,10 @@
   {
    "slug": "akita-americano",
    "nombre": "Akita Americano",
+   "alias": [
+    "American Akita",
+    "Gran Perro Japonés"
+   ],
    "especie": "perro",
    "esPppEstatal": false,
    "notas": null,
@@ -50,6 +54,10 @@
   {
    "slug": "akita-inu",
    "nombre": "Akita Inu",
+   "alias": [
+    "Akita",
+    "Akita Japonés"
+   ],
    "especie": "perro",
    "esPppEstatal": true,
    "notas": null,
@@ -58,6 +66,9 @@
   {
    "slug": "american-bully",
    "nombre": "American Bully",
+   "alias": [
+    "Bully"
+   ],
    "especie": "perro",
    "esPppEstatal": false,
    "notas": null,
@@ -71,6 +82,11 @@
   {
    "slug": "american-staffordshire-terrier",
    "nombre": "American Staffordshire Terrier",
+   "alias": [
+    "Amstaff",
+    "American Stafford",
+    "Staffordshire Terrier Americano"
+   ],
    "especie": "perro",
    "esPppEstatal": true,
    "notas": "El anexo I del RD 287/2002 lo escribe \"American Staffodshire Terrier\". La errata es del texto oficial.",
@@ -79,6 +95,10 @@
   {
    "slug": "bandogg",
    "nombre": "Bandogg",
+   "alias": [
+    "Bandog",
+    "American Bandogge Mastiff"
+   ],
    "especie": "perro",
    "esPppEstatal": false,
    "notas": null,
@@ -92,6 +112,9 @@
   {
    "slug": "bull-terrier",
    "nombre": "Bull Terrier",
+   "alias": [
+    "Bullterrier"
+   ],
    "especie": "perro",
    "esPppEstatal": false,
    "notas": null,
@@ -109,6 +132,9 @@
   {
    "slug": "bullmastiff",
    "nombre": "Bullmastiff",
+   "alias": [
+    "Bull Mastiff"
+   ],
    "especie": "perro",
    "esPppEstatal": false,
    "notas": null,
@@ -134,6 +160,10 @@
   {
    "slug": "doberman",
    "nombre": "Dóberman",
+   "alias": [
+    "Dobermann",
+    "Doberman Pinscher"
+   ],
    "especie": "perro",
    "esPppEstatal": false,
    "notas": null,
@@ -163,6 +193,7 @@
   {
    "slug": "dogo-argentino",
    "nombre": "Dogo Argentino",
+   "alias": [],
    "especie": "perro",
    "esPppEstatal": true,
    "notas": null,
@@ -171,6 +202,9 @@
   {
    "slug": "dogo-de-burdeos",
    "nombre": "Dogo de Burdeos",
+   "alias": [
+    "Dogue de Bordeaux"
+   ],
    "especie": "perro",
    "esPppEstatal": false,
    "notas": null,
@@ -196,6 +230,12 @@
   {
    "slug": "dogo-del-tibet",
    "nombre": "Dogo del Tíbet",
+   "alias": [
+    "Mastín Tibetano",
+    "Mastín del Tíbet",
+    "Tibetan Mastiff",
+    "Do Khyi"
+   ],
    "especie": "perro",
    "esPppEstatal": false,
    "notas": null,
@@ -213,6 +253,10 @@
   {
    "slug": "fila-brasileiro",
    "nombre": "Fila Brasileiro",
+   "alias": [
+    "Fila Brasileño",
+    "Fila"
+   ],
    "especie": "perro",
    "esPppEstatal": true,
    "notas": null,
@@ -221,6 +265,10 @@
   {
    "slug": "mastin-napolitano",
    "nombre": "Mastín Napolitano",
+   "alias": [
+    "Mastino Napoletano",
+    "Mastino"
+   ],
    "especie": "perro",
    "esPppEstatal": false,
    "notas": null,
@@ -246,6 +294,12 @@
   {
    "slug": "pit-bull-terrier",
    "nombre": "Pit Bull Terrier",
+   "alias": [
+    "Pitbull",
+    "American Pit Bull Terrier",
+    "American Pitbull Terrier",
+    "APBT"
+   ],
    "especie": "perro",
    "esPppEstatal": true,
    "notas": null,
@@ -254,6 +308,10 @@
   {
    "slug": "presa-canario",
    "nombre": "Presa Canario",
+   "alias": [
+    "Dogo Canario",
+    "Perro de Presa Canario"
+   ],
    "especie": "perro",
    "esPppEstatal": false,
    "notas": null,
@@ -279,6 +337,10 @@
   {
    "slug": "presa-mallorquin",
    "nombre": "Presa Mallorquín (Ca de Bou)",
+   "alias": [
+    "Perro de Presa Mallorquín",
+    "Ca de Bou"
+   ],
    "especie": "perro",
    "esPppEstatal": false,
    "notas": null,
@@ -296,6 +358,10 @@
   {
    "slug": "rottweiler",
    "nombre": "Rottweiler",
+   "alias": [
+    "Rotweiler",
+    "Rottweiller"
+   ],
    "especie": "perro",
    "esPppEstatal": true,
    "notas": null,
@@ -304,6 +370,11 @@
   {
    "slug": "staffordshire-bull-terrier",
    "nombre": "Staffordshire Bull Terrier",
+   "alias": [
+    "Staffy",
+    "Staffie",
+    "Staffordshire"
+   ],
    "especie": "perro",
    "esPppEstatal": true,
    "notas": null,
@@ -312,6 +383,10 @@
   {
    "slug": "tosa-inu",
    "nombre": "Tosa Inu",
+   "alias": [
+    "Tosa",
+    "Tosa Japonés"
+   ],
    "especie": "perro",
    "esPppEstatal": true,
    "notas": null,

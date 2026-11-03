@@ -58,14 +58,17 @@ export default function Explorador({
     [normas],
   );
 
-  const busqueda = normalizar(texto.trim());
-  const filtradas = normas.filter(
-    (n) =>
-      (!busqueda || normalizar(`${n.nombre} ${n.titulo}`).includes(busqueda)) &&
+  // Cada palabra por separado: "ley bienestar animal" encuentra la Ley 7/2023.
+  const palabras = normalizar(texto).split(' ').filter(Boolean);
+  const filtradas = normas.filter((n) => {
+    const nombre = normalizar(`${n.nombre} ${n.titulo}`);
+    return (
+      palabras.every((p) => nombre.includes(p)) &&
       (!ambito || n.ambito === ambito) &&
       (!comunidad || n.comunidad === comunidad) &&
-      (!estado || n.estado === estado),
-  );
+      (!estado || n.estado === estado)
+    );
+  });
   const hayFiltros = Boolean(texto || ambito || comunidad || estado);
 
   return (

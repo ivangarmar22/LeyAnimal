@@ -123,6 +123,8 @@ export type Especie = {
 export type Raza = {
   slug: string;
   nombre: string;
+  /** Otros nombres con que se busca: "Pitbull", "Dogo Canario". */
+  alias: string[];
   especie: string;
   /** null = no verificado, distinto de false. */
   esPppEstatal: boolean | null;

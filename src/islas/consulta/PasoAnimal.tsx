@@ -2,7 +2,11 @@ import { ArrowLeft, ArrowRight, Dog } from 'lucide-preact';
 import { useState } from 'preact/hooks';
 import { ruta } from '@/lib/rutas';
 import type { Traductor } from '@/i18n/traductor';
-import { buscarRazas, raza as buscarRaza } from '@/lib/datos/normativa';
+import {
+  buscarRazas,
+  raza as buscarRaza,
+  razaPorNombre,
+} from '@/lib/datos/normativa';
 import { veredictoPpp } from '@/lib/datos/ppp';
 import {
   SEXOS,
@@ -77,6 +81,7 @@ export function PasoAnimal({
   const [raza, setRaza] = useState<RazaElegida | null>(
     inicial ? { slug: inicial.slug, nombre: inicial.nombre } : null,
   );
+  const [razaSinElegir, setRazaSinElegir] = useState(false);
 
   const esPerro = estado.especie === 'perro';
   const esGato = estado.especie === 'gato';
@@ -95,12 +100,24 @@ export function PasoAnimal({
         ? n
         : undefined;
     };
+    // Una raza escrita y no elegida vale si coincide con una de la lista. Si
+    // solo se parece, hay que elegirla: no se puede dar por "no esta".
+    let slugRaza = esPerro ? raza?.slug : undefined;
+    const escrita = esPerro && !raza ? valor('razaTexto') : undefined;
+    if (escrita) {
+      slugRaza = razaPorNombre(escrita)?.slug;
+      if (!slugRaza && buscarRazas(escrita).length > 0) {
+        setRazaSinElegir(true);
+        document.getElementById('raza')?.focus();
+        return;
+      }
+    }
     onEnviar({
       paso: 4,
       nombre: valor('nombre')?.slice(0, 40),
       edadAnios: numero('edadAnios', 40),
       edadMeses: numero('edadMeses', 11),
-      raza: raza?.slug,
+      raza: slugRaza,
       sexo: valor('sexo') as EstadoConsulta['sexo'],
       esterilizado: valor('esterilizado') as EstadoConsulta['esterilizado'],
       microchip: valor('microchip') as EstadoConsulta['microchip'],
@@ -168,6 +185,8 @@ export function PasoAnimal({
         {esPerro ? (
           <div class="grid gap-4">
             <Combobox
+              id="raza"
+              nombre="razaTexto"
               textoInicial={raza?.nombre}
               buscar={(termino) =>
                 buscarRazas(termino).map((r) => ({
@@ -180,9 +199,23 @@ export function PasoAnimal({
               marcador={t('razaMarcador')}
               sinResultados={t('razaSinResultados')}
               Icono={Dog}
-              onElegir={(r) => setRaza({ slug: r.valor, nombre: r.principal })}
-              onBorrar={() => setRaza(null)}
+              onElegir={(r) => {
+                setRaza({ slug: r.valor, nombre: r.principal });
+                setRazaSinElegir(false);
+              }}
+              onCambiarTexto={() => {
+                setRaza(null);
+                setRazaSinElegir(false);
+              }}
             />
+            {razaSinElegir ? (
+              <p
+                role="alert"
+                class="text-sm font-medium text-obligatorio-texto"
+              >
+                {t('razaSinElegir')}
+              </p>
+            ) : null}
             {raza ? (
               <div role="status" class="grid gap-2">
                 <VeredictoPpp raza={raza.slug} comunidad={comunidad} t={tp} />

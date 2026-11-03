@@ -106,7 +106,7 @@ function generarSlug(nombre) {
 }
 
 /**
- * Nombre para mostrar: "Mata de los Olmos, La" -> "La Mata de los Olmos",
+ * Nombre para mostrar de comunidades y provincias: "Rioja, La" -> "La Rioja",
  * "Madrid, Comunidad de" -> "Comunidad de Madrid". El oficial se guarda aparte.
  */
 function nombreVisible(nombre) {
@@ -117,6 +117,22 @@ function nombreVisible(nombre) {
   return pospuesto.endsWith("'")
     ? `${pospuesto}${cuerpo}`
     : `${pospuesto} ${cuerpo}`;
+}
+
+/**
+ * En los municipios solo se antepone un articulo, que puede ir seguido del
+ * nombre en castellano: "Vila Joiosa, la/Villajoyosa" -> "la Vila
+ * Joiosa/Villajoyosa". En "Saus, Camallera i Llampaies" la coma es del nombre.
+ */
+function nombreMunicipio(nombre) {
+  const m =
+    /^(.+?),\s*(el|la|los|las|l'|les|els|es|sa|ses|a|o|as|os)(\/.+)?$/i.exec(
+      nombre,
+    );
+  if (!m) return nombre;
+  const [, cuerpo, articulo, castellano = ''] = m;
+  const espacio = articulo.endsWith("'") ? '' : ' ';
+  return `${articulo}${espacio}${cuerpo}${castellano}`;
 }
 
 async function descargar(url, destino, binario = false) {
@@ -399,7 +415,7 @@ async function main() {
   const listado = await escribirDatos(
     'municipios.json',
     [...municipios].sort(porCodigo).map((m) => {
-      const visible = nombreVisible(m.nombre);
+      const visible = nombreMunicipio(m.nombre);
       return visible === m.nombre
         ? [m.codigo, visible, m.slug]
         : [m.codigo, visible, m.slug, m.nombre];

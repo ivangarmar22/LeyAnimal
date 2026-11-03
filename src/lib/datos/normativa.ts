@@ -13,7 +13,7 @@ import catalogoJson from '@/datos/catalogo.json';
 import estatalJson from '@/datos/estatal.json';
 import externasJson from '@/datos/externas.json';
 import referenciaJson from '@/datos/referencia-estatal.json';
-import { normalizar } from './busqueda';
+import { normalizar, puntuar, trigramas } from './busqueda';
 import {
   ordenarArticulos,
   ordenarFuentes,
@@ -48,14 +48,42 @@ export const razas = (especie?: string) =>
   especie ? RAZAS.filter((r) => r.especie === especie) : RAZAS;
 export const raza = (slug: string) => razaPorSlug.get(slug);
 
+const clavesRaza = new Map(
+  RAZAS.map((r) => [r.slug, [r.nombre, ...r.alias].map(normalizar)]),
+);
+
+/**
+ * Busca por nombre y alias. Admite erratas ("rotweiler") pero con un umbral
+ * alto, para no proponer una raza de la lista por otra que no lo es.
+ */
 export function buscarRazas(termino: string, especie = 'perro', limite = 8) {
   const t = normalizar(termino);
   if (t.length < 2) return [];
-  return RAZAS.filter(
-    (r) => r.especie === especie && normalizar(r.nombre).includes(t),
-  )
-    .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'))
-    .slice(0, limite);
+  const trigramasTermino = trigramas(t);
+  return RAZAS.filter((r) => r.especie === especie)
+    .map((r) => ({
+      r,
+      puntos: Math.max(
+        ...(clavesRaza.get(r.slug) ?? []).map((clave) =>
+          puntuar(clave, t, () => trigramas(clave), trigramasTermino, 0.5),
+        ),
+      ),
+    }))
+    .filter((x) => x.puntos > 0)
+    .sort(
+      (a, b) =>
+        b.puntos - a.puntos || a.r.nombre.localeCompare(b.r.nombre, 'es'),
+    )
+    .slice(0, limite)
+    .map((x) => x.r);
+}
+
+/** La raza cuyo nombre o alias es exactamente ese texto, si la hay. */
+export function razaPorNombre(texto: string, especie = 'perro') {
+  const t = normalizar(texto);
+  return RAZAS.find(
+    (r) => r.especie === especie && clavesRaza.get(r.slug)?.includes(t),
+  );
 }
 
 /**

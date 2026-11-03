@@ -16,10 +16,11 @@ export type Opcion = {
  */
 export function Combobox<T extends Opcion>({
   id: idExterno,
+  nombre,
   textoInicial,
   buscar,
   onElegir,
-  onBorrar,
+  onCambiarTexto,
   etiqueta,
   ocultarEtiqueta = false,
   descripcion,
@@ -31,10 +32,13 @@ export function Combobox<T extends Opcion>({
   class: clase,
 }: {
   id?: string;
+  /** `name` del campo, para leer lo escrito al enviar el formulario. */
+  nombre?: string;
   textoInicial?: string;
   buscar: (termino: string) => T[];
   onElegir: (opcion: T) => void;
-  onBorrar?: () => void;
+  /** Al escribir: lo elegido antes deja de valer. */
+  onCambiarTexto?: () => void;
   etiqueta: string;
   ocultarEtiqueta?: boolean;
   descripcion?: string;
@@ -136,6 +140,7 @@ export function Combobox<T extends Opcion>({
         />
         <input
           id={idBase}
+          name={nombre}
           type="text"
           role="combobox"
           aria-expanded={hayLista}
@@ -152,7 +157,7 @@ export function Combobox<T extends Opcion>({
             setTexto(valor);
             setAbierto(true);
             setResaltado(-1);
-            if (valor === '') onBorrar?.();
+            onCambiarTexto?.();
           }}
           onFocus={() => {
             setAbierto(true);

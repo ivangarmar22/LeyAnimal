@@ -188,7 +188,10 @@ export function resolverConsulta(
 ): ConsultaResuelta | null {
   if (!estado.especie || !m) return null;
 
-  const r = estado.raza ? (raza(estado.raza) ?? null) : null;
+  const r =
+    estado.especie === 'perro' && estado.raza
+      ? (raza(estado.raza) ?? null)
+      : null;
 
   // El mismo veredicto que la guia (D61).
   const perfil: PerfilAnimal = {

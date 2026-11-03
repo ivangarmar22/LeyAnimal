@@ -45,6 +45,7 @@
       "razaAyuda": "Si es mestizo o su raza no aparece al escribirla, déjalo en blanco: con tu municipio te decimos si está en la lista de perros potencialmente peligrosos.",
       "razaMarcador": "No lo sé / mestizo",
       "razaSinResultados": "Esa raza no figura en la lista estatal ni en las autonómicas de perros potencialmente peligrosos. Déjalo en blanco.",
+      "razaSinElegir": "Elige la raza en la lista de sugerencias o, si no está, deja el campo vacío.",
       "razaPppEnlace": "Qué implica",
       "sexo": "Sexo",
       "esterilizado": "¿Está esterilizado?",

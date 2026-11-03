@@ -93,7 +93,7 @@ export default function SelectorRapido({ textos }: { textos: Mensajes }) {
           marcador={t('marcador')}
           Icono={MapPin}
           onElegir={(m) => setMunicipio(m.valor)}
-          onBorrar={() => setMunicipio(undefined)}
+          onCambiarTexto={() => setMunicipio(undefined)}
         />
         <button type="submit" class="boton boton--principal h-[54px] shrink-0">
           {t('boton')}

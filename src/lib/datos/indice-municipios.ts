@@ -45,6 +45,76 @@ const CAPITALES_EXCEPCIONES: Record<string, string> = {
   '48': '48020', // Bilbao
 };
 
+/**
+ * Nombres en castellano de uso comun para municipios cuyo nombre oficial esta
+ * en otra lengua y no se parece lo bastante para encontrarlo por erratas.
+ */
+const ALIAS: Record<string, string[]> = {
+  '01059': ['Vitoria'],
+  '03047': ['Calpe'],
+  '07002': ['Alayor'],
+  '07005': ['Andraitx'],
+  '07015': ['Ciudadela', 'Ciudadela de Menorca'],
+  '07026': ['Ibiza'],
+  '07032': ['Mahón'],
+  '07037': ['Mercadal'],
+  '07046': ['San Antonio Abad'],
+  '07048': ['San José'],
+  '07050': ['San Juan Bautista'],
+  '07054': ['Santa Eulalia del Río'],
+  '07057': ['Santañí'],
+  '07064': ['Villacarlos'],
+  '08125': ['Moncada y Reixach'],
+  '08194': ['San Adrián de Besós'],
+  '08196': ['San Andrés de la Barca'],
+  '08200': ['San Baudilio de Llobregat'],
+  '08240': ['San Sadurní de Noya'],
+  '08266': ['Cerdañola del Vallés'],
+  '08279': ['Tarrasa'],
+  '08305': ['Villafranca del Panadés'],
+  '08307': ['Villanueva y Geltrú'],
+  '12135': ['Villarreal'],
+  '12138': ['Vinaroz'],
+  '15037': ['Finisterre'],
+  '15057': ['Noya'],
+  '15070': ['Puentes de García Rodríguez'],
+  '15072': ['Rianjo'],
+  '15078': ['Santiago'],
+  '17015': ['Bañolas'],
+  '17160': ['San Feliú de Guíxols'],
+  '20036': ['Fuenterrabía'],
+  '20064': ['Pasajes'],
+  '20069': ['San Sebastián'],
+  '20074': ['Vergara'],
+  '20079': ['Zarauz'],
+  '25120': ['Lérida'],
+  '25203': ['Seo de Urgel'],
+  '27051': ['Rivadeo'],
+  '27065': ['Villalba'],
+  '27066': ['Vivero'],
+  '28115': ['Pozuelo'],
+  '32009': ['El Barco de Valdeorras'],
+  '32019': ['El Carballino'],
+  '32032': ['Ginzo de Limia'],
+  '33024': ['Xixón'],
+  '36003': ['Bayona'],
+  '36042': ['Puenteareas'],
+  '36051': ['Sangenjo'],
+  '46017': ['Alcira'],
+  '46078': ['Burjasot'],
+  '46145': ['Játiva'],
+  '46147': ['Liria'],
+  '46184': ['Onteniente'],
+  '46205': ['Puzol'],
+  '46244': ['Torrente'],
+  '48003': ['Amorebieta'],
+  '48036': ['Galdácano'],
+  '48044': ['Guecho'],
+  '48046': ['Guernica'],
+  '48054': ['Lejona'],
+  '48069': ['Munguía'],
+};
+
 export function crearIndice(
   municipios: readonly Municipio[],
   nombresProvincia: Map<string, string>,
@@ -63,7 +133,21 @@ export function crearIndice(
     if (capital) capitales.set(codigo, capital);
   }
   const esCapital = new Set([...capitales.values()].map((m) => m.codigoIne));
+  const alias = new Map(
+    Object.entries(ALIAS).map(([codigo, nombres]) => [
+      codigo,
+      nombres.map(normalizar),
+    ]),
+  );
   const cacheTrigramas = new Map<string, Set<string>>();
+  const trigramasDe = (clave: string) => {
+    let cache = cacheTrigramas.get(clave);
+    if (!cache) {
+      cache = trigramas(clave);
+      cacheTrigramas.set(clave, cache);
+    }
+    return cache;
+  };
 
   /**
    * A igual puntuacion van primero las capitales y despues los nombres mas
@@ -75,18 +159,10 @@ export function crearIndice(
     const trigramasTermino = trigramas(t);
     const puntuados: { m: Municipio; puntos: number }[] = [];
     for (const m of municipios) {
-      const puntos = puntuar(
-        m.clave,
-        t,
-        () => {
-          let cache = cacheTrigramas.get(m.codigoIne);
-          if (!cache) {
-            cache = trigramas(m.clave);
-            cacheTrigramas.set(m.codigoIne, cache);
-          }
-          return cache;
-        },
-        trigramasTermino,
+      const puntos = Math.max(
+        ...[m.clave, ...(alias.get(m.codigoIne) ?? [])].map((clave) =>
+          puntuar(clave, t, () => trigramasDe(clave), trigramasTermino),
+        ),
       );
       if (puntos > 0)
         puntuados.push({
