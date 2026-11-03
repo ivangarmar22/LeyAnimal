@@ -63,6 +63,15 @@ export const sirena: IconoColor = { nombre: 'sirena' };
 /** Compass */
 export const brujula: IconoColor = { nombre: 'brujula' };
 
+/** Beach with umbrella */
+export const playa: IconoColor = { nombre: 'playa' };
+
+/** House with garden */
+export const casaJardin: IconoColor = { nombre: 'casaJardin' };
+
+/** Wilted flower */
+export const florMarchita: IconoColor = { nombre: 'florMarchita' };
+
 /** Shield */
 export const escudo: IconoColor = { nombre: 'escudo' };
 
@@ -92,6 +101,30 @@ export const documento: IconoColor = { nombre: 'documento' };
 
 /** Round pushpin */
 export const chincheta: IconoColor = { nombre: 'chincheta' };
+
+/** House */
+export const casa: IconoColor = { nombre: 'casa' };
+
+/** Person walking */
+export const paseante: IconoColor = { nombre: 'paseante' };
+
+/** Baby bottle */
+export const biberon: IconoColor = { nombre: 'biberon' };
+
+/** Lizard */
+export const lagarto: IconoColor = { nombre: 'lagarto' };
+
+/** Bone */
+export const hueso: IconoColor = { nombre: 'hueso' };
+
+/** Cat */
+export const gatoEntero: IconoColor = { nombre: 'gatoEntero' };
+
+/** Houses */
+export const casas: IconoColor = { nombre: 'casas' };
+
+/** Busts in silhouette */
+export const siluetas: IconoColor = { nombre: 'siluetas' };
 
 /** Scroll */
 export const pergamino: IconoColor = { nombre: 'pergamino' };

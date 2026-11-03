@@ -1,7 +1,8 @@
 ---
 /**
  * Rejilla de situaciones: las guias propias y las que ya existen en otra
- * pagina (perros potencialmente peligrosos). La usan su indice y la portada.
+ * pagina (perros potencialmente peligrosos, guias por tema). La usan su
+ * indice, con todas, y la portada, con las de `claves`.
  */
 import { ArrowRight } from 'lucide-preact';
 import { traductor } from '@/i18n/catalogos';
@@ -10,8 +11,13 @@ import { ICONOS_SITUACION } from '@/lib/contenido/iconos';
 import { ACCESOS, SITUACIONES } from '@/lib/contenido/situaciones';
 import { Ilustracion } from '@/ui/Ilustracion';
 
+interface Props {
+  /** Solo estas, en este orden. Sin lista, todas. */
+  claves?: readonly string[];
+}
+
 const t = traductor('situaciones');
-const tarjetas = [
+const todas = [
   ...SITUACIONES.map(({ slug }) => ({
     clave: slug,
     href: `/situaciones/${slug}`,
@@ -25,6 +31,14 @@ const tarjetas = [
     texto: t(`accesos.${clave}.texto`),
   })),
 ];
+const { claves } = Astro.props;
+const tarjetas = claves
+  ? claves.map((clave) => {
+      const tarjeta = todas.find((x) => x.clave === clave);
+      if (!tarjeta) throw new Error(`Situacion desconocida: ${clave}`);
+      return tarjeta;
+    })
+  : todas;
 ---
 
 <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-escalonado>

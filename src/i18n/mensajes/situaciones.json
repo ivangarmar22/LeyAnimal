@@ -1,7 +1,7 @@
 {
   "situaciones": {
-    "metaTitulo": "¿Qué necesita tu animal? Guías por situación",
-    "metaDescripcion": "Qué necesitas al comprar o adoptar un animal, mudarte, viajar por España o al extranjero, o si tu perro es de asistencia, con el artículo de cada obligación.",
+    "metaTitulo": "Tu mascota y la ley: adoptar, viajar, mudarte y más",
+    "metaDescripcion": "Qué exige la ley con tu mascota si vas a comprarla o adoptarla, mudarte, viajar o irte de vacaciones, si ya no puedes cuidarla o al final de su vida.",
     "titulo": "¿Qué vas a hacer?",
     "entradilla": "Elige tu situación y te decimos qué necesita tu animal: lo que es obligatorio, lo que conviene y lo que depende de dónde vivas o adónde vayas. Cada obligación, con su artículo.",
     "indice": "Situaciones",
@@ -33,6 +33,18 @@
       "incidencia": {
         "titulo": "Ha pasado algo",
         "texto": "Se ha perdido, has encontrado uno, ha mordido a alguien o has visto maltrato."
+      },
+      "camada": {
+        "titulo": "Mi perra o mi gata va a tener crías",
+        "texto": "Registro de criador, camadas, edad mínima y cómo se pueden regalar o vender los cachorros."
+      },
+      "separacion": {
+        "titulo": "Nos separamos o divorciamos",
+        "texto": "Quién se queda con el animal, el convenio regulador y qué decide el juez si no hay acuerdo."
+      },
+      "vecinos": {
+        "titulo": "Tengo problemas con los vecinos",
+        "texto": "Comunidad, alquiler, ladridos, terrazas y quién responde por las molestias y los daños."
       }
     },
     "portada": {
@@ -49,7 +61,7 @@
         "titulo": "Voy a comprar o adoptar un animal",
         "corto": "Comprar o adoptar",
         "resumen": "De quién puede venir, qué papeles te tienen que dar y qué trámites te tocan a ti.",
-        "metaTitulo": "Comprar o adoptar un animal: qué exige la ley",
+        "metaTitulo": "Comprar o adoptar un perro o gato: qué exige la ley",
         "metaDescripcion": "Criador registrado, contrato, identificación, edad mínima, adopción en protectoras y trámites después de la compra, según la Ley 7/2023.",
         "entradilla": "Antes de que llegue a casa: de quién puede venir, qué documentos te corresponden y qué queda de tu parte.",
         "puntos": {
@@ -162,7 +174,7 @@
         "titulo": "Voy a viajar con mi animal",
         "corto": "Viajar por España",
         "resumen": "Coche, tren, avión y hoteles, y qué pasa si no puede venir contigo.",
-        "metaTitulo": "Viajar con tu animal por España: qué dice la ley",
+        "metaTitulo": "Viajar con perro o gato por España: qué dice la ley",
         "metaDescripcion": "Transporte en coche, tren, barco y avión, hoteles y restaurantes, playas y cuánto tiempo puede quedarse solo: lo que dice la Ley 7/2023.",
         "entradilla": "Lo que dice la ley sobre el transporte, el acceso a establecimientos y cuánto tiempo puede quedarse solo si no viaja contigo.",
         "puntos": {
@@ -300,6 +312,140 @@
           "denegacion": {
             "titulo": "Si te niegan el acceso",
             "texto": "Pide que te indiquen el motivo por escrito. Fuera de los casos previstos, negar el acceso a una persona con su perro de asistencia se considera una vulneración del derecho a la accesibilidad, la igualdad y la no discriminación, y puedes denunciarlo ante la administración competente."
+          }
+        }
+      },
+      "vacaciones": {
+        "titulo": "Me voy de vacaciones sin mi animal",
+        "corto": "Irme de vacaciones",
+        "resumen": "Quién lo cuida, cuánto tiempo puede quedarse solo y qué pasa si se pierde mientras no estás.",
+        "metaTitulo": "Vacaciones sin tu perro o tu gato: qué exige la ley",
+        "metaDescripcion": "Cuánto tiempo puede quedarse solo, residencias y cuidadores, microchip y pérdida: qué dejar resuelto si te vas de vacaciones sin tu perro o tu gato.",
+        "entradilla": "Irte unos días sin él es perfectamente legal, siempre que alguien lo atienda. Esto es lo que tienes que dejar resuelto antes de salir.",
+        "puntos": {
+          "cuidador": {
+            "titulo": "Alguien tiene que atenderlo",
+            "texto": "Un perro no puede quedarse sin supervisión más de veinticuatro horas seguidas, y el resto de animales, más de tres días. Si te vas más tiempo, alguien tiene que verlo y cuidarlo: un familiar, un vecino, un cuidador o una residencia.",
+            "enlace": "Cuánto tiempo puede quedarse solo"
+          },
+          "residencia": {
+            "titulo": "Si es una residencia, comprueba que esté registrada",
+            "texto": "Las residencias y guarderías de animales tienen que estar registradas en su comunidad autónoma. Pide su número de registro, visítala antes y pregunta qué vacunas y tratamientos exigen."
+          },
+          "salud": {
+            "titulo": "Vacunas y tratamientos al día",
+            "texto": "Tienes que darle los cuidados sanitarios que necesite y los tratamientos obligatorios. Deja a quien lo cuide su cartilla, la medicación y el teléfono de tu clínica veterinaria."
+          },
+          "identificado": {
+            "titulo": "Microchip y datos de contacto al día",
+            "texto": "Tiene que estar identificado y localizable en todo momento. Comprueba antes de irte que tu teléfono en el registro es el correcto y que quien lo cuida sabe cómo localizarte."
+          },
+          "perdida": {
+            "titulo": "Si se pierde mientras no estás, 48 horas para comunicarlo",
+            "texto": "La pérdida hay que comunicarla a la autoridad competente en un máximo de 48 horas. Explica a quien lo cuida cómo hacerlo y pídele que te llame enseguida.",
+            "enlace": "Qué hacer si se pierde"
+          },
+          "recoger": {
+            "titulo": "Recógelo a la vuelta",
+            "texto": "No recoger a un animal de la residencia o del establecimiento donde lo dejaste es infracción grave, igual que el abandono."
+          },
+          "ppp": {
+            "titulo": "Perro potencialmente peligroso: quien lo pasee necesita licencia",
+            "texto": "Quien lo lleve por la calle tiene que llevar encima su propia licencia y el certificado de inscripción del perro en el registro. Si lo va a pasear otra persona, ella también necesita licencia.",
+            "enlace": "Guía de perros potencialmente peligrosos"
+          },
+          "llevarlo": {
+            "titulo": "¿Y si te lo llevas?",
+            "texto": "Si al final viaja contigo, revisa cómo llevarlo en el coche, en tren, barco o avión, y si tu alojamiento lo admite.",
+            "enlace": "Voy a viajar con mi animal"
+          }
+        }
+      },
+      "no-puedo-cuidarlo": {
+        "titulo": "Ya no puedo cuidar de mi animal",
+        "corto": "No puedo cuidarlo",
+        "resumen": "Cómo darlo a otra persona o a una protectora sin abandonarlo, y qué está prohibido.",
+        "metaTitulo": "No puedo cuidar a mi perro o gato: qué hacer",
+        "metaDescripcion": "Cesión con contrato, protectoras, cambio de titular en el registro y lo que la ley prohíbe: abandonarlo, venderlo por internet o sacrificarlo.",
+        "entradilla": "Una mudanza, una enfermedad o un cambio de vida pueden obligarte a dejar a tu animal. La ley no te obliga a quedártelo, pero sí a que pase a otras manos de forma correcta.",
+        "puntos": {
+          "abandono": {
+            "titulo": "Abandonarlo nunca es una salida",
+            "texto": "El abandono es infracción grave, con multas de 10.001 a 50.000 euros, y está prohibido soltar a cualquier animal de compañía en el medio natural. Dejarlo a la puerta de una protectora sin que nadie lo acepte también es abandonarlo."
+          },
+          "ayuda": {
+            "titulo": "Antes de decidir, pide ayuda",
+            "texto": "Muchos problemas de convivencia tienen arreglo. Si es un problema de conducta, un veterinario o un especialista en comportamiento animal puede ayudarte; si es económico o de tiempo, pregunta a protectoras y a tu ayuntamiento qué apoyos hay.",
+            "enlace": "Educación y problemas de conducta"
+          },
+          "cesion": {
+            "titulo": "Si se lo das a alguien: identificado y con contrato",
+            "texto": "Puedes cederlo gratis a una persona de confianza. La cesión tiene que ir acompañada de un contrato de cesión, y el animal tiene que estar identificado y registrado a tu nombre antes de entregarlo."
+          },
+          "venta": {
+            "titulo": "No lo vendas por internet",
+            "texto": "Está prohibida la venta de animales por internet o aplicaciones, y los perros, gatos y hurones solo pueden venderlos criadores registrados."
+          },
+          "protectora": {
+            "titulo": "Protectoras y centros de tu ayuntamiento",
+            "texto": "Solo los centros públicos de protección animal y las entidades registradas pueden darlo en adopción. Puedes pedirles que se hagan cargo, pero depende de sus plazas y suele haber lista de espera. La recogida de animales abandonados es competencia de tu ayuntamiento: pregunta qué hace en estos casos."
+          },
+          "registro": {
+            "titulo": "Comunica el cambio de titular",
+            "texto": "Cuando el animal pasa a otra persona, hay que comunicar el cambio de titularidad al registro de identificación. Hasta entonces, sigue constando a tu nombre."
+          },
+          "sacrificio": {
+            "titulo": "No se puede sacrificar por no poder cuidarlo",
+            "texto": "Está prohibido sacrificar a un animal de compañía por motivos económicos, por falta de sitio, por vejez, por una enfermedad con tratamiento o por problemas de conducta que se puedan reconducir. La eutanasia solo cabe por decisión veterinaria para evitar un sufrimiento sin remedio."
+          },
+          "ppp": {
+            "titulo": "Perro potencialmente peligroso: el nuevo titular necesita licencia",
+            "texto": "Para traspasar o donar un perro potencialmente peligroso, quien lo recibe tiene que tener antes su licencia, y el cambio debe inscribirse en el registro municipal.",
+            "enlace": "Guía de perros potencialmente peligrosos"
+          }
+        }
+      },
+      "final-de-vida": {
+        "titulo": "Mi animal es mayor o está muy enfermo",
+        "corto": "Final de su vida",
+        "resumen": "Cuidados, cuándo se permite la eutanasia y qué hacer después de su muerte.",
+        "metaTitulo": "Eutanasia y muerte de tu mascota: qué dice la ley",
+        "metaDescripcion": "Quién decide la eutanasia, cuándo está prohibido el sacrificio, incineración o entierro por empresa autorizada y baja en el registro.",
+        "entradilla": "Es una de las decisiones más difíciles. La ley pone el bienestar del animal en el centro: cuidados hasta el final, eutanasia solo para evitar un sufrimiento sin remedio y una despedida en condiciones.",
+        "puntos": {
+          "veterinario": {
+            "titulo": "Cuidados veterinarios hasta el final",
+            "texto": "Tienes que darle los cuidados sanitarios que necesite y acudir al veterinario siempre que su situación lo requiera. Los tratamientos paliativos también cuentan."
+          },
+          "eutanasia": {
+            "titulo": "La eutanasia la decide y la hace un veterinario",
+            "texto": "Solo está justificada bajo criterio y control veterinario, para evitar el sufrimiento por causas que no tienen recuperación y que comprometen seriamente su calidad de vida. Tiene que acreditarla y certificarla un veterinario colegiado, y debe hacerse con métodos humanitarios."
+          },
+          "motivos": {
+            "titulo": "No por vejez ni por una enfermedad que tenga tratamiento",
+            "texto": "Ninguna clínica ni centro puede sacrificarlo por vejez, por una enfermedad o lesión que tenga tratamiento, aunque sea paliativo, por problemas de conducta que se puedan reconducir o por motivos económicos."
+          },
+          "indebida": {
+            "titulo": "Nunca por tu cuenta",
+            "texto": "Practicar la eutanasia con medios inadecuados o por personas no cualificadas es infracción muy grave, con multas de 50.001 a 200.000 euros."
+          },
+          "despues": {
+            "titulo": "Después: incineración o entierro por una empresa autorizada",
+            "texto": "Para dar de baja al animal hace falta el documento que acredite que lo incineró o enterró una empresa reconocida oficialmente, con su número de identificación. Tu clínica veterinaria suele gestionarlo."
+          },
+          "jardin": {
+            "titulo": "¿Enterrarlo en el jardín o en el campo?",
+            "texto": "Si lo entierras por tu cuenta, no tendrás el documento de la empresa autorizada que pide la ley para la baja. Además, muchas comunidades y ayuntamientos lo prohíben o lo limitan por motivos sanitarios. Pregunta antes de hacerlo."
+          },
+          "baja": {
+            "titulo": "Comunica la muerte al registro",
+            "texto": "Hay que comunicar la muerte del animal al registro de identificación para darlo de baja.",
+            "enlace": "Qué hacer si tu animal muere"
+          },
+          "ppp": {
+            "titulo": "Perro potencialmente peligroso: también al registro municipal",
+            "texto": "La muerte de un perro potencialmente peligroso hay que comunicarla además al registro municipal donde está inscrito.",
+            "enlace": "Guía de perros potencialmente peligrosos"
           }
         }
       }

@@ -4,16 +4,335 @@
       "descripcion": "Qué exige la ley sobre el seguro de responsabilidad civil de tu perro, qué parte es exigible hoy y qué depende de un reglamento pendiente."
     },
     "identificacion": {
+      "metaTitulo": "Microchip obligatorio: perros, gatos y hurones ({anio})",
       "descripcion": "Microchip, anilla, registro y censo municipal: lo que exige la Ley 7/2023 en toda España y lo que añade tu comunidad."
     },
     "curso": {
+      "metaTitulo": "Curso obligatorio para tener perro en España ({anio})",
       "descripcion": "El curso de tenencia responsable que la Ley 7/2023 exige para tener un perro, y por qué todavía no se puede hacer."
     },
     "ppp": {
+      "metaTitulo": "Licencia para perros potencialmente peligrosos ({anio})",
       "descripcion": "Qué perros se consideran potencialmente peligrosos y qué implica: licencia municipal, seguro de al menos 120.000 € (más en algunas comunidades), bozal y correa."
     },
     "esterilizacion": {
+      "metaTitulo": "¿Es obligatorio castrar al gato? Lo que dice la ley",
       "descripcion": "La obligación estatal de esterilizar a los gatos antes de los seis meses, a quién afecta, desde cuándo y su única excepción."
+    },
+    "solo-en-casa": {
+      "metaTitulo": "¿Cuánto tiempo puede estar solo un perro? La ley",
+      "descripcion": "Cuánto tiempo puede quedarse solo tu animal, si puede vivir en la terraza, el balcón o el patio, y qué pasa si lo dejas atado o en el coche.",
+      "puntos": {
+        "tiempo": {
+          "titulo": "Perros, como mucho 24 horas sin supervisión; el resto, tres días",
+          "texto": "La ley prohíbe dejar a un animal de compañía sin supervisión más de tres días seguidos, y a un perro, más de veinticuatro horas seguidas. No fija un máximo de horas al día: dejarlo en casa mientras trabajas no es ilegal, siempre que esté bien atendido."
+        },
+        "supervision": {
+          "titulo": "Si vas a faltar más, que alguien lo atienda",
+          "texto": "Supervisión no significa que tengas que estar tú. Puede ocuparse un familiar, un vecino, un cuidador profesional o una residencia, siempre que alguien lo vea y lo atienda dentro de esos plazos."
+        },
+        "terraza": {
+          "titulo": "Terraza, balcón, patio o trastero: no como sitio para vivir",
+          "texto": "Está prohibido mantener a perros y gatos de forma habitual en terrazas, balcones, azoteas, trasteros, sótanos, patios y similares, o en vehículos. Que salgan un rato no es el problema; que vivan ahí, sí. Tenerlos ahí de forma permanente es infracción grave, con multas de 10.001 a 50.000 euros."
+        },
+        "fuera": {
+          "titulo": "Si tiene que vivir fuera, con refugio, sombra, agua y comida",
+          "texto": "Hay animales que, por su tamaño o su especie, no pueden vivir dentro de casa. En ese caso necesitan un habitáculo de su tamaño que los proteja del sol, la lluvia y el frío, y acceso a agua, comida y buenas condiciones de higiene. Si son animales que viven en grupo, también la compañía que necesiten."
+        },
+        "atado": {
+          "titulo": "Nada de tenerlo atado a un punto fijo",
+          "texto": "Está prohibido usar cadenas o cualquier otro sistema que lo inmovilice en un punto fijo, salvo que lo prescriba un veterinario por su bienestar."
+        },
+        "coche": {
+          "titulo": "Nunca solo en un coche cerrado",
+          "texto": "No puedes dejarlo solo en un vehículo cerrado expuesto al calor, al frío o a cualquier condición que ponga en peligro su vida. Si tiene que quedarse en un vehículo aparcado, asegúrate de que la ventilación y la temperatura sean adecuadas."
+        },
+        "calle": {
+          "titulo": "Tampoco atado a la puerta de una tienda",
+          "texto": "En la calle y en los espacios públicos no puede quedarse atado ni suelto sin que esté presente quien lo cuida. Dejarlo a la puerta del súper mientras compras entra en esa prohibición.",
+          "enlace": "Paseos, correa y espacios públicos"
+        },
+        "vacaciones": {
+          "titulo": "¿Te vas de vacaciones sin él?",
+          "texto": "Organízalo con tiempo: quién lo cuidará, qué necesita y qué pasa si se pierde mientras no estás.",
+          "enlace": "Me voy de vacaciones sin mi animal"
+        }
+      }
+    },
+    "paseos": {
+      "metaTitulo": "Perro suelto, correa y excrementos: lo que dice la ley",
+      "descripcion": "Si tu perro puede ir suelto, qué hacer con los excrementos y los orines, y quién responde si causa un daño.",
+      "puntos": {
+        "presente": {
+          "titulo": "En la calle, siempre contigo",
+          "texto": "Está prohibido que un animal esté atado o deambule por espacios públicos sin la supervisión presencial de la persona que lo cuida. No basta con que esté cerca de casa o que «conozca el barrio»."
+        },
+        "correa": {
+          "titulo": "Dónde llevarlo con correa lo deciden tu comunidad autónoma y tu ayuntamiento",
+          "texto": "La Ley 7/2023 no obliga a llevar con correa a todos los perros en todas partes, pero prohíbe dejarlos sueltos donde puedan causar daños, sobre todo en espacios naturales y zonas con ganado. Dónde tienen que ir atados y dónde pueden ir sueltos (parques caninos, horarios, playas) lo fijan las leyes autonómicas y las ordenanzas municipales.",
+          "enlace": "Qué exige cada comunidad"
+        },
+        "ppp": {
+          "titulo": "Perros potencialmente peligrosos: bozal y correa corta",
+          "texto": "En lugares públicos tienen que llevar bozal adecuado y una correa o cadena no extensible de menos de dos metros, y cada persona solo puede llevar uno de estos perros.",
+          "enlace": "Guía de perros potencialmente peligrosos"
+        },
+        "excrementos": {
+          "titulo": "Recoge los excrementos y limpia los orines",
+          "texto": "Evita que haga sus necesidades en sitios de paso, fachadas, puertas o entradas de establecimientos, y recoge o limpia siempre lo que deje, con productos biodegradables. Tu ayuntamiento puede concretar cómo hacerlo y multar aparte."
+        },
+        "molestias": {
+          "titulo": "Que no moleste ni ponga en peligro a nadie",
+          "texto": "Tienes que tomar las medidas necesarias para que su presencia en la calle no cause molestias, peligros ni daños a personas, a otros animales o a las cosas."
+        },
+        "danos": {
+          "titulo": "Si causa un daño, respondes tú",
+          "texto": "Quien tiene el animal responde de los daños que cause, aunque se escape o se pierda. Solo se libra si el daño se debe a fuerza mayor o a culpa de quien lo sufre. Por eso conviene un seguro de responsabilidad civil aunque en tu caso no sea obligatorio.",
+          "enlace": "Guía del seguro"
+        },
+        "vehiculo": {
+          "titulo": "Nunca atado a un coche o una moto en marcha",
+          "texto": "Está prohibido llevar animales atados a vehículos a motor en marcha."
+        },
+        "colonias": {
+          "titulo": "Perros: respeta las colonias de gatos",
+          "texto": "Si tienes perro, debes evitar que altere o ponga en riesgo las colonias felinas: los gatos que viven en ellas, su comida y sus refugios."
+        },
+        "espacios": {
+          "titulo": "Playas, parques y zonas caninas: lo decide cada ayuntamiento",
+          "texto": "La ley pide a los ayuntamientos que faciliten el acceso de los animales que no supongan un riesgo y que habiliten zonas de esparcimiento, pero las condiciones concretas están en las ordenanzas. Consúltalas antes de ir."
+        }
+      }
+    },
+    "cria": {
+      "metaTitulo": "Criar, regalar o vender cachorros: lo que dice la ley",
+      "descripcion": "Si tu perra o tu gata puede tener crías, qué hacer si ya ha tenido una camada y cómo se pueden vender o regalar los cachorros.",
+      "puntos": {
+        "registro": {
+          "titulo": "Solo pueden criar las personas inscritas como criadoras",
+          "texto": "Criar perros, gatos, hurones o cualquier otro animal que deba identificarse solo pueden hacerlo personas inscritas en el Registro de Criadores de Animales de Compañía. Vale también para una sola camada y aunque no vendas las crías."
+        },
+        "puntual": {
+          "titulo": "Una camada puntual: inscribe al animal como reproductor",
+          "texto": "Si quieres criar de forma puntual, sin negocio, tienes que inscribir a tu animal como reproductor en el Registro de Animales de Compañía. Con eso quedas dado de alta como criador. Los tipos de criador y sus condiciones están pendientes de reglamento: pregunta en el registro de tu comunidad cómo hacerlo."
+        },
+        "evitar": {
+          "titulo": "Si no vas a criar, evita que se reproduzca",
+          "texto": "Tienes que tomar medidas para que tu animal no se reproduzca sin control. Para los gatos la ley concreta cuál: esterilizarlos antes de los seis meses, salvo los reproductores de un criador registrado.",
+          "enlace": "Guía de la esterilización"
+        },
+        "camada": {
+          "titulo": "Si ya ha nacido una camada",
+          "texto": "Las crías tienen que identificarse, y la primera identificación solo puede hacerse a nombre de un criador registrado, una entidad de protección animal o una Administración. Si tu animal ha tenido crías sin que estés inscrito, habla con tu veterinario y con el registro de tu comunidad para regularizarlo antes de entregar ninguna."
+        },
+        "identificados": {
+          "titulo": "Ningún cachorro se entrega sin estar identificado a nombre de quien lo da",
+          "texto": "Está prohibido vender, regalar o dar en adopción un animal que no esté identificado y registrado previamente a nombre de quien lo entrega."
+        },
+        "edad": {
+          "titulo": "Edad mínima para entregarlos",
+          "texto": "Para venderlos, los perros y gatos tienen que tener al menos dos meses si se venden desde el lugar donde nacieron, y cuatro meses si se venden desde otro sitio. Para regalarlos o cederlos, perros, gatos y hurones tienen que tener al menos ocho semanas."
+        },
+        "internet": {
+          "titulo": "Ni venta por internet ni anuncios sin número de criador",
+          "texto": "Está prohibida la venta directa de animales por internet, portales o aplicaciones. Los anuncios, también los de internet, tienen que incluir el número de registro del criador y el de identificación del animal."
+        },
+        "multas": {
+          "titulo": "Criar o vender sin estar autorizado es infracción muy grave",
+          "texto": "La cría, el comercio o la exposición con fines comerciales por personas no autorizadas se castigan con multas de 50.001 a 200.000 euros.",
+          "enlace": "Todos los tramos de multas"
+        }
+      }
+    },
+    "especies": {
+      "metaTitulo": "Animales exóticos permitidos y prohibidos como mascota",
+      "descripcion": "Perros, gatos y hurones, sí. Primates, reptiles venenosos o grandes y mamíferos silvestres de más de 5 kg, no. El resto espera a una lista oficial.",
+      "puntos": {
+        "listado": {
+          "titulo": "La ley prevé una lista de especies permitidas",
+          "texto": "Solo se podrán criar o transmitir como animales de compañía las especies que figuren en el listado positivo. Ese listado lo tiene que aprobar un real decreto: el Gobierno sometió el proyecto a información pública en abril de 2026, pero a fecha de nuestra última revisión no se ha publicado en el BOE."
+        },
+        "prohibidas": {
+          "titulo": "Mientras tanto, estas especies están prohibidas",
+          "texto": "Hasta que haya listado, no se pueden tener como animales de compañía: artrópodos, peces y anfibios cuya mordedura o veneno sea un riesgo grave; reptiles venenosos y los que de adultos pesen más de dos kilos, salvo las tortugas; todos los primates; los mamíferos silvestres de más de cinco kilos de adultos, y las especies que otra norma prohíba tener, como las del catálogo de especies exóticas invasoras."
+        },
+        "condiciones": {
+          "titulo": "Jaulas, terrarios y acuarios a su medida",
+          "texto": "Los animales que viven en jaulas, acuarios, terrarios o similares necesitan un espacio adecuado a su tamaño, con ambiente natural y enriquecimiento. Las condiciones de cada especie se fijarán por reglamento."
+        },
+        "identificacion": {
+          "titulo": "Aves con anilla; otras especies, según su reglamento",
+          "texto": "Las aves tienen que identificarse con anilla desde que nacen, igual que perros, gatos y hurones con microchip. El sistema para el resto de especies lo fijará un reglamento por especie.",
+          "enlace": "Guía de identificación"
+        },
+        "tiendas": {
+          "titulo": "Dónde se pueden comprar",
+          "texto": "Perros, gatos y hurones solo se venden desde criadores registrados. El resto de especies permitidas sí pueden venderse en tiendas de animales autorizadas.",
+          "enlace": "Voy a comprar o adoptar un animal"
+        },
+        "soltar": {
+          "titulo": "Nunca lo sueltes en el campo",
+          "texto": "Está prohibido liberar en el medio natural cualquier animal de compañía, y abandonarlo es infracción grave. Muchos exóticos se convierten en especies invasoras. Si ya no puedes cuidarlo, busca una entidad de protección animal o pregunta en tu ayuntamiento."
+        }
+      }
+    },
+    "educacion": {
+      "metaTitulo": "Collar eléctrico, de castigo y corte de orejas: la ley",
+      "descripcion": "Qué métodos de adiestramiento prohíbe la ley, qué pasa con los collares eléctricos, de castigo o de ahogo y por qué ya no se pueden cortar orejas ni colas.",
+      "puntos": {
+        "metodos": {
+          "titulo": "Educar sin miedo ni dolor",
+          "texto": "Tienes que educar y manejar a tu animal con métodos que no le provoquen sufrimiento ni le causen ansiedad o miedo. Usar métodos agresivos o violentos en su educación es infracción grave."
+        },
+        "collares": {
+          "titulo": "Collares eléctricos, de impulsos, de castigo o de ahogo: prohibidos",
+          "texto": "La ley prohíbe cualquier herramienta de manejo que pueda lesionar al animal, y cita expresamente los collares eléctricos, de impulsos, de castigo y de ahogo."
+        },
+        "mutilaciones": {
+          "titulo": "Nada de cortar orejas ni cola",
+          "texto": "Están prohibidas las mutilaciones y modificaciones corporales permanentes por motivos estéticos o funcionales, como cortar orejas o cola. Solo se permiten el corte en la oreja que identifica a los gatos comunitarios y las intervenciones necesarias por motivos de salud o para esterilizar, acreditadas con un informe veterinario. Hacerlo sin autorización es infracción grave."
+        },
+        "profesional": {
+          "titulo": "Problemas de conducta: al veterinario o a un especialista",
+          "texto": "Si tu animal lo necesita, tienes que recurrir a un veterinario, o a uno acreditado en comportamiento animal."
+        },
+        "peleas": {
+          "titulo": "Peleas: prohibidas",
+          "texto": "Está prohibido usar animales en peleas o adiestrarlos para ello, y azuzarlos contra otros animales o contra personas fuera de las actividades regladas. Es infracción muy grave, con multas de 50.001 a 200.000 euros."
+        },
+        "curso": {
+          "titulo": "Perros: curso de formación, pendiente",
+          "texto": "La ley exige un curso de tenencia responsable para tener perro, pero su contenido depende de un reglamento que aún no existe. Hoy no se puede hacer.",
+          "enlace": "Guía del curso"
+        }
+      }
+    },
+    "gatos-comunitarios": {
+      "metaTitulo": "Gatos callejeros y colonias felinas: qué dice la ley",
+      "descripcion": "Qué es un gato comunitario, quién se ocupa de las colonias, si puedes darles de comer y qué no se puede hacer con ellos.",
+      "intro": {
+        "titulo": "Qué es un gato comunitario",
+        "texto": "Es el gato que vive en libertad, ligado a un territorio, pero que no se deja manejar con facilidad por las personas porque está poco o nada socializado. Los gatos de una misma zona forman una colonia felina. Siguen siendo animales de compañía y la ley los protege."
+      },
+      "puntos": {
+        "ayuntamiento": {
+          "titulo": "Los gestiona tu ayuntamiento",
+          "texto": "Los gatos comunitarios tienen que estar identificados con microchip a nombre del ayuntamiento y esterilizados. El ayuntamiento debe tener un programa de gestión de colonias felinas con censo, esterilización y control sanitario."
+        },
+        "alimentar": {
+          "titulo": "¿Puedes darles de comer? Depende de tu ayuntamiento",
+          "texto": "La ley quiere que la ciudadanía colabore en el cuidado de las colonias, pero son las normas municipales las que fijan los derechos y obligaciones de las personas cuidadoras. En muchos municipios hace falta una acreditación y la comida solo se puede dejar en puntos fijados. Pregunta en el tuyo antes de empezar."
+        },
+        "respetar": {
+          "titulo": "Respeta a los gatos, su comida y sus refugios",
+          "texto": "Todo el mundo tiene que respetar la integridad y la calidad de vida de los gatos de una colonia, y también los comederos y refugios del programa municipal."
+        },
+        "abandonar": {
+          "titulo": "Dejar un gato en una colonia es abandonarlo",
+          "texto": "Está prohibido abandonar gatos en las colonias, vengan de donde vengan, y soltar gatos en una colonia distinta de la suya. El abandono es infracción grave."
+        },
+        "retirar": {
+          "titulo": "No se pueden sacar de la colonia, salvo excepciones",
+          "texto": "Solo se puede retirar un gato de su colonia si está enfermo y no puede valerse por sí mismo, o si va a ser adoptado porque está socializado o es un cachorro en edad de socialización."
+        },
+        "perros": {
+          "titulo": "Si tienes perro, que no los moleste",
+          "texto": "Tienes que evitar que tu perro altere o ponga en riesgo la colonia, sus gatos o sus recursos."
+        },
+        "tuGato": {
+          "titulo": "Si tu gato sale a la calle, esterilizado",
+          "texto": "Los gatos con titular tienen que estar identificados y esterilizados antes de los seis meses. Un gato que sale sin esterilizar puede tener crías con los de la colonia.",
+          "enlace": "Guía de la esterilización"
+        },
+        "perdido": {
+          "titulo": "Si parece un gato perdido",
+          "texto": "Un gato sociable, que se acerca a las personas, puede ser un gato con dueño que se ha perdido. La recogida de animales extraviados corresponde al ayuntamiento: avisa al tuyo o lleva el gato a un veterinario para que lea su microchip.",
+          "enlace": "Qué hacer si encuentras un animal"
+        }
+      }
+    },
+    "vecinos": {
+      "metaTitulo": "Mascotas y vecinos: comunidad, alquiler y ladridos",
+      "descripcion": "Si la comunidad o el casero pueden prohibirte tener animales, qué hacer con los ladridos y quién responde por las molestias y los daños.",
+      "puntos": {
+        "comunidad": {
+          "titulo": "Comunidad de vecinos: lo que digan los estatutos",
+          "texto": "Ninguna ley prohíbe tener animales en un piso. La Ley de Propiedad Horizontal no menciona a los animales, pero no permite hacer en el piso actividades prohibidas en los estatutos ni actividades molestas. Revisa los estatutos de tu comunidad; si no dicen nada, la comunidad solo puede actuar si el animal causa molestias o daña la finca."
+        },
+        "zonas": {
+          "titulo": "Ascensor, portal y zonas comunes: según las normas internas",
+          "texto": "Las normas de régimen interior de la comunidad pueden regular el uso de las zonas comunes con animales, como el ascensor, el jardín o la piscina. Pregunta al administrador qué hay aprobado en la tuya."
+        },
+        "alquiler": {
+          "titulo": "De alquiler: mira el contrato",
+          "texto": "Ninguna norma estatal regula los animales en un piso de alquiler: cuenta lo que pactes en el contrato. Si una cláusula los prohíbe, incumplirla puede traerte problemas con el casero. Si no dice nada, lo más seguro es pactarlo por escrito antes de entrar."
+        },
+        "ruido": {
+          "titulo": "Ladridos y ruidos: evita molestar",
+          "texto": "Tienes que evitar que tu animal cause molestias. El ruido lo regulan además las ordenanzas de tu ayuntamiento. Si las molestias continúan, el presidente de la comunidad puede exigir que cesen y, con acuerdo de la junta, acudir al juzgado."
+        },
+        "terraza": {
+          "titulo": "Ni en la terraza ni en el balcón de forma habitual",
+          "texto": "Está prohibido mantener perros y gatos de forma habitual en terrazas, balcones, azoteas, trasteros, patios y similares.",
+          "enlace": "Dejarlo solo, en la terraza o en el patio"
+        },
+        "excrementos": {
+          "titulo": "Portal, escalera y aceras, limpios",
+          "texto": "Evita que haga sus necesidades en zonas de paso, fachadas o entradas, y limpia siempre lo que deje."
+        },
+        "danos": {
+          "titulo": "Si causa daños, respondes tú",
+          "texto": "Respondes de los daños y perjuicios que cause tu animal a personas, otros animales o cosas, aunque se escape. Revisa si tu seguro de hogar cubre la responsabilidad civil por tus animales.",
+          "enlace": "Guía del seguro"
+        },
+        "numero": {
+          "titulo": "¿Cuántos animales puedes tener? Lo fijan tu comunidad autónoma o tu ayuntamiento",
+          "texto": "La Ley 7/2023 no fija un número máximo de animales por vivienda. Algunas leyes autonómicas y muchas ordenanzas municipales sí lo hacen o piden una autorización a partir de cierta cifra.",
+          "enlace": "Qué exige cada comunidad"
+        }
+      }
+    },
+    "familia": {
+      "metaTitulo": "Custodia de mascotas en divorcio y herencia",
+      "descripcion": "Quién se queda con el animal si os separáis o divorciáis, y qué pasa con él si su titular fallece.",
+      "intro": {
+        "titulo": "Ya no es un objeto",
+        "texto": "Desde la reforma del Código Civil de 2021, los animales son seres vivos dotados de sensibilidad. Por eso en una separación o en una herencia no se reparten como un mueble más: cuenta su bienestar."
+      },
+      "puntos": {
+        "convenio": {
+          "titulo": "El convenio regulador tiene que decir qué pasa con el animal",
+          "texto": "Si os separáis o divorciáis de mutuo acuerdo, el convenio regulador tiene que recoger con quién vivirá el animal, cómo os repartiréis el tiempo de convivencia y cuidado si hace falta y quién pagará sus gastos."
+        },
+        "control": {
+          "titulo": "Un acuerdo perjudicial para el animal se puede corregir",
+          "texto": "Si lo acordado es gravemente perjudicial para el bienestar del animal, el juez ordenará las medidas necesarias. Y si las circunstancias cambian mucho, se puede pedir que se modifiquen las medidas."
+        },
+        "juez": {
+          "titulo": "Sin acuerdo, decide el juez: a uno o a los dos",
+          "texto": "El juez confía el animal a uno de los cónyuges o a los dos, fija cómo podrá estar con él el otro y reparte los gastos de su cuidado. Decide pensando en la familia y en el bienestar del animal, con independencia de quién figure como propietario. La decisión se anota en el registro de identificación."
+        },
+        "provisional": {
+          "titulo": "Mientras dura el proceso, medidas provisionales",
+          "texto": "Admitida la demanda, y si no hay acuerdo aprobado, el juez decide de forma provisional con quién se queda el animal y cómo puede verlo el otro."
+        },
+        "pareja": {
+          "titulo": "Parejas de hecho: dejadlo por escrito",
+          "texto": "Estas reglas del Código Civil se refieren al matrimonio. Si sois pareja de hecho, lo más seguro es acordar por escrito qué pasará con el animal; sin acuerdo, habrá que acudir al juzgado."
+        },
+        "herencia": {
+          "titulo": "Si su titular fallece",
+          "texto": "Si el testamento no dice nada, el animal se entrega a los herederos o legatarios que lo reclamen. Mientras tanto, si nadie puede atenderlo, queda a cargo del servicio de recogida de animales. Si nadie lo quiere, la Administración puede cederlo a otra persona, y si lo reclaman varios herederos sin ponerse de acuerdo, decide el juez pensando en su bienestar."
+        },
+        "testamento": {
+          "titulo": "Puedes dejarlo previsto en el testamento",
+          "texto": "Las reglas anteriores solo se aplican si no hay disposición en el testamento. Si quieres decidir quién cuidará de tu animal, déjalo escrito."
+        },
+        "registro": {
+          "titulo": "Comunica el cambio de titular",
+          "texto": "Cuando el animal pasa a otra persona, por un divorcio o una herencia, hay que comunicar el cambio de titularidad al registro de identificación."
+        }
+      }
     }
   },
   "especies": {

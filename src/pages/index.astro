@@ -22,6 +22,7 @@ import {
   pergamino,
   sirena,
 } from '@/lib/contenido/ilustraciones';
+import { guiaTema } from '@/lib/contenido/guias';
 import { PREGUNTAS_PORTADA } from '@/lib/contenido/preguntas';
 import {
   cifras,
@@ -43,6 +44,18 @@ const tg = traductor();
 const t = tg.en('inicio');
 const tm = tg.en('meta');
 const ts = tg.en('situaciones.portada');
+
+// La portada no lista todo: las situaciones de siempre y las guias de
+// obligaciones. Las de dudas frecuentes (D60) estan en sus indices.
+const SITUACIONES_PORTADA = [
+  'comprar-o-adoptar',
+  'mudanza',
+  'viajar-por-espana',
+  'viajar-al-extranjero',
+  'perro-de-asistencia',
+  'ppp',
+];
+const temasPortada = temas().filter((tema) => !guiaTema(tema.clave));
 
 const c = cifras();
 const verificada = ultimaVerificacion();
@@ -207,7 +220,7 @@ const cifrasTira = [
         <h2 class="titulo-2">{ts('titulo')}</h2>
         <p class="entradilla">{ts('texto')}</p>
       </div>
-      <TarjetasSituacion />
+      <TarjetasSituacion claves={SITUACIONES_PORTADA} />
       <a href={ruta('/situaciones')} class="enlace-flecha mt-10" data-aparece>
         {ts('todas')}
         <ArrowRight aria-hidden="true" />
@@ -278,7 +291,7 @@ const cifrasTira = [
         <p class="entradilla">{t('guias.texto')}</p>
       </div>
       <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-escalonado>
-        {temas().map((tema) => {
+        {temasPortada.map((tema) => {
           const Icono = ICONOS_TEMA[tema.clave] ?? documento;
           const textos = textosTema(tg.en('temas'), tema);
           return (

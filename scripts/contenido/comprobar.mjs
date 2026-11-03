@@ -11,6 +11,7 @@
  */
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { GUIAS_TEMA } from '../../src/lib/contenido/guias.ts';
 import { SITUACIONES } from '../../src/lib/contenido/situaciones.ts';
 import { DATOS } from './comun.mjs';
 
@@ -312,17 +313,29 @@ ok(
     .map((f) => `${f.articulo}: la cita no esta en el articulo`),
 );
 
-// Las guias por situacion citan articulos sueltos: ninguno puede faltar, y lo
-// que se presenta como obligacion tiene que tener al menos uno.
+// Las guias por situacion y las de dudas frecuentes citan articulos sueltos:
+// ninguno puede faltar, y lo que se presenta como obligacion tiene que tener
+// al menos uno.
+const erroresDeGuia = (nombre, g) => [
+  ...[...(g.intro ?? []), ...g.puntos.flatMap((p) => p.ids)]
+    .filter((id) => !articuloPorId.has(id))
+    .map((id) => `${nombre}: articulo ${id} no existe`),
+  ...g.puntos
+    .filter((p) => p.estado.startsWith('obligatorio') && p.ids.length === 0)
+    .map((p) => `${nombre}.${p.clave}: ${p.estado} sin articulo`),
+];
 ok(
   'Guias por situacion: cada obligacion con articulo, y cada articulo existe',
-  SITUACIONES.flatMap((g) => [
-    ...[...(g.intro ?? []), ...g.puntos.flatMap((p) => p.ids)]
-      .filter((id) => !articuloPorId.has(id))
-      .map((id) => `${g.slug}: articulo ${id} no existe`),
-    ...g.puntos
-      .filter((p) => p.estado.startsWith('obligatorio') && p.ids.length === 0)
-      .map((p) => `${g.slug}.${p.clave}: ${p.estado} sin articulo`),
+  SITUACIONES.flatMap((g) => erroresDeGuia(g.slug, g)),
+);
+ok(
+  'Guias por tema sin requisito: cada obligacion con articulo, cada articulo existe y cada guia es un tema del catalogo sin requisitos (D60)',
+  GUIAS_TEMA.flatMap((g) => [
+    ...erroresDeGuia(g.clave, g),
+    ...(temas.has(g.clave) ? [] : [`${g.clave}: no es un tema del catalogo`]),
+    ...(requisitos.some((r) => r.tema === g.clave)
+      ? [`${g.clave}: tiene requisitos, no puede ir por puntos`]
+      : []),
   ]),
 );
 

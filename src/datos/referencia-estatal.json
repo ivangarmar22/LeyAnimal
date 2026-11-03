@@ -1,6 +1,70 @@
 {
  "articulos": [
   {
+   "id": "codigo-civil#art. 103",
+   "norma": "codigo-civil",
+   "referencia": "art. 103",
+   "epigrafe": "Medidas provisionales sobre los animales de compañía",
+   "textoLiteral": "Admitida la demanda, el Juez, a falta de acuerdo de ambos cónyuges aprobado judicialmente, adoptará, con audiencia de éstos, las medidas siguientes:\n1.ª bis Determinar, atendiendo al interés de los miembros de la familia y al bienestar del animal, si los animales de compañía se confían a uno o a ambos cónyuges, la forma en que el cónyuge al que no se hayan confiado podrá tenerlos en su compañía, así como también las medidas cautelares convenientes para conservar el derecho de cada uno.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#art103"
+  },
+  {
+   "id": "codigo-civil#art. 1905",
+   "norma": "codigo-civil",
+   "referencia": "art. 1905",
+   "epigrafe": "Responsabilidad por los daños que causa un animal",
+   "textoLiteral": "El poseedor de un animal, o el que se sirve de él, es responsable de los perjuicios que causare, aunque se le escape o extravíe. Sólo cesará esta responsabilidad en el caso de que el daño proviniera de fuerza mayor o de culpa del que lo hubiese sufrido.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#art1905"
+  },
+  {
+   "id": "codigo-civil#art. 333 bis.1",
+   "norma": "codigo-civil",
+   "referencia": "art. 333 bis.1",
+   "epigrafe": "Los animales son seres sintientes",
+   "textoLiteral": "Los animales son seres vivos dotados de sensibilidad. Solo les será aplicable el régimen jurídico de los bienes y de las cosas en la medida en que sea compatible con su naturaleza o con las disposiciones destinadas a su protección.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#a3-3"
+  },
+  {
+   "id": "codigo-civil#art. 90.1",
+   "norma": "codigo-civil",
+   "referencia": "art. 90.1",
+   "epigrafe": "Convenio regulador. Destino de los animales de compañía",
+   "textoLiteral": "El convenio regulador a que se refieren los artículos 81, 82, 83, 86 y 87 deberá contener, al menos y siempre que fueran aplicables, los siguientes extremos:\nb) bis El destino de los animales de compañía, en caso de que existan, teniendo en cuenta el interés de los miembros de la familia y el bienestar del animal; el reparto de los tiempos de convivencia y cuidado si fuere necesario, así como las cargas asociadas al cuidado del animal.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#art90"
+  },
+  {
+   "id": "codigo-civil#art. 90.2",
+   "norma": "codigo-civil",
+   "referencia": "art. 90.2",
+   "epigrafe": "Acuerdos perjudiciales para el animal",
+   "textoLiteral": "Si fueran gravemente perjudiciales para el bienestar de los animales de compañía, la autoridad judicial ordenará las medidas a adoptar, sin perjuicio del convenio aprobado.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#art90"
+  },
+  {
+   "id": "codigo-civil#art. 914 bis",
+   "norma": "codigo-civil",
+   "referencia": "art. 914 bis",
+   "epigrafe": "Animales de compañía en una herencia",
+   "textoLiteral": "A falta de disposición testamentaria relativa a los animales de compañía propiedad del causante, estos se entregarán a los herederos o legatarios que los reclamen de acuerdo con las leyes.\nSi no fuera posible hacerlo de inmediato, para garantizar el cuidado del animal de compañía y solo cuando sea necesario por falta de previsiones sobre su atención, se entregará al órgano administrativo o centro que tenga encomendada la recogida de animales abandonados hasta que se resuelvan los correspondientes trámites por razón de sucesión.\nSi ninguno de los sucesores quiere hacerse cargo del animal de compañía, el órgano administrativo competente podrá cederlo a un tercero para su cuidado y protección.\nSi más de un heredero reclama el animal de compañía y no hay acuerdo unánime sobre el destino del mismo, la autoridad judicial decidirá su destino teniendo en cuenta el bienestar del animal.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#a9-2"
+  },
+  {
+   "id": "codigo-civil#art. 94 bis",
+   "norma": "codigo-civil",
+   "referencia": "art. 94 bis",
+   "epigrafe": "A quién se confían los animales de compañía",
+   "textoLiteral": "La autoridad judicial confiará para su cuidado a los animales de compañía a uno o ambos cónyuges, y determinará, en su caso, la forma en la que el cónyuge al que no se le hayan confiado podrá tenerlos en su compañía, así como el reparto de las cargas asociadas al cuidado del animal, todo ello atendiendo al interés de los miembros de la familia y al bienestar del animal, con independencia de la titularidad dominical de este y de a quién le haya sido confiado para su cuidado. Esta circunstancia se hará constar en el correspondiente registro de identificación de animales.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#a9"
+  },
+  {
+   "id": "ley-49-1960-propiedad-horizontal#art. 7.2",
+   "norma": "ley-49-1960-propiedad-horizontal",
+   "referencia": "art. 7.2",
+   "epigrafe": "Actividades molestas o prohibidas en los estatutos",
+   "textoLiteral": "Al propietario y al ocupante del piso o local no les está permitido desarrollar en él o en el resto del inmueble actividades prohibidas en los estatutos, que resulten dañosas para la finca o que contravengan las disposiciones generales sobre actividades molestas, insalubres, nocivas, peligrosas o ilícitas.\nEl presidente de la comunidad, a iniciativa propia o de cualquiera de los propietarios u ocupantes, requerirá a quien realice las actividades prohibidas por este apartado la inmediata cesación de las mismas, bajo apercibimiento de iniciar las acciones judiciales procedentes.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-1960-10906#aseptimo"
+  },
+  {
    "id": "ley-50-1999-animales-potencialmente-peligrosos#art. 13.1.a",
    "norma": "ley-50-1999-animales-potencialmente-peligrosos",
    "referencia": "art. 13.1.a",
@@ -129,6 +193,14 @@
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-4"
   },
   {
+   "id": "ley-7-2023-bienestar-animal#art. 24.2.b",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 24.2.b",
+   "epigrafe": "Obligaciones generales. Educación sin sufrimiento",
+   "textoLiteral": "Educar y manejar al animal con métodos que no provoquen sufrimiento o maltrato al animal, ni le causen estados de ansiedad o miedo.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-6"
+  },
+  {
    "id": "ley-7-2023-bienestar-animal#art. 24.2.c",
    "norma": "ley-7-2023-bienestar-animal",
    "referencia": "art. 24.2.c",
@@ -142,6 +214,14 @@
    "referencia": "art. 24.2.d",
    "epigrafe": "Obligaciones generales. Vehículos cerrados",
    "textoLiteral": "No dejarlos solos dentro de vehículos cerrados, expuestos a condiciones térmicas o de cualquier otra índole que puedan poner su vida en peligro.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-6"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 24.2.e",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 24.2.e",
+   "epigrafe": "Obligaciones generales. Cuidados veterinarios",
+   "textoLiteral": "Prestar al animal los cuidados sanitarios necesarios para garantizar su salud y, en todo caso, los estipulados como obligatorios según su normativa específica, así como facilitarles un reconocimiento veterinario, con la periodicidad que se determine reglamentariamente, que deberá quedar debidamente documentado, en su caso, en el registro de identificación correspondiente.",
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-6"
   },
   {
@@ -161,6 +241,14 @@
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-6"
   },
   {
+   "id": "ley-7-2023-bienestar-animal#art. 24.2.h",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 24.2.h",
+   "epigrafe": "Obligaciones generales. Veterinario o especialista en comportamiento",
+   "textoLiteral": "Recurrir a los servicios de un profesional veterinario, o veterinario acreditado en comportamiento animal, siempre que la situación del animal lo requiera.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-6"
+  },
+  {
    "id": "ley-7-2023-bienestar-animal#art. 24.2.i",
    "norma": "ley-7-2023-bienestar-animal",
    "referencia": "art. 24.2.i",
@@ -177,11 +265,59 @@
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-6"
   },
   {
+   "id": "ley-7-2023-bienestar-animal#art. 25.d",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 25.d",
+   "epigrafe": "Prohibiciones generales. Sueltos o en condiciones de causar daños",
+   "textoLiteral": "Dejar animales sueltos o en condiciones de causar daños en lugares públicos o privados de acceso público especialmente en los parques nacionales, cañadas donde pastan rebaños o animales u otros espacios naturales protegidos donde puedan causar daños a las personas, al ganado o al medio natural.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-7"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 25.l",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 25.l",
+   "epigrafe": "Prohibiciones generales. Atarlos a un punto fijo",
+   "textoLiteral": "Utilizar cualquier artilugio, mecanismo o utensilio destinado a limitar o impedir su movilidad en un punto fijo salvo por prescripción veterinaria atendiendo a su bienestar.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-7"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 26.b",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 26.b",
+   "epigrafe": "Obligaciones específicas. Alojamiento fuera de casa",
+   "textoLiteral": "Los animales que, por razones incompatibles con su calidad de vida tamaño o características de su especie, no puedan convivir en el núcleo familiar, deberán disponer de un alojamiento adecuado, con habitáculos acordes a sus dimensiones y que los protejan de las inclemencias del tiempo, en buenas condiciones higiénico-sanitarias de forma que se facilite un ambiente en el que puedan desarrollar las características propias de su especie y raza; en el caso de animales gregarios se les procurará la compañía que precisen.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-8"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 26.c",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 26.c",
+   "epigrafe": "Obligaciones específicas. Molestias y daños",
+   "textoLiteral": "Adoptar las medidas necesarias para evitar que su tenencia o circulación ocasione molestias, peligros, amenazas o daños a las personas, otros animales o a las cosas.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-8"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 26.d",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 26.d",
+   "epigrafe": "Obligaciones específicas. Reproducción incontrolada",
+   "textoLiteral": "Adoptar las medidas necesarias para evitar la reproducción incontrolada de los animales de compañía. La cría sólo podrá ser llevada a cabo por personas responsables de la actividad de la cría de animales de compañía inscritas como tales en el correspondiente Registro.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-8"
+  },
+  {
    "id": "ley-7-2023-bienestar-animal#art. 26.e",
    "norma": "ley-7-2023-bienestar-animal",
    "referencia": "art. 26.e",
    "epigrafe": "Obligaciones específicas. Excrementos y orines",
    "textoLiteral": "Evitar que los animales depositen sus excrementos y orines en lugares de paso habitual de otras personas, como fachadas, puertas o entradas a establecimientos, procediendo en todo caso a la retirada o limpieza de aquéllos con productos biodegradables.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-8"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 26.g",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 26.g",
+   "epigrafe": "Obligaciones específicas. Jaulas, acuarios y terrarios",
+   "textoLiteral": "En el caso de los animales de compañía que, por sus características y especie, vivan de forma permanente en jaulas, acuarios, terrarios y similares, deberán contar con espacios adecuados en tamaño, naturalización y enriquecimiento ambiental para su tenencia. Las condiciones para cada especie se desarrollarán reglamentariamente.",
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-8"
   },
   {
@@ -191,6 +327,30 @@
    "epigrafe": "Obligaciones específicas. Muerte del animal",
    "textoLiteral": "Comunicar a la administración competente y a su titular, la retirada del cadáver de un animal de compañía identificado.\nLa baja de un animal de compañía por muerte deberá ir acompañada del documento que acredite que fue incinerado o enterrado por una empresa reconocida oficialmente para la realización de dichas actividades, haciendo constar el número de identificación del animal fallecido y el nombre y apellidos de su responsable o, en su defecto, que quede constancia en las bases de datos de la empresa que se ocupó del cadáver. En caso de imposibilidad de recuperar el cadáver, se deberá documentar adecuadamente.",
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-8"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 27.a",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 27.a",
+   "epigrafe": "Prohibiciones. Sacrificio y eutanasia",
+   "textoLiteral": "Su sacrificio, salvo por motivos de seguridad de las personas o animales o de existencia de riesgo para la salud pública debidamente justificado por la autoridad competente.\nSe prohíbe expresamente el sacrificio en los centros de protección animal, ya sean públicos o privados, clínicas veterinarias y núcleos zoológicos en general por cuestiones económicas, de sobrepoblación, carencia de plazas, imposibilidad de hallar adoptante en un plazo determinado, abandono del responsable legal, vejez, enfermedad o lesión con posibilidad de tratamiento, ya sea paliativo o curativo, por problemas de comportamiento que puedan ser reconducidos, así como por cualquier otra causa asimilable a las anteriormente citadas.\nLa eutanasia solamente estará justificada bajo criterio y control veterinario con el único fin de evitar el sufrimiento por causas no recuperables que comprometa seriamente la calidad de vida del animal y que como tal ha de ser acreditado y certificado por profesional veterinario colegiado. El procedimiento de eutanasia se realizará por personal veterinario colegiado o perteneciente a alguna Administración Pública con métodos que garanticen la condición humanitaria, admitidos por las disposiciones legales aplicables.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-9"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 27.b",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 27.b",
+   "epigrafe": "Prohibiciones. Mutilaciones",
+   "textoLiteral": "Practicarles todo tipo de mutilación o modificaciones corporales permanentes; se exceptúan de esta prohibición los sistemas de identificación mediante marcaje en la oreja de gatos comunitarios y las precisas por necesidad terapéutica para garantizar su salud o para limitar o anular su capacidad reproductiva, sin que pueda servir de justificación un motivo funcional o estético de cualquier tipo, y que deberá ser acreditada mediante informe de un profesional veterinario colegiado o perteneciente a alguna administración pública, del que quedará constancia en el registro de identificación correspondiente.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-9"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 27.c",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 27.c",
+   "epigrafe": "Prohibiciones. Peleas",
+   "textoLiteral": "Utilizarlos en peleas o su adiestramiento en el desarrollo de esta práctica u otras similares, así como instigar la agresión a otros animales de compañía o personas fuera del ámbito de actividades regladas.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-9"
   },
   {
    "id": "ley-7-2023-bienestar-animal#art. 27.d",
@@ -209,11 +369,43 @@
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-9"
   },
   {
+   "id": "ley-7-2023-bienestar-animal#art. 27.f",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 27.f",
+   "epigrafe": "Prohibiciones. Atados a un vehículo en marcha",
+   "textoLiteral": "Llevar animales atados a vehículos a motor en marcha.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-9"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 27.g",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 27.g",
+   "epigrafe": "Prohibiciones. Soltarlos en el medio natural",
+   "textoLiteral": "La puesta en libertad o introducción en el medio natural de animales de cualquier especie de animal de compañía que se desarrolla en la presente ley salvo los incluidos en programas de reintroducción.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-9"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 27.h",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 27.h",
+   "epigrafe": "Prohibiciones. Cadáveres sin comprobar la identificación",
+   "textoLiteral": "La eliminación de cadáveres de animales de compañía sin comprobar su identificación, cuando ésta sea obligatoria.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-9"
+  },
+  {
    "id": "ley-7-2023-bienestar-animal#art. 27.i",
    "norma": "ley-7-2023-bienestar-animal",
    "referencia": "art. 27.i",
    "epigrafe": "Prohibiciones. Dejarlo sin supervisión",
    "textoLiteral": "Dejar sin supervisión a cualquier animal de compañía durante más de tres días consecutivos; en el caso de la especie canina, este plazo no podrá ser superior a veinticuatro horas consecutivas.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-9"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 27.k",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 27.k",
+   "epigrafe": "Prohibiciones. Cría sin registro",
+   "textoLiteral": "La cría comercial de cualquier especie de animal de compañía, así como cualquier tipo de cría de animales cuya identificación individual sea obligatoria por la normativa vigente, por criadores no inscritos en el Registro de Criadores de Animales de Compañía.",
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-9"
   },
   {
@@ -231,6 +423,22 @@
    "epigrafe": "Prohibiciones. Animales sin identificar",
    "textoLiteral": "La comercialización, donación o entrega en adopción de animales no identificados y registrados previamente a nombre del transmitente conforme a los métodos de identificación aplicables según la normativa vigente.",
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-9"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 27.ñ",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 27.ñ",
+   "epigrafe": "Prohibiciones. Collares eléctricos, de castigo o de ahogo",
+   "textoLiteral": "Se prohíbe el uso de cualquier herramienta de manejo que pueda causar lesiones al animal, en particular collares eléctricos, de impulsos, de castigo o de ahogo.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-9"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 28.1",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 28.1",
+   "epigrafe": "Animales alojados en espacios abiertos",
+   "textoLiteral": "En el caso de animales de compañía que deban alojarse en espacios abiertos, sin perjuicio de lo dispuesto en el artículo anterior, sus titulares o responsables deberán adoptar las siguientes medidas:\na) Utilizar estancias que protejan a los animales de las inclemencias del tiempo.\nb) Situar las estancias de tal forma que no estén expuestos directamente, de forma prolongada, a la radiación solar, la lluvia o frío extremo.\nc) Emplear estancias acordes a las dimensiones y necesidades fisiológicas del animal.\nd) Garantizar a los animales acceso a bebida y alimentación, así como adecuadas condiciones higiénico-sanitarias.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-10"
   },
   {
    "id": "ley-7-2023-bienestar-animal#art. 29.1",
@@ -281,6 +489,62 @@
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a3"
   },
   {
+   "id": "ley-7-2023-bienestar-animal#art. 3.u",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 3.u",
+   "epigrafe": "Definición de gato comunitario",
+   "textoLiteral": "Gato comunitario: a los efectos de esta ley y de su protección y control poblacional, se considera gato comunitario a aquel individuo de la especie Felis catus, que vive en libertad, pero vinculado a un territorio y que no puede ser abordado o mantenido con facilidad por los seres humanos debido a su bajo o nulo grado de socialización, pero que desarrolla su vida en torno a estos para su subsistencia.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a3"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 38.2",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 38.2",
+   "epigrafe": "Gatos comunitarios identificados y esterilizados",
+   "textoLiteral": "A los efectos previstos en el apartado anterior, será obligatoria la identificación mediante microchip, registrada bajo la titularidad de la Administración local competente, y la esterilización quirúrgica de todos los gatos comunitarios.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a3-10"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 39.1.a",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 39.1.a",
+   "epigrafe": "Colonias felinas. Personas cuidadoras",
+   "textoLiteral": "Fomento de la colaboración ciudadana para el cuidado de los gatos comunitarios, regulando, a través de sus normativas municipales, los procedimientos en los que se recogerán derechos y obligaciones de los cuidadores de colonias felinas.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a3-11"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 41.1",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 41.1",
+   "epigrafe": "Colonias felinas. Respeto a los gatos",
+   "textoLiteral": "Las personas, en su convivencia natural con las colonias felinas, deberán respetar la integridad, seguridad y calidad de vida de los gatos comunitarios que las integran, así como las instalaciones de comida, y refugio propias del programa de gestión de gatos comunitarios.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a4-3"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 41.2",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 41.2",
+   "epigrafe": "Colonias felinas. Perros",
+   "textoLiteral": "Las personas titulares o responsables de perros deberán adoptar las medidas para evitar que la presencia de éstos pueda alterar o poner en riesgo la integridad de las colonias felinas y de los gatos comunitarios, así como de los recursos destinados a los mismos.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a4-3"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 42.3",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 42.3",
+   "epigrafe": "Colonias felinas. Abandono",
+   "textoLiteral": "El abandono de gatos en las colonias, sea cual sea su procedencia.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a4-4"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 42.6",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 42.6",
+   "epigrafe": "Colonias felinas. Retirada de gatos",
+   "textoLiteral": "La retirada de gatos comunitarios de su colonia, con las siguientes excepciones:\na) Gatos enfermos que no puedan seguir valiéndose por sí mismos en su entorno y territorio habituales. En estos casos se valorarán por un profesional veterinario las opciones más adecuadas para el gato, anteponiendo siempre los criterios de calidad de vida del animal.\nb) Gatos totalmente socializados con el ser humano que vayan a ser adoptados.\nc) Cachorros en edad de socialización que vayan a ser adoptados.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a4-4"
+  },
+  {
    "id": "ley-7-2023-bienestar-animal#art. 51.1",
    "norma": "ley-7-2023-bienestar-animal",
    "referencia": "art. 51.1",
@@ -303,6 +567,30 @@
    "epigrafe": "Animales procedentes de la Unión Europea",
    "textoLiteral": "Los perros, gatos y hurones procedentes de otros países de la Unión Europea deberán mantener el pasaporte original que recoja su código de identificación, no pudiendo sustituirse este pasaporte por otra documentación acreditativa de identificación, sin perjuicio de la obligatoriedad de inscripción en el Registro de Animales de Compañía, en el mismo momento de su adquisición con los datos de la persona que se hace cargo de ellos.",
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a5-3"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 52.1",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 52.1",
+   "epigrafe": "Listado positivo de animales de compañía",
+   "textoLiteral": "Se prohíbe la cría o transmisión como animales de compañía de los animales no incluidos en el listado positivo de animales de compañía.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a5-4"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 53.1",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 53.1",
+   "epigrafe": "Cría. Solo personas inscritas",
+   "textoLiteral": "La actividad de la cría de animales de compañía solamente podrá llevarse a cabo por personas debidamente inscritas en el Registro de Criadores de Animales de Compañía.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a5-5"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 53.2",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 53.2",
+   "epigrafe": "Cría puntual. Inscribir a los reproductores",
+   "textoLiteral": "Los titulares de animales de especies animales de compañía cuya identificación individual sea obligatoria por la normativa vigente y que deseen realizar una actividad de cría no comercial, como la cría puntual u otras que se desarrollen reglamentariamente, deberán inscribir obligatoriamente a los animales como reproductores en el Registro de Animales de Compañía. Esta inscripción supondrá de forma automática el alta del titular en el Registro de Criadores de Animales de Compañía en la categoría correspondiente.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a5-5"
   },
   {
    "id": "ley-7-2023-bienestar-animal#art. 55.1",
@@ -351,6 +639,22 @@
    "epigrafe": "Venta. Edad mínima",
    "textoLiteral": "Los perros y gatos deberán tener una edad mínima de dos meses en el momento de la venta, siempre y cuando la venta se realice desde el núcleo zoológico declarado como su lugar de nacimiento. Podrán venderse desde un núcleo zoológico distinto al declarado como lugar de nacimiento a partir del momento en el que el animal cumpla los cuatro meses de edad. Reglamentariamente, se podrá restringir la edad en la venta de las crías de otras especies.",
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a5-7"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 57.1",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 57.1",
+   "epigrafe": "Prohibida la venta por internet",
+   "textoLiteral": "Se prohíbe la venta directa de cualquier tipo de animal de compañía a través de internet, portales web o cualquier medio o aplicación telemáticos.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a5-9"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 57.2",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 57.2",
+   "epigrafe": "Anuncios de venta",
+   "textoLiteral": "Para el anuncio de animales a través de medios de comunicación, revistas, publicaciones asimilables y demás sistemas de difusión, como Internet, deberá incluirse obligatoriamente en el anuncio el número de registro de criador o el núcleo zoológico del establecimiento de venta, así como el número de identificación del animal en su caso. Las plataformas verificarán la veracidad de los datos consignados por el vendedor.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a5-9"
   },
   {
    "id": "ley-7-2023-bienestar-animal#art. 58.1",
@@ -481,6 +785,14 @@
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a7-6"
   },
   {
+   "id": "ley-7-2023-bienestar-animal#art. 74.e",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 74.e",
+   "epigrafe": "Infracción grave. Mutilaciones",
+   "textoLiteral": "Practicar al animal mutilaciones o modificaciones corporales no autorizadas.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a7-6"
+  },
+  {
    "id": "ley-7-2023-bienestar-animal#art. 74.k",
    "norma": "ley-7-2023-bienestar-animal",
    "referencia": "art. 74.k",
@@ -505,11 +817,27 @@
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a7-7"
   },
   {
+   "id": "ley-7-2023-bienestar-animal#art. 75.b",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 75.b",
+   "epigrafe": "Infracción muy grave. Eutanasia indebida",
+   "textoLiteral": "La eutanasia de animales con medios inadecuados o por personal no cualificado.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a7-7"
+  },
+  {
    "id": "ley-7-2023-bienestar-animal#art. 75.c",
    "norma": "ley-7-2023-bienestar-animal",
    "referencia": "art. 75.c",
    "epigrafe": "Infracción muy grave. Peleas",
    "textoLiteral": "El adiestramiento y uso de animales para peleas y riñas con otros animales o personas.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a7-7"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#art. 75.f",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "art. 75.f",
+   "epigrafe": "Infracción muy grave. Cría y comercio sin autorización",
+   "textoLiteral": "La cría, el comercio o la exposición de animales con fines comerciales por personas no autorizadas o la venta de perros, gatos y hurones en tiendas de animales.",
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a7-7"
   },
   {
@@ -543,6 +871,14 @@
    "epigrafe": "Perros de asistencia",
    "textoLiteral": "Los perros de asistencia se regirán por la presente ley en lo no previsto por su normativa específica.",
    "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#da"
+  },
+  {
+   "id": "ley-7-2023-bienestar-animal#disp. trans. 2.ª",
+   "norma": "ley-7-2023-bienestar-animal",
+   "referencia": "disp. trans. 2.ª",
+   "epigrafe": "Especies prohibidas mientras no haya listado positivo",
+   "textoLiteral": "Desde la entrada en vigor de la presente ley, hasta la aprobación y publicación del listado positivo al que corresponda la especie (mamíferos, aves, reptiles, anfibios, peces o invertebrados) queda prohibida la tenencia como animales de compañía de los animales pertenecientes a especies que cumplan alguno de los siguientes criterios, relativos a su peligrosidad y a la necesidad de aplicar un principio de precaución en materia de conservación de la fauna silvestre amenazada:\n1. Artrópodos, peces y anfibios cuya mordedura o veneno pueda suponer un riesgo grave para la integridad física o la salud de personas y animales.\n2. Reptiles venenosos y todas las especies de reptiles que en estado adulto superen los dos kilogramos de peso, excepto en el caso de quelonios.\n3. Todos los primates.\n4. Mamíferos silvestres que en estado adulto superen los 5 kg.\n5. Especies incluidas en otra normativa sectorial a nivel estatal o comunitario que impida su tenencia en cautividad.",
+   "urlAncla": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#dt-2"
   },
   {
    "id": "rd-1428-2003-reglamento-general-circulacion#art. 18.1",

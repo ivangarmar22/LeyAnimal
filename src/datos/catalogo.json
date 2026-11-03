@@ -348,6 +348,54 @@
    "nombre": "Esterilización",
    "slug": "esterilizacion",
    "descripcion": null
+  },
+  {
+   "clave": "solo-en-casa",
+   "nombre": "Dejarlo solo, en la terraza o en el patio",
+   "slug": "solo-en-casa",
+   "descripcion": null
+  },
+  {
+   "clave": "paseos",
+   "nombre": "Paseos, correa y espacios públicos",
+   "slug": "paseos",
+   "descripcion": null
+  },
+  {
+   "clave": "cria",
+   "nombre": "Crías, camadas y venta de cachorros",
+   "slug": "cria",
+   "descripcion": null
+  },
+  {
+   "clave": "especies",
+   "nombre": "Qué animales puedes tener en casa",
+   "slug": "especies",
+   "descripcion": null
+  },
+  {
+   "clave": "educacion",
+   "nombre": "Educación, collares y mutilaciones",
+   "slug": "educacion",
+   "descripcion": null
+  },
+  {
+   "clave": "gatos-comunitarios",
+   "nombre": "Gatos callejeros y colonias felinas",
+   "slug": "gatos-comunitarios",
+   "descripcion": null
+  },
+  {
+   "clave": "vecinos",
+   "nombre": "Vecinos, comunidad y alquiler",
+   "slug": "vecinos",
+   "descripcion": null
+  },
+  {
+   "clave": "familia",
+   "nombre": "Separación, divorcio y herencia",
+   "slug": "familia",
+   "descripcion": null
   }
  ]
 }

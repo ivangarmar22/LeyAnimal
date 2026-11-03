@@ -5,6 +5,7 @@ import PanelCta from '@/componentes/pagina/PanelCta.astro';
 import { traductor } from '@/i18n/catalogos';
 import { ruta } from '@/lib/rutas';
 import Base from '@/layouts/Base.astro';
+import { guiaTema } from '@/lib/contenido/guias';
 import { ICONOS_TEMA } from '@/lib/contenido/iconos';
 import {
   balanza,
@@ -25,43 +26,56 @@ const recursos = [
   ['/multas', 'multas', balanza],
   ['/que-hacer-si', 'queHacerSi', sirena],
 ] as const;
+// Primero las obligaciones (con requisito en el motor); despues las dudas
+// frecuentes, que van por puntos (D60).
+const grupos = [
+  ['obligaciones', temas().filter((tema) => !guiaTema(tema.clave))],
+  ['dudas', temas().filter((tema) => guiaTema(tema.clave))],
+] as const;
 ---
 
 <Base ruta="/temas" titulo={t('metaTitulo')} descripcion={t('metaDescripcion')}>
   <CabeceraPagina titulo={t('titulo')} entradilla={t('entradilla')} solape />
   <div class="contenedor solape pb-[var(--seccion)]">
-    <ul class="grid gap-4 md:grid-cols-2 lg:grid-cols-3" data-escalonado>
-      {temas().map((tema) => {
-        const Icono = ICONOS_TEMA[tema.clave] ?? documento;
-        const textos = textosTema(tg.en('temas'), tema);
-        return (
-          <li>
-            <a
-              href={ruta(`/temas/${tema.slug}`)}
-              class="tarjeta foco-luz h-full gap-5"
-            >
-              <span class="esquinas" aria-hidden="true">
-                <i />
-                <i />
-                <i />
-                <i />
-              </span>
-              <span class="caja-icono">
-                <Ilustracion icono={Icono} />
-              </span>
-              <span class="titulo-3 font-display font-semibold text-texto">
-                {textos.nombre}
-              </span>
-              <span>{textos.descripcion}</span>
-              <span class="enlace-flecha mt-auto text-[0.9375rem]">
-                {tg('inicio.guias.leer')}
-                <ArrowRight aria-hidden="true" />
-              </span>
-            </a>
-          </li>
-        );
-      })}
-    </ul>
+    {grupos.map(([clave, lista], i) => (
+      <section aria-labelledby={`h-${clave}`} class:list={[i > 0 && 'mt-16']}>
+        <h2 id={`h-${clave}`} class="titulo-3 mb-6">
+          {t(clave)}
+        </h2>
+        <ul class="grid gap-4 md:grid-cols-2 lg:grid-cols-3" data-escalonado>
+          {lista.map((tema) => {
+            const Icono = ICONOS_TEMA[tema.clave] ?? documento;
+            const textos = textosTema(tg.en('temas'), tema);
+            return (
+              <li>
+                <a
+                  href={ruta(`/temas/${tema.slug}`)}
+                  class="tarjeta foco-luz h-full gap-5"
+                >
+                  <span class="esquinas" aria-hidden="true">
+                    <i />
+                    <i />
+                    <i />
+                    <i />
+                  </span>
+                  <span class="caja-icono">
+                    <Ilustracion icono={Icono} />
+                  </span>
+                  <span class="titulo-3 font-display font-semibold text-texto">
+                    {textos.nombre}
+                  </span>
+                  <span>{textos.descripcion}</span>
+                  <span class="enlace-flecha mt-auto text-[0.9375rem]">
+                    {tg('inicio.guias.leer')}
+                    <ArrowRight aria-hidden="true" />
+                  </span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    ))}
 
     <h2 class="titulo-3 mt-16">{t('recursos')}</h2>
     <ul class="mt-6 grid gap-3 md:grid-cols-2">

@@ -383,13 +383,150 @@ export const SITUACIONES: readonly Situacion[] = [
       },
     ],
   },
+  {
+    slug: 'vacaciones',
+    animales: TODOS,
+    puntos: [
+      {
+        clave: 'cuidador',
+        estado: 'obligatorio',
+        ids: [`${L7}#art. 27.i`],
+        enlace: '/temas/solo-en-casa',
+      },
+      { clave: 'residencia', estado: 'recomendado', ids: [] },
+      {
+        clave: 'salud',
+        estado: 'obligatorio',
+        ids: [`${L7}#art. 24.2.e`],
+      },
+      {
+        clave: 'identificado',
+        estado: 'obligatorio',
+        ids: [`${L7}#art. 24.2.f`],
+      },
+      {
+        clave: 'perdida',
+        estado: 'obligatorio',
+        ids: [`${L7}#art. 24.2.g`],
+        enlace: '/que-hacer-si#perdido',
+      },
+      {
+        clave: 'recoger',
+        estado: 'obligatorio',
+        ids: [`${L7}#art. 74.k`],
+      },
+      {
+        clave: 'ppp',
+        estado: 'obligatorio',
+        animales: ['perro'],
+        ppp: true,
+        ids: [`${RD287}#art. 8.1`],
+        enlace: PPP,
+      },
+      {
+        clave: 'llevarlo',
+        estado: 'recomendado',
+        ids: [],
+        enlace: '/situaciones/viajar-por-espana',
+      },
+    ],
+  },
+  {
+    slug: 'no-puedo-cuidarlo',
+    animales: TODOS,
+    puntos: [
+      {
+        clave: 'abandono',
+        estado: 'obligatorio',
+        ids: [`${L7}#art. 74.k`, `${L7}#art. 27.g`],
+      },
+      {
+        clave: 'ayuda',
+        estado: 'recomendado',
+        ids: [`${L7}#art. 24.2.h`],
+        enlace: '/temas/educacion',
+      },
+      {
+        clave: 'cesion',
+        estado: 'obligatorio',
+        ids: [`${L7}#art. 58.2`, `${L7}#art. 27.m`],
+      },
+      {
+        clave: 'venta',
+        estado: 'obligatorio',
+        ids: [`${L7}#art. 57.1`, `${L7}#art. 27.l`],
+      },
+      {
+        clave: 'protectora',
+        estado: 'depende',
+        ids: [`${L7}#art. 58.4`, `${L7}#art. 22.1`],
+      },
+      {
+        clave: 'registro',
+        estado: 'obligatorio',
+        ids: [`${L7}#art. 24.2.i`],
+      },
+      {
+        clave: 'sacrificio',
+        estado: 'obligatorio',
+        ids: [`${L7}#art. 27.a`],
+      },
+      {
+        clave: 'ppp',
+        estado: 'obligatorio',
+        animales: ['perro'],
+        ppp: true,
+        ids: [`${L50}#art. 4.4`],
+        enlace: PPP,
+      },
+    ],
+  },
+  {
+    slug: 'final-de-vida',
+    animales: TODOS,
+    puntos: [
+      {
+        clave: 'veterinario',
+        estado: 'obligatorio',
+        ids: [`${L7}#art. 24.2.e`, `${L7}#art. 24.2.h`],
+      },
+      { clave: 'eutanasia', estado: 'obligatorio', ids: [`${L7}#art. 27.a`] },
+      { clave: 'motivos', estado: 'obligatorio', ids: [`${L7}#art. 27.a`] },
+      { clave: 'indebida', estado: 'obligatorio', ids: [`${L7}#art. 75.b`] },
+      {
+        clave: 'despues',
+        estado: 'obligatorio',
+        ids: [`${L7}#art. 26.j`, `${L7}#art. 27.h`],
+      },
+      { clave: 'jardin', estado: 'depende', ids: [`${L7}#art. 26.j`] },
+      {
+        clave: 'baja',
+        estado: 'obligatorio',
+        ids: [`${L7}#art. 24.2.i`],
+        enlace: '/que-hacer-si#muerte',
+      },
+      {
+        clave: 'ppp',
+        estado: 'obligatorio',
+        animales: ['perro'],
+        ppp: true,
+        ids: [`${L50}#art. 6.5`],
+        enlace: PPP,
+      },
+    ],
+  },
 ];
 
 /**
  * Situaciones cuya guia ya existe en otra pagina: se listan junto a las demas
  * y enlazan alli en lugar de repetirla.
  */
-export const ACCESOS = [{ clave: 'ppp', href: PPP }] as const;
+export const ACCESOS = [
+  { clave: 'ppp', href: PPP },
+  { clave: 'camada', href: '/temas/cria' },
+  { clave: 'separacion', href: '/temas/familia' },
+  { clave: 'vecinos', href: '/temas/vecinos' },
+] as const;
 
 export const situacion = (slug: string) =>
   SITUACIONES.find((s) => s.slug === slug);

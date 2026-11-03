@@ -1140,3 +1140,67 @@ idiomas, el sitio ocupaba 1,3 GB.
   página como `<symbol>`. El sitio compilado ocupa unos 450 MB.
 - El formulario de avisos se envía con Web3Forms, que lo reenvía al correo
   del proyecto. La web sigue sin base de datos (D50).
+
+## Dudas más buscadas (noviembre de 2026)
+
+### D60. Ocho guías por tema y tres situaciones nuevas
+
+**Por qué**: petición del propietario (03/11/2026) de cubrir las preguntas
+que más se repiten en buscadores, prensa y foros. Se tomaron como referencia
+el folleto de preguntas frecuentes del Ministerio de Derechos Sociales sobre
+la Ley 7/2023 y los temas que vuelven una y otra vez en la prensa y en los
+foros de inquilinos: tiempo solo en casa, terrazas y patios, perro suelto,
+crías y venta de cachorros, especies permitidas, collares y mutilaciones,
+gatos callejeros, vecinos y alquiler, divorcio, vacaciones, no poder cuidar
+al animal y eutanasia.
+
+**Guías por tema** (`src/lib/contenido/guias.ts`): «Dejarlo solo»,
+«Paseos», «Crías», «Qué animales puedes tener», «Educación», «Gatos
+callejeros», «Vecinos» y «Separación, divorcio y herencia». No son
+obligaciones que evalúe el motor, así que **no tienen requisito ni reglas**
+y no cambian el resultado de la consulta. Van por puntos, como las guías por
+situación, con los mismos estados y las mismas reglas: ningún punto
+obligatorio sin artículo, y `pnpm datos:comprobar` lo verifica. La plantilla
+`/temas/[slug]` pinta por puntos los temas que tienen guía y por requisitos
+los demás; el índice `/temas` los separa en «Lo que tienes que cumplir» y
+«Las dudas más frecuentes».
+
+**Situaciones nuevas**: «Me voy de vacaciones sin mi animal», «Ya no puedo
+cuidar de mi animal» y «Mi animal es mayor o está muy enfermo». El índice de
+situaciones enlaza también, como accesos, a las guías de crías, separación y
+vecinos. La consulta no ofrece la del final de la vida entre sus «¿Tienes
+algo previsto?». La portada sigue mostrando las mismas seis situaciones y las
+cinco guías de obligaciones.
+
+**Normas nuevas**: el Código Civil (arts. 90, 94 bis, 103, 333 bis, 914 bis
+y 1905, tras la Ley 17/2021) y la Ley 49/1960 de propiedad horizontal (art.
+7.2, la única base legal de la comunidad frente a un animal que molesta: la
+ley no menciona a los animales). Las 41 citas nuevas salen literales del BOE
+con `pnpm datos:referencia`; las 91 que ya había no cambiaron.
+
+**Criterios**:
+
+- Lo que no está en una norma estatal se presenta como «depende», sin
+  afirmar una regla: la correa (leyes autonómicas y ordenanzas), dar de comer
+  a gatos comunitarios (normas municipales), el número máximo de animales por
+  vivienda, los estatutos de la comunidad y el contrato de alquiler, y las
+  parejas de hecho (el Código Civil habla de cónyuges).
+- El listado positivo de especies (art. 52.1) sale como pendiente de
+  reglamento: el proyecto de real decreto estuvo en información pública en
+  abril de 2026 y no se había publicado en el BOE a 03/11/2026. Mientras,
+  rige la disposición transitoria segunda.
+- Enterrar al animal por cuenta propia no se presenta como prohibido por la
+  ley estatal: el art. 26.j exige para la baja el documento de una empresa
+  reconocida, y la prohibición expresa, donde existe, es autonómica o
+  municipal.
+
+**SEO**: los títulos y descripciones de las páginas principales usan las
+expresiones con que la gente busca: «ley de bienestar animal» (el nombre
+popular de la Ley 7/2023), «ley de protección animal» en las comunidades,
+«mascota», «perro o gato» y la pregunta concreta en cada guía («¿Cuánto
+tiempo puede estar solo un perro?», «¿Es obligatorio castrar al gato?»,
+«microchip obligatorio», «custodia de mascotas»…). Las guías por tema pueden
+tener un `metaTitulo` propio (admite `{anio}`); si no, usan el patrón común.
+Las descripciones no pasan de 160 caracteres, y no hay títulos ni
+descripciones repetidos en ninguna de las 8.299 páginas. Las fichas de
+municipio y provincia no se tocaron.
