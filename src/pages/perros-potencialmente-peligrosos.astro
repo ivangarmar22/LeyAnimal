@@ -5,10 +5,7 @@ import CabeceraPagina from '@/componentes/pagina/CabeceraPagina.astro';
 import PanelCta from '@/componentes/pagina/PanelCta.astro';
 import { textosPara, traductor } from '@/i18n/catalogos';
 import { ruta } from '@/lib/rutas';
-import Verificador, {
-  type ComunidadVerificador,
-  type RazaVerificador,
-} from '@/islas/Verificador';
+import Verificador, { type OpcionVerificador } from '@/islas/Verificador';
 import Base from '@/layouts/Base.astro';
 import {
   bolsaDinero,
@@ -24,7 +21,6 @@ import {
 import {
   articulo,
   comunidades,
-  esPpp,
   norma,
   pppDeComunidad,
   raza,
@@ -63,17 +59,10 @@ const IMPLICA = [
 ];
 
 const lista = comunidades();
-const catalogo: RazaVerificador[] = razas('perro')
+const catalogo: OpcionVerificador[] = razas('perro')
   .filter((r) => r.esPppEstatal !== null)
   .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'))
-  .map((r) => ({
-    slug: r.slug,
-    nombre: r.nombre,
-    estatal: r.esPppEstatal === true,
-    porComunidad: Object.fromEntries(
-      lista.map((c) => [c.codigoIne, esPpp(r.slug, c.codigoIne)]),
-    ),
-  }));
+  .map((r) => ({ valor: r.slug, nombre: r.nombre }));
 
 // Lo que cambia por comunidad: razas añadidas y seguro mayor que el estatal.
 const enumerar = new Intl.ListFormat('es', { type: 'conjunction' });
@@ -94,15 +83,10 @@ const porComunidad = lista.map((c) => {
     ],
   };
 });
-const verificadorComunidades: ComunidadVerificador[] = porComunidad.map(
-  ({ c, razas: r, norma: n, seguro }) => ({
-    codigo: c.codigoIne,
-    nombre: c.nombre,
-    razas: r,
-    norma: n,
-    seguro,
-  }),
-);
+const verificadorComunidades: OpcionVerificador[] = lista.map((c) => ({
+  valor: c.codigoIne,
+  nombre: c.nombre,
+}));
 const conCambios = porComunidad.filter((x) => x.razas || x.seguro);
 
 const rd = norma(RD);

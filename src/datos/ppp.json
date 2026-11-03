@@ -148,7 +148,12 @@
     "anadidas": ["akita-americano", "american-bully", "bandogg"]
    },
    "seguro": null,
-   "otros": [],
+   "otros": [
+    {
+     "clave": "esterilizacion",
+     "articulo": "ley-animales-pais-vasco#Artículo 4"
+    }
+   ],
    "avisos": []
   }
  ]

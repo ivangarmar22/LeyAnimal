@@ -1,8 +1,9 @@
-import { ArrowLeft, ArrowRight, Dog, ShieldAlert } from 'lucide-preact';
+import { ArrowLeft, ArrowRight, Dog } from 'lucide-preact';
 import { useState } from 'preact/hooks';
 import { ruta } from '@/lib/rutas';
 import type { Traductor } from '@/i18n/traductor';
-import { buscarRazas, esPpp, raza as buscarRaza } from '@/lib/datos/normativa';
+import { buscarRazas, raza as buscarRaza } from '@/lib/datos/normativa';
+import { veredictoPpp } from '@/lib/datos/ppp';
 import {
   SEXOS,
   TRIESTADO,
@@ -10,8 +11,9 @@ import {
   type EstadoConsulta,
 } from '@/lib/validacion/consulta';
 import { Combobox } from '@/ui/Combobox';
+import { VeredictoPpp } from '@/ui/VeredictoPpp';
 
-type RazaElegida = { slug: string; nombre: string; ppp: boolean | null };
+type RazaElegida = { slug: string; nombre: string };
 
 function Opciones<T extends string>({
   nombre,
@@ -70,15 +72,10 @@ export function PasoAnimal({
 }) {
   const t = tg.en('consulta.animal');
   const ta = tg.en('consulta.acciones');
+  const tp = tg.en('ppp');
   const inicial = estado.raza ? buscarRaza(estado.raza) : undefined;
-  const pppDe = (slug: string) =>
-    comunidad
-      ? esPpp(slug, comunidad)
-      : (buscarRaza(slug)?.esPppEstatal ?? null);
   const [raza, setRaza] = useState<RazaElegida | null>(
-    inicial
-      ? { slug: inicial.slug, nombre: inicial.nombre, ppp: pppDe(inicial.slug) }
-      : null,
+    inicial ? { slug: inicial.slug, nombre: inicial.nombre } : null,
   );
 
   const esPerro = estado.especie === 'perro';
@@ -104,7 +101,6 @@ export function PasoAnimal({
       edadAnios: numero('edadAnios', 40),
       edadMeses: numero('edadMeses', 11),
       raza: raza?.slug,
-      ppp: raza?.ppp ? 'si' : (valor('ppp') as EstadoConsulta['ppp']),
       sexo: valor('sexo') as EstadoConsulta['sexo'],
       esterilizado: valor('esterilizado') as EstadoConsulta['esterilizado'],
       microchip: valor('microchip') as EstadoConsulta['microchip'],
@@ -184,42 +180,23 @@ export function PasoAnimal({
               marcador={t('razaMarcador')}
               sinResultados={t('razaSinResultados')}
               Icono={Dog}
-              onElegir={(r) =>
-                setRaza({
-                  slug: r.valor,
-                  nombre: r.principal,
-                  ppp: pppDe(r.valor),
-                })
-              }
+              onElegir={(r) => setRaza({ slug: r.valor, nombre: r.principal })}
               onBorrar={() => setRaza(null)}
             />
-            {/* Aviso inmediato, antes del resultado */}
-            {raza?.ppp ? (
-              <div
-                class="flex gap-3 rounded-2xl border border-obligatorio-borde bg-obligatorio-fondo p-4 text-obligatorio-texto"
-                role="status"
-              >
-                <ShieldAlert class="mt-0.5 size-5 shrink-0" aria-hidden />
-                <p class="text-[0.9375rem]">
-                  {t('razaPpp')}{' '}
+            {raza ? (
+              <div role="status" class="grid gap-2">
+                <VeredictoPpp raza={raza.slug} comunidad={comunidad} t={tp} />
+                {veredictoPpp(raza.slug, comunidad).estado === 'si' ? (
                   <a
                     href={ruta('/perros-potencialmente-peligrosos')}
-                    class="font-semibold underline underline-offset-2"
+                    class="enlace-flecha self-start text-sm"
                   >
                     {t('razaPppEnlace')}
+                    <ArrowRight aria-hidden />
                   </a>
-                </p>
+                ) : null}
               </div>
-            ) : (
-              <Opciones
-                nombre="ppp"
-                etiqueta={t('ppp')}
-                ayuda={t('pppAyuda')}
-                opciones={TRIESTADO}
-                valor={estado.ppp}
-                t={t}
-              />
-            )}
+            ) : null}
           </div>
         ) : null}
 

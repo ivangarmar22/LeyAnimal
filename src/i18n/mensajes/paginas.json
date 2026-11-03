@@ -115,7 +115,8 @@
       "guardaDefensa": "Cantabria regula aparte, en el Decreto 64/1999, las razas de guarda y defensa, y su registro oficial publica la lista."
     },
     "pppOtros": {
-      "cursoAdiestramiento": "Para obtener la licencia se exige además un curso de adiestramiento básico."
+      "cursoAdiestramiento": "Para obtener la licencia se exige además un curso de adiestramiento básico.",
+      "esterilizacion": "Hay que esterilizarlos antes de los 12 meses de edad, salvo en los criaderos autorizados."
     },
     "multas": "Multas de la normativa de {comunidad}",
     "multasTexto": "Tramos que fija su propia ley. La Ley 7/2023 también tiene su cuadro y rige en toda España: cuál se aplica a cada caso lo decide la administración que sanciona."
@@ -175,7 +176,8 @@
     "siTitulo": "Sí: {raza} se considera potencialmente peligroso",
     "siTexto": "Figura en el anexo I del RD 287/2002, que se aplica en toda España.",
     "noTitulo": "No figura en la lista de razas",
-    "noTexto": "Aun así se considera potencialmente peligroso si es un cruce de esas razas, si reúne todas o la mayoría de las características del anexo II o si la autoridad lo declara por su conducta.",
+    "noTituloRaza": "{raza} no figura en la lista que se aplica en {comunidad}",
+    "noTexto": "Aun así es potencialmente peligroso, y necesita licencia, si es un cruce de una raza de la lista, si reúne todas o la mayoría de las características del anexo II o si la autoridad lo ha declarado así por su conducta. Algunas ordenanzas municipales añaden razas: ante la duda, pregunta en tu ayuntamiento.",
     "pendienteElegir": "Elige una raza para ver el resultado.",
     "implica": "Qué implica tener un perro potencialmente peligroso",
     "licencia": "Licencia municipal",
@@ -206,7 +208,7 @@
     "seguroComunidad": "Seguro mínimo en {comunidad}: {importe}.",
     "dependeTitulo": "Depende de tu comunidad",
     "dependeTexto": "No está en la lista estatal, pero se considera potencialmente peligroso en {comunidades}. Elige tu comunidad para verlo.",
-    "otrasComunidades": "Sí lo es en {comunidades}.",
+    "otrasComunidades": "En cambio, sí figura en la lista de {comunidades}.",
     "porComunidad": "Lo que cambia en cada comunidad",
     "porComunidadTexto": "La lista del RD 287/2002 y su seguro mínimo de 120.000 € rigen en toda España. Estas comunidades añaden razas o exigen un seguro mayor, cada una con su norma.",
     "colComunidad": "Comunidad",

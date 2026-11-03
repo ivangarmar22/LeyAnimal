@@ -63,11 +63,16 @@ export function TarjetaObligacion({
   const textos = textosRequisito(requisito);
   const afirma =
     resultado.estado !== 'sin_datos' && resultado.estado !== 'no_aplica';
+  // Si falta un dato de la persona, la norma si esta verificada.
+  const porDuda =
+    resultado.estado === 'sin_datos' && resultado.faltanDatosDelUsuario;
   // Sin afirmacion no se muestra la descripcion del requisito, que esta
   // redactada para cuando si obliga ("Tu comunidad exige...").
   const descripcion = afirma
     ? textos.descripcion
-    : t(`estadosDescripcion.${resultado.estado}`);
+    : porDuda
+      ? tt('dependeDeDuda')
+      : t(`estadosDescripcion.${resultado.estado}`);
   const nota = afirma ? notaRegla(regla) : null;
   const parametros = Object.entries(resultado.parametros).filter(
     (p): p is [Parametro, number] =>
@@ -141,7 +146,7 @@ export function TarjetaObligacion({
         </>
       ) : null}
 
-      {resultado.faltanDatosDelUsuario ? (
+      {resultado.faltanDatosDelUsuario && !porDuda ? (
         <p class="flex gap-2 text-sm text-sindatos-texto">
           <CircleAlert class="mt-0.5 size-4 shrink-0" aria-hidden />
           {tt('faltanDatos')}
@@ -181,7 +186,7 @@ export function TarjetaObligacion({
         )
       ) : null}
 
-      {resultado.estado === 'sin_datos' ? (
+      {resultado.estado === 'sin_datos' && !porDuda ? (
         <a
           href={ruta('/colabora')}
           class="no-imprimir enlace-flecha self-start text-sm"

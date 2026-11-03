@@ -17,10 +17,10 @@ import {
 import { traductor } from '@/i18n/catalogos';
 import {
   comunidad,
-  esPpp,
   municipio,
   raza,
   ultimaVerificacion,
+  veredictoPpp,
 } from '@/lib/datos';
 import { evaluar } from '@/lib/datos/evaluacion';
 import { nombreNorma, textosRequisito } from '@/lib/datos/textos';
@@ -58,7 +58,7 @@ const obligaciones =
     ? evaluar({
         especie: 'perro',
         raza: r.slug,
-        es_ppp: esPpp(r.slug, m.comunidad),
+        es_ppp: veredictoPpp(r.slug, m.comunidad).estado === 'si',
         edad_meses: 36,
         comunidad: m.comunidad,
         provincia: m.provincia,

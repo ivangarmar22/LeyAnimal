@@ -4,7 +4,10 @@
  */
 import { describe, expect, it } from 'vitest';
 import type { PerfilAnimal } from '@/lib/reglas';
-import { evaluar } from './evaluacion';
+import { evaluar, resolverConsulta } from './evaluacion';
+import { municipio } from './municipios';
+import { razas } from './normativa';
+import { veredictoPpp } from './ppp';
 
 const HOY = '2026-09-29';
 
@@ -193,11 +196,58 @@ describe('Perros potencialmente peligrosos por comunidad (D56)', () => {
     expect(akita.resultado.parametros.cobertura_minima_eur).toBe(120000);
   });
 
+  it('Pais Vasco: la licencia cita la esterilizacion obligatoria', () => {
+    const o = resultado('bilbao', 'licencia_ppp', {
+      raza: 'american-bully',
+      es_ppp: true,
+    });
+    expect(articulos(o)).toContain('ley-animales-pais-vasco#Artículo 4');
+  });
+
   it('Madrid aplica la cuantia estatal', () => {
     const o = resultado('madrid', 'licencia_ppp', {
       raza: 'rottweiler',
       es_ppp: true,
     });
     expect(o.resultado.parametros.cobertura_minima_eur).toBe(120000);
+  });
+});
+
+describe('Un solo veredicto PPP para la guia y la consulta (D61)', () => {
+  const licencia = (raza: string | undefined, codigoIne: string) =>
+    resolverConsulta(
+      { paso: 4, especie: 'perro', raza },
+      municipio(codigoIne),
+    )?.obligaciones.find((o) => o.requisito.clave === 'licencia_ppp')?.resultado
+      .estado;
+
+  it('el doberman es PPP en Sevilla y no por su raza en Madrid', () => {
+    expect(veredictoPpp('doberman', '01').estado).toBe('si');
+    expect(veredictoPpp('doberman', '13').estado).toBe('no');
+    expect(licencia('doberman', '41091')).toBe('obligatorio');
+    expect(licencia('doberman', '28079')).toBe('no_aplica');
+  });
+
+  it('sin raza no queda «sin datos»: no figura en la lista', () => {
+    expect(veredictoPpp(null, '13').estado).toBe('no');
+    expect(licencia(undefined, '28079')).toBe('no_aplica');
+  });
+
+  it('sin comunidad, una raza solo autonomica depende', () => {
+    expect(veredictoPpp('doberman', null).estado).toBe('depende');
+    expect(veredictoPpp('rottweiler', null).estado).toBe('si');
+  });
+
+  it('la consulta coincide con el veredicto en cada raza y comunidad', () => {
+    for (const lugar of Object.values(LUGARES))
+      for (const r of [undefined, ...razas('perro').map((x) => x.slug)]) {
+        const esperado =
+          veredictoPpp(r, lugar.comunidad).estado === 'si'
+            ? 'obligatorio'
+            : 'no_aplica';
+        expect(licencia(r, lugar.municipio), `${r} en ${lugar.municipio}`).toBe(
+          esperado,
+        );
+      }
   });
 });

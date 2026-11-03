@@ -15,8 +15,8 @@ import {
   type EstadoConsulta,
 } from '@/lib/validacion/consulta';
 import { comunidades } from './geografia';
-import { esPpp, fuentesDe, raza, reglas, requisitos } from './normativa';
-import { pppDeComunidad, seguroPpp } from './ppp';
+import { fuentesDe, raza, reglas, requisitos } from './normativa';
+import { pppDeComunidad, seguroPpp, veredictoPpp } from './ppp';
 import type {
   FuenteResuelta,
   Municipio,
@@ -81,9 +81,8 @@ function fundamento(resultado: ResultadoRequisito, regla: Regla) {
 }
 
 /**
- * La licencia PPP es estatal, pero dos cosas dependen de la comunidad: si la
- * raza entra por una lista autonomica y si el seguro minimo es mayor que el
- * estatal. Las dos se citan delante de las estatales, con su cuantia.
+ * La licencia PPP es estatal, pero la comunidad puede añadir razas, subir el
+ * seguro o exigir algo mas. Se cita delante de lo estatal.
  */
 function conComunidad(
   o: ObligacionEvaluada,
@@ -103,7 +102,8 @@ function conComunidad(
       ? [ppp.razas.fuente]
       : [];
   const seguro = seguroPpp(ppp.comunidad, perfil.raza);
-  if (porRaza.length === 0 && !seguro) return o;
+  const otros = ppp.otros.map((x) => x.fuente);
+  if (porRaza.length === 0 && !seguro && otros.length === 0) return o;
   return {
     ...o,
     resultado: seguro
@@ -115,7 +115,12 @@ function conComunidad(
           },
         }
       : o.resultado,
-    fuentes: [...porRaza, ...(seguro ? [seguro.fuente] : []), ...o.fuentes],
+    fuentes: [
+      ...porRaza,
+      ...(seguro ? [seguro.fuente] : []),
+      ...otros,
+      ...o.fuentes,
+    ],
   };
 }
 
@@ -185,15 +190,11 @@ export function resolverConsulta(
 
   const r = estado.raza ? (raza(estado.raza) ?? null) : null;
 
-  // Una raza del anexo I basta para ser PPP. Si no, decide lo que haya
-  // declarado la persona (tambien lo es un perro declarado por su conducta).
-  // Sin nada de eso no se afirma que no lo sea: null es "no lo sabemos".
-  const razaPpp = r ? esPpp(r.slug, m.comunidad) : null;
-  const declarado = triestadoABooleano(estado.ppp);
+  // El mismo veredicto que la guia (D61).
   const perfil: PerfilAnimal = {
     especie: estado.especie,
     raza: r?.slug ?? null,
-    es_ppp: razaPpp === true || declarado === true ? true : declarado,
+    es_ppp: veredictoPpp(r?.slug, m.comunidad).estado === 'si',
     edad_meses: edadEnMeses(estado),
     sexo: estado.sexo ?? null,
     esterilizado: triestadoABooleano(estado.esterilizado),

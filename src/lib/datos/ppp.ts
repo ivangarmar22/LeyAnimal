@@ -7,7 +7,8 @@
  * BOE o de un decreto autonomico de src/datos/externas.json.
  */
 import pppJson from '@/datos/ppp.json';
-import { articulo, norma } from './normativa';
+import { articulo, esPpp, norma, raza } from './normativa';
+import { nombreNorma } from './textos';
 import type { FuenteResuelta } from './tipos';
 
 type EntradaPpp = {
@@ -87,4 +88,49 @@ export function seguroPpp(codigoComunidad: string, raza?: string | null) {
   if (!s || s.importe <= SEGURO_PPP_ESTATAL) return null;
   if (s.soloRazas && !(raza && s.soloRazas.includes(raza))) return null;
   return s;
+}
+
+/**
+ * Si la raza esta en la lista de perros potencialmente peligrosos de la
+ * comunidad (D61). Sin raza, `no`. Sin comunidad, `depende` si solo esta
+ * en listas autonomicas.
+ */
+export type VeredictoPpp = {
+  estado: 'si' | 'no' | 'depende';
+  lista: 'estatal' | 'autonomica' | null;
+  /** Comunidades cuya lista propia incluye la raza. */
+  enComunidades: string[];
+};
+
+export function veredictoPpp(
+  slugRaza: string | null | undefined,
+  codigoComunidad: string | null | undefined,
+): VeredictoPpp {
+  const r = slugRaza ? raza(slugRaza) : undefined;
+  if (!r) return { estado: 'no', lista: null, enComunidades: [] };
+  const enComunidades = r.autonomicas
+    .filter((a) => a.esPpp)
+    .map((a) => a.comunidad);
+  const es = codigoComunidad ? esPpp(r.slug, codigoComunidad) : r.esPppEstatal;
+  if (es)
+    return {
+      estado: 'si',
+      lista: r.esPppEstatal ? 'estatal' : 'autonomica',
+      enComunidades,
+    };
+  const depende = !codigoComunidad && enComunidades.length > 0;
+  return { estado: depende ? 'depende' : 'no', lista: null, enComunidades };
+}
+
+/** Razas que añade la comunidad y seguro minimo para esa raza. */
+export function fichaPppComunidad(
+  codigoComunidad: string,
+  slugRaza?: string | null,
+) {
+  const ppp = PPP.get(codigoComunidad);
+  return {
+    razas: ppp?.razas?.anadidas.map((s) => raza(s)?.nombre ?? s) ?? [],
+    norma: ppp?.razas ? nombreNorma(ppp.razas.fuente.norma) : null,
+    seguro: seguroPpp(codigoComunidad, slugRaza)?.importe ?? null,
+  };
 }

@@ -759,6 +759,8 @@ el asistente pregunta si el perro está considerado potencialmente peligroso
 características del anexo II y los declarados por su conducta. Sin respuesta,
 el motor recibe «desconocido» y la licencia sale `sin_datos`, nunca `no_aplica`.
 
+**Sustituida por D61**: ya no se pregunta; decide la raza en la comunidad.
+
 ## Auditoría y paso a sitio estático
 
 ### D47. Paleta clara «Hoja» y tema claro por defecto
@@ -1204,3 +1206,36 @@ tener un `metaTitulo` propio (admite `{anio}`); si no, usan el patrón común.
 Las descripciones no pasan de 160 caracteres, y no hay títulos ni
 descripciones repetidos en ninguna de las 8.299 páginas. Las fichas de
 municipio y provincia no se tocaron.
+
+### D61. Un solo veredicto PPP: raza y comunidad
+
+La guía y la consulta decían cosas distintas del mismo perro. Un dóberman en
+Madrid era «no figura en la lista» en la guía y, con «no lo sé» en la
+pregunta de D46, «aún no lo hemos verificado para tu municipio» en la
+consulta, lo que era falso: la licencia está verificada.
+
+**Decisión**: `veredictoPpp(raza, comunidad)` (`src/lib/datos/ppp.ts`) decide
+si un perro es PPP por su raza y `VeredictoPpp` (`src/ui/`) lo muestra. Lo
+usan la guía, el formulario, el resultado y el motor (`es_ppp`). Se quita la
+pregunta de D46: con la raza y el municipio ya se sabe.
+
+- Raza de la lista estatal o autonómica: `si`, licencia obligatoria.
+- Otra raza, mestizo o en blanco: `no`, licencia «no aplica», con el aviso
+  de la guía (cruces, anexo II, conducta y ordenanzas que añaden razas, como
+  la de Albudeite, BORM 10/03/2022). Sustituye el «nunca `no_aplica`» de D28.
+- Sin comunidad (solo en la guía), raza solo autonómica: `depende`.
+
+Una tarjeta «sin datos» por un «no lo sé» dice que depende de ese dato y no
+pide la norma.
+
+Revisado a 03/11/2026:
+
+- La Ley 50/1999 y el RD 287/2002 siguen vigentes. El proyecto de reglamento
+  de la Ley 7/2023 (junio de 2025), que los cambiaría por pruebas de aptitud
+  y un seguro de 150.000 €, no se ha publicado.
+- Las listas y seguros de `ppp.json` coinciden con sus decretos. Canarias
+  (D. 30/2018) aplica la lista estatal y concreta el anexo II en cinco de
+  ocho rasgos. Las demás leyes autonómicas no enumeran razas.
+- País Vasco: la Ley 9/2022 (art. 4) obliga a esterilizar a los PPP antes de
+  los 12 meses. Se añade a `ppp.json` y, como el curso andaluz, se cita en
+  la licencia.

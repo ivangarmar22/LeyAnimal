@@ -51,8 +51,6 @@ export type EstadoConsulta = {
   municipio?: string;
   nombre?: string;
   raza?: string;
-  /** Solo perros sin raza del catalogo: lo declara la persona. */
-  ppp?: Triestado;
   edadAnios?: number;
   edadMeses?: number;
   sexo?: (typeof SEXOS)[number];
@@ -89,7 +87,6 @@ export function leerConsulta(params: URLSearchParams): EstadoConsulta {
     municipio: texto(params.get('municipio'), 80),
     nombre: texto(params.get('nombre'), 40),
     raza: texto(params.get('raza'), 80),
-    ppp: deLista(TRIESTADO, params.get('ppp')),
     edadAnios: numero(params.get('edadAnios'), 40),
     edadMeses: numero(params.get('edadMeses'), 11),
     sexo: deLista(SEXOS, params.get('sexo')),
@@ -123,7 +120,6 @@ const COMPARTIBLES = [
   'especie',
   'municipio',
   'raza',
-  'ppp',
   'edadAnios',
   'edadMeses',
   'sexo',

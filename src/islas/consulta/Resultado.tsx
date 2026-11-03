@@ -24,6 +24,7 @@ import {
 } from '@/lib/validacion/consulta';
 import { ChipEstado } from '@/ui/Chips';
 import { TarjetaObligacion } from '@/ui/TarjetaObligacion';
+import { VeredictoPpp } from '@/ui/VeredictoPpp';
 import { fueraDelListado } from './especies';
 
 /** Guia por situacion que se ofrece al final del resultado. */
@@ -285,6 +286,14 @@ export function Resultado({
           <Info class="mt-0.5 size-5 shrink-0" aria-hidden />
           {t('especieLimitada')}
         </p>
+      ) : null}
+
+      {estado.especie === 'perro' ? (
+        <VeredictoPpp
+          raza={consulta.raza?.slug}
+          comunidad={municipio.comunidad}
+          t={tg.en('ppp')}
+        />
       ) : null}
 
       {grupos.map((grupo) => {
