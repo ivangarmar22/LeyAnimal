@@ -1404,6 +1404,104 @@
     background-repeat: no-repeat;
     background-position: right 16px center;
   }
+
+  /* Lista desplegable propia donde hay select personalizable; si no, la nativa */
+  @supports (appearance: base-select) {
+    select.campo,
+    select.campo::picker(select) {
+      appearance: base-select;
+    }
+    select.campo {
+      display: flex;
+      align-items: center;
+    }
+    select.campo::picker-icon {
+      display: none;
+    }
+    select.campo:open {
+      border-color: var(--color-marca-600);
+      box-shadow: 0 0 0 4px
+        color-mix(in srgb, var(--color-marca-400) 30%, transparent);
+    }
+    select.campo::picker(select) {
+      width: anchor-size(width);
+      max-height: min(360px, 50dvh);
+      margin-block: 8px;
+      position-try-order: normal;
+      position-try-fallbacks: flip-block;
+      padding: 6px;
+      overflow-y: auto;
+      border: 1px solid var(--color-borde-fuerte);
+      border-radius: 16px;
+      background: var(--color-superficie);
+      box-shadow: var(--shadow-alta);
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-borde-fuerte) transparent;
+      opacity: 0;
+      translate: 0 -6px;
+      transition:
+        opacity 0.18s var(--ease-salida),
+        translate 0.18s var(--ease-salida),
+        overlay 0.18s allow-discrete,
+        display 0.18s allow-discrete;
+    }
+    select.campo:open::picker(select) {
+      opacity: 1;
+      translate: 0 0;
+    }
+    @starting-style {
+      select.campo:open::picker(select) {
+        opacity: 0;
+        translate: 0 -6px;
+      }
+    }
+    select.campo option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 0.9375rem;
+      line-height: 1.4;
+      white-space: normal;
+      color: var(--color-texto-2);
+      transition:
+        background 0.15s,
+        color 0.15s;
+    }
+    select.campo option:checked {
+      background: var(--color-marca-50);
+      color: var(--color-marca-800);
+      font-weight: 600;
+    }
+    /* "Elige…" no se marca como elegida */
+    select.campo option[value=''] {
+      background: none;
+      color: var(--color-texto-3);
+      font-weight: 400;
+    }
+    select.campo option:hover,
+    select.campo option:focus-visible {
+      outline: none;
+      background: var(--color-superficie-2);
+      color: var(--color-texto);
+    }
+    select.campo option::checkmark {
+      order: 1;
+      margin-left: auto;
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%2316804f' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E")
+        center / contain no-repeat;
+    }
+    select.campo option:not(:checked)::checkmark,
+    select.campo option[value='']::checkmark {
+      visibility: hidden;
+    }
+  }
+
   .etiqueta {
     display: block;
     margin-bottom: 8px;
@@ -2007,6 +2105,9 @@
   }
   .maqueta__ventana {
     transform: none;
+  }
+  select.campo::picker(select) {
+    transition: none;
   }
 }
 

@@ -63,7 +63,7 @@ export default function Verificador({
         </div>
       </div>
 
-      <div aria-live="polite">
+      <div aria-live="polite" class="lg:self-stretch">
         {raza ? (
           <VeredictoPpp
             raza={raza === OTRA ? null : raza}
@@ -71,7 +71,7 @@ export default function Verificador({
             t={t}
           />
         ) : (
-          <div class="flex min-h-40 items-center gap-4 rounded-3xl border border-dashed border-borde-fuerte p-6 text-texto-3">
+          <div class="flex h-full min-h-40 items-center gap-4 rounded-3xl border border-dashed border-borde-fuerte p-6 text-texto-3">
             <HelpCircle class="size-6 shrink-0" aria-hidden />
             {t('pendienteElegir')}
           </div>
