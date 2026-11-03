@@ -22,6 +22,7 @@
     "datos:geografia": "node scripts/contenido/generar-geografia.mjs",
     "datos:autonomicas": "node scripts/contenido/generar-autonomicas.mjs",
     "datos:referencia": "node scripts/contenido/generar-referencia-estatal.mjs",
+    "datos:mapa": "node scripts/contenido/generar-mapa.mjs",
     "datos:extraer": "node scripts/contenido/extraer-autonomicas.mjs",
     "og": "node scripts/generar-og.mjs",
     "iconos": "node scripts/generar-ilustraciones.mjs",
