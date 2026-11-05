@@ -1259,3 +1259,35 @@ buscadores, sí:
 - **Elecciones obsoletas**: escribir en el buscador anula lo elegido antes,
   y cambiar de especie borra la raza, el uso y el acceso al exterior.
 - **Normativa**: se busca cada palabra por separado.
+
+### D63. Revisión de noviembre de 2026: sin cambios en lo que exige la web
+
+Un aviso decía que en Madrid el seguro de responsabilidad civil es obligatorio
+para todos los perros. No lo es desde el 28/12/2024: la redacción original de
+la Ley 4/2016 lo preveía (art. 6.2.a, y una infracción leve por no tenerlo
+en perros), pero la Ley 7/2024 suprimió ambas cosas (D54). El BOE no enlaza
+ningún real decreto que desarrolle el art. 30.3 de la Ley 7/2023, cuyo texto
+no ha cambiado: el seguro estatal sigue pendiente de reglamento.
+
+Comprobado además, el 05/11/2026:
+
+- **Leyes del BOE**: se volvieron a descargar todas. La única con texto
+  nuevo citado es el RGC (RD 518/2026, en vigor el 1/10/2026), y la frase
+  del art. 18.1 que cita la web no cambia. Extremadura y la ley de perros de
+  asistencia de Asturias cambian de fecha de actualización, no de texto.
+- **`externas.json`**: cada cita se comparó con el boletín oficial. Todas son
+  literales. El BOJA en HTML omite el «€» del art. 4.2.f del D. 42/2008; el
+  consolidado de la Junta lo trae. El texto del D. 44/2020 vasco está en el
+  PDF del BOPV, no en la página de euskadi.eus.
+- **Vigencia**: el D. 246/2011 andaluz no toca los artículos citados.
+  Castilla y León, Galicia (en lo que no se oponga a la Ley 4/2017), la
+  Comunitat Valenciana (con el D. 16/2015), Canarias, Navarra y el País Vasco
+  mantienen sus decretos. Madrid (D. 30/2003), el País Vasco (D. 101/2004,
+  art. 12) y Baleares exigen los 120.000 € estatales a los PPP; Aragón,
+  Asturias, Castilla-La Mancha, Murcia, La Rioja y Navarra no tienen decreto
+  propio con razas o seguro.
+- **Melilla**: leído entero. El seguro solo aparece para PPP y perros de
+  asistencia; la infracción «No contar con seguro» está entre las de PPP.
+- **Municipios**: la geografía regenerada del INE coincide con la publicada,
+  y los 8.132 municipios, con cinco perfiles de animal, dan el mismo
+  resultado dentro de cada comunidad, sin obligaciones sin fuente.

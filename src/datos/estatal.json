@@ -15,7 +15,7 @@
    "fechaEntradaVigor": "2023-09-29",
    "estado": "vigente",
    "resumen": "Marco estatal de protección animal. Varias de sus obligaciones (seguro de responsabilidad civil y curso de tenencia) remiten su contenido a un desarrollo reglamentario que todavía no se ha publicado.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "slug": "rd-287-2002-animales-potencialmente-peligrosos",
@@ -32,7 +32,7 @@
    "fechaEntradaVigor": "2002-03-28",
    "estado": "vigente",
    "resumen": "Desarrolla la Ley 50/1999: lista de razas del anexo I, requisitos de la licencia municipal y cobertura mínima del seguro. Su artículo 2.1 fue modificado por el RD 1570/2007.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "slug": "ley-50-1999-animales-potencialmente-peligrosos",
@@ -49,7 +49,7 @@
    "fechaEntradaVigor": "1999-12-25",
    "estado": "vigente",
    "resumen": "Régimen de la tenencia de animales potencialmente peligrosos. El BOE la sigue dando como no derogada: la Ley 7/2023 no la sustituyó.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "slug": "rd-409-2025-perros-asistencia",
@@ -66,7 +66,7 @@
    "fechaEntradaVigor": "2025-06-17",
    "estado": "vigente",
    "resumen": "Desarrolla el artículo 29.6 de la Ley 7/2023: acceso de los perros de asistencia a lugares, establecimientos y transportes, su formación, reconocimiento e identificación y sus condiciones de bienestar. El reconocimiento que da una comunidad autónoma vale en toda España.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "slug": "rd-1428-2003-reglamento-general-circulacion",
@@ -83,7 +83,7 @@
    "fechaEntradaVigor": "2004-01-23",
    "estado": "vigente",
    "resumen": "Norma de tráfico. Se cita solo su artículo 18.1, que obliga a quien conduce a colocar los animales que transporta de forma que no interfieran en la conducción.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "slug": "ley-49-1960-propiedad-horizontal",
@@ -100,7 +100,7 @@
    "fechaEntradaVigor": "1960-08-12",
    "estado": "vigente",
    "resumen": "Norma de las comunidades de vecinos. No habla de animales: se cita su artículo 7.2, que permite a la comunidad pedir que cese una actividad molesta o prohibida en los estatutos.",
-   "verificadaEn": "2026-11-03"
+   "verificadaEn": "2026-11-05"
   },
   {
    "slug": "codigo-civil",
@@ -117,7 +117,7 @@
    "fechaEntradaVigor": null,
    "estado": "vigente",
    "resumen": "Desde la Ley 17/2021, reconoce a los animales como seres sintientes y regula qué pasa con los de compañía en una separación o divorcio y en una herencia. También fija la responsabilidad de quien tiene un animal por los daños que cause.",
-   "verificadaEn": "2026-11-03"
+   "verificadaEn": "2026-11-05"
   }
  ],
  "articulos": [
@@ -272,7 +272,7 @@
    "vigenteHasta": null,
    "prioridad": 0,
    "nota": "El contenido del curso se determinará reglamentariamente y ese reglamento sigue pendiente.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "id": "10000000-0000-4000-8000-000000000005",
@@ -318,7 +318,7 @@
    "vigenteHasta": null,
    "prioridad": 0,
    "nota": "Para las aves la ley exige el anillado desde el nacimiento. Los perros de caza, pastoreo y trabajo quedan fuera de la Ley 7/2023, aunque tu comunidad puede exigirles la identificación igualmente.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "id": "10000000-0000-4000-8000-000000000006",
@@ -343,7 +343,7 @@
    "vigenteHasta": null,
    "prioridad": 0,
    "nota": "Para las especies distintas de perros, gatos, hurones y aves, el sistema de identificación de cada una se fijará por reglamento, y ese reglamento no se ha publicado.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "id": "10000000-0000-4000-8000-000000000007",
@@ -376,7 +376,7 @@
    "vigenteHasta": null,
    "prioridad": 0,
    "nota": "La Ley 7/2023 no se aplica a los perros de caza, pastoreo y trabajo. Su identificación depende de la normativa de tu comunidad sobre caza, ganadería y sanidad animal.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "id": "10000000-0000-4000-8000-000000000004",
@@ -408,7 +408,7 @@
    "vigenteHasta": null,
    "prioridad": 0,
    "nota": "Además de las razas del anexo I, la autoridad competente puede declarar potencialmente peligroso a cualquier perro que muestre agresividad marcada.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "id": "10000000-0000-4000-8000-000000000003",
@@ -430,7 +430,7 @@
    "vigenteHasta": null,
    "prioridad": 0,
    "nota": "Excepción no evaluable: gatos inscritos como reproductores a nombre de un criador registrado.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "id": "10000000-0000-4000-8000-000000000001",
@@ -463,7 +463,7 @@
    "vigenteHasta": null,
    "prioridad": 0,
    "nota": "La ley fija la obligación pero remite el importe mínimo a un reglamento que no se ha publicado.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   }
  ],
  "fuentes": [

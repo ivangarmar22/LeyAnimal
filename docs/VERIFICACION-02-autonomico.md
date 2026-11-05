@@ -5,7 +5,7 @@
 > las citas son literales de la versión vigente del texto consolidado del
 > BOE, obtenidas por su API de datos abiertos.
 
-Generada el 2026-09-29 por
+Generada el 2026-11-05 por
 `scripts/contenido/extraer-autonomicas.mjs`.
 
 ## Cómo se han localizado estas leyes
@@ -3463,7 +3463,7 @@ _(y 12 artículos más en este tema)_
 - **Identificador**: `BOE-A-2002-16784`
 - **Fuente oficial**: https://www.boe.es/buscar/act.php?id=BOE-A-2002-16784
 - **Publicación**: 20020822 · **Vigencia**: 20020918
-- **Última actualización del consolidado**: 20251218T194127Z
+- **Última actualización del consolidado**: 20261013T104939Z
 - **Artículos**: 49
 
 ### Identificación y microchip

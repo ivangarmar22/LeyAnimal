@@ -15,7 +15,7 @@
    "fechaEntradaVigor": null,
    "estado": "vigente",
    "resumen": null,
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "slug": "decreto-30-2018-perros-peligrosos-canarias",
@@ -32,7 +32,7 @@
    "fechaEntradaVigor": null,
    "estado": "vigente",
    "resumen": null,
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "slug": "decreto-134-1999-reglamento-animales-castilla-y-leon",
@@ -49,7 +49,7 @@
    "fechaEntradaVigor": null,
    "estado": "vigente",
    "resumen": null,
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "slug": "decreto-145-2000-perros-peligrosos-comunitat-valenciana",
@@ -66,7 +66,7 @@
    "fechaEntradaVigor": null,
    "estado": "vigente",
    "resumen": "Sigue vigente por la disposición transitoria cuarta de la Ley 2/2023 mientras no se desarrolle esa ley. Se cita el texto consolidado de la propia Generalitat, que incluye la reforma del Decreto 16/2015.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "slug": "decreto-90-2002-perros-peligrosos-galicia",
@@ -83,7 +83,7 @@
    "fechaEntradaVigor": null,
    "estado": "vigente",
    "resumen": null,
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "slug": "decreto-foral-94-2022-reglamento-animales-navarra",
@@ -100,7 +100,7 @@
    "fechaEntradaVigor": "2022-11-30",
    "estado": "vigente",
    "resumen": null,
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "slug": "decreto-44-2020-perros-pais-vasco",
@@ -117,7 +117,7 @@
    "fechaEntradaVigor": null,
    "estado": "vigente",
    "resumen": "Modifica el Decreto 101/2004, de 1 de junio, sobre tenencia de animales de la especie canina, y da nueva redacción a su anexo I, la relación de razas de perros potencialmente peligrosos.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "slug": "reglamento-2-2015-animales-ceuta",
@@ -136,7 +136,7 @@
    "fechaEntradaVigor": "2015-05-13",
    "estado": "vigente",
    "resumen": "Ceuta, sin potestad legislativa, regula los animales de compañía con este reglamento de la Ciudad. El decreto de 24 de septiembre de 2025 que declaró un foco de rabia lo cita como vigente.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "slug": "reglamento-sanidad-animal-melilla",
@@ -155,7 +155,7 @@
    "fechaEntradaVigor": null,
    "estado": "vigente",
    "resumen": "Melilla, sin potestad legislativa, regula la sanidad y la tenencia de animales con este reglamento de la Ciudad. Se cita el texto íntegro publicado tras la modificación aprobada por la Asamblea el 10 de noviembre de 2022.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "slug": "ley-11-2026-medidas-cataluna",
@@ -172,7 +172,7 @@
    "fechaEntradaVigor": "2026-07-14",
    "estado": "vigente",
    "resumen": "Ley de acompañamiento de los presupuestos. Su artículo 121 actualiza las multas del texto refundido de la Ley de protección de los animales de Cataluña; el consolidado del BOE todavía no recoge el cambio, así que la cuantía vigente se cita de aquí.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   }
  ],
  "articulos": [
@@ -363,7 +363,7 @@
    "vigenteHasta": null,
    "prioridad": 0,
    "nota": "Plazo: tres meses desde el nacimiento o un mes desde la adquisición.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "id": "20000000-0000-4000-8000-000000000002",
@@ -387,7 +387,7 @@
    "vigenteHasta": null,
    "prioridad": 0,
    "nota": "Tras ponerle el microchip hay que inscribirlo en el Registro de Animales de Compañía de Ceuta (SIACE), que hace de censo; puede hacerse en una clínica veterinaria habilitada.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   },
   {
    "id": "20000000-0000-4000-8000-000000000003",
@@ -411,7 +411,7 @@
    "vigenteHasta": null,
    "prioridad": 0,
    "nota": "El reglamento obliga a identificar por procedimiento electrónico a los animales de compañía y, en concreto, con microchip a perros, gatos y hurones.",
-   "verificadaEn": "2026-09-29"
+   "verificadaEn": "2026-11-05"
   }
  ],
  "referencias": [

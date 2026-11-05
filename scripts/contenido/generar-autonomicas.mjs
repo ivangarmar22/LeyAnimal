@@ -47,7 +47,7 @@ import { CACHE as CACHE_COMUN, escribirDatos } from './comun.mjs';
 const CACHE = join(CACHE_COMUN, 'autonomicas');
 
 /** Fecha de la ultima revision completa de la seleccion contra el BOE. */
-const VERIFICADA_EN = '2026-09-29';
+const VERIFICADA_EN = '2026-11-05';
 
 /** Requisitos que solo existen por las leyes autonomicas. */
 const REQUISITOS = [
