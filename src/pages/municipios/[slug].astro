@@ -12,6 +12,8 @@ import {
   nombreRepetido,
   pppDeComunidad,
   provincia,
+  raza,
+  razas,
   SEGURO_PPP_ESTATAL,
   todosLosMunicipios,
 } from '@/lib/datos';
@@ -39,6 +41,38 @@ const nombreTitulo = nombreRepetido(m.nombre)
     ? `${m.nombre} (municipio)`
     : m.nombre;
 
+// Titulo de hasta 60 caracteres, lo que muestra Google sin cortar: con
+// nombres largos se cae primero el anio y luego el seguro, antes que las
+// palabras que mas se buscan (censo y perros peligrosos).
+const opcionesTitulo = [
+  t('metaTitulo', { municipio: nombreTitulo, anio: anioActual() }),
+  t('metaTituloCorto', { municipio: nombreTitulo }),
+];
+const metaTitulo =
+  opcionesTitulo.find((x) => x.length <= 60) ??
+  t('metaTituloMinimo', { municipio: nombreTitulo });
+
+// Donde esta, sin repeticiones: "Salamanca (Castilla y León)", no
+// "Salamanca (Salamanca)"; "Getafe (Comunidad de Madrid)", no "(Madrid,
+// Comunidad de Madrid)"; "Ceuta", sin nada.
+const donde = [
+  p && p.nombre !== m.nombre && !c?.nombre.includes(p.nombre) ? p.nombre : null,
+  c && c.nombre !== m.nombre ? c.nombre : null,
+].filter(Boolean);
+const lugar = donde.length ? `${m.nombre} (${donde.join(', ')})` : m.nombre;
+
+// Razas PPP: la lista estatal y las que anade la comunidad, si anade.
+const enumerar = new Intl.ListFormat('es', { type: 'conjunction' });
+const razasEstatales = enumerar.format(
+  razas('perro')
+    .filter((r) => r.esPppEstatal === true)
+    .map((r) => r.nombre),
+);
+const razasAnadidas =
+  pppDeComunidad(m.comunidad)?.razas?.anadidas.map(
+    (s) => raza(s)?.nombre ?? s,
+  ) ?? [];
+
 // Seguro minimo de un perro PPP: el estatal o, si su comunidad exige mas a
 // cualquier perro PPP (no solo a las razas de su lista), el de su norma.
 const seguroAutonomico = pppDeComunidad(m.comunidad)?.seguro;
@@ -62,12 +96,9 @@ const colabora = `${ruta('/colabora')}?tipo=falta_ordenanza&municipio=${encodeUR
 
 <Base
   ruta={`/municipios/${m.slug}`}
-  titulo={t('metaTitulo', { municipio: nombreTitulo, anio: anioActual() })}
+  titulo={metaTitulo}
   tituloCompleto
-  descripcion={t('metaDescripcion', {
-    municipio: m.nombre,
-    provincia: p?.nombre ?? '',
-  })}
+  descripcion={t('metaDescripcion', { lugar })}
 >
   <CabeceraPagina
     titulo={t('titulo', {
@@ -124,13 +155,28 @@ const colabora = `${ruta('/colabora')}?tipo=falta_ordenanza&municipio=${encodeUR
         nota={t('referencia')}
       />
 
-      <div class="mt-12 flex flex-col gap-4 rounded-3xl border border-obligatorio-borde bg-obligatorio-fondo p-5 text-obligatorio-texto sm:flex-row sm:items-center sm:p-6">
+      <section
+        class="mt-12 flex flex-col gap-4 rounded-3xl border border-obligatorio-borde bg-obligatorio-fondo p-5 text-obligatorio-texto sm:flex-row sm:items-center sm:p-6"
+        aria-labelledby="ppp"
+      >
         <ShieldAlert class="size-7 shrink-0" aria-hidden="true" />
         <div class="flex-1">
-          <p class="font-semibold">{t('ppp')}</p>
+          <h2 id="ppp" class="font-semibold">
+            {t('ppp', { municipio: m.nombre })}
+          </h2>
           <p class="mt-1 text-[0.9375rem]">
             {t('pppTexto', { municipio: m.nombre, importe: seguroPpp })}
           </p>
+          {razasEstatales ? (
+            <p class="mt-1 text-[0.9375rem]">
+              {razasAnadidas.length > 0
+                ? t('pppListaPropia', {
+                    razas: razasEstatales,
+                    anadidas: enumerar.format(razasAnadidas),
+                  })
+                : t('pppLista', { razas: razasEstatales })}
+            </p>
+          ) : null}
         </div>
         <a
           href={ruta('/perros-potencialmente-peligrosos')}
@@ -138,7 +184,7 @@ const colabora = `${ruta('/colabora')}?tipo=falta_ordenanza&municipio=${encodeUR
         >
           {t('pppEnlace')}
         </a>
-      </div>
+      </section>
     </div>
 
     {cercanos.length > 0 && p ? (

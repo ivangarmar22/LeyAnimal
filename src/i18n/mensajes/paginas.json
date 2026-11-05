@@ -134,8 +134,10 @@
     "titulo": "Provincia de {provincia}"
   },
   "municipio": {
-    "metaTitulo": "{municipio}: obligaciones con perros y gatos ({anio})",
-    "metaDescripcion": "Qué exige la ley en {municipio} ({provincia}) a quien tiene perro o gato: microchip, censo, seguro y perros peligrosos, con la norma y el artículo.",
+    "metaTitulo": "{municipio}: censo canino, seguro y perros peligrosos ({anio})",
+    "metaTituloCorto": "{municipio}: censo canino, seguro y perros peligrosos",
+    "metaTituloMinimo": "{municipio}: censo canino y perros peligrosos",
+    "metaDescripcion": "Perro o gato en {lugar}: censo, microchip, seguro y licencia de perro peligroso. Qué es obligatorio de verdad, con el artículo de la ley.",
     "titulo": "Tener perro o gato en {municipio}",
     "entradilla": "Lo que exige hoy la ley en {municipio}, según las normas estatales y autonómicas que hemos verificado.",
     "oficial": "Nombre oficial: {nombre}",
@@ -143,9 +145,11 @@
     "gato": "Si tienes gato",
     "referencia": "Perfil de referencia: animal adulto, no considerado potencialmente peligroso.",
     "ctaBoton": "Consultar en {municipio}",
-    "ppp": "¿Perro potencialmente peligroso?",
-    "pppTexto": "Necesitas licencia del Ayuntamiento de {municipio} y un seguro de al menos {importe}.",
-    "pppEnlace": "Qué implica",
+    "ppp": "Perros potencialmente peligrosos en {municipio}",
+    "pppTexto": "Si tu perro es de una raza de la lista, un cruce de ellas o reúne sus características, necesitas licencia del Ayuntamiento de {municipio} y un seguro de al menos {importe}.",
+    "pppLista": "Razas de la lista estatal: {razas}.",
+    "pppListaPropia": "Razas de la lista estatal: {razas}. La ley de tu comunidad añade {anadidas}.",
+    "pppEnlace": "Comprueba si tu perro lo es",
     "cercanos": "Otros municipios de {provincia}",
     "verProvincia": "Ver los {n} municipios de {provincia}",
     "verComunidad": "Ver la normativa de {comunidad}"
@@ -174,8 +178,8 @@
     "listado": "Ver como tabla"
   },
   "ppp": {
-    "metaTitulo": "Perros peligrosos (PPP): razas, licencia y seguro",
-    "metaDescripcion": "Comprueba si tu perro es potencialmente peligroso y qué implica: licencia, seguro de al menos 120.000 €, bozal, correa y registro, con cada artículo.",
+    "metaTitulo": "Perros potencialmente peligrosos (PPP): razas y ley ({anio})",
+    "metaDescripcion": "Lista de razas PPP en España y qué exigen la Ley 50/1999 y el RD 287/2002: licencia, seguro de 120.000 €, bozal, correa y registro. Comprueba tu perro.",
     "titulo": "¿Tu perro se considera potencialmente peligroso?",
     "entradilla": "Elige la raza y tu comunidad. Te decimos si figura en la lista legal y qué implica, con el artículo de cada cosa.",
     "raza": "Raza",
@@ -208,7 +212,7 @@
     "sanciones": "Si no se cumple",
     "sancionesTexto": "Tenerlo sin licencia es infracción muy grave; llevarlo sin bozal o sin sujetar, grave.",
     "multas": "Ver los tramos de multa",
-    "razas": "Las razas del anexo I",
+    "razas": "Lista de razas de perros potencialmente peligrosos",
     "conducta": "También por su conducta",
     "errata": "El BOE escribe «American Staffodshire Terrier»: la errata es del texto oficial.",
     "siTextoAutonomico": "No está en la lista estatal, pero sí en {norma}, que se aplica en {comunidad}.",

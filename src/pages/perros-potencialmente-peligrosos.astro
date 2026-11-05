@@ -29,6 +29,7 @@ import {
 } from '@/lib/datos';
 import { nombreNorma } from '@/lib/datos/textos';
 import { formatearEuros } from '@/lib/fechas';
+import { anioActual } from '@/lib/seo';
 import { CitaLegal } from '@/ui/CitaLegal';
 import { Ilustracion } from '@/ui/Ilustracion';
 
@@ -96,7 +97,8 @@ const conducta = articulo(`${RD}#art. 2.2`);
 
 <Base
   ruta="/perros-potencialmente-peligrosos"
-  titulo={t('metaTitulo')}
+  titulo={t('metaTitulo', { anio: anioActual() })}
+  tituloCompleto
   descripcion={t('metaDescripcion')}
 >
   <CabeceraPagina titulo={t('titulo')} entradilla={t('entradilla')} solape />
